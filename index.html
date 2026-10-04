@@ -40,11 +40,10 @@
       <div id="signedOutBox">
         <div>
           <strong>Sync your progress</strong>
-          <p>Sign in with your email to keep revision progress synced across phone and laptop.</p>
+          <p>Sign in with Google to keep revision progress synced across phone and laptop.</p>
         </div>
         <div class="auth-form">
-          <input id="authEmail" type="email" placeholder="Your email address" autocomplete="email">
-          <button id="magicLinkBtn">Send sign-in link</button>
+          <button id="googleSignInBtn">Sign in with Google</button>
         </div>
         <div id="authMessage" class="auth-message"></div>
       </div>
@@ -265,17 +264,12 @@
   </main>
 
   <footer>
-    Progress is saved in this browser on this device.
+    Progress is saved on this device and syncs to Firebase when you sign in.
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
-    window.ARABIC_APP_CONFIG = {
-      SUPABASE_URL: "https://ttdvjlhyjhichenqdipk.supabase.co",
-      SUPABASE_KEY: "sb_publishable_4qMPlihf0gZw-umgHOA2Kw_jMYDvwq9"
-    };
-  </script>
-  <script src="config.js?v=20261004c"></script>
-  <script src="script.js?v=20261004d"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore-compat.js"></script>
+  <script src="config.js?v=20261004-firebase1"></script>
+  <script src="script.js?v=20261004-firebase1"></script>
 </body>
 </html>
