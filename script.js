@@ -1,167 +1,116 @@
-let supabaseClient = null;
+let firebaseApp = null;
+let firebaseAuth = null;
+let firebaseDb = null;
 let currentUser = null;
 let remoteProgress = {};
 let syncReady = false;
+let firebaseInitError = '';
 
-let supabaseInitError = '';
-function initSupabase(){
-  supabaseInitError = '';
-  const cfg = window.ARABIC_APP_CONFIG || {};
-  const valid = cfg.SUPABASE_URL && cfg.SUPABASE_KEY &&
-    !String(cfg.SUPABASE_URL).startsWith('PASTE_') && !String(cfg.SUPABASE_KEY).startsWith('PASTE_');
+function initFirebase(){
+  firebaseInitError = '';
+  const cfg = window.FIREBASE_CONFIG || {};
+  const valid = cfg.apiKey && cfg.authDomain && cfg.projectId && cfg.appId;
   if(!valid){
-    supabaseInitError = 'Supabase configuration was not loaded.';
+    firebaseInitError = 'Firebase configuration was not loaded.';
     return false;
   }
-  if(!window.supabase || typeof window.supabase.createClient !== 'function'){
-    supabaseInitError = 'The Supabase library did not load. Please refresh the page.';
+  if(!window.firebase || !window.firebase.initializeApp){
+    firebaseInitError = 'The Firebase library did not load. Please refresh the page.';
     return false;
   }
   try{
-    supabaseClient = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_KEY, {
-      auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}
-    });
+    firebaseApp = firebase.apps?.length ? firebase.app() : firebase.initializeApp(cfg);
+    firebaseAuth = firebase.auth();
+    firebaseDb = firebase.firestore();
     return true;
   }catch(err){
-    console.error('Supabase initialization error',err);
-    supabaseInitError = 'Supabase could not initialise in this browser.';
+    console.error('Firebase initialization error',err);
+    firebaseInitError = 'Firebase could not initialise in this browser.';
     return false;
   }
-}
-
-async function handleSupabaseAuthCallback(){
-  if(!supabaseClient) return false;
-
-  const url=new URL(window.location.href);
-  const code=url.searchParams.get('code');
-  const errorDescription=url.searchParams.get('error_description') || url.searchParams.get('error');
-
-  if(errorDescription){
-    setAuthMessage('Sign-in failed: '+decodeURIComponent(errorDescription));
-    return false;
-  }
-
-  try{
-    // PKCE flow: Supabase returns ?code=...
-    if(code){
-      setAuthMessage('Signing you in…');
-      const {data,error}=await supabaseClient.auth.exchangeCodeForSession(code);
-      if(error) throw error;
-      currentUser=data?.session?.user||null;
-      cleanAuthUrl();
-      if(currentUser){
-        await loadRemoteProgress();
-        updateAuthUI();
-        setAuthMessage('');
-        return true;
-      }
-    }
-
-    // Implicit flow: Supabase can return tokens in the URL hash.
-    const hash=new URLSearchParams((window.location.hash||'').replace(/^#/,''));
-    const accessToken=hash.get('access_token');
-    const refreshToken=hash.get('refresh_token');
-    if(accessToken&&refreshToken){
-      setAuthMessage('Signing you in…');
-      const {data,error}=await supabaseClient.auth.setSession({
-        access_token:accessToken,
-        refresh_token:refreshToken
-      });
-      if(error) throw error;
-      currentUser=data?.session?.user||null;
-      cleanAuthUrl();
-      if(currentUser){
-        await loadRemoteProgress();
-        updateAuthUI();
-        setAuthMessage('');
-        return true;
-      }
-    }
-  }catch(err){
-    console.error('Supabase callback error',err);
-    setAuthMessage('The sign-in link was opened, but the session could not be completed. Please request a fresh link and try again.');
-  }
-  return false;
-}
-
-function cleanAuthUrl(){
-  try{
-    const clean=window.location.origin+window.location.pathname;
-    window.history.replaceState({},document.title,clean);
-  }catch(e){}
-}
-
-async function refreshAuth(){
-  if(!supabaseClient){ updateAuthUI(); return; }
-  const {data:{session},error} = await supabaseClient.auth.getSession();
-  if(error) console.error('Supabase session error',error);
-  currentUser = session?.user || null;
-  if(currentUser) await loadRemoteProgress();
-  updateAuthUI();
 }
 
 async function loadRemoteProgress(){
-  if(!supabaseClient || !currentUser) return;
-  const {data,error}=await supabaseClient.from('progress').select('*');
-  if(error){ console.error(error); return; }
-  remoteProgress={};
-  (data||[]).forEach(r=>{
-    remoteProgress[r.item_id]={
-      status:r.status,
-      favourite:r.favourite,
-      dateCovered:r.date_covered,
-      lastRevised:r.last_revised,
-      timesRevised:r.times_revised,
-      correctCount:r.correct_count,
-      incorrectCount:r.incorrect_count
-    };
-  });
-  syncReady=true;
-  localStorage.setItem(STORE_KEY,JSON.stringify({...loadProgress(),...remoteProgress}));
-  renderAll();
-  if(currentCard) updateFlashMeta();
+  if(!firebaseDb || !currentUser) return;
+  try{
+    const snap = await firebaseDb.collection('users').doc(currentUser.uid).collection('progress').get();
+    remoteProgress = {};
+    snap.forEach(doc=>{
+      const r=doc.data()||{};
+      remoteProgress[doc.id]={
+        status:r.status || 'Not Started',
+        favourite:!!r.favourite,
+        dateCovered:r.dateCovered || null,
+        lastRevised:r.lastRevised || null,
+        timesRevised:r.timesRevised || 0,
+        correctCount:r.correctCount || 0,
+        incorrectCount:r.incorrectCount || 0
+      };
+    });
+    syncReady=true;
+    localStorage.setItem(STORE_KEY,JSON.stringify({...loadProgress(),...remoteProgress}));
+    renderAll();
+    if(currentCard) updateFlashMeta();
+  }catch(err){
+    console.error('Firestore progress load error',err);
+    setAuthMessage('Signed in, but cloud progress could not load. Check Firestore setup/rules.');
+  }
 }
 
-async function pushProgress(id, value){
-  if(!supabaseClient || !currentUser) return;
-  const row={
-    user_id:currentUser.id,item_id:id,status:value.status||'Not Started',
-    favourite:!!value.favourite,date_covered:value.dateCovered||null,
-    last_revised:value.lastRevised||null,times_revised:value.timesRevised||0,
-    correct_count:value.correctCount||0,incorrect_count:value.incorrectCount||0,
-    updated_at:new Date().toISOString()
-  };
-  const {error}=await supabaseClient.from('progress').upsert(row,{onConflict:'user_id,item_id'});
-  if(error) console.error('Progress sync error',error);
+async function pushProgress(id,value){
+  if(!firebaseDb || !currentUser) return;
+  try{
+    await firebaseDb.collection('users').doc(currentUser.uid).collection('progress').doc(id).set({
+      status:value.status||'Not Started',
+      favourite:!!value.favourite,
+      dateCovered:value.dateCovered||null,
+      lastRevised:value.lastRevised||null,
+      timesRevised:value.timesRevised||0,
+      correctCount:value.correctCount||0,
+      incorrectCount:value.incorrectCount||0,
+      updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+    },{merge:true});
+  }catch(err){
+    console.error('Firestore progress sync error',err);
+  }
 }
 
-async function sendMagicLink(){
-  if(!supabaseClient){
-    if(initSupabase()) await refreshAuth();
+async function signInWithGoogle(){
+  if(!firebaseAuth){
+    if(!initFirebase()){
+      setAuthMessage(firebaseInitError || 'Firebase is not available right now.');
+      return;
+    }
   }
-  if(!supabaseClient){
-    setAuthMessage(supabaseInitError || 'Supabase is not available right now. Refresh the page and try again.');
-    return;
+  setAuthMessage('Opening Google sign-in…');
+  try{
+    const provider=new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({prompt:'select_account'});
+    const isStandalone=window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+    const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+    if(isStandalone || isiOS){
+      await firebaseAuth.signInWithRedirect(provider);
+    }else{
+      await firebaseAuth.signInWithPopup(provider);
+    }
+  }catch(err){
+    console.error('Google sign-in error',err);
+    const msg=err?.code==='auth/unauthorized-domain'
+      ? 'This GitHub Pages domain needs to be added to Firebase Authentication → Settings → Authorized domains.'
+      : (err?.message || 'Google sign-in failed.');
+    setAuthMessage(msg);
   }
-  const email=document.getElementById('authEmail').value.trim();
-  if(!email){setAuthMessage('Enter your email address.');return;}
-  setAuthMessage('Sending sign-in link…');
-  const redirectTo='https://saqifmc.github.io/arabic-encyclopedia/';
-  const {error}=await supabaseClient.auth.signInWithOtp({
-    email,
-    options:{emailRedirectTo:redirectTo}
-  });
-  setAuthMessage(error?error.message:'Check your email and open the newest sign-in link. You should return here signed in automatically.');
 }
 
 async function signOut(){
-  if(supabaseClient) await supabaseClient.auth.signOut();
+  if(firebaseAuth) await firebaseAuth.signOut();
   currentUser=null;remoteProgress={};syncReady=false;updateAuthUI();
 }
 
 function setAuthMessage(msg){
   const el=document.getElementById('authMessage'); if(el) el.textContent=msg||'';
 }
+
 function updateAuthUI(){
   const out=document.getElementById('signedOutBox');
   const inn=document.getElementById('signedInBox');
@@ -169,7 +118,7 @@ function updateAuthUI(){
   out.classList.toggle('hidden',!!currentUser);
   inn.classList.toggle('hidden',!currentUser);
   if(currentUser){
-    document.getElementById('signedInEmail').textContent=`Signed in as ${currentUser.email}. Changes now sync between devices.`;
+    document.getElementById('signedInEmail').textContent=`Signed in as ${currentUser.email||currentUser.displayName||'Google user'}. Changes now sync between devices.`;
   }
 }
 
@@ -211,23 +160,31 @@ function setup(){
   bindNavigation();
   populateFilters();
   bindEvents();
-  document.getElementById('magicLinkBtn')?.addEventListener('click',sendMagicLink);
+  document.getElementById('googleSignInBtn')?.addEventListener('click',signInWithGoogle);
   document.getElementById('signOutBtn')?.addEventListener('click',signOut);
   renderAll();
   newRevisionCard();
-  if(initSupabase()){
-    supabaseClient.auth.onAuthStateChange(async (_event,session)=>{
-      currentUser=session?.user||null;
-      if(currentUser) await loadRemoteProgress();
+
+  if(initFirebase()){
+    firebaseAuth.onAuthStateChanged(async user=>{
+      currentUser=user||null;
+      if(currentUser){
+        setAuthMessage('');
+        await loadRemoteProgress();
+      }else{
+        remoteProgress={};
+        syncReady=false;
+      }
       updateAuthUI();
     });
-    (async()=>{
-      const handled=await handleSupabaseAuthCallback();
-      if(!handled) await refreshAuth();
-    })();
-  } else {
+
+    firebaseAuth.getRedirectResult().catch(err=>{
+      console.error('Firebase redirect sign-in error',err);
+      setAuthMessage(err?.message||'Google sign-in could not be completed.');
+    });
+  }else{
     updateAuthUI();
-    setAuthMessage(supabaseInitError || 'Supabase is not connected yet. Your progress is currently stored only on this device.');
+    setAuthMessage(firebaseInitError || 'Firebase is not connected yet. Your progress is currently stored only on this device.');
   }
 }
 function bindNavigation(){
