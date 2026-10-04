@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Arabic Encyclopedia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="arabic-title" lang="ar" dir="rtl">مَوْسُوعَتِي الْعَرَبِيَّةُ</div>
+      <div class="subtitle">My Arabic Encyclopedia</div>
+    </div>
+    <nav>
+      <button data-view="home">Home</button>
+      <button data-view="vocabulary">Vocabulary</button>
+      <button data-view="roots">Roots</button>
+      <button data-view="verbs">Verbs & Ṣarf</button>
+      <button data-view="speaking">Speaking Phrases</button>
+      <button data-view="revision">Revision</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="view active">
+      <div class="hero">
+        <h1>Build, browse and revise your Arabic</h1>
+        <p>Search vocabulary, explore roots and verb forms, practise speaking phrases, and revise with flashcards.</p>
+        <input id="globalSearch" type="search" placeholder="Search Arabic, English, root or topic..." />
+      </div>
+
+      <div class="cards">
+        <button class="dashboard-card" data-view="vocabulary"><span>📖</span><strong>Vocabulary</strong><small>Browse all words</small></button>
+        <button class="dashboard-card" data-view="roots"><span>🌳</span><strong>Roots</strong><small>Explore word families</small></button>
+        <button class="dashboard-card" data-view="verbs"><span>🔄</span><strong>Verbs & Ṣarf</strong><small>Forms I–X</small></button>
+        <button class="dashboard-card" data-view="speaking"><span>💬</span><strong>Speaking Phrases</strong><small>Useful spoken Arabic</small></button>
+        <button class="dashboard-card" data-view="revision"><span>🧠</span><strong>Revision</strong><small>Flashcards and recall</small></button>
+      </div>
+
+      <div id="stats" class="stats"></div>
+      <div id="searchResults" class="results hidden"></div>
+    </section>
+
+    <section id="vocabulary" class="view">
+      <div class="section-head">
+        <div><h2>Vocabulary</h2><p>Your complete Arabic word bank.</p></div>
+        <input id="vocabSearch" type="search" placeholder="Search vocabulary..." />
+      </div>
+      <div class="filters">
+        <select id="typeFilter"><option value="">All types</option></select>
+        <select id="statusFilter"><option value="">All statuses</option></select>
+      </div>
+      <div id="vocabList" class="list"></div>
+    </section>
+
+    <section id="roots" class="view">
+      <div class="section-head">
+        <div><h2>Arabic Roots</h2><p>See words grouped into related families.</p></div>
+      </div>
+      <div id="rootsList" class="root-grid"></div>
+    </section>
+
+    <section id="verbs" class="view">
+      <div class="section-head">
+        <div><h2>Verbs & Ṣarf</h2><p>Browse verbs by form and review their key patterns.</p></div>
+        <select id="formFilter"><option value="">All forms</option></select>
+      </div>
+      <div id="verbsList" class="list"></div>
+    </section>
+
+    <section id="speaking" class="view">
+      <div class="section-head">
+        <div><h2>Speaking Phrases</h2><p>Practical phrases for active speaking practice.</p></div>
+        <select id="speakingTopicFilter"><option value="">All topics</option></select>
+      </div>
+      <div id="speakingList" class="list"></div>
+    </section>
+
+    <section id="revision" class="view">
+      <div class="section-head">
+        <div><h2>Revision</h2><p>Test yourself without looking at the answer first.</p></div>
+      </div>
+      <div class="revision-controls">
+        <select id="revisionMode">
+          <option value="ar-en">Arabic → English</option>
+          <option value="en-ar">English → Arabic</option>
+          <option value="speaking">Speaking Phrases</option>
+        </select>
+        <button id="newCardBtn">New Card</button>
+      </div>
+
+      <div class="flashcard">
+        <div id="flashPrompt" class="flash-prompt"></div>
+        <button id="revealBtn">Reveal Answer</button>
+        <div id="flashAnswer" class="flash-answer hidden"></div>
+        <div id="ratingButtons" class="rating-buttons hidden">
+          <button data-rating="Again">Again</button>
+          <button data-rating="Learning">Learning</button>
+          <button data-rating="Know It">Know It</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

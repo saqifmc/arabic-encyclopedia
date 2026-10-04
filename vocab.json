@@ -1,0 +1,291 @@
+{
+  "vocabulary": [
+    {
+      "arabic": "مَفْقُودٌ",
+      "english": "missing / lost",
+      "root": "ف ق د",
+      "type": "Adjective",
+      "form": "",
+      "past": "",
+      "present": "",
+      "masdar": "",
+      "topic": "General",
+      "source": "Reading",
+      "example": "الْكِتَابُ مَفْقُودٌ.",
+      "example_en": "The book is missing.",
+      "status": "Learning"
+    },
+    {
+      "arabic": "مَلَأَ",
+      "english": "to fill",
+      "root": "م ل أ",
+      "type": "Verb",
+      "form": "I",
+      "past": "مَلَأَ",
+      "present": "يَمْلَأُ",
+      "masdar": "مَلْءٌ",
+      "topic": "General",
+      "source": "Reading",
+      "example": "مَلَأَ الْإِنَاءَ.",
+      "example_en": "He filled the container.",
+      "status": "Learning"
+    },
+    {
+      "arabic": "يَمْلَأُ",
+      "english": "he fills",
+      "root": "م ل أ",
+      "type": "Verb",
+      "form": "I",
+      "past": "مَلَأَ",
+      "present": "يَمْلَأُ",
+      "masdar": "مَلْءٌ",
+      "topic": "General",
+      "source": "Reading",
+      "example": "يَمْلَأُ الْكُوبَ بِالْمَاءِ.",
+      "example_en": "He fills the cup with water.",
+      "status": "Familiar"
+    },
+    {
+      "arabic": "مَمْلُوءٌ",
+      "english": "full / filled",
+      "root": "م ل أ",
+      "type": "Adjective",
+      "form": "",
+      "past": "",
+      "present": "",
+      "masdar": "",
+      "topic": "General",
+      "source": "Reading",
+      "example": "الْكُوبُ مَمْلُوءٌ بِالْمَاءِ.",
+      "example_en": "The cup is full of water.",
+      "status": "Learning"
+    },
+    {
+      "arabic": "مَلِيءٌ",
+      "english": "full",
+      "root": "م ل أ",
+      "type": "Adjective",
+      "form": "",
+      "past": "",
+      "present": "",
+      "masdar": "",
+      "topic": "General",
+      "source": "Reading",
+      "example": "الْبَيْتُ مَلِيءٌ بِالنَّاسِ.",
+      "example_en": "The house is full of people.",
+      "status": "Learning"
+    },
+    {
+      "arabic": "اِسْتَيْقَظَ",
+      "english": "to wake up",
+      "root": "ي ق ظ",
+      "type": "Verb",
+      "form": "X",
+      "past": "اِسْتَيْقَظَ",
+      "present": "يَسْتَيْقِظُ",
+      "masdar": "اِسْتِيقَاظٌ",
+      "topic": "Daily Routine",
+      "source": "Reading",
+      "example": "اِسْتَيْقَظَ الطَّالِبُ مُبَكِّرًا.",
+      "example_en": "The student woke up early.",
+      "status": "Learning"
+    },
+    {
+      "arabic": "يَسْتَيْقِظُ",
+      "english": "he wakes up",
+      "root": "ي ق ظ",
+      "type": "Verb",
+      "form": "X",
+      "past": "اِسْتَيْقَظَ",
+      "present": "يَسْتَيْقِظُ",
+      "masdar": "اِسْتِيقَاظٌ",
+      "topic": "Daily Routine",
+      "source": "Reading",
+      "example": "يَسْتَيْقِظُ مُبَكِّرًا.",
+      "example_en": "He wakes up early.",
+      "status": "Learning"
+    },
+    {
+      "arabic": "اِبْتَسَمَ",
+      "english": "to smile",
+      "root": "ب س م",
+      "type": "Verb",
+      "form": "VIII",
+      "past": "اِبْتَسَمَ",
+      "present": "يَبْتَسِمُ",
+      "masdar": "اِبْتِسَامٌ",
+      "topic": "Feelings",
+      "source": "Reading",
+      "example": "اِبْتَسَمَ الطِّفْلُ.",
+      "example_en": "The child smiled.",
+      "status": "Familiar"
+    },
+    {
+      "arabic": "يَرْجُو",
+      "english": "he hopes",
+      "root": "ر ج و",
+      "type": "Verb",
+      "form": "I",
+      "past": "رَجَا",
+      "present": "يَرْجُو",
+      "masdar": "رَجَاءٌ",
+      "topic": "Feelings",
+      "source": "Reading",
+      "example": "يَرْجُو النَّجَاحَ.",
+      "example_en": "He hopes for success.",
+      "status": "Learning"
+    },
+    {
+      "arabic": "رَغِبَ فِي",
+      "english": "to desire / be interested in",
+      "root": "ر غ ب",
+      "type": "Phrase",
+      "form": "I",
+      "past": "رَغِبَ",
+      "present": "يَرْغَبُ",
+      "masdar": "رَغْبَةٌ",
+      "topic": "Opinions",
+      "source": "Reading",
+      "example": "رَغِبَ فِي التَّعَلُّمِ.",
+      "example_en": "He wanted to learn.",
+      "status": "Learning"
+    },
+    {
+      "arabic": "شَرَحَ",
+      "english": "to explain",
+      "root": "ش ر ح",
+      "type": "Verb",
+      "form": "I",
+      "past": "شَرَحَ",
+      "present": "يَشْرَحُ",
+      "masdar": "شَرْحٌ",
+      "topic": "Study",
+      "source": "Lesson",
+      "example": "شَرَحَ الْمُعَلِّمُ الدَّرْسَ.",
+      "example_en": "The teacher explained the lesson.",
+      "status": "Familiar"
+    },
+    {
+      "arabic": "مَسْرُورٌ",
+      "english": "happy / pleased",
+      "root": "س ر ر",
+      "type": "Adjective",
+      "form": "",
+      "past": "",
+      "present": "",
+      "masdar": "",
+      "topic": "Feelings",
+      "source": "Reading",
+      "example": "هُوَ مَسْرُورٌ.",
+      "example_en": "He is happy.",
+      "status": "Learning"
+    },
+    {
+      "arabic": "عَطَشٌ",
+      "english": "thirst",
+      "root": "ع ط ش",
+      "type": "Noun",
+      "form": "",
+      "past": "",
+      "present": "",
+      "masdar": "",
+      "topic": "Daily Life",
+      "source": "Reading",
+      "example": "عِنْدِي عَطَشٌ.",
+      "example_en": "I am thirsty.",
+      "status": "New"
+    },
+    {
+      "arabic": "رَضِيعٌ",
+      "english": "infant / baby",
+      "root": "ر ض ع",
+      "type": "Noun",
+      "form": "",
+      "past": "",
+      "present": "",
+      "masdar": "",
+      "topic": "Family",
+      "source": "Reading",
+      "example": "هٰذَا طِفْلٌ رَضِيعٌ.",
+      "example_en": "This is an infant.",
+      "status": "New"
+    },
+    {
+      "arabic": "أَحْيَانًا",
+      "english": "sometimes",
+      "root": "",
+      "type": "Adverb",
+      "form": "",
+      "past": "",
+      "present": "",
+      "masdar": "",
+      "topic": "General",
+      "source": "Reading",
+      "example": "أَحْيَانًا أَقْرَأُ فِي الْمَسَاءِ.",
+      "example_en": "Sometimes I read in the evening.",
+      "status": "Learning"
+    }
+  ],
+  "speaking": [
+    {
+      "arabic": "السَّلَامُ عَلَيْكُمْ",
+      "english": "Peace be upon you / hello",
+      "topic": "Greetings",
+      "status": "Familiar"
+    },
+    {
+      "arabic": "وَعَلَيْكُمُ السَّلَامُ",
+      "english": "And peace be upon you",
+      "topic": "Greetings",
+      "status": "Familiar"
+    },
+    {
+      "arabic": "كَيْفَ حَالُكَ؟",
+      "english": "How are you?",
+      "topic": "Greetings",
+      "status": "Learning"
+    },
+    {
+      "arabic": "أَنَا بِخَيْرٍ، الْحَمْدُ لِلّٰهِ.",
+      "english": "I am well, praise be to Allah.",
+      "topic": "Greetings",
+      "status": "Learning"
+    },
+    {
+      "arabic": "مَا اسْمُكَ؟",
+      "english": "What is your name?",
+      "topic": "Introductions",
+      "status": "Learning"
+    },
+    {
+      "arabic": "اسْمِي ...",
+      "english": "My name is ...",
+      "topic": "Introductions",
+      "status": "Familiar"
+    },
+    {
+      "arabic": "مِنْ أَيْنَ أَنْتَ؟",
+      "english": "Where are you from?",
+      "topic": "Introductions",
+      "status": "Learning"
+    },
+    {
+      "arabic": "أُرِيدُ هٰذَا.",
+      "english": "I want this.",
+      "topic": "Shopping",
+      "status": "Learning"
+    },
+    {
+      "arabic": "كَمِ السِّعْرُ؟",
+      "english": "How much is it?",
+      "topic": "Shopping",
+      "status": "New"
+    },
+    {
+      "arabic": "لَا أَفْهَمُ.",
+      "english": "I do not understand.",
+      "topic": "Conversation Responses",
+      "status": "Learning"
+    }
+  ]
+}

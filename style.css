@@ -1,0 +1,184 @@
+*{box-sizing:border-box}
+:root{
+  --green:#176b4d;
+  --green-dark:#0f4e38;
+  --green-soft:#eaf5f0;
+  --ink:#1d2a24;
+  --muted:#6f7d76;
+  --line:#dce7e1;
+  --bg:#f7faf8;
+  --white:#fff;
+}
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+}
+button,input,select{font:inherit}
+.topbar{
+  background:var(--white);
+  border-bottom:1px solid var(--line);
+  padding:18px 5vw;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.brand{margin-bottom:14px}
+.arabic-title{
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:2rem;
+  font-weight:700;
+  color:var(--green-dark);
+  text-align:right;
+  letter-spacing:0;
+}
+.subtitle{color:var(--muted);font-size:.95rem}
+nav{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+nav button,.dashboard-card,.revision-controls button,.flashcard button{
+  border:0;
+  background:var(--green);
+  color:white;
+  border-radius:10px;
+  padding:10px 14px;
+  cursor:pointer;
+}
+nav button:hover,.revision-controls button:hover,.flashcard button:hover{background:var(--green-dark)}
+main{padding:30px 5vw 60px;max-width:1200px;margin:auto}
+.view{display:none}
+.view.active{display:block}
+.hero{
+  background:linear-gradient(135deg,var(--green-soft),#fff);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:36px;
+}
+.hero h1{margin-top:0;font-size:2rem}
+.hero input,.section-head input,select{
+  width:100%;
+  max-width:480px;
+  padding:13px 14px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px;
+  margin:24px 0;
+}
+.dashboard-card{
+  text-align:left;
+  background:#fff;
+  color:var(--ink);
+  border:1px solid var(--line);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+.dashboard-card:hover{background:var(--green-soft)}
+.dashboard-card span{font-size:1.5rem}
+.dashboard-card small{color:var(--muted)}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+}
+.stat{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+}
+.stat strong{display:block;font-size:1.7rem;color:var(--green-dark)}
+.section-head{
+  display:flex;
+  gap:20px;
+  justify-content:space-between;
+  align-items:end;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.section-head h2{margin-bottom:6px}
+.section-head p{margin:0;color:var(--muted)}
+.filters,.revision-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.list{display:grid;gap:12px}
+.item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+}
+.arabic{
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:2rem;
+  line-height:1.8;
+  direction:rtl;
+  text-align:right;
+  letter-spacing:0;
+}
+.meta{color:var(--muted);font-size:.92rem;margin-top:8px}
+.example{
+  font-family:"Noto Naskh Arabic",serif;
+  direction:rtl;
+  text-align:right;
+  font-size:1.35rem;
+  margin-top:10px;
+}
+.root-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+.root-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+}
+.root-title{
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:2rem;
+  direction:rtl;
+  text-align:right;
+}
+.root-words{
+  font-family:"Noto Naskh Arabic",serif;
+  direction:rtl;
+  text-align:right;
+  font-size:1.25rem;
+  line-height:2;
+}
+.flashcard{
+  max-width:700px;
+  margin:auto;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:28px;
+  text-align:center;
+  min-height:320px;
+}
+.flash-prompt,.flash-answer{margin:32px 0}
+.flash-prompt.arabic,.flash-answer.arabic{font-size:2.8rem;text-align:center}
+.flash-answer{font-size:1.2rem}
+.rating-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.hidden{display:none!important}
+.results{
+  margin-top:18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px;
+}
+@media(max-width:700px){
+  .arabic-title{font-size:1.6rem}
+  .hero{padding:24px}
+  .flash-prompt.arabic,.flash-answer.arabic{font-size:2.2rem}
+}
