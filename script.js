@@ -178,6 +178,9 @@ function renderAll(){
   renderStats(); renderSectionDashboards(); renderVocabulary(); renderRoots(); renderVerbs(); renderSpeaking(); renderNahw(); renderProgress();
 }
 function itemStatus(id){return progressFor(id).status || 'Not Started';}
+function statusClass(status){
+  return 'status-'+String(status||'Not Started').toLowerCase().replace(/\s+/g,'-');
+}
 function renderStats(){
   const allItems=[...DATA.vocabulary,...DATA.verbs,...DATA.speaking,...DATA.nahw];
   const covered=allItems.filter(x=>itemStatus(x.id)!=='Not Started').length;
@@ -197,8 +200,12 @@ function dashboardMarkup(items){
   const favourites=items.filter(x=>progressFor(x.id).favourite).length;
   const pct=total?Math.round(covered/total*100):0;
   return [
-    ['Total',total],['Covered',covered],['Learning',learning],['Mastered',mastered],['Favourites',favourites]
-  ].map(([label,value],i)=>`<div class="section-metric"><span>${label}</span><strong>${value}</strong>${i===1?`<div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div><div class="meta">${pct}% coverage</div>`:''}</div>`).join('');
+    ['Total',total,''],
+    ['Covered',covered,'status-covered'],
+    ['Learning',learning,'status-learning'],
+    ['Mastered',mastered,'status-mastered'],
+    ['Favourites',favourites,'']
+  ].map(([label,value,cls],i)=>`<div class="section-metric ${cls}"><span>${label}</span><strong>${value}</strong>${i===1?`<div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div><div class="meta">${pct}% coverage</div>`:''}</div>`).join('');
 }
 function renderSectionDashboards(){
   const map=[
@@ -242,12 +249,12 @@ function renderRootsDashboard(){
   const mastered=groups.filter(items=>rootProgress(items).pct===100).length;
   const avg=totalRoots?Math.round(groups.reduce((sum,items)=>sum+rootProgress(items).pct,0)/totalRoots):0;
   el.innerHTML=[
-    ['Total Roots',totalRoots],
-    ['Started',started],
-    ['Strong (75%+)',strong],
-    ['Mastered Roots',mastered],
-    ['Average Progress',avg+'%']
-  ].map(([a,b])=>`<div class="section-metric"><span>${a}</span><strong>${b}</strong></div>`).join('');
+    ['Total Roots',totalRoots,''],
+    ['Started',started,'status-covered'],
+    ['Strong (75%+)',strong,'status-confident'],
+    ['Mastered Roots',mastered,'status-mastered'],
+    ['Average Progress',avg+'%','']
+  ].map(([a,b,cls])=>`<div class="section-metric ${cls}"><span>${a}</span><strong>${b}</strong></div>`).join('');
 }
 
 function statusControls(x){
@@ -265,7 +272,7 @@ function vocabCard(x){
         <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
         <h3>${x.english}</h3>
       </div>
-      <span class="pill">${p.status}</span>
+      <span class="pill ${statusClass(p.status)}">${p.status}</span>
     </div>
     <div class="meta">Root: ${x.root||'—'} · Type: ${x.type} ${x.form?`· Form ${x.form}`:''}</div>
     ${x.past?`<div class="meta">Past: <span lang="ar" dir="rtl">${x.past}</span> · Present: <span lang="ar" dir="rtl">${x.present}</span> · Maṣdar: <span lang="ar" dir="rtl">${x.masdar}</span></div>`:''}
@@ -282,7 +289,7 @@ function speakingCard(x){
         <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
         <h3>${x.english}</h3>
       </div>
-      <span class="pill">${p.status}</span>
+      <span class="pill ${statusClass(p.status)}">${p.status}</span>
     </div>
     <div class="meta">${x.topic} · Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}</div>
     ${statusControls(x)}
@@ -308,7 +315,14 @@ function renderVocabulary(){
     const p=progressFor(x.id);
     return hay.includes(q)&&(!type||x.type===type)&&(!source||(x.source||'').split(';').map(s=>s.trim()).includes(source))&&(!status||p.status===status)&&(!fav||p.favourite);
   });
-  document.getElementById('vocabList').innerHTML=rows.map(vocabCard).join('')||'<p>No matches.</p>';
+  document.getElementById('vocabList').innerHTML=`
+    <div class="traffic-legend">
+      <span class="traffic-dot not">Not Started</span>
+      <span class="traffic-dot learning">Learning</span>
+      <span class="traffic-dot covered">Covered</span>
+      <span class="traffic-dot confident">Confident</span>
+      <span class="traffic-dot mastered">Mastered</span>
+    </div>`+(rows.map(vocabCard).join('')||'<p>No matches.</p>');
   bindDynamicButtons();
 }
 function renderRoots(){
@@ -354,8 +368,12 @@ function renderProgress(){
   const covered=all.length-count('Not Started');
   const pct=all.length?Math.round(covered/all.length*100):0;
   document.getElementById('progressSummary').innerHTML=[
-    ['Overall Covered',`${covered}/${all.length}`],['Coverage',`${pct}%`],['Learning',count('Learning')],['Confident',count('Confident')],['Mastered',count('Mastered')]
-  ].map(([a,b])=>`<div class="summary-card"><span>${a}</span><strong>${b}</strong></div>`).join('');
+    ['Overall Covered',`${covered}/${all.length}`,'status-covered'],
+    ['Coverage',`${pct}%`,''],
+    ['Learning',count('Learning'),'status-learning'],
+    ['Confident',count('Confident'),'status-confident'],
+    ['Mastered',count('Mastered'),'status-mastered']
+  ].map(([a,b,cls])=>`<div class="summary-card ${cls}"><span>${a}</span><strong>${b}</strong></div>`).join('');
   const topics={};
   all.forEach(x=>{const t=x.topic||'Uncategorised';topics[t]=topics[t]||[];topics[t].push(x);});
   document.getElementById('topicProgress').innerHTML=Object.entries(topics).sort().map(([topic,items])=>{
