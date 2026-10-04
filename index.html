@@ -21,7 +21,8 @@
       <button data-view="progress">Progress</button>
       <button data-view="vocabulary">Vocabulary</button>
       <button data-view="roots">Roots</button>
-      <button data-view="verbs">Verbs & Sarf</button>
+      <button data-view="verbs">Verbs</button>
+      <button data-view="sarf">Sarf</button>
       <button data-view="speaking">Speaking</button>
       <button data-view="nahw">Nahw</button>
       <button data-view="revision">Revision</button>
@@ -65,7 +66,8 @@
         <button class="dashboard-card" data-view="progress"><strong>Progress</strong><small>Track what you have covered</small></button>
         <button class="dashboard-card" data-view="vocabulary"><strong>Vocabulary</strong><small>Browse all words</small></button>
         <button class="dashboard-card" data-view="roots"><strong>Roots</strong><small>Explore word families</small></button>
-        <button class="dashboard-card" data-view="verbs"><strong>Verbs & Sarf</strong><small>Forms I–X</small></button>
+        <button class="dashboard-card" data-view="verbs"><strong>Verbs</strong><small>Reference library and testing</small></button>
+        <button class="dashboard-card" data-view="sarf"><strong>Sarf</strong><small>Foundational morphology topics</small></button>
         <button class="dashboard-card" data-view="speaking"><strong>Speaking Phrases</strong><small>Useful spoken Arabic</small></button>
         <button class="dashboard-card" data-view="nahw"><strong>Nahw Concepts</strong><small>Your grammar reference</small></button>
         <button class="dashboard-card" data-view="revision"><strong>Revision</strong><small>Focus on weaker items</small></button>
@@ -131,11 +133,56 @@
 
     <section id="verbs" class="view section-verbs">
       <div class="section-head">
-        <div><h2>Verbs & Sarf</h2><p>Browse verbs by form and review their key patterns.</p></div>
-        <select id="formFilter"><option value="">All forms</option></select>
+        <div><h2>Verbs</h2><p>Your Sarf-based verb reference library and testing bank.</p></div>
+        <input id="verbSearch" type="search" placeholder="Search verb, meaning or root..." />
       </div>
+
       <div id="verbsDashboard" class="section-dashboard"></div>
-      <div id="verbsList" class="list"></div>
+
+      <div class="filters">
+        <select id="formFilter"><option value="">All forms</option></select>
+        <select id="verbTypeFilter"><option value="">All verb types</option></select>
+      </div>
+
+      <div class="verb-tabs">
+        <button type="button" class="verb-tab active" data-verb-panel="reference">Verb Reference</button>
+        <button type="button" class="verb-tab" data-verb-panel="testing">Verb Testing</button>
+      </div>
+
+      <div id="verbReferencePanel">
+        <div id="verbsList" class="list"></div>
+      </div>
+
+      <div id="verbTestingPanel" class="hidden">
+        <div class="verb-test-controls">
+          <select id="verbTestMode">
+            <option value="ar-en">Arabic → English</option>
+            <option value="en-ar">English → Arabic</option>
+            <option value="past-present">Past → Present</option>
+            <option value="present-past">Present → Past</option>
+            <option value="root">Verb → Root</option>
+            <option value="form">Verb → Form</option>
+            <option value="masdar">Verb → Maṣdar</option>
+          </select>
+          <button id="newVerbTestBtn" type="button">New Verb</button>
+        </div>
+
+        <div class="verb-test-card">
+          <div id="verbTestMeta" class="pill">Verb Testing</div>
+          <div id="verbTestPrompt" class="verb-test-prompt">Choose “New Verb” to begin.</div>
+          <button id="revealVerbTestBtn" type="button">Reveal Answer</button>
+          <div id="verbTestAnswer" class="verb-test-answer hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sarf" class="view section-sarf">
+      <div class="section-head">
+        <div><h2>Sarf Foundations</h2><p>A reference guide to the foundational concepts and patterns of Arabic morphology.</p></div>
+        <select id="sarfSectionFilter"><option value="">All Sarf topics</option></select>
+      </div>
+      <div id="sarfOverview" class="sarf-overview"></div>
+      <div id="sarfList"></div>
     </section>
 
     <section id="speaking" class="view section-speaking">
@@ -177,7 +224,7 @@
           <option value="ar-en">Arabic → English</option>
           <option value="en-ar">English → Arabic</option>
           <option value="speaking">Speaking Phrases</option>
-          <option value="verbs">Verbs & Sarf</option>
+          <option value="verbs">Verbs</option>
           <option value="nahw">Nahw Concepts</option>
         </select>
         <select id="revisionSubset">
