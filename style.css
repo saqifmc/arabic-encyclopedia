@@ -155,3 +155,49 @@ footer{text-align:center;color:var(--muted);padding:0 20px 40px;font-size:.9rem}
   .account-panel>div{align-items:stretch;flex-direction:column}
   .auth-form input{min-width:0;width:100%}
 }
+
+/* ===== Section colour system and dashboards ===== */
+.section-vocab{--accent:#2563eb;--accent-soft:#eff6ff;--accent-border:#bfdbfe;--accent-deep:#1d4ed8}
+.section-roots{--accent:#7c3aed;--accent-soft:#f5f3ff;--accent-border:#ddd6fe;--accent-deep:#6d28d9}
+.section-verbs{--accent:#d97706;--accent-soft:#fff7ed;--accent-border:#fed7aa;--accent-deep:#b45309}
+.section-speaking{--accent:#db2777;--accent-soft:#fdf2f8;--accent-border:#fbcfe8;--accent-deep:#be185d}
+.section-nahw{--accent:#0f766e;--accent-soft:#f0fdfa;--accent-border:#99f6e4;--accent-deep:#115e59}
+.section-vocab .section-head,.section-roots .section-head,.section-verbs .section-head,.section-speaking .section-head,.section-nahw .section-head{
+  padding:22px 24px;border-radius:22px;background:var(--accent-soft);border:1px solid var(--accent-border);margin-bottom:18px
+}
+.section-vocab .section-head h2,.section-roots .section-head h2,.section-verbs .section-head h2,.section-speaking .section-head h2,.section-nahw .section-head h2{color:var(--accent-deep)}
+.section-vocab .item,.section-roots .root-card{border-left:4px solid #2563eb}
+.section-verbs .item{border-left:4px solid #d97706}
+.section-speaking .item{border-left:4px solid #db2777}
+.section-nahw .item{border-left:4px solid #0f766e}
+.section-dashboard{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0 0 22px
+}
+.section-metric{
+  background:#fff;border:1px solid var(--accent-border,var(--line));border-radius:18px;padding:16px 17px;
+  box-shadow:0 6px 18px rgba(22,65,52,.04)
+}
+.section-metric span{display:block;color:var(--muted);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.section-metric strong{display:block;font-size:1.65rem;color:var(--accent,var(--green));margin-top:5px}
+.section-metric.wide{grid-column:span 2}
+.section-dashboard .progress-bar{margin-top:9px}
+.section-dashboard .progress-fill{background:var(--accent,var(--green))}
+.nahw-keyterms-panel{
+  margin:0 0 26px;padding:24px;border-radius:22px;background:linear-gradient(135deg,#f0fdfa,#ecfeff);
+  border:1px solid #99f6e4;box-shadow:0 8px 22px rgba(15,118,110,.07)
+}
+.nahw-keyterms-head{display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.nahw-keyterms-head h3{margin:5px 0 7px;font-size:1.45rem;color:#115e59}
+.nahw-keyterms-head p{margin:0;color:var(--muted);max-width:720px}
+.eyebrow.dark{color:#0f766e;opacity:1}
+.nahw-keyterms-btn{
+  border:0;background:#0f766e;color:#fff;border-radius:999px;padding:10px 16px;cursor:pointer;font-weight:600
+}
+.keyterms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:20px}
+.keyterm-card{background:#fff;border:1px solid #ccfbf1;border-radius:16px;padding:16px}
+.keyterm-card .arabic{font-size:1.7rem}
+.keyterm-card h4{margin:4px 0 7px;color:#115e59}
+.keyterm-card p{margin:0;color:#52615a;line-height:1.55;font-size:.92rem}
+.concepts-title{margin-top:10px}
+@media(max-width:850px){.section-dashboard{grid-template-columns:repeat(2,minmax(0,1fr))}.section-metric.wide{grid-column:span 2}}
+@media(max-width:460px){.section-dashboard{grid-template-columns:1fr 1fr}.section-metric{padding:13px}.section-metric strong{font-size:1.35rem}}
