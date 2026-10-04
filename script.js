@@ -3,15 +3,30 @@ let currentUser = null;
 let remoteProgress = {};
 let syncReady = false;
 
+let supabaseInitError = '';
 function initSupabase(){
+  supabaseInitError = '';
   const cfg = window.ARABIC_APP_CONFIG || {};
   const valid = cfg.SUPABASE_URL && cfg.SUPABASE_KEY &&
-    !cfg.SUPABASE_URL.startsWith('PASTE_') && !cfg.SUPABASE_KEY.startsWith('PASTE_');
-  if(!valid) return false;
-  supabaseClient = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_KEY, {
-    auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}
-  });
-  return true;
+    !String(cfg.SUPABASE_URL).startsWith('PASTE_') && !String(cfg.SUPABASE_KEY).startsWith('PASTE_');
+  if(!valid){
+    supabaseInitError = 'Supabase configuration was not loaded.';
+    return false;
+  }
+  if(!window.supabase || typeof window.supabase.createClient !== 'function'){
+    supabaseInitError = 'The Supabase library did not load. Please refresh the page.';
+    return false;
+  }
+  try{
+    supabaseClient = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_KEY, {
+      auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}
+    });
+    return true;
+  }catch(err){
+    console.error('Supabase initialization error',err);
+    supabaseInitError = 'Supabase could not initialise in this browser.';
+    return false;
+  }
 }
 
 async function refreshAuth(){
@@ -59,7 +74,10 @@ async function pushProgress(id, value){
 
 async function sendMagicLink(){
   if(!supabaseClient){
-    setAuthMessage('Add your Supabase URL and publishable key to config.js first.');
+    if(initSupabase()) await refreshAuth();
+  }
+  if(!supabaseClient){
+    setAuthMessage(supabaseInitError || 'Supabase is not available right now. Refresh the page and try again.');
     return;
   }
   const email=document.getElementById('authEmail').value.trim();
@@ -143,7 +161,7 @@ function setup(){
     refreshAuth();
   } else {
     updateAuthUI();
-    setAuthMessage('Supabase is not connected yet. Your progress is currently stored only on this device.');
+    setAuthMessage(supabaseInitError || 'Supabase is not connected yet. Your progress is currently stored only on this device.');
   }
 }
 function bindNavigation(){
