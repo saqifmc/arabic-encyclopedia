@@ -165,6 +165,7 @@ function fillSelect(id,values){
   values.forEach(v=>el.insertAdjacentHTML('beforeend',`<option value="${v}">${v}</option>`));
 }
 function populateFilters(){
+  fillSelect('categoryFilter',unique(DATA.vocabulary.map(x=>x.category)));
   fillSelect('typeFilter',unique(DATA.vocabulary.map(x=>x.type)));
   fillSelect('sourceFilter',unique(DATA.vocabulary.flatMap(sourceValues)));
   fillSelect('formFilter',unique(DATA.verbs.map(x=>x.form)));
@@ -200,7 +201,13 @@ function renderStats(){
   ].map(([a,b])=>`<div class="stat"><span>${a}</span><strong>${b}</strong></div>`).join('');
 }
 
-function dashboardMarkup(items, interactive=false){
+function filterByMetric(items,filter){
+  if(!filter||filter==='all') return items;
+  if(filter==='favourites') return items.filter(x=>progressFor(x.id).favourite);
+  if(filter==='started') return items.filter(x=>itemStatus(x.id)!=='Not Started');
+  return items.filter(x=>itemStatus(x.id)===filter);
+}
+function dashboardMarkup(items,section){
   const counts={
     total:items.length,
     notStarted:items.filter(x=>itemStatus(x.id)==='Not Started').length,
@@ -222,26 +229,44 @@ function dashboardMarkup(items, interactive=false){
     ['Favourites',counts.favourites,'','favourites']
   ];
   return cards.map(([label,value,cls,filter])=>`
-    <button type="button" class="section-metric ${cls} ${interactive?'metric-clickable':''}" ${interactive?`data-vocab-metric="${filter}"`:''}>
+    <button type="button" class="section-metric metric-clickable ${cls} ${SECTION_METRIC_FILTERS[section]===filter?'selected':''}" data-section-name="${section}" data-section-filter="${filter}">
       <span>${label}</span><strong>${value}</strong>
       ${label==='Total'?`<div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div><div class="meta">${pct}% started</div>`:''}
     </button>`).join('');
 }
 function renderSectionDashboards(){
   const map=[
-    ['vocabDashboard',DATA.vocabulary,true],
-    ['verbsDashboard',DATA.verbs,false],
-    ['speakingDashboard',DATA.speaking,false],
-    ['nahwDashboard',DATA.nahw,false]
+    ['vocabDashboard',DATA.vocabulary,'vocabulary'],
+    ['verbsDashboard',DATA.verbs,'verbs'],
+    ['speakingDashboard',DATA.speaking,'speaking'],
+    ['nahwDashboard',DATA.nahw,'nahw']
   ];
-  map.forEach(([id,items,interactive])=>{
+  map.forEach(([id,items,section])=>{
     const el=document.getElementById(id);
-    if(el) el.innerHTML=dashboardMarkup(items,interactive);
+    if(el) el.innerHTML=dashboardMarkup(items,section);
   });
-  bindVocabDashboardFilters();
+  bindSectionDashboardFilters();
   renderRootsDashboard();
 }
-
+function bindSectionDashboardFilters(){
+  document.querySelectorAll('[data-section-filter]').forEach(btn=>{
+    btn.onclick=()=>{
+      const section=btn.dataset.sectionName, filter=btn.dataset.sectionFilter;
+      SECTION_METRIC_FILTERS[section]=filter;
+      if(section==='vocabulary'){
+        const status=document.getElementById('statusFilter'),fav=document.getElementById('favouriteFilter');
+        if(status)status.value='';if(fav)fav.checked=false;
+      }
+      renderSectionDashboards();
+      if(section==='vocabulary')renderVocabulary();
+      if(section==='verbs')renderVerbs();
+      if(section==='speaking')renderSpeaking();
+      if(section==='nahw')renderNahw();
+      const target={vocabulary:'vocabList',verbs:'verbsList',speaking:'speakingList',nahw:'nahwList'}[section];
+      document.getElementById(target)?.scrollIntoView({behavior:'smooth',block:'start'});
+    };
+  });
+}
 function getRootGroups(){
   const groups={};
   [...DATA.vocabulary,...DATA.verbs].filter(x=>x.root).forEach(x=>{
@@ -265,42 +290,20 @@ function rootProgress(items){
 }
 
 function renderRootsDashboard(){
-  const el=document.getElementById('rootsDashboard'); if(!el)return;
+  const el=document.getElementById('rootsDashboard');if(!el)return;
   const groups=Object.values(getRootGroups());
-  const totalRoots=groups.length;
+  const total=groups.length;
+  const notStarted=groups.filter(items=>rootProgress(items).pct===0).length;
   const started=groups.filter(items=>rootProgress(items).pct>0).length;
   const strong=groups.filter(items=>rootProgress(items).pct>=75).length;
   const mastered=groups.filter(items=>rootProgress(items).pct===100).length;
-  const avg=totalRoots?Math.round(groups.reduce((sum,items)=>sum+rootProgress(items).pct,0)/totalRoots):0;
-  el.innerHTML=[
-    ['Total Roots',totalRoots,''],
-    ['Started',started,'status-covered'],
-    ['Strong (75%+)',strong,'status-confident'],
-    ['Mastered Roots',mastered,'status-mastered'],
-    ['Average Progress',avg+'%','']
-  ].map(([a,b,cls])=>`<div class="section-metric ${cls}"><span>${a}</span><strong>${b}</strong></div>`).join('');
-}
-
-function bindVocabDashboardFilters(){
-  document.querySelectorAll('[data-vocab-metric]').forEach(btn=>{
-    btn.onclick=()=>{
-      const filter=btn.dataset.vocabMetric;
-      const status=document.getElementById('statusFilter');
-      const fav=document.getElementById('favouriteFilter');
-      if(status) status.value='';
-      if(fav) fav.checked=false;
-
-      if(filter==='favourites'){
-        if(fav) fav.checked=true;
-      } else if(filter!=='all'){
-        if(status) status.value=filter;
-      }
-      document.querySelectorAll('[data-vocab-metric]').forEach(x=>x.classList.remove('selected'));
-      btn.classList.add('selected');
-      renderVocabulary();
-      document.getElementById('vocabList')?.scrollIntoView({behavior:'smooth',block:'start'});
-    };
-  });
+  const cards=[
+    ['Total Roots',total,'','all'],['Not Started',notStarted,'status-not-started','not-started'],
+    ['Started',started,'status-covered','started'],['Strong (75%+)',strong,'status-confident','strong'],
+    ['Mastered',mastered,'status-mastered','mastered']
+  ];
+  el.innerHTML=cards.map(([a,b,cls,f])=>`<button type="button" class="section-metric metric-clickable ${cls} ${ROOT_METRIC_FILTER===f?'selected':''}" data-root-dashboard-filter="${f}"><span>${a}</span><strong>${b}</strong></button>`).join('');
+  document.querySelectorAll('[data-root-dashboard-filter]').forEach(btn=>btn.onclick=()=>{ROOT_METRIC_FILTER=btn.dataset.rootDashboardFilter;renderRootsDashboard();renderRoots();});
 }
 
 function openRootItem(id){
@@ -347,7 +350,7 @@ function vocabCard(x){
       </div>
       <span class="pill ${statusClass(p.status)}">${p.status}</span>
     </div>
-    <div class="meta">Root: ${x.root||'—'} · Type: ${x.type} ${x.form?`· Form ${x.form}`:''}</div>
+    <div class="meta">${x.category||'General'} · ${x.topic||'General'} · Type: ${x.type}${x.root?` · Root: ${x.root}`:''} ${x.form?`· Form ${x.form}`:''}</div>
     ${x.past?`<div class="meta">Past: <span lang="ar" dir="rtl">${x.past}</span> · Present: <span lang="ar" dir="rtl">${x.present}</span> · Maṣdar: <span lang="ar" dir="rtl">${x.masdar}</span></div>`:''}
     ${x.example?`<div class="example" lang="ar" dir="rtl">${x.example}</div><div class="meta">${x.example_en}</div>`:''}
     <div class="meta">Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}${p.lastRevised?` · Last revised ${formatDate(p.lastRevised)}`:''}</div>
@@ -447,30 +450,34 @@ function bindDynamicButtons(){
 }
 function renderVocabulary(){
   const q=(document.getElementById('vocabSearch')?.value||'').toLowerCase();
+  const category=document.getElementById('categoryFilter')?.value||'';
   const type=document.getElementById('typeFilter')?.value||'';
   const source=document.getElementById('sourceFilter')?.value||'';
   const status=document.getElementById('statusFilter')?.value||'';
   const fav=document.getElementById('favouriteFilter')?.checked||false;
   let rows=DATA.vocabulary.filter(x=>{
-    const hay=[x.arabic,x.english,x.root,x.topic,x.source].join(' ').toLowerCase();
+    const hay=[x.arabic,x.english,x.root,x.topic,x.category,...sourceValues(x)].join(' ').toLowerCase();
     const p=progressFor(x.id);
-    return hay.includes(q)&&(!type||x.type===type)&&(!source||(x.source||'').split(';').map(s=>s.trim()).includes(source))&&(!status||p.status===status)&&(!fav||p.favourite);
+    return hay.includes(q)&&(!category||x.category===category)&&(!type||x.type===type)&&(!source||sourceValues(x).includes(source))&&(!status||p.status===status)&&(!fav||p.favourite);
   });
+  rows=filterByMetric(rows,SECTION_METRIC_FILTERS.vocabulary);
+  rows.sort((a,b)=>String(a.category||'').localeCompare(String(b.category||''))||String(a.topic||'').localeCompare(String(b.topic||''))||String(a.english||'').localeCompare(String(b.english||'')));
   rows=sortRecentlyCoveredLast(rows);
   document.getElementById('vocabList').innerHTML=`
     <div class="traffic-legend">
-      <span class="traffic-dot not">Not Started</span>
-      <span class="traffic-dot learning">Learning</span>
-      <span class="traffic-dot covered">Covered</span>
-      <span class="traffic-dot confident">Confident</span>
-      <span class="traffic-dot mastered">Mastered</span>
+      <span class="traffic-dot not">Not Started</span><span class="traffic-dot learning">Learning</span><span class="traffic-dot covered">Covered</span><span class="traffic-dot confident">Confident</span><span class="traffic-dot mastered">Mastered</span>
     </div>`+(rows.map(vocabCard).join('')||'<p>No matches.</p>');
   bindDynamicButtons();
 }
+
 function renderRoots(){
   const groups=getRootGroups();
   const sort=document.getElementById('rootSort')?.value||'weakest';
   let entries=Object.entries(groups).map(([root,items])=>({root,items,progress:rootProgress(items)}));
+  if(ROOT_METRIC_FILTER==='not-started')entries=entries.filter(x=>x.progress.pct===0);
+  if(ROOT_METRIC_FILTER==='started')entries=entries.filter(x=>x.progress.pct>0);
+  if(ROOT_METRIC_FILTER==='strong')entries=entries.filter(x=>x.progress.pct>=75);
+  if(ROOT_METRIC_FILTER==='mastered')entries=entries.filter(x=>x.progress.pct===100);
   if(sort==='weakest') entries.sort((a,b)=>a.progress.pct-b.progress.pct||b.items.length-a.items.length);
   if(sort==='strongest') entries.sort((a,b)=>b.progress.pct-a.progress.pct||b.items.length-a.items.length);
   if(sort==='largest') entries.sort((a,b)=>b.items.length-a.items.length||a.root.localeCompare(b.root,'ar'));
@@ -497,41 +504,49 @@ function renderRoots(){
 }
 function renderVerbs(){
   const form=document.getElementById('formFilter')?.value||'',type=document.getElementById('verbTypeFilter')?.value||'',q=(document.getElementById('verbSearch')?.value||'').toLowerCase();
-  let rows=DATA.verbs.filter(x=>{const h=[x.arabic,x.english,x.root,x.form,x.category,x.verb_type,x.masdar].join(' ').toLowerCase();return(!form||x.form===form)&&(!type||x.verb_type===type)&&h.includes(q)});
+  let rows=DATA.verbs.filter(x=>{const h=[x.arabic,x.english,x.root,x.form,x.category,x.verb_type,x.masdar].join(' ').toLowerCase();return(!form||x.form===form)&&(!type||x.verb_type===type)&&h.includes(q)});rows=filterByMetric(rows,SECTION_METRIC_FILTERS.verbs);
   rows=sortRecentlyCoveredLast(rows);document.getElementById('verbsList').innerHTML=rows.map(verbCard).join('')||'<p>No verbs match these filters.</p>';bindDynamicButtons();
 }
 function renderSpeaking(){
   const topic=document.getElementById('speakingTopicFilter')?.value||'';
-  let rows=DATA.speaking.filter(x=>!topic||x.topic===topic);
+  let rows=DATA.speaking.filter(x=>!topic||x.topic===topic);rows=filterByMetric(rows,SECTION_METRIC_FILTERS.speaking);
   rows=sortRecentlyCoveredLast(rows);
   document.getElementById('speakingList').innerHTML=rows.map(speakingCard).join('');
   bindDynamicButtons();
 }
+function progressItemCard(x){
+  const p=progressFor(x.id);
+  return `<article class="item progress-item"><div class="item-head"><div><div class="arabic" lang="ar" dir="rtl">${x.arabic}</div><strong>${x.english}</strong></div><span class="pill ${statusClass(p.status)}">${p.status}</span></div><div class="meta">${x.topic||x.category||x.verb_type||'General'}</div></article>`;
+}
 function renderProgress(){
   const all=[...DATA.vocabulary,...DATA.verbs,...DATA.speaking,...DATA.nahw];
   const count=s=>all.filter(x=>itemStatus(x.id)===s).length;
-  const covered=all.length-count('Not Started');
-  const pct=all.length?Math.round(covered/all.length*100):0;
-  document.getElementById('progressSummary').innerHTML=[
-    ['Overall Covered',`${covered}/${all.length}`,'status-covered'],
-    ['Coverage',`${pct}%`,''],
-    ['Learning',count('Learning'),'status-learning'],
-    ['Confident',count('Confident'),'status-confident'],
-    ['Mastered',count('Mastered'),'status-mastered']
-  ].map(([a,b,cls])=>`<div class="summary-card ${cls}"><span>${a}</span><strong>${b}</strong></div>`).join('');
+  const favourites=all.filter(x=>progressFor(x.id).favourite).length;
+  const cards=[
+    ['Total',all.length,'','all'],['Not Started',count('Not Started'),'status-not-started','Not Started'],
+    ['Covered',count('Covered'),'status-covered','Covered'],['Learning',count('Learning'),'status-learning','Learning'],
+    ['Confident',count('Confident'),'status-confident','Confident'],['Mastered',count('Mastered'),'status-mastered','Mastered'],
+    ['Favourites',favourites,'','favourites']
+  ];
+  document.getElementById('progressSummary').innerHTML=cards.map(([a,b,cls,f])=>`<button class="summary-card progress-summary-clickable ${cls} ${PROGRESS_METRIC_FILTER===f?'selected':''}" data-progress-filter="${f}"><span>${a}</span><strong>${b}</strong></button>`).join('');
+  document.querySelectorAll('[data-progress-filter]').forEach(btn=>btn.onclick=()=>{PROGRESS_METRIC_FILTER=btn.dataset.progressFilter;renderProgress();});
+  const drill=document.getElementById('progressDrilldown');
+  if(PROGRESS_METRIC_FILTER==='all'){drill.classList.add('hidden');drill.innerHTML='';}
+  else{
+    const rows=filterByMetric(all,PROGRESS_METRIC_FILTER);
+    drill.classList.remove('hidden');
+    drill.innerHTML=`<div class="progress-drilldown-head"><h3>${PROGRESS_METRIC_FILTER}</h3><span>${rows.length} item${rows.length===1?'':'s'}</span></div><div class="list">${rows.map(progressItemCard).join('')||'<p>No items.</p>'}</div>`;
+  }
   const topics={};
-  all.forEach(x=>{const t=x.topic||'Uncategorised';topics[t]=topics[t]||[];topics[t].push(x);});
+  all.forEach(x=>{const t=x.topic||x.category||x.verb_type||'Uncategorised';(topics[t]??=[]).push(x);});
   document.getElementById('topicProgress').innerHTML=Object.entries(topics).sort().map(([topic,items])=>{
-    const c=items.filter(x=>itemStatus(x.id)!=='Not Started').length;
-    const p=Math.round(c/items.length*100);
-    return `<div class="topic-row"><div class="topic-top"><strong>${topic}</strong><span>${c}/${items.length} covered</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:${p}%"></div></div></div>`;
+    const c=items.filter(x=>itemStatus(x.id)!=='Not Started').length,p=Math.round(c/items.length*100);
+    return `<div class="topic-row"><div class="topic-top"><strong>${topic}</strong><span>${c}/${items.length} covered</span></div><div class="progress-bar"><div class="progress-fill" style="width:${p}%"></div></div></div>`;
   }).join('');
   const recent=all.map(x=>({x,p:progressFor(x.id)})).filter(o=>o.p.dateCovered).sort((a,b)=>new Date(b.p.dateCovered)-new Date(a.p.dateCovered)).slice(0,6);
-  document.getElementById('recentlyCovered').innerHTML=recent.length?recent.map(o=>`
-    <article class="item"><div class="arabic" lang="ar" dir="rtl">${o.x.arabic}</div><strong>${o.x.english}</strong>
-    <div class="meta">${o.p.status} · Covered ${formatDate(o.p.dateCovered)}</div></article>`).join(''):'<p class="meta">Nothing marked as covered yet.</p>';
+  document.getElementById('recentlyCovered').innerHTML=recent.length?recent.map(o=>`<article class="item"><div class="arabic" lang="ar" dir="rtl">${o.x.arabic}</div><strong>${o.x.english}</strong><div class="meta">${o.p.status} · Covered ${formatDate(o.p.dateCovered)}</div></article>`).join(''):'<p class="meta">Nothing marked as covered yet.</p>';
 }
+
 function nahwCard(x){
   const p=progressFor(x.id);
   return `<article class="item">
@@ -540,7 +555,7 @@ function nahwCard(x){
         <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
         <h3>${x.english}</h3>
       </div>
-      <span class="pill">${p.status}</span>
+      <span class="pill ${statusClass(p.status)}">${p.status}</span>
     </div>
     <div class="meta">${x.topic}</div>
     <p>${x.summary||''}</p>
@@ -550,18 +565,12 @@ function nahwCard(x){
 }
 function renderNahw(){
   const topic=document.getElementById('nahwTopicFilter')?.value||'';
-  const keyTerms=sortRecentlyCoveredLast(DATA.nahw.filter(x=>x.topic==='Key Terms'));
-  const concepts=sortRecentlyCoveredLast(DATA.nahw.filter(x=>x.topic!=='Key Terms'&&(!topic||x.topic===topic)));
+  let concepts=DATA.nahw.filter(x=>!topic||x.topic===topic);
+  concepts=filterByMetric(concepts,SECTION_METRIC_FILTERS.nahw);
+  concepts=sortRecentlyCoveredLast(concepts);
   const keyBox=document.getElementById('nahwKeyTerms');
-  if(keyBox){
-    keyBox.innerHTML=keyTerms.map(x=>`<article class="keyterm-card">
-      <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
-      <h4>${x.english}</h4>
-      <p>${x.summary||''}</p>
-      ${x.example?`<div class="example" lang="ar" dir="rtl">${x.example}</div><div class="meta">${x.example_en||''}</div>`:''}
-    </article>`).join('');
-  }
-  document.getElementById('nahwList').innerHTML=concepts.map(nahwCard).join('')||'<p>No concepts yet.</p>';
+  if(keyBox)keyBox.innerHTML='';
+  document.getElementById('nahwList').innerHTML=concepts.map(nahwCard).join('')||'<p>No concepts match this filter.</p>';
   bindDynamicButtons();
 }
 
@@ -638,12 +647,9 @@ function rateCurrent(rating){
 }
 function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});}
 function bindEvents(){
-  ['vocabSearch','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{
-    document.querySelectorAll('[data-vocab-metric]').forEach(x=>x.classList.remove('selected'));
-    renderVocabulary();
-  }));
-  document.getElementById('formFilter').addEventListener('input',()=>{renderVerbs();if(currentVerbTest)newVerbTestCard();});
-  document.getElementById('verbTypeFilter')?.addEventListener('input',()=>{renderVerbs();if(currentVerbTest)newVerbTestCard();});
+  ['vocabSearch','categoryFilter','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.vocabulary='all';renderSectionDashboards();renderVocabulary();}));
+  document.getElementById('formFilter').addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
+  document.getElementById('verbTypeFilter')?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
   document.getElementById('verbSearch')?.addEventListener('input',renderVerbs);
   document.querySelectorAll('[data-verb-panel]').forEach(btn=>btn.addEventListener('click',()=>switchVerbPanel(btn.dataset.verbPanel)));
   document.getElementById('newVerbTestBtn')?.addEventListener('click',newVerbTestCard);
@@ -651,8 +657,8 @@ function bindEvents(){
   document.getElementById('verbTestMode')?.addEventListener('change',newVerbTestCard);
   document.getElementById('sarfSectionFilter')?.addEventListener('input',renderSarf);
   document.getElementById('rootSort')?.addEventListener('input',renderRoots);
-  document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
-  document.getElementById('nahwTopicFilter').addEventListener('input',renderNahw);
+  document.getElementById('speakingTopicFilter').addEventListener('input',()=>{SECTION_METRIC_FILTERS.speaking='all';renderSectionDashboards();renderSpeaking();});
+  document.getElementById('nahwTopicFilter').addEventListener('input',()=>{SECTION_METRIC_FILTERS.nahw='all';renderSectionDashboards();renderNahw();});
   document.getElementById('showKeyTermsBtn')?.addEventListener('click',()=>{
     const box=document.getElementById('nahwKeyTerms');
     const btn=document.getElementById('showKeyTermsBtn');
