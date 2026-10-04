@@ -734,8 +734,12 @@ function bindEvents(){
   document.getElementById('resetProgressBtn').addEventListener('click',()=>{
     if(confirm('Reset all saved learning progress on this device?')){
       localStorage.removeItem(STORE_KEY);
-      if(currentUser && supabaseClient){
-        supabaseClient.from('progress').delete().eq('user_id',currentUser.id).then(()=>{});
+      if(currentUser && firebaseDb){
+        firebaseDb.collection('users').doc(currentUser.uid).collection('progress').get().then(async snap=>{
+          const batch=firebaseDb.batch();
+          snap.forEach(doc=>batch.delete(doc.ref));
+          await batch.commit();
+        }).catch(err=>console.error('Cloud progress reset error',err));
       }
       renderAll();newRevisionCard();
     }
