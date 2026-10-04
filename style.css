@@ -368,3 +368,28 @@ html,body,button,input,select,textarea{
 .progress-drilldown-head h3{margin:0}
 .progress-item .arabic{font-size:1.65rem}
 .section-metric{appearance:none;text-align:left;font:inherit;color:inherit;width:100%}
+
+/* Quranic Tarkeeb */
+.section-quranic{--qgreen:#174f3f}
+.quran-intro-card{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;padding:24px;border:1px solid #d8e4df;border-radius:18px;background:linear-gradient(135deg,#f7fbf9,#eef6f2);margin-bottom:22px}
+.quran-surah-title{font-size:2.15rem;font-weight:700;color:var(--qgreen);margin-bottom:4px}
+.translation-note{background:#fff;border-left:4px solid var(--qgreen);padding:15px 17px;border-radius:12px}
+.translation-note p{margin:5px 0 0}
+.quran-ayah-list{display:grid;gap:22px}
+.quran-ayah-card{position:relative;background:#fff;border:1px solid #dfe7e3;border-radius:18px;padding:25px;box-shadow:0 8px 24px rgba(25,63,50,.06)}
+.ayah-number{position:absolute;top:18px;left:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#174f3f;color:#fff;font-weight:700}
+.quran-arabic{font-family:"Noto Naskh Arabic",serif;font-size:2rem;line-height:1.9;text-align:right;color:#153d33;padding-left:46px}
+.quran-sense{font-size:1.03rem;font-style:italic;margin:5px 0 18px;color:#42534c}
+.tarkeeb-summary{font-family:"Noto Naskh Arabic",serif;font-size:1.25rem;line-height:1.8;background:#f2f8f5;border-radius:12px;padding:12px 15px;margin:12px 0 16px;color:#174f3f;text-align:right}
+.tarkeeb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px}
+.tarkeeb-grid>div{border:1px solid #e1e8e5;border-radius:12px;padding:13px;background:#fbfdfc}
+.tarkeeb-grid b{display:block;color:#174f3f;font-family:"Noto Naskh Arabic",serif;font-size:1.08rem;margin:4px 0}
+.tarkeeb-grid small{display:block;line-height:1.45;color:#59665f}
+.q-word{display:block;font-family:"Noto Naskh Arabic",serif;font-size:1.45rem;font-weight:700;text-align:right}
+.tarkeeb-note{margin:15px 0 0;padding-top:13px;border-top:1px dashed #cedbd5}
+@media (max-width:720px){
+  .quran-intro-card{grid-template-columns:1fr;padding:18px}
+  .quran-ayah-card{padding:20px 16px}
+  .quran-arabic{font-size:1.65rem;padding-left:40px}
+  .tarkeeb-grid{grid-template-columns:1fr}
+}
