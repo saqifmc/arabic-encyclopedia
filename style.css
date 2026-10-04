@@ -201,3 +201,42 @@ footer{text-align:center;color:var(--muted);padding:0 20px 40px;font-size:.9rem}
 .concepts-title{margin-top:10px}
 @media(max-width:850px){.section-dashboard{grid-template-columns:repeat(2,minmax(0,1fr))}.section-metric.wide{grid-column:span 2}}
 @media(max-width:460px){.section-dashboard{grid-template-columns:1fr 1fr}.section-metric{padding:13px}.section-metric strong{font-size:1.35rem}}
+
+/* ===== Improved root tracking ===== */
+.roots-toolbar{
+  display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;
+  background:#faf7ff;border:1px solid #ddd6fe;border-radius:18px;padding:16px 18px;margin:0 0 18px
+}
+.roots-toolbar p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+.roots-toolbar select{max-width:210px}
+.root-card{
+  position:relative;overflow:hidden;border-left:0!important;border-top:5px solid #7c3aed
+}
+.root-card.mastered-root{border-top-color:#16a34a}
+.root-card.learning-root{border-top-color:#d97706}
+.root-card.not-started-root{border-top-color:#cbd5e1}
+.root-card .root-title{font-size:2.2rem;color:#5b21b6;margin-bottom:4px}
+.root-card .root-family-count{font-size:.82rem;color:var(--muted);margin-bottom:12px}
+.root-progress-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:14px}
+.root-progress-head strong{font-size:.9rem}
+.root-percent{font-size:1.1rem;font-weight:700;color:#6d28d9}
+.root-status-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:12px}
+.root-status-chip{border-radius:12px;padding:9px 8px;text-align:center;font-size:.76rem;background:#f8fafc}
+.root-status-chip strong{display:block;font-size:1rem;margin-bottom:2px}
+.root-status-chip.learning{background:#fff7ed;color:#9a3412}
+.root-status-chip.confident{background:#eff6ff;color:#1d4ed8}
+.root-status-chip.mastered{background:#f0fdf4;color:#166534}
+.root-status-chip.notstarted{background:#f8fafc;color:#64748b}
+.root-progress-bar{height:12px;border-radius:999px;background:#eef2f7;overflow:hidden;margin-top:8px}
+.root-progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.root-card.mastered-root .root-progress-fill{background:linear-gradient(90deg,#16a34a,#4ade80)}
+.root-card.learning-root .root-progress-fill{background:linear-gradient(90deg,#d97706,#fbbf24)}
+.root-card.not-started-root .root-progress-fill{background:#cbd5e1}
+.root-family-words{
+  font-family:"Noto Naskh Arabic",serif;direction:rtl;text-align:right;font-size:1.22rem;
+  line-height:1.9;margin-top:12px;padding-top:12px;border-top:1px solid #eee
+}
+@media(max-width:520px){
+  .root-status-grid{grid-template-columns:1fr 1fr}
+  .roots-toolbar select{max-width:none;width:100%}
+}
