@@ -92,7 +92,7 @@ function updateAuthUI(){
   }
 }
 
-let DATA = { vocabulary: [], speaking: [] };
+let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [] };
 let currentCard = null;
 const STORE_KEY = 'arabicEncyclopediaProgressV2';
 const STATUSES = ['Not Started','Covered','Learning','Confident','Mastered'];
@@ -115,8 +115,22 @@ function patchProgress(id, patch){
   renderAll();
 }
 async function loadData(){
-  const res=await fetch('vocab.json');
-  DATA=await res.json();
+  const [vocabRes, verbsRes, speakingRes, nahwRes] = await Promise.all([
+    fetch('vocab.json'),
+    fetch('verbs.json'),
+    fetch('speaking.json'),
+    fetch('nahw.json')
+  ]);
+  const vocabData = await vocabRes.json();
+  const verbsData = await verbsRes.json();
+  const speakingData = await speakingRes.json();
+  const nahwData = await nahwRes.json();
+  DATA = {
+    vocabulary: vocabData.vocabulary || [],
+    verbs: verbsData.verbs || [],
+    speaking: speakingData.speaking || [],
+    nahw: nahwData.nahw || []
+  };
   setup();
 }
 function setup(){
@@ -155,15 +169,17 @@ function fillSelect(id,values){
 }
 function populateFilters(){
   fillSelect('typeFilter',unique(DATA.vocabulary.map(x=>x.type)));
-  fillSelect('formFilter',unique(DATA.vocabulary.map(x=>x.form)));
+  fillSelect('sourceFilter',unique([...DATA.vocabulary,...DATA.verbs,...DATA.speaking].flatMap(x=>(x.source||'').split(';').map(s=>s.trim())).filter(Boolean)));
+  fillSelect('formFilter',unique(DATA.verbs.map(x=>x.form)));
   fillSelect('speakingTopicFilter',unique(DATA.speaking.map(x=>x.topic)));
+  fillSelect('nahwTopicFilter',unique(DATA.nahw.map(x=>x.topic)));
 }
 function renderAll(){
-  renderStats(); renderVocabulary(); renderRoots(); renderVerbs(); renderSpeaking(); renderProgress();
+  renderStats(); renderVocabulary(); renderRoots(); renderVerbs(); renderSpeaking(); renderNahw(); renderProgress();
 }
 function itemStatus(id){return progressFor(id).status || 'Not Started';}
 function renderStats(){
-  const allItems=[...DATA.vocabulary,...DATA.speaking];
+  const allItems=[...DATA.vocabulary,...DATA.verbs,...DATA.speaking,...DATA.nahw];
   const covered=allItems.filter(x=>itemStatus(x.id)!=='Not Started').length;
   const mastered=allItems.filter(x=>itemStatus(x.id)==='Mastered').length;
   const learning=allItems.filter(x=>itemStatus(x.id)==='Learning').length;
@@ -222,19 +238,20 @@ function bindDynamicButtons(){
 function renderVocabulary(){
   const q=(document.getElementById('vocabSearch')?.value||'').toLowerCase();
   const type=document.getElementById('typeFilter')?.value||'';
+  const source=document.getElementById('sourceFilter')?.value||'';
   const status=document.getElementById('statusFilter')?.value||'';
   const fav=document.getElementById('favouriteFilter')?.checked||false;
   const rows=DATA.vocabulary.filter(x=>{
     const hay=[x.arabic,x.english,x.root,x.topic,x.source].join(' ').toLowerCase();
     const p=progressFor(x.id);
-    return hay.includes(q)&&(!type||x.type===type)&&(!status||p.status===status)&&(!fav||p.favourite);
+    return hay.includes(q)&&(!type||x.type===type)&&(!source||(x.source||'').split(';').map(s=>s.trim()).includes(source))&&(!status||p.status===status)&&(!fav||p.favourite);
   });
   document.getElementById('vocabList').innerHTML=rows.map(vocabCard).join('')||'<p>No matches.</p>';
   bindDynamicButtons();
 }
 function renderRoots(){
   const groups={};
-  DATA.vocabulary.filter(x=>x.root).forEach(x=>{groups[x.root]=groups[x.root]||[];groups[x.root].push(x);});
+  [...DATA.vocabulary,...DATA.verbs].filter(x=>x.root).forEach(x=>{groups[x.root]=groups[x.root]||[];groups[x.root].push(x);});
   document.getElementById('rootsList').innerHTML=Object.entries(groups).map(([root,items])=>{
     const covered=items.filter(x=>itemStatus(x.id)!=='Not Started').length;
     const pct=Math.round(covered/items.length*100);
@@ -248,7 +265,7 @@ function renderRoots(){
 }
 function renderVerbs(){
   const form=document.getElementById('formFilter')?.value||'';
-  const rows=DATA.vocabulary.filter(x=>x.type==='Verb'&&(!form||x.form===form));
+  const rows=DATA.verbs.filter(x=>!form||x.form===form);
   document.getElementById('verbsList').innerHTML=rows.map(vocabCard).join('');
   bindDynamicButtons();
 }
@@ -259,7 +276,7 @@ function renderSpeaking(){
   bindDynamicButtons();
 }
 function renderProgress(){
-  const all=[...DATA.vocabulary,...DATA.speaking];
+  const all=[...DATA.vocabulary,...DATA.verbs,...DATA.speaking,...DATA.nahw];
   const count=s=>all.filter(x=>itemStatus(x.id)===s).length;
   const covered=all.length-count('Not Started');
   const pct=all.length?Math.round(covered/all.length*100):0;
@@ -279,10 +296,37 @@ function renderProgress(){
     <article class="item"><div class="arabic" lang="ar" dir="rtl">${o.x.arabic}</div><strong>${o.x.english}</strong>
     <div class="meta">${o.p.status} · Covered ${formatDate(o.p.dateCovered)}</div></article>`).join(''):'<p class="meta">Nothing marked as covered yet.</p>';
 }
+function nahwCard(x){
+  const p=progressFor(x.id);
+  return `<article class="item">
+    <div class="item-head">
+      <div style="flex:1">
+        <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
+        <h3>${x.english}</h3>
+      </div>
+      <span class="pill">${p.status}</span>
+    </div>
+    <div class="meta">${x.topic}</div>
+    <p>${x.summary||''}</p>
+    ${x.example?`<div class="example" lang="ar" dir="rtl">${x.example}</div><div class="meta">${x.example_en||''}</div>`:''}
+    ${statusControls(x)}
+  </article>`;
+}
+function renderNahw(){
+  const topic=document.getElementById('nahwTopicFilter')?.value||'';
+  const rows=DATA.nahw.filter(x=>!topic||x.topic===topic);
+  document.getElementById('nahwList').innerHTML=rows.map(nahwCard).join('')||'<p>No concepts yet.</p>';
+  bindDynamicButtons();
+}
+
 function revisionPool(){
   const mode=document.getElementById('revisionMode')?.value||'ar-en';
   const subset=document.getElementById('revisionSubset')?.value||'all';
-  let pool=mode==='speaking'?DATA.speaking:DATA.vocabulary;
+  let pool;
+  if(mode==='speaking') pool=DATA.speaking;
+  else if(mode==='verbs') pool=DATA.verbs;
+  else if(mode==='nahw') pool=DATA.nahw;
+  else pool=DATA.vocabulary;
   pool=pool.filter(x=>{
     const p=progressFor(x.id);
     if(subset==='all') return true;
@@ -311,7 +355,11 @@ function newRevisionCard(){
   if(mode==='ar-en'){
     prompt.textContent=currentCard.arabic;prompt.className='flash-prompt arabic';
     answer.textContent=currentCard.english;answer.className='flash-answer hidden';
-  }else{
+  } else if(mode==='nahw'){
+    prompt.textContent=currentCard.english;prompt.className='flash-prompt';
+    answer.innerHTML=`<div class="arabic" lang="ar" dir="rtl">${currentCard.arabic}</div><div>${currentCard.summary||''}</div>`;
+    answer.className='flash-answer hidden';
+  } else {
     prompt.textContent=currentCard.english;prompt.className='flash-prompt';
     answer.textContent=currentCard.arabic;answer.className='flash-answer arabic hidden';
   }
@@ -344,9 +392,10 @@ function rateCurrent(rating){
 }
 function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});}
 function bindEvents(){
-  ['vocabSearch','typeFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id).addEventListener('input',renderVocabulary));
+  ['vocabSearch','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id).addEventListener('input',renderVocabulary));
   document.getElementById('formFilter').addEventListener('input',renderVerbs);
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
+  document.getElementById('nahwTopicFilter').addEventListener('input',renderNahw);
   document.getElementById('revisionMode').addEventListener('change',newRevisionCard);
   document.getElementById('revisionSubset').addEventListener('change',newRevisionCard);
   document.getElementById('newCardBtn').addEventListener('click',newRevisionCard);
@@ -375,9 +424,11 @@ function bindEvents(){
     const box=document.getElementById('searchResults');
     if(!q){box.classList.add('hidden');box.innerHTML='';return;}
     const vocab=DATA.vocabulary.filter(x=>[x.arabic,x.english,x.root,x.topic].join(' ').toLowerCase().includes(q));
+    const verbs=DATA.verbs.filter(x=>[x.arabic,x.english,x.root,x.topic,x.form].join(' ').toLowerCase().includes(q));
     const speaking=DATA.speaking.filter(x=>[x.arabic,x.english,x.topic].join(' ').toLowerCase().includes(q));
+    const nahw=DATA.nahw.filter(x=>[x.arabic,x.english,x.topic,x.summary].join(' ').toLowerCase().includes(q));
     box.classList.remove('hidden');
-    box.innerHTML=[...vocab.map(vocabCard),...speaking.map(speakingCard)].join('')||'<p>No matches.</p>';
+    box.innerHTML=[...vocab.map(vocabCard),...verbs.map(vocabCard),...speaking.map(speakingCard),...nahw.map(nahwCard)].join('')||'<p>No matches.</p>';
     bindDynamicButtons();
   });
 }

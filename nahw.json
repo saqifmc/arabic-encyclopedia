@@ -1,0 +1,44 @@
+{
+  "nahw": [
+    {
+      "id": "nahw-1",
+      "arabic": "الْمُبْتَدَأُ وَالْخَبَرُ",
+      "english": "Mubtadaʾ and Khabar",
+      "topic": "Nominal Sentence",
+      "summary": "The mubtadaʾ is the subject/topic of a nominal sentence and the khabar gives information about it.",
+      "example": "زَيْدٌ طَالِبٌ.",
+      "example_en": "Zayd is a student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-2",
+      "arabic": "الْفَاعِلُ",
+      "english": "The doer / subject of a verb",
+      "topic": "Verbal Sentence",
+      "summary": "The fāʿil is the doer of the action and is normally marfūʿ.",
+      "example": "كَتَبَ الطَّالِبُ الدَّرْسَ.",
+      "example_en": "The student wrote the lesson.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-3",
+      "arabic": "الْمَفْعُولُ بِهِ",
+      "english": "Direct object",
+      "topic": "Verbal Sentence",
+      "summary": "The mafʿūl bihi is the person or thing directly affected by the verb and is normally manṣūb.",
+      "example": "قَرَأَ الطَّالِبُ الْكِتَابَ.",
+      "example_en": "The student read the book.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-4",
+      "arabic": "الْحَالُ",
+      "english": "Ḥāl",
+      "topic": "Case / Description",
+      "summary": "Ḥāl describes the state or condition of a person or thing while an action takes place.",
+      "example": "صَامَ زَيْدٌ صَابِرًا.",
+      "example_en": "Zayd fasted patiently.",
+      "status": "Not Started"
+    }
+  ]
+}

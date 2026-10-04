@@ -17,38 +17,6 @@
       "id": "vocab-1"
     },
     {
-      "arabic": "مَلَأَ",
-      "english": "to fill",
-      "root": "م ل أ",
-      "type": "Verb",
-      "form": "I",
-      "past": "مَلَأَ",
-      "present": "يَمْلَأُ",
-      "masdar": "مَلْءٌ",
-      "topic": "General",
-      "source": "Reading",
-      "example": "مَلَأَ الْإِنَاءَ.",
-      "example_en": "He filled the container.",
-      "status": "Learning",
-      "id": "vocab-2"
-    },
-    {
-      "arabic": "يَمْلَأُ",
-      "english": "he fills",
-      "root": "م ل أ",
-      "type": "Verb",
-      "form": "I",
-      "past": "مَلَأَ",
-      "present": "يَمْلَأُ",
-      "masdar": "مَلْءٌ",
-      "topic": "General",
-      "source": "Reading",
-      "example": "يَمْلَأُ الْكُوبَ بِالْمَاءِ.",
-      "example_en": "He fills the cup with water.",
-      "status": "Familiar",
-      "id": "vocab-3"
-    },
-    {
       "arabic": "مَمْلُوءٌ",
       "english": "full / filled",
       "root": "م ل أ",
@@ -81,70 +49,6 @@
       "id": "vocab-5"
     },
     {
-      "arabic": "اِسْتَيْقَظَ",
-      "english": "to wake up",
-      "root": "ي ق ظ",
-      "type": "Verb",
-      "form": "X",
-      "past": "اِسْتَيْقَظَ",
-      "present": "يَسْتَيْقِظُ",
-      "masdar": "اِسْتِيقَاظٌ",
-      "topic": "Daily Routine",
-      "source": "Reading",
-      "example": "اِسْتَيْقَظَ الطَّالِبُ مُبَكِّرًا.",
-      "example_en": "The student woke up early.",
-      "status": "Learning",
-      "id": "vocab-6"
-    },
-    {
-      "arabic": "يَسْتَيْقِظُ",
-      "english": "he wakes up",
-      "root": "ي ق ظ",
-      "type": "Verb",
-      "form": "X",
-      "past": "اِسْتَيْقَظَ",
-      "present": "يَسْتَيْقِظُ",
-      "masdar": "اِسْتِيقَاظٌ",
-      "topic": "Daily Routine",
-      "source": "Reading",
-      "example": "يَسْتَيْقِظُ مُبَكِّرًا.",
-      "example_en": "He wakes up early.",
-      "status": "Learning",
-      "id": "vocab-7"
-    },
-    {
-      "arabic": "اِبْتَسَمَ",
-      "english": "to smile",
-      "root": "ب س م",
-      "type": "Verb",
-      "form": "VIII",
-      "past": "اِبْتَسَمَ",
-      "present": "يَبْتَسِمُ",
-      "masdar": "اِبْتِسَامٌ",
-      "topic": "Feelings",
-      "source": "Reading",
-      "example": "اِبْتَسَمَ الطِّفْلُ.",
-      "example_en": "The child smiled.",
-      "status": "Familiar",
-      "id": "vocab-8"
-    },
-    {
-      "arabic": "يَرْجُو",
-      "english": "he hopes",
-      "root": "ر ج و",
-      "type": "Verb",
-      "form": "I",
-      "past": "رَجَا",
-      "present": "يَرْجُو",
-      "masdar": "رَجَاءٌ",
-      "topic": "Feelings",
-      "source": "Reading",
-      "example": "يَرْجُو النَّجَاحَ.",
-      "example_en": "He hopes for success.",
-      "status": "Learning",
-      "id": "vocab-9"
-    },
-    {
       "arabic": "رَغِبَ فِي",
       "english": "to desire / be interested in",
       "root": "ر غ ب",
@@ -159,22 +63,6 @@
       "example_en": "He wanted to learn.",
       "status": "Learning",
       "id": "vocab-10"
-    },
-    {
-      "arabic": "شَرَحَ",
-      "english": "to explain",
-      "root": "ش ر ح",
-      "type": "Verb",
-      "form": "I",
-      "past": "شَرَحَ",
-      "present": "يَشْرَحُ",
-      "masdar": "شَرْحٌ",
-      "topic": "Study",
-      "source": "Lesson",
-      "example": "شَرَحَ الْمُعَلِّمُ الدَّرْسَ.",
-      "example_en": "The teacher explained the lesson.",
-      "status": "Familiar",
-      "id": "vocab-11"
     },
     {
       "arabic": "مَسْرُورٌ",
@@ -239,78 +127,2598 @@
       "example_en": "Sometimes I read in the evening.",
       "status": "Learning",
       "id": "vocab-15"
-    }
-  ],
-  "speaking": [
-    {
-      "arabic": "السَّلَامُ عَلَيْكُمْ",
-      "english": "Peace be upon you / hello",
-      "topic": "Greetings",
-      "status": "Familiar",
-      "id": "speaking-1"
     },
     {
-      "arabic": "وَعَلَيْكُمُ السَّلَامُ",
-      "english": "And peace be upon you",
-      "topic": "Greetings",
-      "status": "Familiar",
-      "id": "speaking-2"
+      "arabic": "أَبٌ",
+      "english": "father",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-001"
     },
     {
-      "arabic": "كَيْفَ حَالُكَ؟",
-      "english": "How are you?",
-      "topic": "Greetings",
-      "status": "Learning",
-      "id": "speaking-3"
+      "arabic": "آبَاءٌ",
+      "english": "fathers",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-002"
     },
     {
-      "arabic": "أَنَا بِخَيْرٍ، الْحَمْدُ لِلّٰهِ.",
-      "english": "I am well, praise be to Allah.",
-      "topic": "Greetings",
-      "status": "Learning",
-      "id": "speaking-4"
+      "arabic": "أَبْنَاءٌ",
+      "english": "sons",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-003"
     },
     {
-      "arabic": "مَا اسْمُكَ؟",
-      "english": "What is your name?",
-      "topic": "Introductions",
-      "status": "Learning",
-      "id": "speaking-5"
+      "arabic": "أَخٌ",
+      "english": "brother",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-004"
     },
     {
-      "arabic": "اسْمِي ...",
-      "english": "My name is ...",
-      "topic": "Introductions",
-      "status": "Familiar",
-      "id": "speaking-6"
+      "arabic": "إِخْوَةٌ",
+      "english": "brothers",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-005"
     },
     {
-      "arabic": "مِنْ أَيْنَ أَنْتَ؟",
-      "english": "Where are you from?",
-      "topic": "Introductions",
-      "status": "Learning",
-      "id": "speaking-7"
+      "arabic": "أُمٌّ",
+      "english": "mother",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-006"
     },
     {
-      "arabic": "أُرِيدُ هٰذَا.",
-      "english": "I want this.",
+      "arabic": "أُمَّهَاتٌ",
+      "english": "mothers",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-007"
+    },
+    {
+      "arabic": "اِبْنٌ",
+      "english": "son",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-008"
+    },
+    {
+      "arabic": "بِنْتٌ",
+      "english": "daughter, girl",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-009"
+    },
+    {
+      "arabic": "زَوْجٌ",
+      "english": "husband",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-010"
+    },
+    {
+      "arabic": "زَوْجَةٌ",
+      "english": "wife",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-011"
+    },
+    {
+      "arabic": "عَمٌّ",
+      "english": "paternal uncle",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-012"
+    },
+    {
+      "arabic": "أَعْمَامٌ",
+      "english": "paternal uncles",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-013"
+    },
+    {
+      "arabic": "عَمَّةٌ",
+      "english": "paternal aunt",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-014"
+    },
+    {
+      "arabic": "خَالٌ",
+      "english": "maternal uncle",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-015"
+    },
+    {
+      "arabic": "خَالَةٌ",
+      "english": "maternal aunt",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-016"
+    },
+    {
+      "arabic": "حَفِيدٌ",
+      "english": "grandson",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-017"
+    },
+    {
+      "arabic": "حَفَدَةٌ",
+      "english": "grandsons",
+      "type": "Noun",
+      "topic": "Family",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-018"
+    },
+    {
+      "arabic": "رَجُلٌ",
+      "english": "man",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-019"
+    },
+    {
+      "arabic": "رِجَالٌ",
+      "english": "men",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-020"
+    },
+    {
+      "arabic": "فَتًى",
+      "english": "young man",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-021"
+    },
+    {
+      "arabic": "فِتْيَةٌ",
+      "english": "young men",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-022"
+    },
+    {
+      "arabic": "فَتَاةٌ",
+      "english": "young lady",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-023"
+    },
+    {
+      "arabic": "نِسَاءٌ",
+      "english": "women",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-024"
+    },
+    {
+      "arabic": "مَرْأَةٌ",
+      "english": "woman",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-025"
+    },
+    {
+      "arabic": "طِفْلٌ",
+      "english": "child",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-026"
+    },
+    {
+      "arabic": "طِفْلَةٌ",
+      "english": "child (f)",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-027"
+    },
+    {
+      "arabic": "صَدِيقٌ",
+      "english": "friend",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-028"
+    },
+    {
+      "arabic": "أَصْدِقَاءُ",
+      "english": "friends",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-029"
+    },
+    {
+      "arabic": "زَمِيلٌ",
+      "english": "colleague, class-mate",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-030"
+    },
+    {
+      "arabic": "زُمَلَاءُ",
+      "english": "class-mates",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-031"
+    },
+    {
+      "arabic": "ضَيْفٌ",
+      "english": "guest",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-032"
+    },
+    {
+      "arabic": "ضُيُوفٌ",
+      "english": "guests",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-033"
+    },
+    {
+      "arabic": "طَالِبٌ",
+      "english": "student",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-034"
+    },
+    {
+      "arabic": "طُلَّابٌ",
+      "english": "students",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-035"
+    },
+    {
+      "arabic": "مُدَرِّسٌ",
+      "english": "teacher",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-036"
+    },
+    {
+      "arabic": "أُسْتَاذَةٌ",
+      "english": "professor (f)",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-037"
+    },
+    {
+      "arabic": "مُدِيرٌ",
+      "english": "headmaster",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-038"
+    },
+    {
+      "arabic": "مُفَتِّشٌ",
+      "english": "inspector",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-039"
+    },
+    {
+      "arabic": "عَالِمٌ",
+      "english": "scholar",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-040"
+    },
+    {
+      "arabic": "عُلَمَاءُ",
+      "english": "scholars",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-041"
+    },
+    {
+      "arabic": "إِمَامٌ",
+      "english": "imam",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-042"
+    },
+    {
+      "arabic": "مُؤَذِّنٌ",
+      "english": "mu'adhdhin",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-043"
+    },
+    {
+      "arabic": "رَسُولٌ",
+      "english": "messenger",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-044"
+    },
+    {
+      "arabic": "نَبِيٌّ",
+      "english": "Prophet",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-045"
+    },
+    {
+      "arabic": "حَاجٌّ",
+      "english": "pilgrim",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-046"
+    },
+    {
+      "arabic": "حُجَّاجٌ",
+      "english": "pilgrims",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-047"
+    },
+    {
+      "arabic": "فَلَّاحٌ",
+      "english": "farmer",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-048"
+    },
+    {
+      "arabic": "تَاجِرٌ",
+      "english": "merchant",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-049"
+    },
+    {
+      "arabic": "طَبِيبٌ",
+      "english": "doctor (m)",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-050"
+    },
+    {
+      "arabic": "مُمَرِّضَةٌ",
+      "english": "nurse",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-051"
+    },
+    {
+      "arabic": "وَزِيرٌ",
+      "english": "minister",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-052"
+    },
+    {
+      "arabic": "وُزَرَاءُ",
+      "english": "ministers",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-053"
+    },
+    {
+      "arabic": "رَاكِبٌ",
+      "english": "passenger (bus or plane)",
+      "type": "Noun",
+      "topic": "Travel",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-054"
+    },
+    {
+      "arabic": "رُكَّابٌ",
+      "english": "passengers",
+      "type": "Noun",
+      "topic": "Travel",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-055"
+    },
+    {
+      "arabic": "أَمْرِيكَا",
+      "english": "America",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-056"
+    },
+    {
+      "arabic": "آسِيَا",
+      "english": "Asia",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-057"
+    },
+    {
+      "arabic": "أَلْمَانِيَا",
+      "english": "Germany",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-058"
+    },
+    {
+      "arabic": "إِنْدُونِيسِيَا",
+      "english": "Indonesia",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-059"
+    },
+    {
+      "arabic": "إِنْكَلْتَرَا",
+      "english": "England",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-060"
+    },
+    {
+      "arabic": "أُورُبَّا",
+      "english": "Europe",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-061"
+    },
+    {
+      "arabic": "الصِّينُ",
+      "english": "China",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-062"
+    },
+    {
+      "arabic": "الْعِرَاقُ",
+      "english": "Iraq",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-063"
+    },
+    {
+      "arabic": "الْفِلِبِّينُ",
+      "english": "The Philippines",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-064"
+    },
+    {
+      "arabic": "الْهِنْدُ",
+      "english": "India",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-065"
+    },
+    {
+      "arabic": "الْيَابَانُ",
+      "english": "Japan",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-066"
+    },
+    {
+      "arabic": "الْيُونَانُ",
+      "english": "Greece",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-067"
+    },
+    {
+      "arabic": "سُورِيَا",
+      "english": "Syria",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-068"
+    },
+    {
+      "arabic": "سُوَيْسْرَا",
+      "english": "Switzerland",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-069"
+    },
+    {
+      "arabic": "مَالِيزِيَا",
+      "english": "Malaysia",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-070"
+    },
+    {
+      "arabic": "يُوغُسْلَافِيَا",
+      "english": "Yugoslavia",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-071"
+    },
+    {
+      "arabic": "وَاشِنْطُنُ",
+      "english": "Washington",
+      "type": "Proper Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-072"
+    },
+    {
+      "arabic": "بَغْدَادُ",
+      "english": "Baghdad",
+      "type": "Proper Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-073"
+    },
+    {
+      "arabic": "الْقَاهِرَةُ",
+      "english": "Cairo",
+      "type": "Proper Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-074"
+    },
+    {
+      "arabic": "إِسْطَنْبُولُ",
+      "english": "Istanbul",
+      "type": "Proper Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-075"
+    },
+    {
+      "arabic": "جِدَّةُ",
+      "english": "Jeddah",
+      "type": "Proper Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-076"
+    },
+    {
+      "arabic": "الطَّائِفُ",
+      "english": "Taif City",
+      "type": "Proper Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-077"
+    },
+    {
+      "arabic": "الْكُوَيْتُ",
+      "english": "Kuwait",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-078"
+    },
+    {
+      "arabic": "الْمَمْلَكَةُ الْعَرَبِيَّةُ السَّعُودِيَّةُ",
+      "english": "Kingdom of Saudi Arabia",
+      "type": "Proper Noun",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-079"
+    },
+    {
+      "arabic": "بَلَدٌ",
+      "english": "country",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-080"
+    },
+    {
+      "arabic": "بِلَادٌ",
+      "english": "countries",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-081"
+    },
+    {
+      "arabic": "مَدِينَةٌ",
+      "english": "city",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-082"
+    },
+    {
+      "arabic": "حَيٌّ",
+      "english": "city district",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-083"
+    },
+    {
+      "arabic": "قَرْيَةٌ",
+      "english": "village",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-084"
+    },
+    {
+      "arabic": "بَيْتٌ",
+      "english": "house",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-085"
+    },
+    {
+      "arabic": "غُرْفَةٌ",
+      "english": "room",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-086"
+    },
+    {
+      "arabic": "غُرَفٌ",
+      "english": "rooms",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-087"
+    },
+    {
+      "arabic": "مَطْبَخٌ",
+      "english": "kitchen",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-088"
+    },
+    {
+      "arabic": "حَمَّامٌ",
+      "english": "bathroom",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-089"
+    },
+    {
+      "arabic": "مِرْحَاضٌ",
+      "english": "toilet",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-090"
+    },
+    {
+      "arabic": "مَسْجِدٌ",
+      "english": "masjid",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-091"
+    },
+    {
+      "arabic": "الْكَعْبَةُ",
+      "english": "Ka'bah (the)",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-092"
+    },
+    {
+      "arabic": "الْقِبْلَةُ",
+      "english": "prayer direction (the)",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-093"
+    },
+    {
+      "arabic": "مَدْرَسَةٌ",
+      "english": "school",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-094"
+    },
+    {
+      "arabic": "الْمَدْرَسَةُ الْمُتَوَسِّطَةُ",
+      "english": "middle school",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-095"
+    },
+    {
+      "arabic": "الثَّانَوِيَّةُ",
+      "english": "secondary (the)",
+      "type": "Adjective",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-096"
+    },
+    {
+      "arabic": "فَصْلٌ",
+      "english": "classroom",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-097"
+    },
+    {
+      "arabic": "جَامِعَةٌ",
+      "english": "university",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-098"
+    },
+    {
+      "arabic": "كُلِّيَّةٌ",
+      "english": "faculty, college",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-099"
+    },
+    {
+      "arabic": "كُلِّيَّةُ التِّجَارَةِ",
+      "english": "faculty of commerce",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-100"
+    },
+    {
+      "arabic": "كُلِّيَّةُ الْهَنْدَسَةِ",
+      "english": "faculty of engineering",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-101"
+    },
+    {
+      "arabic": "كُلِّيَّةُ الشَّرِيعَةِ",
+      "english": "faculty of Islamic law",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-102"
+    },
+    {
+      "arabic": "كُلِّيَّةُ الطِّبِّ",
+      "english": "faculty of medicine",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-103"
+    },
+    {
+      "arabic": "مُسْتَشْفًى",
+      "english": "hospital",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-104"
+    },
+    {
+      "arabic": "مُسْتَشْفَى الْوِلَادَةِ",
+      "english": "maternity hospital",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-105"
+    },
+    {
+      "arabic": "مُسْتَوْصَفٌ",
+      "english": "clinic, small hospital",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-106"
+    },
+    {
+      "arabic": "فُنْدُقٌ",
+      "english": "hotel",
+      "type": "Noun",
+      "topic": "Travel",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-107"
+    },
+    {
+      "arabic": "مَطْعَمٌ",
+      "english": "restaurant, mess",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-108"
+    },
+    {
+      "arabic": "مَطَارٌ",
+      "english": "airport",
+      "type": "Noun",
+      "topic": "Travel",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-109"
+    },
+    {
+      "arabic": "مَحْكَمَةٌ",
+      "english": "lawcourt",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-110"
+    },
+    {
+      "arabic": "مَكْتَبَةٌ",
+      "english": "library",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-111"
+    },
+    {
+      "arabic": "سُوقٌ",
+      "english": "market",
+      "type": "Noun",
       "topic": "Shopping",
-      "status": "Learning",
-      "id": "speaking-8"
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-112"
     },
     {
-      "arabic": "كَمِ السِّعْرُ؟",
-      "english": "How much is it?",
+      "arabic": "دُكَّانٌ",
+      "english": "shop",
+      "type": "Noun",
       "topic": "Shopping",
-      "status": "New",
-      "id": "speaking-9"
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-113"
     },
     {
-      "arabic": "لَا أَفْهَمُ.",
-      "english": "I do not understand.",
-      "topic": "Conversation Responses",
-      "status": "Learning",
-      "id": "speaking-10"
+      "arabic": "شَرِكَةٌ",
+      "english": "firm, company",
+      "type": "Noun",
+      "topic": "Work",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-114"
+    },
+    {
+      "arabic": "كِتَابٌ",
+      "english": "book",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-115"
+    },
+    {
+      "arabic": "دَفْتَرٌ",
+      "english": "notebook",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-116"
+    },
+    {
+      "arabic": "قَلَمٌ",
+      "english": "pen",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-117"
+    },
+    {
+      "arabic": "مِسْطَرَةٌ",
+      "english": "ruler",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-118"
+    },
+    {
+      "arabic": "سَبُّورَةٌ",
+      "english": "writing board",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-119"
+    },
+    {
+      "arabic": "كَلِمَةٌ",
+      "english": "word",
+      "type": "Noun",
+      "topic": "Language",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-120"
+    },
+    {
+      "arabic": "كَلِمَاتٌ",
+      "english": "words",
+      "type": "Noun",
+      "topic": "Language",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-121"
+    },
+    {
+      "arabic": "حَرْفٌ",
+      "english": "letter (of the alphabet)",
+      "type": "Noun",
+      "topic": "Language",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-122"
+    },
+    {
+      "arabic": "حُرُوفٌ",
+      "english": "letters (of the alphabet)",
+      "type": "Noun",
+      "topic": "Language",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-123"
+    },
+    {
+      "arabic": "لُغَةٌ",
+      "english": "language",
+      "type": "Noun",
+      "topic": "Language",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-124"
+    },
+    {
+      "arabic": "الْإِنْكِلِيزِيَّةُ",
+      "english": "English (language)",
+      "type": "Noun",
+      "topic": "Language",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-125"
+    },
+    {
+      "arabic": "عَرَبِيَّةٌ",
+      "english": "Arabic",
+      "type": "Noun",
+      "topic": "Language",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-126"
+    },
+    {
+      "arabic": "دَرْسٌ",
+      "english": "lesson",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-127"
+    },
+    {
+      "arabic": "دُرُوسٌ",
+      "english": "lessons",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-128"
+    },
+    {
+      "arabic": "اِخْتِبَارٌ",
+      "english": "examination",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-129"
+    },
+    {
+      "arabic": "سُؤَالٌ",
+      "english": "question",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-130"
+    },
+    {
+      "arabic": "اِسْمٌ",
+      "english": "name",
+      "type": "Noun",
+      "topic": "General",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-131"
+    },
+    {
+      "arabic": "أَسْمَاءٌ",
+      "english": "names",
+      "type": "Noun",
+      "topic": "General",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-132"
+    },
+    {
+      "arabic": "مَكْتَبٌ",
+      "english": "desk",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-133"
+    },
+    {
+      "arabic": "كُرْسِيٌّ",
+      "english": "chair",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-134"
+    },
+    {
+      "arabic": "سَرِيرٌ",
+      "english": "bed",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-135"
+    },
+    {
+      "arabic": "ثَلَّاجَةٌ",
+      "english": "fridge",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-136"
+    },
+    {
+      "arabic": "مِرْوَحَةٌ",
+      "english": "fan",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-137"
+    },
+    {
+      "arabic": "مِكْوَاةٌ",
+      "english": "iron (for ironing)",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-138"
+    },
+    {
+      "arabic": "سِكِّينٌ",
+      "english": "knife",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-139"
+    },
+    {
+      "arabic": "مِلْعَقَةٌ",
+      "english": "spoon",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-140"
+    },
+    {
+      "arabic": "كُوبٌ",
+      "english": "cup",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-141"
+    },
+    {
+      "arabic": "فِنْجَانٌ",
+      "english": "tea-cup",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-142"
+    },
+    {
+      "arabic": "فَنَاجِينُ",
+      "english": "tea-cups",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-143"
+    },
+    {
+      "arabic": "إِنَاءٌ",
+      "english": "container",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-144"
+    },
+    {
+      "arabic": "حَقِيبَةٌ",
+      "english": "bag, case",
+      "type": "Noun",
+      "topic": "Objects",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-145"
+    },
+    {
+      "arabic": "مِنْدِيلٌ",
+      "english": "handkerchief",
+      "type": "Noun",
+      "topic": "Objects",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-146"
+    },
+    {
+      "arabic": "مَنَادِيلُ",
+      "english": "kerchiefs",
+      "type": "Noun",
+      "topic": "Objects",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-147"
+    },
+    {
+      "arabic": "مِفْتَاحٌ",
+      "english": "key",
+      "type": "Noun",
+      "topic": "Objects",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-148"
+    },
+    {
+      "arabic": "مَفَاتِيحُ",
+      "english": "keys",
+      "type": "Noun",
+      "topic": "Objects",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-149"
+    },
+    {
+      "arabic": "جَيْبٌ",
+      "english": "pocket",
+      "type": "Noun",
+      "topic": "Clothing",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-150"
+    },
+    {
+      "arabic": "قَمِيصٌ",
+      "english": "shirt",
+      "type": "Noun",
+      "topic": "Clothing",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-151"
+    },
+    {
+      "arabic": "قُمْصَانٌ",
+      "english": "shirts",
+      "type": "Noun",
+      "topic": "Clothing",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-152"
+    },
+    {
+      "arabic": "وَرَقٌ",
+      "english": "paper",
+      "type": "Noun",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-153"
+    },
+    {
+      "arabic": "قِدْرٌ",
+      "english": "pot (f)",
+      "type": "Noun",
+      "topic": "Home",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-154"
+    },
+    {
+      "arabic": "سَيَّارَةٌ",
+      "english": "car",
+      "type": "Noun",
+      "topic": "Travel",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-155"
+    },
+    {
+      "arabic": "حَافِلَةٌ",
+      "english": "bus",
+      "type": "Noun",
+      "topic": "Travel",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-156"
+    },
+    {
+      "arabic": "دَرَّاجَةٌ",
+      "english": "bicycle",
+      "type": "Noun",
+      "topic": "Travel",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-157"
+    },
+    {
+      "arabic": "طَائِرَةٌ",
+      "english": "airplane",
+      "type": "Noun",
+      "topic": "Travel",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-158"
+    },
+    {
+      "arabic": "عَجَلَةٌ",
+      "english": "wheel",
+      "type": "Noun",
+      "topic": "Travel",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-159"
+    },
+    {
+      "arabic": "شَارِعٌ",
+      "english": "street",
+      "type": "Noun",
+      "topic": "Places",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-160"
+    },
+    {
+      "arabic": "جَمَلٌ",
+      "english": "camel",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-161"
+    },
+    {
+      "arabic": "نَاقَةٌ",
+      "english": "she-camel",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-162"
+    },
+    {
+      "arabic": "حِصَانٌ",
+      "english": "horse",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-163"
+    },
+    {
+      "arabic": "حِمَارٌ",
+      "english": "donkey",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-164"
+    },
+    {
+      "arabic": "كَلْبٌ",
+      "english": "dog",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-165"
+    },
+    {
+      "arabic": "قِطٌّ",
+      "english": "cat",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-166"
+    },
+    {
+      "arabic": "بَقَرَةٌ",
+      "english": "cow",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-167"
+    },
+    {
+      "arabic": "بَطَّةٌ",
+      "english": "duck",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-168"
+    },
+    {
+      "arabic": "دَجَاجَةٌ",
+      "english": "hen",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-169"
+    },
+    {
+      "arabic": "دِيكٌ",
+      "english": "rooster",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-170"
+    },
+    {
+      "arabic": "طَائِرٌ",
+      "english": "bird",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-171"
+    },
+    {
+      "arabic": "عُصْفُورٌ",
+      "english": "sparrow",
+      "type": "Noun",
+      "topic": "Animals",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-172"
+    },
+    {
+      "arabic": "شَجَرَةٌ",
+      "english": "tree",
+      "type": "Noun",
+      "topic": "Nature",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-173"
+    },
+    {
+      "arabic": "حَدِيقَةٌ",
+      "english": "garden",
+      "type": "Noun",
+      "topic": "Nature",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-174"
+    },
+    {
+      "arabic": "حَقْلٌ",
+      "english": "field",
+      "type": "Noun",
+      "topic": "Nature",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-175"
+    },
+    {
+      "arabic": "حُقُولٌ",
+      "english": "fields",
+      "type": "Noun",
+      "topic": "Nature",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-176"
+    },
+    {
+      "arabic": "بَحْرٌ",
+      "english": "sea",
+      "type": "Noun",
+      "topic": "Nature",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-177"
+    },
+    {
+      "arabic": "نَهْرٌ",
+      "english": "river",
+      "type": "Noun",
+      "topic": "Nature",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-178"
+    },
+    {
+      "arabic": "نَجْمٌ",
+      "english": "star",
+      "type": "Noun",
+      "topic": "Nature",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-179"
+    },
+    {
+      "arabic": "السَّمَاءُ",
+      "english": "sky",
+      "type": "Noun",
+      "topic": "Nature",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-180"
+    },
+    {
+      "arabic": "حَجَرٌ",
+      "english": "stone",
+      "type": "Noun",
+      "topic": "Nature",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-181"
+    },
+    {
+      "arabic": "مَاءٌ",
+      "english": "water",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-182"
+    },
+    {
+      "arabic": "لَبَنٌ",
+      "english": "milk",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-183"
+    },
+    {
+      "arabic": "شَايٌ",
+      "english": "tea",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-184"
+    },
+    {
+      "arabic": "قَهْوَةٌ",
+      "english": "coffee",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-185"
+    },
+    {
+      "arabic": "سُكَّرٌ",
+      "english": "sugar",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-186"
+    },
+    {
+      "arabic": "فَاكِهَةٌ",
+      "english": "fruit",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-187"
+    },
+    {
+      "arabic": "تُفَّاحٌ",
+      "english": "apple",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-188"
+    },
+    {
+      "arabic": "بَيْضَةٌ",
+      "english": "egg",
+      "type": "Noun",
+      "topic": "Food & Drink",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-189"
+    },
+    {
+      "arabic": "أُذُنٌ",
+      "english": "ear",
+      "type": "Noun",
+      "topic": "Body",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-190"
+    },
+    {
+      "arabic": "أَنْفٌ",
+      "english": "nose",
+      "type": "Noun",
+      "topic": "Body",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-191"
+    },
+    {
+      "arabic": "عَيْنٌ",
+      "english": "eye",
+      "type": "Noun",
+      "topic": "Body",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-192"
+    },
+    {
+      "arabic": "وَجْهٌ",
+      "english": "face",
+      "type": "Noun",
+      "topic": "Body",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-193"
+    },
+    {
+      "arabic": "رَأْسٌ",
+      "english": "head",
+      "type": "Noun",
+      "topic": "Body",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-194"
+    },
+    {
+      "arabic": "رِجْلٌ",
+      "english": "leg",
+      "type": "Noun",
+      "topic": "Body",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-195"
+    },
+    {
+      "arabic": "يَدٌ",
+      "english": "hand",
+      "type": "Noun",
+      "topic": "Body",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-196"
+    },
+    {
+      "arabic": "فَمٌ",
+      "english": "mouth",
+      "type": "Noun",
+      "topic": "Body",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-197"
+    },
+    {
+      "arabic": "أُسْبُوعٌ",
+      "english": "week",
+      "type": "Noun",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-198"
+    },
+    {
+      "arabic": "يَوْمٌ",
+      "english": "day",
+      "type": "Noun",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-199"
+    },
+    {
+      "arabic": "أَيَّامٌ",
+      "english": "days",
+      "type": "Noun",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-200"
+    },
+    {
+      "arabic": "الْيَوْمَ",
+      "english": "today",
+      "type": "Adverb",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-201"
+    },
+    {
+      "arabic": "الْآنَ",
+      "english": "now, just now",
+      "type": "Adverb",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-202"
+    },
+    {
+      "arabic": "سَنَةٌ",
+      "english": "year",
+      "type": "Noun",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-203"
+    },
+    {
+      "arabic": "شَهْرٌ",
+      "english": "month",
+      "type": "Noun",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-204"
+    },
+    {
+      "arabic": "رَجَبٌ",
+      "english": "the month of Rajab",
+      "type": "Proper Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-205"
+    },
+    {
+      "arabic": "يَوْمُ السَّبْتِ",
+      "english": "Saturday",
+      "type": "Noun",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-206"
+    },
+    {
+      "arabic": "دَقِيقَةٌ",
+      "english": "minute",
+      "type": "Noun",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-207"
+    },
+    {
+      "arabic": "دَقَائِقُ",
+      "english": "minutes",
+      "type": "Noun",
+      "topic": "Time",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-208"
+    },
+    {
+      "arabic": "دِينٌ",
+      "english": "religion",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-209"
+    },
+    {
+      "arabic": "رَكْعَةٌ",
+      "english": "rak'ah (part of salat)",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-210"
+    },
+    {
+      "arabic": "رَكَعَاتٌ",
+      "english": "rak'ats",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-211"
+    },
+    {
+      "arabic": "الرَّبُّ",
+      "english": "Lord (the)",
+      "type": "Noun",
+      "topic": "Religion",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-212"
+    },
+    {
+      "arabic": "رِيَالٌ",
+      "english": "riyal",
+      "type": "Noun",
+      "topic": "Money",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-213"
+    },
+    {
+      "arabic": "قِرْشٌ",
+      "english": "1/10th of a riyal",
+      "type": "Noun",
+      "topic": "Money",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-214"
+    },
+    {
+      "arabic": "قُرُوشٌ",
+      "english": "1/10ths of riyal",
+      "type": "Noun",
+      "topic": "Money",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-215"
+    },
+    {
+      "arabic": "ثَمَنٌ",
+      "english": "price",
+      "type": "Noun",
+      "topic": "Shopping",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-216"
+    },
+    {
+      "arabic": "نِصْفٌ",
+      "english": "half",
+      "type": "Noun",
+      "topic": "Quantity",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-217"
+    },
+    {
+      "arabic": "وَاحِدٌ",
+      "english": "one",
+      "type": "Number",
+      "topic": "Quantity",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-218"
+    },
+    {
+      "arabic": "كُلٌّ",
+      "english": "all",
+      "type": "Quantifier",
+      "topic": "Quantity",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-219"
+    },
+    {
+      "arabic": "كُلُّكُمْ",
+      "english": "all of you",
+      "type": "Pronoun phrase",
+      "topic": "Quantity",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-220"
+    },
+    {
+      "arabic": "كُلُّنَا",
+      "english": "all of us",
+      "type": "Pronoun phrase",
+      "topic": "Quantity",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-221"
+    },
+    {
+      "arabic": "كُلُّهُمْ",
+      "english": "all of them",
+      "type": "Pronoun phrase",
+      "topic": "Quantity",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-222"
+    },
+    {
+      "arabic": "مِنْهُمْ",
+      "english": "of them (literally, from them)",
+      "type": "Pronoun phrase",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-223"
+    },
+    {
+      "arabic": "أَبْيَضُ",
+      "english": "white",
+      "type": "Adjective",
+      "topic": "Colours",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-224"
+    },
+    {
+      "arabic": "أَحْمَرُ",
+      "english": "red",
+      "type": "Adjective",
+      "topic": "Colours",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-225"
+    },
+    {
+      "arabic": "أَخْضَرُ",
+      "english": "green",
+      "type": "Adjective",
+      "topic": "Colours",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-226"
+    },
+    {
+      "arabic": "أَزْرَقُ",
+      "english": "blue",
+      "type": "Adjective",
+      "topic": "Colours",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-227"
+    },
+    {
+      "arabic": "أَسْوَدُ",
+      "english": "black",
+      "type": "Adjective",
+      "topic": "Colours",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-228"
+    },
+    {
+      "arabic": "أَصْفَرُ",
+      "english": "yellow",
+      "type": "Adjective",
+      "topic": "Colours",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-229"
+    },
+    {
+      "arabic": "لَوْنٌ",
+      "english": "colour",
+      "type": "Noun",
+      "topic": "Colours",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-230"
+    },
+    {
+      "arabic": "أَلْوَانٌ",
+      "english": "colours",
+      "type": "Noun",
+      "topic": "Colours",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-231"
+    },
+    {
+      "arabic": "جَمِيلٌ",
+      "english": "beautiful",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-232"
+    },
+    {
+      "arabic": "كَبِيرٌ",
+      "english": "big",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-233"
+    },
+    {
+      "arabic": "صَغِيرٌ",
+      "english": "small",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-234"
+    },
+    {
+      "arabic": "جَدِيدٌ",
+      "english": "new",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-235"
+    },
+    {
+      "arabic": "جُدُدٌ",
+      "english": "new (p)",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-236"
+    },
+    {
+      "arabic": "قَدِيمٌ",
+      "english": "old",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-237"
+    },
+    {
+      "arabic": "قُدَامَى",
+      "english": "old (p)",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-238"
+    },
+    {
+      "arabic": "شَهِيرٌ",
+      "english": "famous",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-239"
+    },
+    {
+      "arabic": "سَهْلٌ",
+      "english": "easy",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-240"
+    },
+    {
+      "arabic": "صَعْبٌ",
+      "english": "difficult",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-241"
+    },
+    {
+      "arabic": "قَرِيبٌ",
+      "english": "near",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-242"
+    },
+    {
+      "arabic": "بَعِيدٌ",
+      "english": "far away",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-243"
+    },
+    {
+      "arabic": "طَوِيلٌ",
+      "english": "tall",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-244"
+    },
+    {
+      "arabic": "طِوَالٌ",
+      "english": "tall (p)",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-245"
+    },
+    {
+      "arabic": "قَصِيرٌ",
+      "english": "short",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-246"
+    },
+    {
+      "arabic": "قِصَارٌ",
+      "english": "short (p)",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-247"
+    },
+    {
+      "arabic": "سَرِيعٌ",
+      "english": "fast",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-248"
+    },
+    {
+      "arabic": "ثَقِيلٌ",
+      "english": "heavy",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-249"
+    },
+    {
+      "arabic": "خَفِيفٌ",
+      "english": "light",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-250"
+    },
+    {
+      "arabic": "نَظِيفٌ",
+      "english": "clean",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-251"
+    },
+    {
+      "arabic": "وَسِخٌ",
+      "english": "dirty",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-252"
+    },
+    {
+      "arabic": "بَارِدٌ",
+      "english": "cold",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-253"
+    },
+    {
+      "arabic": "حَارٌّ",
+      "english": "hot",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-254"
+    },
+    {
+      "arabic": "حُلْوٌ",
+      "english": "sweet",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-255"
+    },
+    {
+      "arabic": "غَنِيٌّ",
+      "english": "rich",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-256"
+    },
+    {
+      "arabic": "فَقِيرٌ",
+      "english": "poor",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-257"
+    },
+    {
+      "arabic": "قَوِيٌّ",
+      "english": "strong",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-258"
+    },
+    {
+      "arabic": "أَقْوِيَاءُ",
+      "english": "strong (p)",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-259"
+    },
+    {
+      "arabic": "ضَعِيفٌ",
+      "english": "weak",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-260"
+    },
+    {
+      "arabic": "ضِعَافٌ",
+      "english": "weak (p)",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-261"
+    },
+    {
+      "arabic": "مَرِيضٌ",
+      "english": "sick",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-262"
+    },
+    {
+      "arabic": "مَشْهُورٌ",
+      "english": "famous",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-263"
+    },
+    {
+      "arabic": "مُغْلَقٌ",
+      "english": "closed, shut",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-264"
+    },
+    {
+      "arabic": "مُخْتَلِفٌ",
+      "english": "different",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-265"
+    },
+    {
+      "arabic": "وَاسِعٌ",
+      "english": "spacious",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-266"
+    },
+    {
+      "arabic": "جَالِسٌ",
+      "english": "sitting",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-267"
+    },
+    {
+      "arabic": "وَاقِفٌ",
+      "english": "standing",
+      "type": "Adjective",
+      "topic": "Descriptions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-268"
+    },
+    {
+      "arabic": "مُجْتَهِدٌ",
+      "english": "hardworking",
+      "type": "Adjective",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-269"
+    },
+    {
+      "arabic": "مُجْتَهِدُونَ",
+      "english": "hardworking (p)",
+      "type": "Adjective",
+      "topic": "School",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-270"
+    },
+    {
+      "arabic": "إِلَى",
+      "english": "to",
+      "type": "Preposition",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-271"
+    },
+    {
+      "arabic": "مِنْ",
+      "english": "from",
+      "type": "Preposition",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-272"
+    },
+    {
+      "arabic": "فِي",
+      "english": "in",
+      "type": "Preposition",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-273"
+    },
+    {
+      "arabic": "عَلَى",
+      "english": "on",
+      "type": "Preposition",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-274"
+    },
+    {
+      "arabic": "تَحْتَ",
+      "english": "under, beneath",
+      "type": "Preposition",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-275"
+    },
+    {
+      "arabic": "بَعْدَ",
+      "english": "after",
+      "type": "Preposition",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-276"
+    },
+    {
+      "arabic": "أَيْنَ",
+      "english": "where",
+      "type": "Question word",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-277"
+    },
+    {
+      "arabic": "لِمَاذَا",
+      "english": "why",
+      "type": "Question word",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-278"
+    },
+    {
+      "arabic": "هُنَا",
+      "english": "here",
+      "type": "Adverb",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-279"
+    },
+    {
+      "arabic": "هُنَاكَ",
+      "english": "there",
+      "type": "Adverb",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-280"
+    },
+    {
+      "arabic": "ذٰلِكَ",
+      "english": "that",
+      "type": "Demonstrative",
+      "topic": "Grammar",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-281"
+    },
+    {
+      "arabic": "شَرْقٌ",
+      "english": "east",
+      "type": "Noun",
+      "topic": "Directions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-282"
+    },
+    {
+      "arabic": "مَغْرِبٌ",
+      "english": "west",
+      "type": "Noun",
+      "topic": "Directions",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-283"
+    },
+    {
+      "arabic": "دُسْتُورٌ",
+      "english": "constitution (law)",
+      "type": "Noun",
+      "topic": "General",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-284"
+    },
+    {
+      "arabic": "مَجَلَّةٌ",
+      "english": "magazine, journal",
+      "type": "Noun",
+      "topic": "Reading",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-285"
+    },
+    {
+      "arabic": "نَصْرَانِيٌّ",
+      "english": "Christian",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-286"
+    },
+    {
+      "arabic": "نَصَارَى",
+      "english": "Christians",
+      "type": "Noun",
+      "topic": "People",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-287"
+    },
+    {
+      "arabic": "يَابَانِيَّةٌ",
+      "english": "Japanese",
+      "type": "Adjective",
+      "topic": "Countries",
+      "source": "Madinah Book 1",
+      "status": "Not Started",
+      "id": "madinah1-vocab-288"
     }
   ]
 }
