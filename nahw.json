@@ -1,43 +1,393 @@
 {
   "nahw": [
     {
-      "id": "nahw-1",
-      "arabic": "الْمُبْتَدَأُ وَالْخَبَرُ",
-      "english": "Mubtadaʾ and Khabar",
-      "topic": "Nominal Sentence",
-      "summary": "The mubtadaʾ is the subject or topic of a nominal sentence, and the khabar gives information about it.",
+      "id": "nahw-foundation-001",
+      "arabic": "اِسْمٌ",
+      "english": "Ism — noun",
+      "topic": "Foundations",
+      "summary": "A word that names a person, place, thing, quality or idea.",
       "example": "زَيْدٌ طَالِبٌ.",
       "example_en": "Zayd is a student.",
       "status": "Not Started"
     },
     {
-      "id": "nahw-2",
-      "arabic": "الْفَاعِلُ",
-      "english": "Fāʿil — the doer",
+      "id": "nahw-foundation-002",
+      "arabic": "فِعْلٌ",
+      "english": "Fiʿl — verb",
+      "topic": "Foundations",
+      "summary": "A word that expresses an action or occurrence and is connected to time.",
+      "example": "كَتَبَ زَيْدٌ.",
+      "example_en": "Zayd wrote.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-003",
+      "arabic": "حَرْفٌ",
+      "english": "Ḥarf — particle",
+      "topic": "Foundations",
+      "summary": "A particle whose full grammatical meaning appears through its relationship with other words.",
+      "example": "فِي الْبَيْتِ كِتَابٌ.",
+      "example_en": "There is a book in the house.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-004",
+      "arabic": "مُعْرَبٌ",
+      "english": "Muʿrab — inflected",
+      "topic": "Iʿrāb",
+      "summary": "A word whose ending can change because of its grammatical position.",
+      "example": "جَاءَ زَيْدٌ، رَأَيْتُ زَيْدًا.",
+      "example_en": "Zayd came; I saw Zayd.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-005",
+      "arabic": "مَبْنِيٌّ",
+      "english": "Mabnī — fixed",
+      "topic": "Iʿrāb",
+      "summary": "A word whose ending normally remains fixed despite changes in grammatical position.",
+      "example": "هٰذَا كِتَابٌ.",
+      "example_en": "This is a book.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-006",
+      "arabic": "مَرْفُوعٌ",
+      "english": "Marfūʿ — nominative",
+      "topic": "Iʿrāb",
+      "summary": "The nominative grammatical state, commonly marked by ḍammah.",
+      "example": "جَاءَ الطَّالِبُ.",
+      "example_en": "The student came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-007",
+      "arabic": "مَنْصُوبٌ",
+      "english": "Manṣūb — accusative",
+      "topic": "Iʿrāb",
+      "summary": "The accusative grammatical state, commonly marked by fatḥah.",
+      "example": "رَأَيْتُ الطَّالِبَ.",
+      "example_en": "I saw the student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-008",
+      "arabic": "مَجْرُورٌ",
+      "english": "Majrūr — genitive",
+      "topic": "Iʿrāb",
+      "summary": "The genitive state for nouns, commonly marked by kasrah.",
+      "example": "مَرَرْتُ بِالطَّالِبِ.",
+      "example_en": "I passed by the student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-009",
+      "arabic": "مَجْزُومٌ",
+      "english": "Majzūm — jussive",
+      "topic": "Iʿrāb",
+      "summary": "The jussive state of the present verb after certain particles.",
+      "example": "لَمْ يَذْهَبْ زَيْدٌ.",
+      "example_en": "Zayd did not go.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-010",
+      "arabic": "مُبْتَدَأٌ",
+      "english": "Mubtadaʾ — subject/topic",
+      "topic": "Nominal Sentence",
+      "summary": "The opening noun or topic of a nominal sentence and is normally marfūʿ.",
+      "example": "زَيْدٌ طَالِبٌ.",
+      "example_en": "Zayd is a student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-011",
+      "arabic": "خَبَرٌ",
+      "english": "Khabar — predicate",
+      "topic": "Nominal Sentence",
+      "summary": "The information given about the mubtadaʾ and is normally marfūʿ.",
+      "example": "زَيْدٌ طَالِبٌ.",
+      "example_en": "Zayd is a student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-012",
+      "arabic": "فَاعِلٌ",
+      "english": "Fāʿil — doer",
       "topic": "Verbal Sentence",
-      "summary": "The fāʿil is the doer of the action in a verbal sentence and is normally marfūʿ.",
+      "summary": "The doer of the action in a verbal sentence and is normally marfūʿ.",
       "example": "كَتَبَ الطَّالِبُ الدَّرْسَ.",
       "example_en": "The student wrote the lesson.",
       "status": "Not Started"
     },
     {
-      "id": "nahw-3",
-      "arabic": "الْمَفْعُولُ بِهِ",
-      "english": "Mafʿūl bihi — direct object",
+      "id": "nahw-foundation-013",
+      "arabic": "مَفْعُولٌ",
+      "english": "Mafʿūl — object",
       "topic": "Verbal Sentence",
-      "summary": "The mafʿūl bihi is the person or thing directly affected by the verb and is normally manṣūb.",
+      "summary": "The noun affected by the action; the direct object is normally manṣūb.",
       "example": "قَرَأَ الطَّالِبُ الْكِتَابَ.",
       "example_en": "The student read the book.",
       "status": "Not Started"
     },
     {
-      "id": "nahw-4",
-      "arabic": "الْحَالُ",
-      "english": "Ḥāl — state or condition",
-      "topic": "Case / Description",
-      "summary": "Ḥāl describes the state or condition of someone or something while an action takes place and is normally manṣūb.",
-      "example": "صَامَ زَيْدٌ صَابِرًا.",
-      "example_en": "Zayd fasted patiently.",
+      "id": "nahw-foundation-014",
+      "arabic": "نَائِبٌ",
+      "english": "Nāʾib — deputy",
+      "topic": "Verbal Sentence",
+      "summary": "In a passive sentence, the deputy subject takes the place of the omitted doer and is marfūʿ.",
+      "example": "كُتِبَ الدَّرْسُ.",
+      "example_en": "The lesson was written.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-015",
+      "arabic": "مُضَافٌ",
+      "english": "Muḍāf",
+      "topic": "Iḍāfah",
+      "summary": "The first noun in an iḍāfah construction; it is linked to the noun after it.",
+      "example": "كِتَابُ الطَّالِبِ جَدِيدٌ.",
+      "example_en": "The student's book is new.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-016",
+      "arabic": "مُضَافٌ إِلَيْهِ",
+      "english": "Muḍāf ilayh",
+      "topic": "Iḍāfah",
+      "summary": "The second noun in an iḍāfah construction and is always majrūr.",
+      "example": "كِتَابُ الطَّالِبِ جَدِيدٌ.",
+      "example_en": "The student's book is new.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-017",
+      "arabic": "نَعْتٌ",
+      "english": "Naʿt — adjective",
+      "topic": "Description",
+      "summary": "An adjective that follows the noun it describes in key grammatical features.",
+      "example": "جَاءَ طَالِبٌ مُجْتَهِدٌ.",
+      "example_en": "A hardworking student came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-018",
+      "arabic": "مَنْعُوتٌ",
+      "english": "Manʿūt — described noun",
+      "topic": "Description",
+      "summary": "The noun being described by a naʿt.",
+      "example": "جَاءَ طَالِبٌ مُجْتَهِدٌ.",
+      "example_en": "A hardworking student came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-019",
+      "arabic": "حَالٌ",
+      "english": "Ḥāl — state",
+      "topic": "Description",
+      "summary": "A normally manṣūb word describing the state of someone or something during an action.",
+      "example": "جَاءَ زَيْدٌ رَاكِبًا.",
+      "example_en": "Zayd came riding.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-020",
+      "arabic": "تَمْيِيزٌ",
+      "english": "Tamyīz — specification",
+      "topic": "Description",
+      "summary": "A normally manṣūb noun that clarifies an otherwise vague quantity or relationship.",
+      "example": "اِشْتَرَيْتُ لِتْرًا مَاءً.",
+      "example_en": "I bought a litre of water.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-021",
+      "arabic": "مَعْرِفَةٌ",
+      "english": "Maʿrifah — definite",
+      "topic": "Definiteness",
+      "summary": "A definite noun referring to something specific or identified.",
+      "example": "جَاءَ الطَّالِبُ.",
+      "example_en": "The student came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-022",
+      "arabic": "نَكِرَةٌ",
+      "english": "Nakirah — indefinite",
+      "topic": "Definiteness",
+      "summary": "An indefinite noun referring to a non-specific person or thing.",
+      "example": "جَاءَ طَالِبٌ.",
+      "example_en": "A student came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-023",
+      "arabic": "مُفْرَدٌ",
+      "english": "Mufrad — singular",
+      "topic": "Number",
+      "summary": "A word referring to one person or thing.",
+      "example": "هٰذَا طَالِبٌ.",
+      "example_en": "This is a student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-024",
+      "arabic": "مُثَنًّى",
+      "english": "Muthannā — dual",
+      "topic": "Number",
+      "summary": "A form referring to two people or things.",
+      "example": "جَاءَ طَالِبَانِ.",
+      "example_en": "Two students came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-025",
+      "arabic": "جَمْعٌ",
+      "english": "Jamʿ — plural",
+      "topic": "Number",
+      "summary": "A form referring to three or more.",
+      "example": "جَاءَ الطُّلَّابُ.",
+      "example_en": "The students came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-026",
+      "arabic": "مُذَكَّرٌ",
+      "english": "Mudhakkar — masculine",
+      "topic": "Gender",
+      "summary": "The masculine grammatical gender.",
+      "example": "هٰذَا طَالِبٌ.",
+      "example_en": "This is a male student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-027",
+      "arabic": "مُؤَنَّثٌ",
+      "english": "Muʾannath — feminine",
+      "topic": "Gender",
+      "summary": "The feminine grammatical gender.",
+      "example": "هٰذِهِ طَالِبَةٌ.",
+      "example_en": "This is a female student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-028",
+      "arabic": "ضَمِيرٌ",
+      "english": "Ḍamīr — pronoun",
+      "topic": "Pronouns",
+      "summary": "A pronoun that stands in place of a noun.",
+      "example": "هُوَ طَالِبٌ.",
+      "example_en": "He is a student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-029",
+      "arabic": "إِشَارَةٌ",
+      "english": "Ishārah — demonstrative",
+      "topic": "Pronouns",
+      "summary": "A demonstrative expression used to point to something near or far.",
+      "example": "هٰذَا كِتَابٌ.",
+      "example_en": "This is a book.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-030",
+      "arabic": "مَوْصُولٌ",
+      "english": "Mawṣūl — relative",
+      "topic": "Pronouns",
+      "summary": "A relative expression that links a noun to a following clause.",
+      "example": "جَاءَ الَّذِي دَرَسَ.",
+      "example_en": "The one who studied came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-031",
+      "arabic": "ظَرْفٌ",
+      "english": "Ẓarf — adverbial noun",
+      "topic": "Adverbials",
+      "summary": "A noun expressing time or place in relation to an action.",
+      "example": "جَلَسْتُ أَمَامَ الْبَيْتِ.",
+      "example_en": "I sat in front of the house.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-032",
+      "arabic": "جَارٌّ",
+      "english": "Jārr — governing preposition",
+      "topic": "Prepositions",
+      "summary": "A preposition that causes the following noun to become majrūr.",
+      "example": "ذَهَبْتُ إِلَى الْمَسْجِدِ.",
+      "example_en": "I went to the mosque.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-033",
+      "arabic": "عَطْفٌ",
+      "english": "ʿAṭf — coordination",
+      "topic": "Followers",
+      "summary": "Coordination linking one word or phrase to another.",
+      "example": "جَاءَ زَيْدٌ وَخَالِدٌ.",
+      "example_en": "Zayd and Khalid came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-034",
+      "arabic": "بَدَلٌ",
+      "english": "Badal — substitute/apposition",
+      "topic": "Followers",
+      "summary": "A following noun that restates or substitutes for the noun before it.",
+      "example": "جَاءَ أَخُوكَ زَيْدٌ.",
+      "example_en": "Your brother Zayd came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-035",
+      "arabic": "تَوْكِيدٌ",
+      "english": "Tawkīd — emphasis",
+      "topic": "Followers",
+      "summary": "A follower used to strengthen or emphasise the meaning of the word before it.",
+      "example": "جَاءَ الطُّلَّابُ كُلُّهُمْ.",
+      "example_en": "All the students came.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-036",
+      "arabic": "اِسْتِثْنَاءٌ",
+      "english": "Istithnāʾ — exception",
+      "topic": "Exception",
+      "summary": "A construction excluding something from a preceding general statement.",
+      "example": "جَاءَ الطُّلَّابُ إِلَّا زَيْدًا.",
+      "example_en": "The students came except Zayd.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-037",
+      "arabic": "شَرْطٌ",
+      "english": "Sharṭ — condition",
+      "topic": "Clauses",
+      "summary": "A conditional construction linking a condition to its result.",
+      "example": "إِنْ تَدْرُسْ تَنْجَحْ.",
+      "example_en": "If you study, you will succeed.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-038",
+      "arabic": "نَفْيٌ",
+      "english": "Nafy — negation",
+      "topic": "Clauses",
+      "summary": "A construction used to negate a statement or action.",
+      "example": "مَا ذَهَبَ زَيْدٌ.",
+      "example_en": "Zayd did not go.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-039",
+      "arabic": "اِسْتِفْهَامٌ",
+      "english": "Istifhām — interrogation",
+      "topic": "Clauses",
+      "summary": "A construction used to ask a question.",
+      "example": "هَلْ أَنْتَ طَالِبٌ؟",
+      "example_en": "Are you a student?",
       "status": "Not Started"
     }
   ]
