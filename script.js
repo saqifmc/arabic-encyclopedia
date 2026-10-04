@@ -181,6 +181,15 @@ function itemStatus(id){return progressFor(id).status || 'Not Started';}
 function statusClass(status){
   return 'status-'+String(status||'Not Started').toLowerCase().replace(/\s+/g,'-');
 }
+function sortRecentlyCoveredLast(items){
+  return [...items].sort((a,b)=>{
+    const pa=progressFor(a.id), pb=progressFor(b.id);
+    const aCovered=!!pa.dateCovered, bCovered=!!pb.dateCovered;
+    if(aCovered!==bCovered) return aCovered?1:-1;
+    if(!aCovered && !bCovered) return 0;
+    return new Date(pa.dateCovered)-new Date(pb.dateCovered);
+  });
+}
 function renderStats(){
   const allItems=[...DATA.vocabulary,...DATA.verbs,...DATA.speaking,...DATA.nahw];
   const covered=allItems.filter(x=>itemStatus(x.id)!=='Not Started').length;
@@ -310,11 +319,12 @@ function renderVocabulary(){
   const source=document.getElementById('sourceFilter')?.value||'';
   const status=document.getElementById('statusFilter')?.value||'';
   const fav=document.getElementById('favouriteFilter')?.checked||false;
-  const rows=DATA.vocabulary.filter(x=>{
+  let rows=DATA.vocabulary.filter(x=>{
     const hay=[x.arabic,x.english,x.root,x.topic,x.source].join(' ').toLowerCase();
     const p=progressFor(x.id);
     return hay.includes(q)&&(!type||x.type===type)&&(!source||(x.source||'').split(';').map(s=>s.trim()).includes(source))&&(!status||p.status===status)&&(!fav||p.favourite);
   });
+  rows=sortRecentlyCoveredLast(rows);
   document.getElementById('vocabList').innerHTML=`
     <div class="traffic-legend">
       <span class="traffic-dot not">Not Started</span>
@@ -352,13 +362,15 @@ function renderRoots(){
 }
 function renderVerbs(){
   const form=document.getElementById('formFilter')?.value||'';
-  const rows=DATA.verbs.filter(x=>!form||x.form===form);
+  let rows=DATA.verbs.filter(x=>!form||x.form===form);
+  rows=sortRecentlyCoveredLast(rows);
   document.getElementById('verbsList').innerHTML=rows.map(vocabCard).join('');
   bindDynamicButtons();
 }
 function renderSpeaking(){
   const topic=document.getElementById('speakingTopicFilter')?.value||'';
-  const rows=DATA.speaking.filter(x=>!topic||x.topic===topic);
+  let rows=DATA.speaking.filter(x=>!topic||x.topic===topic);
+  rows=sortRecentlyCoveredLast(rows);
   document.getElementById('speakingList').innerHTML=rows.map(speakingCard).join('');
   bindDynamicButtons();
 }
@@ -405,8 +417,8 @@ function nahwCard(x){
 }
 function renderNahw(){
   const topic=document.getElementById('nahwTopicFilter')?.value||'';
-  const keyTerms=DATA.nahw.filter(x=>x.topic==='Key Terms');
-  const concepts=DATA.nahw.filter(x=>x.topic!=='Key Terms'&&(!topic||x.topic===topic));
+  const keyTerms=sortRecentlyCoveredLast(DATA.nahw.filter(x=>x.topic==='Key Terms'));
+  const concepts=sortRecentlyCoveredLast(DATA.nahw.filter(x=>x.topic!=='Key Terms'&&(!topic||x.topic===topic)));
   const keyBox=document.getElementById('nahwKeyTerms');
   if(keyBox){
     keyBox.innerHTML=keyTerms.map(x=>`<article class="keyterm-card">
