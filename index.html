@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20261005-quran1" />
 </head>
 <body>
   <header class="topbar">
@@ -25,6 +25,7 @@
       <button data-view="sarf">Sarf</button>
       <button data-view="speaking">Speaking</button>
       <button data-view="nahw">Nahw</button>
+      <button data-view="quranic-tarkeeb">Quranic Tarkeeb</button>
       <button data-view="revision">Revision</button>
     </nav>
   </header>
@@ -69,6 +70,7 @@
         <button class="dashboard-card" data-view="sarf"><strong>Sarf</strong><small>Foundational morphology topics</small></button>
         <button class="dashboard-card" data-view="speaking"><strong>Speaking Phrases</strong><small>Useful spoken Arabic</small></button>
         <button class="dashboard-card" data-view="nahw"><strong>Nahw Concepts</strong><small>Your grammar reference</small></button>
+        <button class="dashboard-card" data-view="quranic-tarkeeb"><strong>Quranic Tarkeeb</strong><small>Analyse Qur'anic sentence structure</small></button>
         <button class="dashboard-card" data-view="revision"><strong>Revision</strong><small>Focus on weaker items</small></button>
       </div>
 
@@ -214,6 +216,149 @@
       </div>
       <h3 class="concepts-title">Grammar Concepts</h3>
       <div id="nahwList" class="list"></div>
+    </section>
+
+
+    <section id="quranic-tarkeeb" class="view section-quranic">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow dark">QURANIC GRAMMAR</span>
+          <h2>Quranic Tarkeeb</h2>
+          <p>Sentence structure, iʿrāb and grammatical relationships in the Qur'an.</p>
+        </div>
+      </div>
+
+      <div class="quran-intro-card">
+        <div>
+          <div class="arabic quran-surah-title" lang="ar" dir="rtl">سُورَةُ الْفَاتِحَةِ</div>
+          <h3>Surah al-Fātiḥah — Tarkeeb</h3>
+          <p>Read each āyah as a complete structure, then break it into its grammatical parts.</p>
+        </div>
+        <div class="translation-note">
+          <strong>Translation reference</strong>
+          <p>M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). The English lines on this study page are concise study paraphrases rather than a reproduction of the published translation.</p>
+        </div>
+      </div>
+
+      <div class="quran-ayah-list">
+        <article class="quran-ayah-card">
+          <div class="ayah-number">1</div>
+          <div class="quran-arabic" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+          <div class="quran-sense">In God's name, invoking His perfect mercy.</div>
+          <div class="tarkeeb-summary" lang="ar" dir="rtl">
+            <strong>التَّرْكِيبُ:</strong>
+            جَارٌّ وَمَجْرُورٌ + مُضَافٌ إِلَيْهِ + نَعْتَانِ مَجْرُورَانِ.
+          </div>
+          <div class="tarkeeb-grid">
+            <div><span class="q-word" lang="ar" dir="rtl">بِـ</span><b>حَرْفُ جَرٍّ</b><small>Preposition.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">اسْمِ</span><b>اِسْمٌ مَجْرُورٌ</b><small>Majrūr by بِـ and it is muḍāf.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">اللَّهِ</span><b>مُضَافٌ إِلَيْهِ</b><small>Genitive complement of اسْم.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الرَّحْمَٰنِ</span><b>نَعْتٌ مَجْرُورٌ</b><small>First adjective describing Allah.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الرَّحِيمِ</span><b>نَعْتٌ ثَانٍ مَجْرُورٌ</b><small>Second adjective.</small></div>
+          </div>
+          <p class="tarkeeb-note"><strong>Connection:</strong> the جارّ ومجرور is attached to an understood verb such as <span lang="ar" dir="rtl">أَبْدَأُ</span> — “I begin”.</p>
+        </article>
+
+        <article class="quran-ayah-card">
+          <div class="ayah-number">2</div>
+          <div class="quran-arabic" lang="ar" dir="rtl">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</div>
+          <div class="quran-sense">All praise belongs to God, Lord of all worlds.</div>
+          <div class="tarkeeb-summary" lang="ar" dir="rtl">
+            <strong>التَّرْكِيبُ:</strong>
+            جُمْلَةٌ اسْمِيَّةٌ: مُبْتَدَأٌ + خَبَرٌ شِبْهُ جُمْلَةٍ.
+          </div>
+          <div class="tarkeeb-grid">
+            <div><span class="q-word" lang="ar" dir="rtl">الْحَمْدُ</span><b>مُبْتَدَأٌ مَرْفُوعٌ</b><small>The subject of the nominal sentence.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">لِلَّهِ</span><b>جَارٌّ وَمَجْرُورٌ</b><small> شبه جملة functioning as the predicate.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">رَبِّ</span><b>بَدَلٌ أَوْ عَطْفُ بَيَانٍ</b><small>Majrūr, explaining the لفظ الجلالة; it is also muḍāf.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الْعَالَمِينَ</span><b>مُضَافٌ إِلَيْهِ مَجْرُورٌ</b><small>Marked with ياء because it is a sound masculine plural form.</small></div>
+          </div>
+        </article>
+
+        <article class="quran-ayah-card">
+          <div class="ayah-number">3</div>
+          <div class="quran-arabic" lang="ar" dir="rtl">الرَّحْمَٰنِ الرَّحِيمِ</div>
+          <div class="quran-sense">The Lord of boundless and continually bestowed mercy.</div>
+          <div class="tarkeeb-summary" lang="ar" dir="rtl">
+            <strong>التَّرْكِيبُ:</strong>
+            نَعْتَانِ مَجْرُورَانِ تَابِعَانِ لِمَا قَبْلَهُمَا.
+          </div>
+          <div class="tarkeeb-grid">
+            <div><span class="q-word" lang="ar" dir="rtl">الرَّحْمَٰنِ</span><b>نَعْتٌ مَجْرُورٌ</b><small>A dependent adjective continuing the description of Allah.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الرَّحِيمِ</span><b>نَعْتٌ مَجْرُورٌ</b><small>A second dependent adjective.</small></div>
+          </div>
+        </article>
+
+        <article class="quran-ayah-card">
+          <div class="ayah-number">4</div>
+          <div class="quran-arabic" lang="ar" dir="rtl">مَالِكِ يَوْمِ الدِّينِ</div>
+          <div class="quran-sense">Master of the Day when all are brought to account.</div>
+          <div class="tarkeeb-summary" lang="ar" dir="rtl">
+            <strong>التَّرْكِيبُ:</strong>
+            نَعْتٌ مَجْرُورٌ + إِضَافَةٌ دَاخِلَ إِضَافَةٍ.
+          </div>
+          <div class="tarkeeb-grid">
+            <div><span class="q-word" lang="ar" dir="rtl">مَالِكِ</span><b>نَعْتٌ مَجْرُورٌ</b><small>Continuing the description of Allah; it is muḍāf.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">يَوْمِ</span><b>مُضَافٌ إِلَيْهِ مَجْرُورٌ</b><small>It is itself muḍāf to the next word.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الدِّينِ</span><b>مُضَافٌ إِلَيْهِ مَجْرُورٌ</b><small>Completes the second iḍāfah.</small></div>
+          </div>
+        </article>
+
+        <article class="quran-ayah-card">
+          <div class="ayah-number">5</div>
+          <div class="quran-arabic" lang="ar" dir="rtl">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</div>
+          <div class="quran-sense">You alone we worship, and You alone we ask for help.</div>
+          <div class="tarkeeb-summary" lang="ar" dir="rtl">
+            <strong>التَّرْكِيبُ:</strong>
+            مَفْعُولٌ بِهِ مُقَدَّمٌ + فِعْلٌ وَفَاعِلٌ مُسْتَتِرٌ، ثُمَّ عَطْفٌ.
+          </div>
+          <div class="tarkeeb-grid">
+            <div><span class="q-word" lang="ar" dir="rtl">إِيَّاكَ</span><b>مَفْعُولٌ بِهِ مُقَدَّمٌ</b><small>Detached pronoun placed before the verb for emphasis and exclusivity.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">نَعْبُدُ</span><b>فِعْلٌ مُضَارِعٌ مَرْفُوعٌ</b><small>The subject is a hidden pronoun: نَحْنُ.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">وَ</span><b>حَرْفُ عَطْفٍ</b><small>Joins the two verbal clauses.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">إِيَّاكَ</span><b>مَفْعُولٌ بِهِ مُقَدَّمٌ</b><small>Again fronted before its verb.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">نَسْتَعِينُ</span><b>فِعْلٌ مُضَارِعٌ مَرْفُوعٌ</b><small>The hidden subject is نَحْنُ.</small></div>
+          </div>
+        </article>
+
+        <article class="quran-ayah-card">
+          <div class="ayah-number">6</div>
+          <div class="quran-arabic" lang="ar" dir="rtl">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</div>
+          <div class="quran-sense">Guide us to the straight path.</div>
+          <div class="tarkeeb-summary" lang="ar" dir="rtl">
+            <strong>التَّرْكِيبُ:</strong>
+            فِعْلُ أَمْرٍ + فَاعِلٌ مُسْتَتِرٌ + مَفْعُولَانِ + نَعْتٌ.
+          </div>
+          <div class="tarkeeb-grid">
+            <div><span class="q-word" lang="ar" dir="rtl">اهْدِ</span><b>فِعْلُ أَمْرٍ</b><small>Built on the deletion of the final weak letter; the hidden subject is أَنْتَ.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">نَا</span><b>مَفْعُولٌ بِهِ أَوَّلٌ</b><small>Attached pronoun meaning “us”.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الصِّرَاطَ</span><b>مَفْعُولٌ بِهِ ثَانٍ</b><small>The thing to which guidance is requested.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الْمُسْتَقِيمَ</span><b>نَعْتٌ مَنْصُوبٌ</b><small>Adjective agreeing with الصراط.</small></div>
+          </div>
+        </article>
+
+        <article class="quran-ayah-card">
+          <div class="ayah-number">7</div>
+          <div class="quran-arabic" lang="ar" dir="rtl">صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</div>
+          <div class="quran-sense">The path of those You have favoured—not those under anger, nor those who have gone astray.</div>
+          <div class="tarkeeb-summary" lang="ar" dir="rtl">
+            <strong>التَّرْكِيبُ:</strong>
+            بَدَلٌ + اِسْمٌ مَوْصُولٌ + صِلَةُ الْمَوْصُولِ + بَدَلٌ أَوْ نَعْتٌ + عَطْفٌ.
+          </div>
+          <div class="tarkeeb-grid">
+            <div><span class="q-word" lang="ar" dir="rtl">صِرَاطَ</span><b>بَدَلٌ أَوْ عَطْفُ بَيَانٍ</b><small>Explains الصِّرَاطَ in the previous āyah; منصوب and muḍāf.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الَّذِينَ</span><b>اِسْمٌ مَوْصُولٌ</b><small>In the genitive position as muḍāf ilayh.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">أَنْعَمْتَ</span><b>فِعْلٌ مَاضٍ + فَاعِلٌ</b><small>تَ is the subject: “You”.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">عَلَيْهِمْ</span><b>جَارٌّ وَمَجْرُورٌ</b><small>Attached in meaning to أَنْعَمْتَ.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">غَيْرِ</span><b>بَدَلٌ أَوْ نَعْتٌ مَجْرُورٌ</b><small>Describes/excludes a group from الَّذِينَ; it is muḍāf.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الْمَغْضُوبِ</span><b>مُضَافٌ إِلَيْهِ مَجْرُورٌ</b><small>اسم مفعول from غَضِبَ.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">عَلَيْهِمْ</span><b>جَارٌّ وَمَجْرُورٌ</b><small>Connected to الْمَغْضُوبِ.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">وَلَا</span><b>عَطْفٌ وَنَفْيٌ</b><small>Links the final description while reinforcing negation.</small></div>
+            <div><span class="q-word" lang="ar" dir="rtl">الضَّالِّينَ</span><b>مَعْطُوفٌ مَجْرُورٌ</b><small>Majrūr with ياء because it is a sound masculine plural.</small></div>
+          </div>
+          <p class="tarkeeb-note"><strong>Clause:</strong> <span lang="ar" dir="rtl">أَنْعَمْتَ عَلَيْهِمْ</span> is <span lang="ar" dir="rtl">صِلَةُ الْمَوْصُولِ</span> and has no independent محلّ of iʿrāb.</p>
+        </article>
+      </div>
     </section>
 
     <section id="revision" class="view">
