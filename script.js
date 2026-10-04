@@ -29,9 +29,72 @@ function initSupabase(){
   }
 }
 
+async function handleSupabaseAuthCallback(){
+  if(!supabaseClient) return false;
+
+  const url=new URL(window.location.href);
+  const code=url.searchParams.get('code');
+  const errorDescription=url.searchParams.get('error_description') || url.searchParams.get('error');
+
+  if(errorDescription){
+    setAuthMessage('Sign-in failed: '+decodeURIComponent(errorDescription));
+    return false;
+  }
+
+  try{
+    // PKCE flow: Supabase returns ?code=...
+    if(code){
+      setAuthMessage('Signing you in…');
+      const {data,error}=await supabaseClient.auth.exchangeCodeForSession(code);
+      if(error) throw error;
+      currentUser=data?.session?.user||null;
+      cleanAuthUrl();
+      if(currentUser){
+        await loadRemoteProgress();
+        updateAuthUI();
+        setAuthMessage('');
+        return true;
+      }
+    }
+
+    // Implicit flow: Supabase can return tokens in the URL hash.
+    const hash=new URLSearchParams((window.location.hash||'').replace(/^#/,''));
+    const accessToken=hash.get('access_token');
+    const refreshToken=hash.get('refresh_token');
+    if(accessToken&&refreshToken){
+      setAuthMessage('Signing you in…');
+      const {data,error}=await supabaseClient.auth.setSession({
+        access_token:accessToken,
+        refresh_token:refreshToken
+      });
+      if(error) throw error;
+      currentUser=data?.session?.user||null;
+      cleanAuthUrl();
+      if(currentUser){
+        await loadRemoteProgress();
+        updateAuthUI();
+        setAuthMessage('');
+        return true;
+      }
+    }
+  }catch(err){
+    console.error('Supabase callback error',err);
+    setAuthMessage('The sign-in link was opened, but the session could not be completed. Please request a fresh link and try again.');
+  }
+  return false;
+}
+
+function cleanAuthUrl(){
+  try{
+    const clean=window.location.origin+window.location.pathname;
+    window.history.replaceState({},document.title,clean);
+  }catch(e){}
+}
+
 async function refreshAuth(){
   if(!supabaseClient){ updateAuthUI(); return; }
-  const {data:{session}} = await supabaseClient.auth.getSession();
+  const {data:{session},error} = await supabaseClient.auth.getSession();
+  if(error) console.error('Supabase session error',error);
   currentUser = session?.user || null;
   if(currentUser) await loadRemoteProgress();
   updateAuthUI();
@@ -83,12 +146,12 @@ async function sendMagicLink(){
   const email=document.getElementById('authEmail').value.trim();
   if(!email){setAuthMessage('Enter your email address.');return;}
   setAuthMessage('Sending sign-in link…');
-  const redirectTo=window.location.origin+window.location.pathname;
+  const redirectTo='https://saqifmc.github.io/arabic-encyclopedia/';
   const {error}=await supabaseClient.auth.signInWithOtp({
     email,
     options:{emailRedirectTo:redirectTo}
   });
-  setAuthMessage(error?error.message:'Check your email and open the sign-in link.');
+  setAuthMessage(error?error.message:'Check your email and open the newest sign-in link. You should return here signed in automatically.');
 }
 
 async function signOut(){
@@ -158,7 +221,10 @@ function setup(){
       if(currentUser) await loadRemoteProgress();
       updateAuthUI();
     });
-    refreshAuth();
+    (async()=>{
+      const handled=await handleSupabaseAuthCallback();
+      if(!handled) await refreshAuth();
+    })();
   } else {
     updateAuthUI();
     setAuthMessage(supabaseInitError || 'Supabase is not connected yet. Your progress is currently stored only on this device.');
