@@ -94,7 +94,13 @@ async function signInWithGoogle(){
     // GitHub Pages is hosted outside Firebase Hosting. Firebase recommends
     // popup auth for this setup because redirect auth can be blocked by
     // modern browser cross-site storage protections.
-    const result=await firebaseAuth.signInWithPopup(provider);
+    const popupPromise=firebaseAuth.signInWithPopup(provider);
+    const timeoutPromise=new Promise((_,reject)=>setTimeout(()=>{
+      const e=new Error('Google sign-in timed out after the account window completed.');
+      e.code='auth/popup-timeout';
+      reject(e);
+    },15000));
+    const result=await Promise.race([popupPromise,timeoutPromise]);
 
     currentUser=result?.user||firebaseAuth.currentUser||null;
     if(!currentUser) throw new Error('Google sign-in finished without returning a user.');
@@ -115,6 +121,8 @@ async function signInWithGoogle(){
       msg='Your browser blocked the Google sign-in window. Allow pop-ups for this site and try again.';
     }else if(err?.code==='auth/cancelled-popup-request'){
       msg='Another Google sign-in window is already open. Close it and try again.';
+    }else if(err?.code==='auth/popup-timeout'){
+      msg='Google accepted the sign-in, but this browser did not return the session to the site. I have switched the site to a more stable Firebase Auth version; refresh once and try again.';
     }
 
     setAuthMessage(msg);
