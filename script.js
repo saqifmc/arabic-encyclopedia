@@ -156,6 +156,16 @@ function showView(id){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function unique(arr){return [...new Set(arr.filter(Boolean))].sort();}
+function sortVerbForms(forms){
+  const order=["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","Quadriliteral I","Quadriliteral derived"];
+  return [...new Set(forms.filter(Boolean))].sort((a,b)=>{
+    const ai=order.indexOf(a), bi=order.indexOf(b);
+    if(ai!==-1&&bi!==-1) return ai-bi;
+    if(ai!==-1) return -1;
+    if(bi!==-1) return 1;
+    return String(a).localeCompare(String(b));
+  });
+}
 function sourceValues(x){
   if(Array.isArray(x?.source)) return x.source;
   return String(x?.source||'').split(';').map(s=>s.trim()).filter(Boolean);
@@ -168,7 +178,7 @@ function populateFilters(){
   fillSelect('categoryFilter',unique(DATA.vocabulary.map(x=>x.category)));
   fillSelect('typeFilter',unique(DATA.vocabulary.map(x=>x.type)));
   fillSelect('sourceFilter',unique(DATA.vocabulary.flatMap(sourceValues)));
-  fillSelect('formFilter',unique(DATA.verbs.map(x=>x.form)));
+  fillSelect('formFilter',sortVerbForms(DATA.verbs.map(x=>x.form)));
   fillSelect('verbTypeFilter',unique(DATA.verbs.map(x=>x.verb_type)));
   fillSelect('sarfSectionFilter',unique(DATA.sarf.map(x=>x.section)));
   fillSelect('speakingTopicFilter',unique(DATA.speaking.map(x=>x.topic)));
