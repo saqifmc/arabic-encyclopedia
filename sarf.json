@@ -247,10 +247,11 @@
       "arabic": "اللَّفِيفُ",
       "english": "Lafīf verb",
       "section": "Weak Verbs",
-      "summary": "A verb containing two weak radicals.",
+      "summary": "A weak verb containing two weak radicals. Module 4 divides it into separated lafīf and adjacent lafīf.",
       "source": [
         "Sarf Module 2",
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ]
     },
     {
@@ -258,9 +259,10 @@
       "arabic": "اللَّفِيفُ الْمَفْرُوقُ",
       "english": "Separated lafīf",
       "section": "Weak Verbs",
-      "summary": "A lafīf verb whose two weak radicals are separated by a sound radical.",
+      "summary": "A lafīf verb whose two weak radicals are separated, occurring in the first and last root positions. Module 4 explains that its inflection combines behaviour from the assimilated and defective verb classes.",
       "source": [
-        "Sarf Module 2"
+        "Sarf Module 2",
+        "Sarf Module 4"
       ]
     },
     {
@@ -268,9 +270,10 @@
       "arabic": "اللَّفِيفُ الْمَقْرُونُ",
       "english": "Adjacent lafīf",
       "section": "Weak Verbs",
-      "summary": "A lafīf verb whose two weak radicals are next to one another.",
+      "summary": "A lafīf verb whose two weak radicals are adjacent, occurring next to one another in the root.",
       "source": [
-        "Sarf Module 2"
+        "Sarf Module 2",
+        "Sarf Module 4"
       ]
     },
     {
@@ -278,9 +281,10 @@
       "arabic": "الْمَهْمُوزُ",
       "english": "Hamzated verb",
       "section": "Other Verb Classes",
-      "summary": "A verb containing hamzah as the first, middle or final radical.",
+      "summary": "A verb containing hamzah as one of its root radicals. Module 4 classifies it according to whether hamzah is the first, middle or final radical and reviews the main spelling and substitution rules.",
       "source": [
-        "Sarf Module 2"
+        "Sarf Module 2",
+        "Sarf Module 4"
       ]
     },
     {
@@ -288,9 +292,10 @@
       "arabic": "الْمُضَاعَفُ",
       "english": "Doubled verb",
       "section": "Other Verb Classes",
-      "summary": "A verb containing repeated identical radicals; Module 2 distinguishes triliteral and quadriliteral doubled types.",
+      "summary": "A verb containing repeated identical root radicals. Module 4 develops the doubled verb in detail and explains the changes that occur because of doubling, especially idghām.",
       "source": [
-        "Sarf Module 2"
+        "Sarf Module 2",
+        "Sarf Module 4"
       ]
     },
     {
@@ -447,6 +452,86 @@
       "summary": "Module 2 gives three derived quadriliteral forms, again distinguished by their patterns and hamzat al-waṣl behaviour.",
       "source": [
         "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-041",
+      "arabic": "الْإِدْغَامُ",
+      "english": "Idghām — merging",
+      "section": "Doubled Verb",
+      "summary": "The merging of two letters in pronunciation. Module 4 identifies idghām as the most common change in doubled verbs when the repeated letters are brought together.",
+      "source": [
+        "Sarf Module 4"
+      ]
+    },
+    {
+      "id": "sarf-042",
+      "arabic": "الْمُدْغَمُ",
+      "english": "Mudgham — merged letter",
+      "section": "Doubled Verb",
+      "summary": "In an idghām, the first of the two letters being joined is called the mudgham.",
+      "source": [
+        "Sarf Module 4"
+      ]
+    },
+    {
+      "id": "sarf-043",
+      "arabic": "الْمُدْغَمُ فِيهِ",
+      "english": "Mudgham fīh — receiving letter",
+      "section": "Doubled Verb",
+      "summary": "In an idghām, the second letter into which the first is merged is called the mudgham fīh.",
+      "source": [
+        "Sarf Module 4"
+      ]
+    },
+    {
+      "id": "sarf-044",
+      "arabic": "مَهْمُوزُ الْفَاءِ",
+      "english": "Hamzated first radical",
+      "section": "Hamzated Verb",
+      "summary": "A hamzated verb whose hamzah is the first root radical (فَاءُ الْكَلِمَةِ).",
+      "source": [
+        "Sarf Module 4"
+      ]
+    },
+    {
+      "id": "sarf-045",
+      "arabic": "مَهْمُوزُ الْعَيْنِ",
+      "english": "Hamzated middle radical",
+      "section": "Hamzated Verb",
+      "summary": "A hamzated verb whose hamzah is the middle root radical (عَيْنُ الْكَلِمَةِ).",
+      "source": [
+        "Sarf Module 4"
+      ]
+    },
+    {
+      "id": "sarf-046",
+      "arabic": "مَهْمُوزُ اللَّامِ",
+      "english": "Hamzated final radical",
+      "section": "Hamzated Verb",
+      "summary": "A hamzated verb whose hamzah is the final root radical (لَامُ الْكَلِمَةِ).",
+      "source": [
+        "Sarf Module 4"
+      ]
+    },
+    {
+      "id": "sarf-047",
+      "arabic": "رَسْمُ الْهَمْزَةِ",
+      "english": "Writing the hamzah",
+      "section": "Hamzated Verb",
+      "summary": "Module 4 reviews when hamzah is written independently or on alif, wāw or yāʾ according to the surrounding vowels.",
+      "source": [
+        "Sarf Module 4"
+      ]
+    },
+    {
+      "id": "sarf-048",
+      "arabic": "إِبْدَالُ الْهَمْزَةِ",
+      "english": "Substitution of hamzah",
+      "section": "Hamzated Verb",
+      "summary": "Module 4 explains that a sākin hamzah may change to a weak letter compatible with the vowel on the preceding letter.",
+      "source": [
+        "Sarf Module 4"
       ]
     }
   ]
