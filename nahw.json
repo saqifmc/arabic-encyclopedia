@@ -5,7 +5,7 @@
       "arabic": "الْمُبْتَدَأُ وَالْخَبَرُ",
       "english": "Mubtadaʾ and Khabar",
       "topic": "Nominal Sentence",
-      "summary": "The mubtadaʾ is the subject/topic of a nominal sentence and the khabar gives information about it.",
+      "summary": "The mubtadaʾ is the subject or topic of a nominal sentence, and the khabar gives information about it.",
       "example": "زَيْدٌ طَالِبٌ.",
       "example_en": "Zayd is a student.",
       "status": "Not Started"
@@ -13,9 +13,9 @@
     {
       "id": "nahw-2",
       "arabic": "الْفَاعِلُ",
-      "english": "The doer / subject of a verb",
+      "english": "Fāʿil — the doer",
       "topic": "Verbal Sentence",
-      "summary": "The fāʿil is the doer of the action and is normally marfūʿ.",
+      "summary": "The fāʿil is the doer of the action in a verbal sentence and is normally marfūʿ.",
       "example": "كَتَبَ الطَّالِبُ الدَّرْسَ.",
       "example_en": "The student wrote the lesson.",
       "status": "Not Started"
@@ -23,7 +23,7 @@
     {
       "id": "nahw-3",
       "arabic": "الْمَفْعُولُ بِهِ",
-      "english": "Direct object",
+      "english": "Mafʿūl bihi — direct object",
       "topic": "Verbal Sentence",
       "summary": "The mafʿūl bihi is the person or thing directly affected by the verb and is normally manṣūb.",
       "example": "قَرَأَ الطَّالِبُ الْكِتَابَ.",
@@ -33,11 +33,155 @@
     {
       "id": "nahw-4",
       "arabic": "الْحَالُ",
-      "english": "Ḥāl",
+      "english": "Ḥāl — state or condition",
       "topic": "Case / Description",
-      "summary": "Ḥāl describes the state or condition of a person or thing while an action takes place.",
+      "summary": "Ḥāl describes the state or condition of someone or something while an action takes place and is normally manṣūb.",
       "example": "صَامَ زَيْدٌ صَابِرًا.",
       "example_en": "Zayd fasted patiently.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-1",
+      "arabic": "النَّحْوُ",
+      "english": "Naḥw",
+      "topic": "Key Terms",
+      "summary": "The study of how words function together in sentences, including case endings and grammatical relationships.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-2",
+      "arabic": "الْإِعْرَابُ",
+      "english": "Iʿrāb",
+      "topic": "Key Terms",
+      "summary": "Showing the grammatical state of a word, usually through its ending: marfūʿ, manṣūb, majrūr, or majzūm.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-3",
+      "arabic": "مَرْفُوعٌ",
+      "english": "Marfūʿ",
+      "topic": "Key Terms",
+      "summary": "The nominative grammatical state. A ḍammah is one common sign of rafʿ.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-4",
+      "arabic": "مَنْصُوبٌ",
+      "english": "Manṣūb",
+      "topic": "Key Terms",
+      "summary": "The accusative grammatical state. A fatḥah is one common sign of naṣb.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-5",
+      "arabic": "مَجْرُورٌ",
+      "english": "Majrūr",
+      "topic": "Key Terms",
+      "summary": "The genitive grammatical state used with nouns, often after a preposition or as a muḍāf ilayh. A kasrah is one common sign.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-6",
+      "arabic": "مَجْزُومٌ",
+      "english": "Majzūm",
+      "topic": "Key Terms",
+      "summary": "The jussive grammatical state used with present-tense verbs after certain particles. Sukūn is one common sign.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-7",
+      "arabic": "مَعْرِفَةٌ",
+      "english": "Maʿrifah — definite",
+      "topic": "Key Terms",
+      "summary": "A definite noun: something specific or already identified, such as a proper name or a noun with ال.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-8",
+      "arabic": "نَكِرَةٌ",
+      "english": "Nakirah — indefinite",
+      "topic": "Key Terms",
+      "summary": "An indefinite noun referring to a non-specific person or thing, often marked by tanwīn.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-9",
+      "arabic": "الْجُمْلَةُ الِاسْمِيَّةُ",
+      "english": "Nominal sentence",
+      "topic": "Key Terms",
+      "summary": "A sentence that begins with a noun or noun-like element, commonly built from a mubtadaʾ and khabar.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-10",
+      "arabic": "الْجُمْلَةُ الْفِعْلِيَّةُ",
+      "english": "Verbal sentence",
+      "topic": "Key Terms",
+      "summary": "A sentence that begins with a verb and commonly contains a verb, a fāʿil, and sometimes a mafʿūl bihi.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-11",
+      "arabic": "الْمُضَافُ",
+      "english": "Muḍāf",
+      "topic": "Key Terms",
+      "summary": "The first noun in an iḍāfah construction. It is linked to the noun after it and normally does not take tanwīn.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-12",
+      "arabic": "الْمُضَافُ إِلَيْهِ",
+      "english": "Muḍāf ilayh",
+      "topic": "Key Terms",
+      "summary": "The second noun in an iḍāfah construction. It is always majrūr.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-13",
+      "arabic": "النَّعْتُ",
+      "english": "Naʿt — adjective",
+      "topic": "Key Terms",
+      "summary": "An adjective that describes a noun and follows it in definiteness, gender, number, and grammatical case.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-14",
+      "arabic": "الْمَنْعُوتُ",
+      "english": "Manʿūt — described noun",
+      "topic": "Key Terms",
+      "summary": "The noun being described by a naʿt.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-15",
+      "arabic": "حَرْفُ الْجَرِّ",
+      "english": "Ḥarf al-jarr — preposition",
+      "topic": "Key Terms",
+      "summary": "A preposition such as فِي، مِنْ، إِلَى، عَلَى. The noun after it becomes majrūr.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-16",
+      "arabic": "الْجَارُّ وَالْمَجْرُورُ",
+      "english": "Jārr wa majrūr",
+      "topic": "Key Terms",
+      "summary": "A preposition together with the majrūr noun that follows it.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-17",
+      "arabic": "الضَّمِيرُ",
+      "english": "Ḍamīr — pronoun",
+      "topic": "Key Terms",
+      "summary": "A pronoun that stands in place of a noun, such as هُوَ، هِيَ، أَنَا, or an attached pronoun.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-term-18",
+      "arabic": "الْعَامِلُ",
+      "english": "ʿĀmil — grammatical governor",
+      "topic": "Key Terms",
+      "summary": "A word or construction that causes another word to take a particular grammatical state or ending.",
       "status": "Not Started"
     }
   ]
