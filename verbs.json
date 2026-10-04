@@ -829,13 +829,19 @@
       "prohibition": "لَا تُروُ",
       "masdar": "الروايةُ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Defective Verb Vocabulary"
+        "Defective Verb Vocabulary",
+        "Complex Verb Vocabulary — Form I"
       ],
       "topic": "اللَّفِيفُ",
-      "type": "Verb"
+      "type": "Verb",
+      "also_classified_as": [
+        "اللَّفِيفُ الْمَقْرُونُ"
+      ],
+      "active_participle": "رَاوٍ"
     },
     {
       "id": "verb-sarf-039",
@@ -1072,13 +1078,19 @@
       "prohibition": "لَا تُشوُ",
       "masdar": "الشوي",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Defective Verb Vocabulary"
+        "Defective Verb Vocabulary",
+        "Complex Verb Vocabulary — Form I"
       ],
       "topic": "اللَّفِيفُ",
-      "type": "Verb"
+      "type": "Verb",
+      "also_classified_as": [
+        "اللَّفِيفُ الْمَقْرُونُ"
+      ],
+      "active_participle": "شَاوٍ"
     },
     {
       "id": "verb-sarf-050",
@@ -1271,13 +1283,19 @@
       "prohibition": "لَا تُطْوُ",
       "masdar": "الطيُ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Defective Verb Vocabulary"
+        "Defective Verb Vocabulary",
+        "Complex Verb Vocabulary — Form I"
       ],
       "topic": "اللَّفِيفُ",
-      "type": "Verb"
+      "type": "Verb",
+      "also_classified_as": [
+        "اللَّفِيفُ الْمَقْرُونُ"
+      ],
+      "active_participle": "طَاوٍ"
     },
     {
       "id": "verb-sarf-059",
@@ -1536,13 +1554,19 @@
       "prohibition": "لَا تُغوُ",
       "masdar": "الْغَيُ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Defective Verb Vocabulary"
+        "Defective Verb Vocabulary",
+        "Complex Verb Vocabulary — Form I"
       ],
       "topic": "اللَّفِيفُ",
-      "type": "Verb"
+      "type": "Verb",
+      "also_classified_as": [
+        "اللَّفِيفُ الْمَقْرُونُ"
+      ],
+      "active_participle": "غَاوٍ"
     },
     {
       "id": "verb-sarf-071",
@@ -1668,13 +1692,17 @@
       "prohibition": "لَا تُقوُ",
       "masdar": "الْقوةُ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Defective Verb Vocabulary"
+        "Defective Verb Vocabulary",
+        "Complex Verb Vocabulary — Form I"
       ],
       "topic": "النَّاقِصُ",
-      "type": "Verb"
+      "type": "Verb",
+      "subtype": "اللَّفِيفُ الْمَقْرُونُ",
+      "active_participle": "قَاوٍ"
     },
     {
       "id": "verb-sarf-077",
@@ -1757,13 +1785,19 @@
       "prohibition": "لَا تُكُْوُ",
       "masdar": "الكَوي",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Defective Verb Vocabulary"
+        "Defective Verb Vocabulary",
+        "Complex Verb Vocabulary — Form I"
       ],
       "topic": "اللَّفِيفُ",
-      "type": "Verb"
+      "type": "Verb",
+      "also_classified_as": [
+        "اللَّفِيفُ الْمَقْرُونُ"
+      ],
+      "active_participle": "كَاوٍ"
     },
     {
       "id": "verb-sarf-081",
@@ -2352,13 +2386,19 @@
       "prohibition": "لَا تَُفُ",
       "masdar": "الْوفَاءُ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Defective Verb Vocabulary"
+        "Defective Verb Vocabulary",
+        "Complex Verb Vocabulary — Form I"
       ],
       "topic": "اللَّفِيفُ",
-      "type": "Verb"
+      "type": "Verb",
+      "also_classified_as": [
+        "اللَّفِيفُ الْمَفْرُوقُ"
+      ],
+      "active_participle": "وَافٍ"
     },
     {
       "id": "verb-sarf-108",
@@ -2419,13 +2459,19 @@
       "prohibition": "لَا تُقُ",
       "masdar": "الْوقايةُ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Defective Verb Vocabulary"
+        "Defective Verb Vocabulary",
+        "Complex Verb Vocabulary — Form I"
       ],
       "topic": "اللَّفِيفُ",
-      "type": "Verb"
+      "type": "Verb",
+      "also_classified_as": [
+        "اللَّفِيفُ الْمَفْرُوقُ"
+      ],
+      "active_participle": "وَاقٍ"
     },
     {
       "id": "verb-sarf-111",
@@ -6650,13 +6696,16 @@
       "prohibition": "لَا تَتحِدْ",
       "masdar": "الاِتَِّاَدَ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Assimilated Verb Vocabulary"
+        "Assimilated Verb Vocabulary",
+        "Doubled Verb Vocabulary — Form VIII"
       ],
       "topic": "الْمِثَالُ",
-      "type": "Verb"
+      "type": "Verb",
+      "active_participle": "مُتَّحِدٌ"
     },
     {
       "id": "verb-sarf-269",
@@ -6677,13 +6726,16 @@
       "prohibition": "لَا تَتسِعْ",
       "masdar": "الاِتِساعَ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Assimilated Verb Vocabulary"
+        "Assimilated Verb Vocabulary",
+        "Doubled Verb Vocabulary — Form VIII"
       ],
       "topic": "الْمِثَالُ",
-      "type": "Verb"
+      "type": "Verb",
+      "active_participle": "مُتَّسِعٌ"
     },
     {
       "id": "verb-sarf-270",
@@ -6704,13 +6756,16 @@
       "prohibition": "لَا تَتصِفْ",
       "masdar": "الاِتِصافَ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Assimilated Verb Vocabulary"
+        "Assimilated Verb Vocabulary",
+        "Doubled Verb Vocabulary — Form VIII"
       ],
       "topic": "الْمِثَالُ",
-      "type": "Verb"
+      "type": "Verb",
+      "active_participle": "مُتَّصِفٌ"
     },
     {
       "id": "verb-sarf-271",
@@ -6731,13 +6786,16 @@
       "prohibition": "لَا تَتصِلْ",
       "masdar": "الاِتِصالَ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Assimilated Verb Vocabulary"
+        "Assimilated Verb Vocabulary",
+        "Doubled Verb Vocabulary — Form VIII"
       ],
       "topic": "الْمِثَالُ",
-      "type": "Verb"
+      "type": "Verb",
+      "active_participle": "مُتَّصِلٌ"
     },
     {
       "id": "verb-sarf-272",
@@ -6758,13 +6816,16 @@
       "prohibition": "لَا تَتضِحْ",
       "masdar": "الاِتِضاحَ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Assimilated Verb Vocabulary"
+        "Assimilated Verb Vocabulary",
+        "Doubled Verb Vocabulary — Form VIII"
       ],
       "topic": "الْمِثَالُ",
-      "type": "Verb"
+      "type": "Verb",
+      "active_participle": "مُتَّضِحٌ"
     },
     {
       "id": "verb-sarf-273",
@@ -6785,13 +6846,16 @@
       "prohibition": "لَا تَتفِقْ",
       "masdar": "الاِتِفَاقَ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Assimilated Verb Vocabulary"
+        "Assimilated Verb Vocabulary",
+        "Doubled Verb Vocabulary — Form VIII"
       ],
       "topic": "الْمِثَالُ",
-      "type": "Verb"
+      "type": "Verb",
+      "active_participle": "مُتَّفِقٌ"
     },
     {
       "id": "verb-sarf-274",
@@ -6812,13 +6876,17 @@
       "prohibition": "لَا تَُتقُ",
       "masdar": "الاتقَاءُ",
       "source": [
-        "Sarf Module 3"
+        "Sarf Module 3",
+        "Sarf Module 4"
       ],
       "source_section": [
-        "Defective Verb Vocabulary"
+        "Defective Verb Vocabulary",
+        "Complex Verb Vocabulary — Form VIII"
       ],
       "topic": "النَّاقِصُ",
-      "type": "Verb"
+      "type": "Verb",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "active_participle": "مُتَّقٍ"
     },
     {
       "id": "verb-sarf-275",
@@ -7970,6 +8038,3436 @@
       ],
       "topic": "الصَّحِيحُ",
       "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-318",
+      "arabic": "صَدَّ",
+      "english": "to deter / prevent / discourage",
+      "root": "ص د د",
+      "past": "صَدَّ",
+      "present": "يَصُدُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "صُدَّ",
+      "prohibition": "لَا تَصُدَّ",
+      "active_participle": "صَادٌّ",
+      "masdar": "الصَّدُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-319",
+      "arabic": "سَبَّ",
+      "english": "to swear at / verbally abuse / insult",
+      "root": "س ب ب",
+      "past": "سَبَّ",
+      "present": "يَسُبُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "سُبَّ",
+      "prohibition": "لَا تَسُبَّ",
+      "active_participle": "سَابٌّ",
+      "masdar": "السَّبُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-320",
+      "arabic": "قَصَّ",
+      "english": "to cut / follow tracks / narrate",
+      "root": "ق ص ص",
+      "past": "قَصَّ",
+      "present": "يَقُصُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "قُصَّ",
+      "prohibition": "لَا تَقُصَّ",
+      "active_participle": "قَاصٌّ",
+      "masdar": "الْقَصُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-321",
+      "arabic": "جَرَّ",
+      "english": "to drag",
+      "root": "ج ر ر",
+      "past": "جَرَّ",
+      "present": "يَجُرُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "جُرَّ",
+      "prohibition": "لَا تَجُرَّ",
+      "active_participle": "جَارٌّ",
+      "masdar": "الْجَرُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-322",
+      "arabic": "حَطَّ",
+      "english": "to put down / take down",
+      "root": "ح ط ط",
+      "past": "حَطَّ",
+      "present": "يَحُطُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "حُطَّ",
+      "prohibition": "لَا تَحُطَّ",
+      "active_participle": "حَاطٌّ",
+      "masdar": "الْحَطُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-323",
+      "arabic": "رَدَّ",
+      "english": "to send back / return",
+      "root": "ر د د",
+      "past": "رَدَّ",
+      "present": "يَرُدُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "رُدَّ",
+      "prohibition": "لَا تَرُدَّ",
+      "active_participle": "رَادٌّ",
+      "masdar": "الرَّدُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-324",
+      "arabic": "حَكَّ",
+      "english": "to scratch / rub harshly",
+      "root": "ح ك ك",
+      "past": "حَكَّ",
+      "present": "يَحُكُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "حُكَّ",
+      "prohibition": "لَا تَحُكَّ",
+      "active_participle": "حَاكٌّ",
+      "masdar": "الْحَكُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-325",
+      "arabic": "شَمَّ",
+      "english": "to smell",
+      "root": "ش م م",
+      "past": "شَمَّ",
+      "present": "يَشُمُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "شُمَّ",
+      "prohibition": "لَا تَشُمَّ",
+      "active_participle": "شَامٌّ",
+      "masdar": "الشَّمُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-326",
+      "arabic": "مَرَّ",
+      "english": "to pass",
+      "root": "م ر ر",
+      "past": "مَرَّ",
+      "present": "يَمُرُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "مُرَّ",
+      "prohibition": "لَا تَمُرَّ",
+      "active_participle": "مَارٌّ",
+      "masdar": "الْمُرُورُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-327",
+      "arabic": "سَرَّ",
+      "english": "to make happy / cheer",
+      "root": "س ر ر",
+      "past": "سَرَّ",
+      "present": "يَسُرُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "سُرَّ",
+      "prohibition": "لَا تَسُرَّ",
+      "active_participle": "سَارٌّ",
+      "masdar": "الْمَسَرَّةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-328",
+      "arabic": "صَفَّ",
+      "english": "to arrange in rows / line up",
+      "root": "ص ف ف",
+      "past": "صَفَّ",
+      "present": "يَصُفُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "صُفَّ",
+      "prohibition": "لَا تَصُفَّ",
+      "active_participle": "صَافٌّ",
+      "masdar": "الصَّفُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-329",
+      "arabic": "حَلَّ",
+      "english": "to untie / unravel",
+      "root": "ح ل ل",
+      "past": "حَلَّ",
+      "present": "يَحُلُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "حُلَّ",
+      "prohibition": "لَا تَحُلَّ",
+      "active_participle": "حَالٌّ",
+      "masdar": "الْحَلُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-330",
+      "arabic": "دَعَّ",
+      "english": "to rebuff / turn down",
+      "root": "د ع ع",
+      "past": "دَعَّ",
+      "present": "يَدُعُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "دُعَّ",
+      "prohibition": "لَا تَدُعَّ",
+      "active_participle": "دَاعٌّ",
+      "masdar": "الدَّعُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-331",
+      "arabic": "دَقَّ",
+      "english": "to crush / grind / knock / hammer",
+      "root": "د ق ق",
+      "past": "دَقَّ",
+      "present": "يَدُقُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "دُقَّ",
+      "prohibition": "لَا تَدُقَّ",
+      "active_participle": "دَاقٌّ",
+      "masdar": "الدَّقُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-332",
+      "arabic": "ذَمَّ",
+      "english": "to dispraise / criticise",
+      "root": "ذ م م",
+      "past": "ذَمَّ",
+      "present": "يَذُمُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "ذُمَّ",
+      "prohibition": "لَا تَذُمَّ",
+      "active_participle": "ذَامٌّ",
+      "masdar": "الذَّمُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-333",
+      "arabic": "رَشَّ",
+      "english": "to sprinkle",
+      "root": "ر ش ش",
+      "past": "رَشَّ",
+      "present": "يَرُشُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "رُشَّ",
+      "prohibition": "لَا تَرُشَّ",
+      "active_participle": "رَاشٌّ",
+      "masdar": "الرَّشُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-334",
+      "arabic": "مَدَّ",
+      "english": "to extend / stretch / aid / supply",
+      "root": "م د د",
+      "past": "مَدَّ",
+      "present": "يَمُدُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "مُدَّ",
+      "prohibition": "لَا تَمُدَّ",
+      "active_participle": "مَادٌّ",
+      "masdar": "الْمَدُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-335",
+      "arabic": "بَثَّ",
+      "english": "to spread",
+      "root": "ب ث ث",
+      "past": "بَثَّ",
+      "present": "يَبُثُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "بُثَّ",
+      "prohibition": "لَا تَبُثَّ",
+      "active_participle": "بَاثٌّ",
+      "masdar": "الْبَثُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-336",
+      "arabic": "كَفَّ",
+      "english": "to desist / refrain",
+      "root": "ك ف ف",
+      "past": "كَفَّ",
+      "present": "يَكُفُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "كُفَّ",
+      "prohibition": "لَا تَكُفَّ",
+      "active_participle": "كَافٌّ",
+      "masdar": "الْكَفُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-337",
+      "arabic": "سَدَّ",
+      "english": "to close up / block up",
+      "root": "س د د",
+      "past": "سَدَّ",
+      "present": "يَسُدُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "سُدَّ",
+      "prohibition": "لَا تَسُدَّ",
+      "active_participle": "سَادٌّ",
+      "masdar": "السَّدُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-338",
+      "arabic": "سَلَّ",
+      "english": "to pull out / remove gently / unsheathe",
+      "root": "س ل ل",
+      "past": "سَلَّ",
+      "present": "يَسُلُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "سُلَّ",
+      "prohibition": "لَا تَسُلَّ",
+      "active_participle": "سَالٌّ",
+      "masdar": "السَّلُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-339",
+      "arabic": "شَجَّ",
+      "english": "to fracture",
+      "root": "ش ج ج",
+      "past": "شَجَّ",
+      "present": "يَشُجُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "شُجَّ",
+      "prohibition": "لَا تَشُجَّ",
+      "active_participle": "شَاجٌّ",
+      "masdar": "الشَّجُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-340",
+      "arabic": "شَدَّ",
+      "english": "to tie / pull / attract",
+      "root": "ش د د",
+      "past": "شَدَّ",
+      "present": "يَشُدُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "شُدَّ",
+      "prohibition": "لَا تَشُدَّ",
+      "active_participle": "شَادٌّ",
+      "masdar": "الشَّدُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-341",
+      "arabic": "شَقَّ",
+      "english": "to fatigue / trouble",
+      "root": "ش ق ق",
+      "past": "شَقَّ",
+      "present": "يَشُقُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "شُقَّ",
+      "prohibition": "لَا تَشُقَّ",
+      "active_participle": "شَاقٌّ",
+      "masdar": "الشَّقُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-342",
+      "arabic": "صَبَّ",
+      "english": "to pour",
+      "root": "ص ب ب",
+      "past": "صَبَّ",
+      "present": "يَصُبُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "صُبَّ",
+      "prohibition": "لَا تَصُبَّ",
+      "active_participle": "صَابٌّ",
+      "masdar": "الصَّبُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-343",
+      "arabic": "ضَمَّ",
+      "english": "to bring together / join",
+      "root": "ض م م",
+      "past": "ضَمَّ",
+      "present": "يَضُمُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "ضُمَّ",
+      "prohibition": "لَا تَضُمَّ",
+      "active_participle": "ضَامٌّ",
+      "masdar": "الضَّمُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-344",
+      "arabic": "عَدَّ",
+      "english": "to count / reckon",
+      "root": "ع د د",
+      "past": "عَدَّ",
+      "present": "يَعُدُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "عُدَّ",
+      "prohibition": "لَا تَعُدَّ",
+      "active_participle": "عَادٌّ",
+      "masdar": "الْعَدُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-345",
+      "arabic": "عَضَّ",
+      "english": "to bite into",
+      "root": "ع ض ض",
+      "past": "عَضَّ",
+      "present": "يَعَضُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "عَضَّ",
+      "prohibition": "لَا تَعَضَّ",
+      "active_participle": "عَاضٌّ",
+      "masdar": "الْعَضُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-346",
+      "arabic": "غَضَّ",
+      "english": "to lower one's eyes / cast down",
+      "root": "غ ض ض",
+      "past": "غَضَّ",
+      "present": "يَغُضُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "غُضَّ",
+      "prohibition": "لَا تَغُضَّ",
+      "active_participle": "غَاضٌّ",
+      "masdar": "الْغَضُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-347",
+      "arabic": "لَفَّ",
+      "english": "to wrap up",
+      "root": "ل ف ف",
+      "past": "لَفَّ",
+      "present": "يَلُفُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "لُفَّ",
+      "prohibition": "لَا تَلُفَّ",
+      "active_participle": "لَافٌّ",
+      "masdar": "اللَّفُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-348",
+      "arabic": "مَصَّ",
+      "english": "to suck",
+      "root": "م ص ص",
+      "past": "مَصَّ",
+      "present": "يَمُصُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "مُصَّ",
+      "prohibition": "لَا تَمُصَّ",
+      "active_participle": "مَاصٌّ",
+      "masdar": "الْمَصُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-349",
+      "arabic": "مَنَّ",
+      "english": "to be kind / generous",
+      "root": "م ن ن",
+      "past": "مَنَّ",
+      "present": "يَمُنُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "مُنَّ",
+      "prohibition": "لَا تَمُنَّ",
+      "active_participle": "مَانٌّ",
+      "masdar": "الْمَنُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-350",
+      "arabic": "هَشَّ",
+      "english": "to be smiley / wave the hands to push something away",
+      "root": "ه ش ش",
+      "past": "هَشَّ",
+      "present": "يَهُشُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "هُشَّ",
+      "prohibition": "لَا تَهُشَّ",
+      "active_participle": "هَاشٌّ",
+      "masdar": "الْهَشُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-351",
+      "arabic": "ضَلَّ",
+      "english": "to go astray",
+      "root": "ض ل ل",
+      "past": "ضَلَّ",
+      "present": "يَضِلُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "ضِلَّ",
+      "prohibition": "لَا تَضِلَّ",
+      "active_participle": "ضَالٌّ",
+      "masdar": "الضَّلَالُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-352",
+      "arabic": "قَلَّ",
+      "english": "to become little / small / few",
+      "root": "ق ل ل",
+      "past": "قَلَّ",
+      "present": "يَقِلُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "قِلَّ",
+      "prohibition": "لَا تَقِلَّ",
+      "active_participle": "قَالٌّ",
+      "masdar": "الْقِلَّةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-353",
+      "arabic": "تَمَّ",
+      "english": "to be complete",
+      "root": "ت م م",
+      "past": "تَمَّ",
+      "present": "يَتِمُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "تِمَّ",
+      "prohibition": "لَا تَتِمَّ",
+      "active_participle": "تَامٌّ",
+      "masdar": "التَّمَامُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-354",
+      "arabic": "زَلَّ",
+      "english": "to slip",
+      "root": "ز ل ل",
+      "past": "زَلَّ",
+      "present": "يَزِلُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "زِلَّ",
+      "prohibition": "لَا تَزِلَّ",
+      "active_participle": "زَالٌّ",
+      "masdar": "الزَّلَّةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-355",
+      "arabic": "جَفَّ",
+      "english": "to become dry / dry out",
+      "root": "ج ف ف",
+      "past": "جَفَّ",
+      "present": "يَجِفُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "جِفَّ",
+      "prohibition": "لَا تَجِفَّ",
+      "active_participle": "جَافٌّ",
+      "masdar": "الْجَفَافُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-356",
+      "arabic": "فَرَّ",
+      "english": "to flee",
+      "root": "ف ر ر",
+      "past": "فَرَّ",
+      "present": "يَفِرُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "فِرَّ",
+      "prohibition": "لَا تَفِرَّ",
+      "active_participle": "فَارٌّ",
+      "masdar": "الْفِرَارُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-357",
+      "arabic": "ضَجَّ",
+      "english": "to be noisy / clamour",
+      "root": "ض ج ج",
+      "past": "ضَجَّ",
+      "present": "يَضِجُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "ضِجَّ",
+      "prohibition": "لَا تَضِجَّ",
+      "active_participle": "ضَاجٌّ",
+      "masdar": "الضَّجِيجُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-358",
+      "arabic": "بَشَّ",
+      "english": "to be cheerful",
+      "root": "ب ش ش",
+      "past": "بَشَّ",
+      "present": "يَبَشُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "بَشَّ",
+      "prohibition": "لَا تَبَشَّ",
+      "active_participle": "بَاشٌّ",
+      "masdar": "الْبَشَاشَةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-359",
+      "arabic": "لَذَّ",
+      "english": "to gratify the senses / be tasty",
+      "root": "ل ذ ذ",
+      "past": "لَذَّ",
+      "present": "يَلَذُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "لَذَّ",
+      "prohibition": "لَا تَلَذَّ",
+      "active_participle": "لَاذٌّ",
+      "masdar": "اللَّذَّةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-360",
+      "arabic": "مَسَّ",
+      "english": "to touch",
+      "root": "م س س",
+      "past": "مَسَّ",
+      "present": "يَمَسُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "مَسَّ",
+      "prohibition": "لَا تَمَسَّ",
+      "active_participle": "مَاسٌّ",
+      "masdar": "الْمَسُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-361",
+      "arabic": "وَدَّ",
+      "english": "to love / wish / be kind",
+      "root": "و د د",
+      "past": "وَدَّ",
+      "present": "يَوَدُّ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "وَدَّ",
+      "prohibition": "لَا تَوَدَّ",
+      "active_participle": "وَادٌّ",
+      "masdar": "الْوُدُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-362",
+      "arabic": "خَفَّفَ",
+      "english": "to lighten / lessen",
+      "root": "خ ف ف",
+      "past": "خَفَّفَ",
+      "present": "يُخَفِّفُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "خَفِّفْ",
+      "prohibition": "لَا تُخَفِّفْ",
+      "active_participle": "مُخَفِّفٌ",
+      "masdar": "التَّخْفِيفُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-363",
+      "arabic": "تَمَّمَ",
+      "english": "to complete / finish",
+      "root": "ت م م",
+      "past": "تَمَّمَ",
+      "present": "يُتَمِّمُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "تَمِّمْ",
+      "prohibition": "لَا تُتَمِّمْ",
+      "active_participle": "مُتَمِّمٌ",
+      "masdar": "التَّتْمِيمُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-364",
+      "arabic": "طَبَّبَ",
+      "english": "to treat an ill person",
+      "root": "ط ب ب",
+      "past": "طَبَّبَ",
+      "present": "يُطَبِّبُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "طَبِّبْ",
+      "prohibition": "لَا تُطَبِّبْ",
+      "active_participle": "مُطَبِّبٌ",
+      "masdar": "التَّطْبِيبُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-365",
+      "arabic": "قَرَّرَ",
+      "english": "to decide",
+      "root": "ق ر ر",
+      "past": "قَرَّرَ",
+      "present": "يُقَرِّرُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "قَرِّرْ",
+      "prohibition": "لَا تُقَرِّرْ",
+      "active_participle": "مُقَرِّرٌ",
+      "masdar": "التَّقْرِيرُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-366",
+      "arabic": "قَلَّلَ",
+      "english": "to make little / decrease / reduce",
+      "root": "ق ل ل",
+      "past": "قَلَّلَ",
+      "present": "يُقَلِّلُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "قَلِّلْ",
+      "prohibition": "لَا تُقَلِّلْ",
+      "active_participle": "مُقَلِّلٌ",
+      "masdar": "التَّقْلِيلُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-367",
+      "arabic": "ذَلَّلَ",
+      "english": "to humiliate / overcome",
+      "root": "ذ ل ل",
+      "past": "ذَلَّلَ",
+      "present": "يُذَلِّلُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "ذَلِّلْ",
+      "prohibition": "لَا تُذَلِّلْ",
+      "active_participle": "مُذَلِّلٌ",
+      "masdar": "التَّذْلِيلُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-368",
+      "arabic": "صَفَّفَ",
+      "english": "to arrange together / dress hair",
+      "root": "ص ف ف",
+      "past": "صَفَّفَ",
+      "present": "يُصَفِّفُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "صَفِّفْ",
+      "prohibition": "لَا تُصَفِّفْ",
+      "active_participle": "مُصَفِّفٌ",
+      "masdar": "التَّصْفِيفُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-369",
+      "arabic": "ضَلَّلَ",
+      "english": "to mislead / lead astray",
+      "root": "ض ل ل",
+      "past": "ضَلَّلَ",
+      "present": "يُضَلِّلُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "ضَلِّلْ",
+      "prohibition": "لَا تُضَلِّلْ",
+      "active_participle": "مُضَلِّلٌ",
+      "masdar": "التَّضْلِيلُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-370",
+      "arabic": "كَرَّرَ",
+      "english": "to repeat",
+      "root": "ك ر ر",
+      "past": "كَرَّرَ",
+      "present": "يُكَرِّرُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "كَرِّرْ",
+      "prohibition": "لَا تُكَرِّرْ",
+      "active_participle": "مُكَرِّرٌ",
+      "masdar": "التَّكْرِيرُ / التَّكْرَارُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-371",
+      "arabic": "جَدَّدَ",
+      "english": "to renew / restore",
+      "root": "ج د د",
+      "past": "جَدَّدَ",
+      "present": "يُجَدِّدُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "جَدِّدْ",
+      "prohibition": "لَا تُجَدِّدْ",
+      "active_participle": "مُجَدِّدٌ",
+      "masdar": "التَّجْدِيدُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-372",
+      "arabic": "حَلَّلَ",
+      "english": "to make lawful / permissible",
+      "root": "ح ل ل",
+      "past": "حَلَّلَ",
+      "present": "يُحَلِّلُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "حَلِّلْ",
+      "prohibition": "لَا تُحَلِّلْ",
+      "active_participle": "مُحَلِّلٌ",
+      "masdar": "التَّحْلِيلُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-373",
+      "arabic": "أَحَبَّ",
+      "english": "to want / wish / like / love",
+      "root": "ح ب ب",
+      "past": "أَحَبَّ",
+      "present": "يُحِبُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَحْبِبْ",
+      "prohibition": "لَا تُحْبِبْ",
+      "active_participle": "مُحِبٌّ",
+      "masdar": "الْإِحْبَابُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-374",
+      "arabic": "أَعَدَّ",
+      "english": "to prepare",
+      "root": "ع د د",
+      "past": "أَعَدَّ",
+      "present": "يُعِدُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَعْدِدْ",
+      "prohibition": "لَا تُعْدِدْ",
+      "active_participle": "مُعِدٌّ",
+      "masdar": "الْإِعْدَادُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-375",
+      "arabic": "أَسَرَّ",
+      "english": "to keep secret / confide",
+      "root": "س ر ر",
+      "past": "أَسَرَّ",
+      "present": "يُسِرُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَسْرِرْ",
+      "prohibition": "لَا تُسْرِرْ",
+      "active_participle": "مُسِرٌّ",
+      "masdar": "الْإِسْرَارُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-376",
+      "arabic": "أَتَمَّ",
+      "english": "to complete / perfect",
+      "root": "ت م م",
+      "past": "أَتَمَّ",
+      "present": "يُتِمُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَتْمِمْ",
+      "prohibition": "لَا تُتْمِمْ",
+      "active_participle": "مُتِمٌّ",
+      "masdar": "الْإِتْمَامُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-377",
+      "arabic": "أَحَسَّ",
+      "english": "to feel",
+      "root": "ح س س",
+      "past": "أَحَسَّ",
+      "present": "يُحِسُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَحْسِسْ",
+      "prohibition": "لَا تُحْسِسْ",
+      "active_participle": "مُحِسٌّ",
+      "masdar": "الْإِحْسَاسُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-378",
+      "arabic": "أَعَزَّ",
+      "english": "to honour",
+      "root": "ع ز ز",
+      "past": "أَعَزَّ",
+      "present": "يُعِزُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَعْزِزْ",
+      "prohibition": "لَا تُعْزِزْ",
+      "active_participle": "مُعِزٌّ",
+      "masdar": "الْإِعْزَازُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-379",
+      "arabic": "أَصَرَّ",
+      "english": "to persist / insist",
+      "root": "ص ر ر",
+      "past": "أَصَرَّ",
+      "present": "يُصِرُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَصْرِرْ",
+      "prohibition": "لَا تُصْرِرْ",
+      "active_participle": "مُصِرٌّ",
+      "masdar": "الْإِصْرَارُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-380",
+      "arabic": "أَذَلَّ",
+      "english": "to disgrace / humiliate",
+      "root": "ذ ل ل",
+      "past": "أَذَلَّ",
+      "present": "يُذِلُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَذْلِلْ",
+      "prohibition": "لَا تُذْلِلْ",
+      "active_participle": "مُذِلٌّ",
+      "masdar": "الْإِذْلَالُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-381",
+      "arabic": "أَضَلَّ",
+      "english": "to mislead",
+      "root": "ض ل ل",
+      "past": "أَضَلَّ",
+      "present": "يُضِلُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَضْلِلْ",
+      "prohibition": "لَا تُضْلِلْ",
+      "active_participle": "مُضِلٌّ",
+      "masdar": "الْإِضْلَالُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-382",
+      "arabic": "أَطَلَّ",
+      "english": "to appear / look from above",
+      "root": "ط ل ل",
+      "past": "أَطَلَّ",
+      "present": "يُطِلُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَطْلِلْ",
+      "prohibition": "لَا تُطْلِلْ",
+      "active_participle": "مُطِلٌّ",
+      "masdar": "الْإِطْلَالُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-383",
+      "arabic": "أَظَلَّ",
+      "english": "to shade",
+      "root": "ظ ل ل",
+      "past": "أَظَلَّ",
+      "present": "يُظِلُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَظْلِلْ",
+      "prohibition": "لَا تُظْلِلْ",
+      "active_participle": "مُظِلٌّ",
+      "masdar": "الْإِظْلَالُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-384",
+      "arabic": "أَكَبَّ",
+      "english": "to devote oneself / be fully engaged",
+      "root": "ك ب ب",
+      "past": "أَكَبَّ",
+      "present": "يُكِبُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَكْبِبْ",
+      "prohibition": "لَا تُكْبِبْ",
+      "active_participle": "مُكِبٌّ",
+      "masdar": "الْإِكْبَابُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-385",
+      "arabic": "أَكَنَّ",
+      "english": "to safely hide / conceal",
+      "root": "ك ن ن",
+      "past": "أَكَنَّ",
+      "present": "يُكِنُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَكْنِنْ",
+      "prohibition": "لَا تُكْنِنْ",
+      "active_participle": "مُكِنٌّ",
+      "masdar": "الْإِكْنَانُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-386",
+      "arabic": "أَمَلَّ",
+      "english": "to be tedious / vex / annoy",
+      "root": "م ل ل",
+      "past": "أَمَلَّ",
+      "present": "يُمِلُّ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "أَمْلِلْ",
+      "prohibition": "لَا تُمِلَّ",
+      "active_participle": "مُمِلٌّ",
+      "masdar": "الْإِمْلَالُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-387",
+      "arabic": "تَحَابَّ",
+      "english": "to love one another",
+      "root": "ح ب ب",
+      "past": "تَحَابَّ",
+      "present": "يَتَحَابُّ",
+      "form": "V",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "تَحَابَّ",
+      "prohibition": "لَا تَتَحَابَّ",
+      "active_participle": "مُتَحَابٌّ",
+      "masdar": "التَّحَابُّ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form V"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-388",
+      "arabic": "تَحَقَّقَ",
+      "english": "to ascertain / happen in reality",
+      "root": "ح ق ق",
+      "past": "تَحَقَّقَ",
+      "present": "يَتَحَقَّقُ",
+      "form": "V",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "تَحَقَّقْ",
+      "prohibition": "لَا تَتَحَقَّقْ",
+      "active_participle": "مُتَحَقِّقٌ",
+      "masdar": "التَّحَقُّقُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form V"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-389",
+      "arabic": "تَرَدَّدَ",
+      "english": "to come and go / frequent / hesitate",
+      "root": "ر د د",
+      "past": "تَرَدَّدَ",
+      "present": "يَتَرَدَّدُ",
+      "form": "V",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "تَرَدَّدْ",
+      "prohibition": "لَا تَتَرَدَّدْ",
+      "active_participle": "مُتَرَدِّدٌ",
+      "masdar": "التَّرَدُّدُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form V"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-390",
+      "arabic": "تَحَرَّرَ",
+      "english": "to liberate oneself",
+      "root": "ح ر ر",
+      "past": "تَحَرَّرَ",
+      "present": "يَتَحَرَّرُ",
+      "form": "V",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "تَحَرَّرْ",
+      "prohibition": "لَا تَتَحَرَّرْ",
+      "active_participle": "مُتَحَرِّرٌ",
+      "masdar": "التَّحَرُّرُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form V"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-391",
+      "arabic": "تَشَتَّتَ",
+      "english": "to break up / scatter",
+      "root": "ش ت ت",
+      "past": "تَشَتَّتَ",
+      "present": "يَتَشَتَّتُ",
+      "form": "V",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "تَشَتَّتْ",
+      "prohibition": "لَا تَتَشَتَّتْ",
+      "active_participle": "مُتَشَتِّتٌ",
+      "masdar": "التَّشَتُّتُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form V"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-392",
+      "arabic": "تَشَدَّدَ",
+      "english": "to be strict",
+      "root": "ش د د",
+      "past": "تَشَدَّدَ",
+      "present": "يَتَشَدَّدُ",
+      "form": "V",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "تَشَدَّدْ",
+      "prohibition": "لَا تَتَشَدَّدْ",
+      "active_participle": "مُتَشَدِّدٌ",
+      "masdar": "التَّشَدُّدُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form V"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-393",
+      "arabic": "تَكَرَّرَ",
+      "english": "to be repeated / reiterated",
+      "root": "ك ر ر",
+      "past": "تَكَرَّرَ",
+      "present": "يَتَكَرَّرُ",
+      "form": "V",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "تَكَرَّرْ",
+      "prohibition": "لَا تَتَكَرَّرْ",
+      "active_participle": "مُتَكَرِّرٌ",
+      "masdar": "التَّكَرُّرُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form V"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-394",
+      "arabic": "اِنْضَمَّ",
+      "english": "to draw together / be unified",
+      "root": "ض م م",
+      "past": "اِنْضَمَّ",
+      "present": "يَنْضَمُّ",
+      "form": "VII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِنْضَمَّ",
+      "prohibition": "لَا تَنْضَمَّ",
+      "active_participle": "مُنْضَمٌّ",
+      "masdar": "الِانْضِمَامُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-395",
+      "arabic": "اِنْفَكَّ",
+      "english": "to be separated / disengage",
+      "root": "ف ك ك",
+      "past": "اِنْفَكَّ",
+      "present": "يَنْفَكُّ",
+      "form": "VII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِنْفَكَّ",
+      "prohibition": "لَا تَنْفَكَّ",
+      "active_participle": "مُنْفَكٌّ",
+      "masdar": "الِانْفِكَاكُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-396",
+      "arabic": "اِنْحَلَّ",
+      "english": "to be untied / dissolved / decadent",
+      "root": "ح ل ل",
+      "past": "اِنْحَلَّ",
+      "present": "يَنْحَلُّ",
+      "form": "VII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِنْحَلَّ",
+      "prohibition": "لَا تَنْحَلَّ",
+      "active_participle": "مُنْحَلٌّ",
+      "masdar": "الِانْحِلَالُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-397",
+      "arabic": "اِنْسَلَّ",
+      "english": "to leave swiftly / sneak out",
+      "root": "س ل ل",
+      "past": "اِنْسَلَّ",
+      "present": "يَنْسَلُّ",
+      "form": "VII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِنْسَلَّ",
+      "prohibition": "لَا تَنْسَلَّ",
+      "active_participle": "مُنْسَلٌّ",
+      "masdar": "الِانْسِلَالُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-398",
+      "arabic": "اِنْقَضَّ",
+      "english": "to physically attack / collapse",
+      "root": "ق ض ض",
+      "past": "اِنْقَضَّ",
+      "present": "يَنْقَضُّ",
+      "form": "VII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِنْقَضَّ",
+      "prohibition": "لَا تَنْقَضَّ",
+      "active_participle": "مُنْقَضٌّ",
+      "masdar": "الِانْقِضَاضُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-399",
+      "arabic": "اِنْشَقَّ",
+      "english": "to crack / burst",
+      "root": "ش ق ق",
+      "past": "اِنْشَقَّ",
+      "present": "يَنْشَقُّ",
+      "form": "VII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِنْشَقَّ",
+      "prohibition": "لَا تَنْشَقَّ",
+      "active_participle": "مُنْشَقٌّ",
+      "masdar": "الِانْشِقَاقُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-400",
+      "arabic": "اِهْتَمَّ",
+      "english": "to feel concern / seriously think",
+      "root": "ه م م",
+      "past": "اِهْتَمَّ",
+      "present": "يَهْتَمُّ",
+      "form": "VIII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِهْتَمَّ",
+      "prohibition": "لَا تَهْتَمَّ",
+      "active_participle": "مُهْتَمٌّ",
+      "masdar": "الِاهْتِمَامُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VIII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-401",
+      "arabic": "اِسْتَنَّ",
+      "english": "to follow the Sunnah",
+      "root": "س ن ن",
+      "past": "اِسْتَنَّ",
+      "present": "يَسْتَنُّ",
+      "form": "VIII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِسْتَنَّ",
+      "prohibition": "لَا تَسْتَنَّ",
+      "active_participle": "مُسْتَنٌّ",
+      "masdar": "الِاسْتِنَانُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VIII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-402",
+      "arabic": "اِشْتَدَّ",
+      "english": "to become hard / harsh / forceful",
+      "root": "ش د د",
+      "past": "اِشْتَدَّ",
+      "present": "يَشْتَدُّ",
+      "form": "VIII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِشْتَدَّ",
+      "prohibition": "لَا تَشْتَدَّ",
+      "active_participle": "مُشْتَدٌّ",
+      "masdar": "الِاشْتِدَادُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VIII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-403",
+      "arabic": "اِغْتَرَّ",
+      "english": "to be deceived",
+      "root": "غ ر ر",
+      "past": "اِغْتَرَّ",
+      "present": "يَغْتَرُّ",
+      "form": "VIII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِغْتَرَّ",
+      "prohibition": "لَا تَغْتَرَّ",
+      "active_participle": "مُغْتَرٌّ",
+      "masdar": "الِاغْتِرَارُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VIII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-404",
+      "arabic": "اِمْتَنَّ",
+      "english": "to be kind / gracious",
+      "root": "م ن ن",
+      "past": "اِمْتَنَّ",
+      "present": "يَمْتَنُّ",
+      "form": "VIII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِمْتَنَّ",
+      "prohibition": "لَا تَمْتَنَّ",
+      "active_participle": "مُمْتَنٌّ",
+      "masdar": "الِامْتِنَانُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VIII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-405",
+      "arabic": "اِجْتَثَّ",
+      "english": "to tear out / uproot",
+      "root": "ج ث ث",
+      "past": "اِجْتَثَّ",
+      "present": "يَجْتَثُّ",
+      "form": "VIII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِجْتَثَّ",
+      "prohibition": "لَا تَجْتَثَّ",
+      "active_participle": "مُجْتَثٌّ",
+      "masdar": "الِاجْتِثَاثُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VIII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-406",
+      "arabic": "اِغْتَمَّ",
+      "english": "to be distressed / worried",
+      "root": "غ م م",
+      "past": "اِغْتَمَّ",
+      "present": "يَغْتَمُّ",
+      "form": "VIII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِغْتَمَّ",
+      "prohibition": "لَا تَغْتَمَّ",
+      "active_participle": "مُغْتَمٌّ",
+      "masdar": "الِاغْتِمَامُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VIII"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-407",
+      "arabic": "اِتَّهَمَ",
+      "english": "to suspect / doubt / accuse / indict",
+      "root": "و ه م",
+      "past": "اِتَّهَمَ",
+      "present": "يَتَّهِمُ",
+      "form": "VIII",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمِثَالُ",
+      "command": "اِتَّهِمْ",
+      "prohibition": "لَا تَتَّهِمْ",
+      "active_participle": "مُتَّهِمٌ",
+      "masdar": "الِاتِّهَامُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form VIII"
+      ],
+      "topic": "الْمِثَالُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-408",
+      "arabic": "اِسْتَحَبَّ",
+      "english": "to like / recommend",
+      "root": "ح ب ب",
+      "past": "اِسْتَحَبَّ",
+      "present": "يَسْتَحِبُّ",
+      "form": "X",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِسْتَحِبَّ",
+      "prohibition": "لَا تَسْتَحِبَّ",
+      "active_participle": "مُسْتَحِبٌّ",
+      "masdar": "الِاسْتِحْبَابُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form X"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-409",
+      "arabic": "اِسْتَحَقَّ",
+      "english": "to be entitled / worthy",
+      "root": "ح ق ق",
+      "past": "اِسْتَحَقَّ",
+      "present": "يَسْتَحِقُّ",
+      "form": "X",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِسْتَحِقَّ",
+      "prohibition": "لَا تَسْتَحِقَّ",
+      "active_participle": "مُسْتَحِقٌّ",
+      "masdar": "الِاسْتِحْقَاقُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form X"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-410",
+      "arabic": "اِسْتَمَرَّ",
+      "english": "to remain / continue",
+      "root": "م ر ر",
+      "past": "اِسْتَمَرَّ",
+      "present": "يَسْتَمِرُّ",
+      "form": "X",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِسْتَمِرَّ",
+      "prohibition": "لَا تَسْتَمِرَّ",
+      "active_participle": "مُسْتَمِرٌّ",
+      "masdar": "الِاسْتِمْرَارُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form X"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-411",
+      "arabic": "اِسْتَقَرَّ",
+      "english": "to settle down / reside",
+      "root": "ق ر ر",
+      "past": "اِسْتَقَرَّ",
+      "present": "يَسْتَقِرُّ",
+      "form": "X",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِسْتَقِرَّ",
+      "prohibition": "لَا تَسْتَقِرَّ",
+      "active_participle": "مُسْتَقِرٌّ",
+      "masdar": "الِاسْتِقْرَارُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form X"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-412",
+      "arabic": "اِسْتَمَدَّ",
+      "english": "to get help / support",
+      "root": "م د د",
+      "past": "اِسْتَمَدَّ",
+      "present": "يَسْتَمِدُّ",
+      "form": "X",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمُضَاعَفُ",
+      "command": "اِسْتَمِدَّ",
+      "prohibition": "لَا تَسْتَمِدَّ",
+      "active_participle": "مُسْتَمِدٌّ",
+      "masdar": "الِاسْتِمْدَادُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Doubled Verb Vocabulary — Form X"
+      ],
+      "topic": "الْمُضَاعَفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-413",
+      "arabic": "وَعَى",
+      "english": "to hold / comprise / retain in memory / know by heart",
+      "root": "و ع ي",
+      "past": "وَعَى",
+      "present": "يَعِي",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "command": "عِ",
+      "prohibition": "لَا تَعِ",
+      "active_participle": "وَاعٍ",
+      "masdar": "الْوَعْيُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form I"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-414",
+      "arabic": "وَهَى",
+      "english": "to be weak / feeble / frail / fragile",
+      "root": "و ه ي",
+      "past": "وَهَى",
+      "present": "يَهِي",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "command": "هِ",
+      "prohibition": "لَا تَهِ",
+      "active_participle": "وَاهٍ",
+      "masdar": "الْوَهْيُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form I"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-415",
+      "arabic": "أَوَى",
+      "english": "to seek refuge / shelter",
+      "root": "أ و ي",
+      "past": "أَوَى",
+      "present": "يَأْوِي",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَقْرُونُ",
+      "command": "اِئْوِ",
+      "prohibition": "لَا تَأْوِ",
+      "active_participle": "آوٍ",
+      "masdar": "الْإِيوَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form I"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-416",
+      "arabic": "هَوِيَ",
+      "english": "to love / like / take up as a hobby",
+      "root": "ه و ي",
+      "past": "هَوِيَ",
+      "present": "يَهْوَى",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَقْرُونُ",
+      "command": "اِهْوَ",
+      "prohibition": "لَا تَهْوَ",
+      "active_participle": "هَاوٍ",
+      "masdar": "الْهَوَى",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form I"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-417",
+      "arabic": "وَلِيَ",
+      "english": "to be near / be a friend / administer / follow",
+      "root": "و ل ي",
+      "past": "وَلِيَ",
+      "present": "يَلِي",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "command": "لِ",
+      "prohibition": "لَا تَلِ",
+      "active_participle": "وَالٍ",
+      "masdar": "الْوِلَايَةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form I"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-418",
+      "arabic": "وَرَّى",
+      "english": "to hide / conceal / keep secret",
+      "root": "و ر ي",
+      "past": "وَرَّى",
+      "present": "يُوَرِّي",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "command": "وَرِّ",
+      "prohibition": "لَا تُوَرِّ",
+      "active_participle": "مُوَرٍّ",
+      "masdar": "التَّوْرِيَةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form II"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-419",
+      "arabic": "وَارَى",
+      "english": "to hide / conceal / try to keep secret",
+      "root": "و ر ي",
+      "past": "وَارَى",
+      "present": "يُوَارِي",
+      "form": "III",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "command": "وَارِ",
+      "prohibition": "لَا تُوَارِ",
+      "active_participle": "مُوَارٍ",
+      "masdar": "الْمُوَارَاةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form III"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-420",
+      "arabic": "أَعْيَا",
+      "english": "to tire / fatigue / exhaust",
+      "root": "ع ي ي",
+      "past": "أَعْيَا",
+      "present": "يُعْيِي",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَقْرُونُ",
+      "command": "أَعْيِ",
+      "prohibition": "لَا تُعْيِ",
+      "active_participle": "مُعْيٍ",
+      "masdar": "الْإِعْيَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form IV"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-421",
+      "arabic": "أَحْيَا",
+      "english": "to give life / revive",
+      "root": "ح ي ي",
+      "past": "أَحْيَا",
+      "present": "يُحْيِي",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَقْرُونُ",
+      "command": "أَحْيِ",
+      "prohibition": "لَا تُحْيِ",
+      "active_participle": "مُحْيٍ",
+      "masdar": "الْإِحْيَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form IV"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-422",
+      "arabic": "أَغْوَى",
+      "english": "to mislead / seduce / entice",
+      "root": "غ و ي",
+      "past": "أَغْوَى",
+      "present": "يُغْوِي",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَقْرُونُ",
+      "command": "أَغْوِ",
+      "prohibition": "لَا تُغْوِ",
+      "active_participle": "مُغْوٍ",
+      "masdar": "الْإِغْوَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form IV"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-423",
+      "arabic": "أَوْحَى",
+      "english": "to inspire / reveal / give an idea",
+      "root": "و ح ي",
+      "past": "أَوْحَى",
+      "present": "يُوحِي",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "command": "أَوْحِ",
+      "prohibition": "لَا تُوحِ",
+      "active_participle": "مُوحٍ",
+      "masdar": "الْإِيحَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form IV"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-424",
+      "arabic": "أَوْصَى",
+      "english": "to entrust / advise / counsel / bequeath",
+      "root": "و ص ي",
+      "past": "أَوْصَى",
+      "present": "يُوصِي",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "command": "أَوْصِ",
+      "prohibition": "لَا تُوصِ",
+      "active_participle": "مُوصٍ",
+      "masdar": "الْإِيصَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form IV"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-425",
+      "arabic": "أَوْفَى",
+      "english": "to pay in full / fulfil",
+      "root": "و ف ي",
+      "past": "أَوْفَى",
+      "present": "يُوفِي",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "command": "أَوْفِ",
+      "prohibition": "لَا تُوفِ",
+      "active_participle": "مُوفٍ",
+      "masdar": "الْإِيفَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form IV"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-426",
+      "arabic": "تَوَفَّى",
+      "english": "to take one's full share / exact fully",
+      "root": "و ف ي",
+      "past": "تَوَفَّى",
+      "present": "يَتَوَفَّى",
+      "form": "V",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "اللَّفِيفُ",
+      "subtype": "اللَّفِيفُ الْمَفْرُوقُ",
+      "command": "تَوَفَّ",
+      "prohibition": "لَا تَتَوَفَّ",
+      "active_participle": "مُتَوَفٍّ",
+      "masdar": "التَّوَفِّي",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Complex Verb Vocabulary — Form V"
+      ],
+      "topic": "اللَّفِيفُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-427",
+      "arabic": "أَخَذَ",
+      "english": "to take / grab",
+      "root": "أ خ ذ",
+      "past": "أَخَذَ",
+      "present": "يَأْخُذُ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "خُذْ",
+      "prohibition": "لَا تَأْخُذْ",
+      "active_participle": "آخِذٌ",
+      "masdar": "الْأَخْذُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-428",
+      "arabic": "أَكَلَ",
+      "english": "to eat",
+      "root": "أ ك ل",
+      "past": "أَكَلَ",
+      "present": "يَأْكُلُ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "كُلْ",
+      "prohibition": "لَا تَأْكُلْ",
+      "active_participle": "آكِلٌ",
+      "masdar": "الْأَكْلُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-429",
+      "arabic": "أَمَرَ",
+      "english": "to order",
+      "root": "أ م ر",
+      "past": "أَمَرَ",
+      "present": "يَأْمُرُ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "مُرْ",
+      "prohibition": "لَا تَأْمُرْ",
+      "active_participle": "آمِرٌ",
+      "masdar": "الْأَمْرُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-430",
+      "arabic": "سَأَلَ",
+      "english": "to ask / request / inquire",
+      "root": "س أ ل",
+      "past": "سَأَلَ",
+      "present": "يَسْأَلُ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْعَيْنِ",
+      "command": "اِسْأَلْ",
+      "prohibition": "لَا تَسْأَلْ",
+      "active_participle": "سَائِلٌ",
+      "masdar": "السُّؤَالُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-431",
+      "arabic": "قَرَأَ",
+      "english": "to read / study",
+      "root": "ق ر أ",
+      "past": "قَرَأَ",
+      "present": "يَقْرَأُ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "اِقْرَأْ",
+      "prohibition": "لَا تَقْرَأْ",
+      "active_participle": "قَارِئٌ",
+      "masdar": "الْقِرَاءَةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-432",
+      "arabic": "مَلَأَ",
+      "english": "to fill up",
+      "root": "م ل أ",
+      "past": "مَلَأَ",
+      "present": "يَمْلَأُ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "اِمْلَأْ",
+      "prohibition": "لَا تَمْلَأْ",
+      "active_participle": "مَالِئٌ",
+      "masdar": "الْمَلْءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-433",
+      "arabic": "بَدَأَ",
+      "english": "to begin",
+      "root": "ب د أ",
+      "past": "بَدَأَ",
+      "present": "يَبْدَأُ",
+      "form": "I",
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "اِبْدَأْ",
+      "prohibition": "لَا تَبْدَأْ",
+      "active_participle": "بَادِئٌ",
+      "masdar": "الْبَدْءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form I"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-434",
+      "arabic": "أَذَّنَ",
+      "english": "to call for prayer",
+      "root": "أ ذ ن",
+      "past": "أَذَّنَ",
+      "present": "يُؤَذِّنُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "أَذِّنْ",
+      "prohibition": "لَا تُؤَذِّنْ",
+      "active_participle": "مُؤَذِّنٌ",
+      "masdar": "التَّأْذِينُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-435",
+      "arabic": "أَجَّرَ",
+      "english": "to let a property",
+      "root": "أ ج ر",
+      "past": "أَجَّرَ",
+      "present": "يُؤَجِّرُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "أَجِّرْ",
+      "prohibition": "لَا تُؤَجِّرْ",
+      "active_participle": "مُؤَجِّرٌ",
+      "masdar": "التَّأْجِيرُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-436",
+      "arabic": "أَخَّرَ",
+      "english": "to delay",
+      "root": "أ خ ر",
+      "past": "أَخَّرَ",
+      "present": "يُؤَخِّرُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "أَخِّرْ",
+      "prohibition": "لَا تُؤَخِّرْ",
+      "active_participle": "مُؤَخِّرٌ",
+      "masdar": "التَّأْخِيرُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-437",
+      "arabic": "أَلَّفَ",
+      "english": "to unite / compile",
+      "root": "أ ل ف",
+      "past": "أَلَّفَ",
+      "present": "يُؤَلِّفُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "أَلِّفْ",
+      "prohibition": "لَا تُؤَلِّفْ",
+      "active_participle": "مُؤَلِّفٌ",
+      "masdar": "التَّأْلِيفُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-438",
+      "arabic": "أَهَّلَ",
+      "english": "to qualify",
+      "root": "أ ه ل",
+      "past": "أَهَّلَ",
+      "present": "يُؤَهِّلُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "أَهِّلْ",
+      "prohibition": "لَا تُؤَهِّلْ",
+      "active_participle": "مُؤَهِّلٌ",
+      "masdar": "التَّأْهِيلُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-439",
+      "arabic": "أَسَّسَ",
+      "english": "to establish / lay the foundations",
+      "root": "أ س س",
+      "past": "أَسَّسَ",
+      "present": "يُؤَسِّسُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "أَسِّسْ",
+      "prohibition": "لَا تُؤَسِّسْ",
+      "active_participle": "مُؤَسِّسٌ",
+      "masdar": "التَّأْسِيسُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-440",
+      "arabic": "أَدَّبَ",
+      "english": "to discipline / educate",
+      "root": "أ د ب",
+      "past": "أَدَّبَ",
+      "present": "يُؤَدِّبُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "أَدِّبْ",
+      "prohibition": "لَا تُؤَدِّبْ",
+      "active_participle": "مُؤَدِّبٌ",
+      "masdar": "التَّأْدِيبُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-441",
+      "arabic": "أَيَّدَ",
+      "english": "to back / support",
+      "root": "أ ي د",
+      "past": "أَيَّدَ",
+      "present": "يُؤَيِّدُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "أَيِّدْ",
+      "prohibition": "لَا تُؤَيِّدْ",
+      "active_participle": "مُؤَيِّدٌ",
+      "masdar": "التَّأْيِيدُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-442",
+      "arabic": "أَكَّدَ",
+      "english": "to confirm / assert",
+      "root": "أ ك د",
+      "past": "أَكَّدَ",
+      "present": "يُؤَكِّدُ",
+      "form": "II",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "أَكِّدْ",
+      "prohibition": "لَا تُؤَكِّدْ",
+      "active_participle": "مُؤَكِّدٌ",
+      "masdar": "التَّأْكِيدُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form II"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-443",
+      "arabic": "أَقْرَأَ",
+      "english": "to teach how to read / make read / pass a greeting",
+      "root": "ق ر أ",
+      "past": "أَقْرَأَ",
+      "present": "يُقْرِئُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "أَقْرِئْ",
+      "prohibition": "لَا تُقْرِئْ",
+      "active_participle": "مُقْرِئٌ",
+      "masdar": "الْإِقْرَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-444",
+      "arabic": "أَخْطَأَ",
+      "english": "to err / make a mistake",
+      "root": "خ ط أ",
+      "past": "أَخْطَأَ",
+      "present": "يُخْطِئُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "أَخْطِئْ",
+      "prohibition": "لَا تُخْطِئْ",
+      "active_participle": "مُخْطِئٌ",
+      "masdar": "الْإِخْطَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-445",
+      "arabic": "آذَنَ",
+      "english": "to announce",
+      "root": "أ ذ ن",
+      "past": "آذَنَ",
+      "present": "يُؤْذِنُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "آذِنْ",
+      "prohibition": "لَا تُؤْذِنْ",
+      "active_participle": "مُؤْذِنٌ",
+      "masdar": "الْإِيذَانُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-446",
+      "arabic": "أَسَاءَ",
+      "english": "to do badly",
+      "root": "س و أ",
+      "past": "أَسَاءَ",
+      "present": "يُسِيءُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "أَسِئْ",
+      "prohibition": "لَا تُسِئْ",
+      "active_participle": "مُسِيءٌ",
+      "masdar": "الْإِسَاءَةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-447",
+      "arabic": "آتَى",
+      "english": "to give",
+      "root": "أ ت ي",
+      "past": "آتَى",
+      "present": "يُؤْتِي",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "آتِ",
+      "prohibition": "لَا تُؤْتِ",
+      "active_participle": "مُؤْتٍ",
+      "masdar": "الْإِيتَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-448",
+      "arabic": "آثَرَ",
+      "english": "to prefer / give priority",
+      "root": "أ ث ر",
+      "past": "آثَرَ",
+      "present": "يُؤْثِرُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "آثِرْ",
+      "prohibition": "لَا تُؤْثِرْ",
+      "active_participle": "مُؤْثِرٌ",
+      "masdar": "الْإِيثَارُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-449",
+      "arabic": "أَبْرَأَ",
+      "english": "to cure / clear someone's debt",
+      "root": "ب ر أ",
+      "past": "أَبْرَأَ",
+      "present": "يُبْرِئُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "أَبْرِئْ",
+      "prohibition": "لَا تُبْرِئْ",
+      "active_participle": "مُبْرِئٌ",
+      "masdar": "الْإِبْرَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-450",
+      "arabic": "أَبْطَأَ",
+      "english": "to be late / delay / be slow",
+      "root": "ب ط أ",
+      "past": "أَبْطَأَ",
+      "present": "يُبْطِئُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "أَبْطِئْ",
+      "prohibition": "لَا تُبْطِئْ",
+      "active_participle": "مُبْطِئٌ",
+      "masdar": "الْإِبْطَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-451",
+      "arabic": "آذَى",
+      "english": "to hurt / harm",
+      "root": "أ ذ ي",
+      "past": "آذَى",
+      "present": "يُؤْذِي",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "آذِ",
+      "prohibition": "لَا تُؤْذِ",
+      "active_participle": "مُؤْذٍ",
+      "masdar": "الْإِيذَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-452",
+      "arabic": "أَضَاءَ",
+      "english": "to shine / illuminate / light",
+      "root": "ض و أ",
+      "past": "أَضَاءَ",
+      "present": "يُضِيءُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "أَضِئْ",
+      "prohibition": "لَا تُضِئْ",
+      "active_participle": "مُضِيءٌ",
+      "masdar": "الْإِضَاءَةُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-453",
+      "arabic": "آلَفَ",
+      "english": "to tame",
+      "root": "أ ل ف",
+      "past": "آلَفَ",
+      "present": "يُؤْلِفُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "آلِفْ",
+      "prohibition": "لَا تُؤْلِفْ",
+      "active_participle": "مُؤْلِفٌ",
+      "masdar": "الْإِيلَافُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-454",
+      "arabic": "آمَنَ",
+      "english": "to believe / have faith",
+      "root": "أ م ن",
+      "past": "آمَنَ",
+      "present": "يُؤْمِنُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "آمِنْ",
+      "prohibition": "لَا تُؤْمِنْ",
+      "active_participle": "مُؤْمِنٌ",
+      "masdar": "الْإِيمَانُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-455",
+      "arabic": "أَنْبَأَ",
+      "english": "to inform / tell news",
+      "root": "ن ب أ",
+      "past": "أَنْبَأَ",
+      "present": "يُنْبِئُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "أَنْبِئْ",
+      "prohibition": "لَا تُنْبِئْ",
+      "active_participle": "مُنْبِئٌ",
+      "masdar": "الْإِنْبَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-456",
+      "arabic": "أَنْشَأَ",
+      "english": "to produce / originate",
+      "root": "ن ش أ",
+      "past": "أَنْشَأَ",
+      "present": "يُنْشِئُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "أَنْشِئْ",
+      "prohibition": "لَا تُنْشِئْ",
+      "active_participle": "مُنْشِئٌ",
+      "masdar": "الْإِنْشَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-457",
+      "arabic": "أَوْمَأَ",
+      "english": "to gesture / glance / make an indirect reference",
+      "root": "و م أ",
+      "past": "أَوْمَأَ",
+      "present": "يُومِئُ",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ اللَّامِ",
+      "command": "أَوْمِئْ",
+      "prohibition": "لَا تُومِئْ",
+      "active_participle": "مُومِئٌ",
+      "masdar": "الْإِيمَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-458",
+      "arabic": "آوَى",
+      "english": "to give shelter",
+      "root": "أ و ي",
+      "past": "آوَى",
+      "present": "يُؤْوِي",
+      "form": "IV",
+      "category": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "verb_type": "الْمَهْمُوزُ",
+      "subtype": "مَهْمُوزُ الْفَاءِ",
+      "command": "آوِ",
+      "prohibition": "لَا تُؤْوِ",
+      "active_participle": "مُؤْوٍ",
+      "masdar": "الْإِيوَاءُ",
+      "source": [
+        "Sarf Module 4"
+      ],
+      "source_section": [
+        "Hamzated Verb Vocabulary — Form IV"
+      ],
+      "topic": "الْمَهْمُوزُ",
+      "type": "Verb",
+      "root_status": "morphological analysis from the Module 4 headword"
     }
   ]
 }
