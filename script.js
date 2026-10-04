@@ -22,12 +22,23 @@ function initFirebase(){
     firebaseApp = firebase.apps?.length ? firebase.app() : firebase.initializeApp(cfg);
     firebaseAuth = firebase.auth();
     firebaseDb = firebase.firestore();
+    firebaseAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(err=>{
+      console.error('Firebase persistence error',err);
+    });
     return true;
   }catch(err){
     console.error('Firebase initialization error',err);
     firebaseInitError = 'Firebase could not initialise in this browser.';
     return false;
   }
+}
+
+function normaliseCloudDate(value){
+  if(!value) return null;
+  if(typeof value==='string') return value;
+  if(value?.toDate) return value.toDate().toISOString();
+  if(typeof value?.seconds==='number') return new Date(value.seconds*1000).toISOString();
+  return null;
 }
 
 async function loadRemoteProgress(){
@@ -40,15 +51,38 @@ async function loadRemoteProgress(){
       remoteProgress[doc.id]={
         status:r.status || 'Not Started',
         favourite:!!r.favourite,
-        dateCovered:r.dateCovered || null,
-        lastRevised:r.lastRevised || null,
+        dateCovered:normaliseCloudDate(r.dateCovered),
+        lastRevised:normaliseCloudDate(r.lastRevised),
         timesRevised:r.timesRevised || 0,
         correctCount:r.correctCount || 0,
         incorrectCount:r.incorrectCount || 0
       };
     });
+    const local=loadProgress();
+    const merged={...local,...remoteProgress};
+    localStorage.setItem(STORE_KEY,JSON.stringify(merged));
     syncReady=true;
-    localStorage.setItem(STORE_KEY,JSON.stringify({...loadProgress(),...remoteProgress}));
+
+    // Upload any progress that exists on this device but not yet in Firestore.
+    const missing=Object.entries(local).filter(([id])=>!remoteProgress[id]);
+    if(missing.length){
+      const batch=firebaseDb.batch();
+      missing.forEach(([id,value])=>{
+        const ref=firebaseDb.collection('users').doc(currentUser.uid).collection('progress').doc(id);
+        batch.set(ref,{
+          status:value.status||'Not Started',
+          favourite:!!value.favourite,
+          dateCovered:value.dateCovered||null,
+          lastRevised:value.lastRevised||null,
+          timesRevised:value.timesRevised||0,
+          correctCount:value.correctCount||0,
+          incorrectCount:value.incorrectCount||0,
+          updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+        },{merge:true});
+      });
+      await batch.commit();
+    }
+
     renderAll();
     if(currentCard) updateFlashMeta();
   }catch(err){
@@ -91,9 +125,16 @@ async function signInWithGoogle(){
     const provider=new firebase.auth.GoogleAuthProvider();
     provider.setCustomParameters({prompt:'select_account'});
 
-    // GitHub Pages is hosted outside Firebase Hosting. Firebase recommends
-    // popup auth for this setup because redirect auth can be blocked by
-    // modern browser cross-site storage protections.
+    const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isStandalone=window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+
+    // iOS Home Screen apps frequently block auth pop-ups, so use a full-page
+    // redirect there. Desktop browsers continue to use the popup flow.
+    if(isiOS || isStandalone){
+      await firebaseAuth.signInWithRedirect(provider);
+      return;
+    }
+
     const popupPromise=firebaseAuth.signInWithPopup(provider);
     const timeoutPromise=new Promise((_,reject)=>setTimeout(()=>{
       const e=new Error('Google sign-in timed out after the account window completed.');
@@ -118,17 +159,16 @@ async function signInWithGoogle(){
     }else if(err?.code==='auth/popup-closed-by-user'){
       msg='The Google sign-in window was closed before sign-in finished. Please try again.';
     }else if(err?.code==='auth/popup-blocked'){
-      msg='Your browser blocked the Google sign-in window. Allow pop-ups for this site and try again.';
+      msg='Your browser blocked the Google sign-in window. On iPhone, refresh the site and try again; it will now use full-page sign-in.';
     }else if(err?.code==='auth/cancelled-popup-request'){
       msg='Another Google sign-in window is already open. Close it and try again.';
     }else if(err?.code==='auth/popup-timeout'){
-      msg='Google accepted the sign-in, but this browser did not return the session to the site. I have switched the site to a more stable Firebase Auth version; refresh once and try again.';
+      msg='Google accepted the sign-in, but the browser did not return the session. Refresh once and try again.';
     }
 
     setAuthMessage(msg);
   }
 }
-
 async function signOut(){
   if(firebaseAuth) await firebaseAuth.signOut();
   currentUser=null;remoteProgress={};syncReady=false;updateAuthUI();
@@ -148,6 +188,10 @@ function updateAuthUI(){
     document.getElementById('signedInEmail').textContent=`Signed in as ${currentUser.email||currentUser.displayName||'Google user'}. Changes now sync between devices.`;
   }
 }
+
+const SECTION_METRIC_FILTERS = { vocabulary:'all', verbs:'all', speaking:'all', nahw:'all' };
+let ROOT_METRIC_FILTER = 'all';
+let PROGRESS_METRIC_FILTER = 'all';
 
 let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [] };
 let currentCard = null;
@@ -193,16 +237,34 @@ function setup(){
   newRevisionCard();
 
   if(initFirebase()){
-    firebaseAuth.onAuthStateChanged(async user=>{
-      currentUser=user||null;
-      if(currentUser){
-        setAuthMessage('');
-        await loadRemoteProgress();
-      }else{
-        remoteProgress={};
-        syncReady=false;
-      }
-      updateAuthUI();
+    firebaseAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(()=>{
+      firebaseAuth.onAuthStateChanged(async user=>{
+        currentUser=user||null;
+        if(currentUser){
+          setAuthMessage('');
+          await loadRemoteProgress();
+        }else{
+          remoteProgress={};
+          syncReady=false;
+        }
+        updateAuthUI();
+      });
+
+      firebaseAuth.getRedirectResult().then(async result=>{
+        if(result?.user){
+          currentUser=result.user;
+          setAuthMessage('Signed in. Loading your progress…');
+          await loadRemoteProgress();
+          updateAuthUI();
+          setAuthMessage('');
+        }
+      }).catch(err=>{
+        console.error('Firebase redirect sign-in error',err);
+        setAuthMessage(err?.message||'Google sign-in could not be completed.');
+      });
+    }).catch(err=>{
+      console.error('Firebase persistence setup error',err);
+      setAuthMessage('This browser could not keep your sign-in session. Progress will still stay on this device.');
     });
   }else{
     updateAuthUI();
