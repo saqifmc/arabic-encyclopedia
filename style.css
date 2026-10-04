@@ -159,13 +159,13 @@ footer{text-align:center;color:var(--muted);padding:0 20px 40px;font-size:.9rem}
 /* ===== Section colour system and dashboards ===== */
 .section-vocab{--accent:#2563eb;--accent-soft:#eff6ff;--accent-border:#bfdbfe;--accent-deep:#1d4ed8}
 .section-roots{--accent:#7c3aed;--accent-soft:#f5f3ff;--accent-border:#ddd6fe;--accent-deep:#6d28d9}
-.section-verbs{--accent:#d97706;--accent-soft:#fff7ed;--accent-border:#fed7aa;--accent-deep:#b45309}
+.section-verbs{--accent:#d97706;--accent-soft:#fff7ed;--accent-border:#fed7aa;--accent-deep:#b45309}\n.section-sarf{--accent:#4f46e5;--accent-soft:#eef2ff;--accent-border:#c7d2fe;--accent-deep:#3730a3}
 .section-speaking{--accent:#db2777;--accent-soft:#fdf2f8;--accent-border:#fbcfe8;--accent-deep:#be185d}
 .section-nahw{--accent:#0f766e;--accent-soft:#f0fdfa;--accent-border:#99f6e4;--accent-deep:#115e59}
-.section-vocab .section-head,.section-roots .section-head,.section-verbs .section-head,.section-speaking .section-head,.section-nahw .section-head{
+.section-vocab .section-head,.section-roots .section-head,.section-verbs .section-head,.section-sarf .section-head,.section-speaking .section-head,.section-nahw .section-head{
   padding:22px 24px;border-radius:22px;background:var(--accent-soft);border:1px solid var(--accent-border);margin-bottom:18px
 }
-.section-vocab .section-head h2,.section-roots .section-head h2,.section-verbs .section-head h2,.section-speaking .section-head h2,.section-nahw .section-head h2{color:var(--accent-deep)}
+.section-vocab .section-head h2,.section-roots .section-head h2,.section-verbs .section-head h2,.section-sarf .section-head h2,.section-speaking .section-head h2,.section-nahw .section-head h2{color:var(--accent-deep)}
 .section-vocab .item,.section-roots .root-card{border-left:4px solid #2563eb}
 .section-verbs .item{border-left:4px solid #d97706}
 .section-speaking .item{border-left:4px solid #db2777}
@@ -321,3 +321,40 @@ html,body,button,input,select,textarea{
   font-family:"Noto Naskh Arabic","Palatino Linotype","Book Antiqua",Palatino,serif;
 }
 .dashboard-card span{display:none}
+
+/* ===== Verbs + Sarf ===== */
+.verb-tabs{display:flex;gap:8px;margin:0 0 20px;flex-wrap:wrap}
+.verb-tab,.verb-test-controls button,.verb-test-card>button{border:1px solid #fed7aa;background:#fff;color:#92400e;border-radius:999px;padding:10px 15px;cursor:pointer}
+.verb-tab.active,.verb-test-controls button,.verb-test-card>button{background:#d97706;color:#fff;border-color:#d97706}
+.verb-entry{border-left:4px solid #d97706}
+.verb-tag-row{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.verb-tag{display:inline-flex;border-radius:999px;padding:5px 9px;background:#fff7ed;border:1px solid #fed7aa;color:#92400e;font-size:.82rem}
+.verb-reference-details{margin-top:14px;border-top:1px solid #f1e2cf;padding-top:12px}
+.verb-reference-details summary{cursor:pointer;font-weight:700;color:#92400e}
+.verb-data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:12px}
+.verb-data{background:#fffaf5;border:1px solid #ffedd5;border-radius:13px;padding:10px 12px}
+.verb-data span{display:block;color:var(--muted);font-size:.76rem;text-transform:uppercase}
+.verb-data strong{display:block;margin-top:4px}
+.verb-ar{font-family:"Noto Naskh Arabic","Palatino Linotype","Book Antiqua",Palatino,serif;direction:rtl;font-size:1.25rem}
+.verb-test-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.verb-test-card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #fed7aa;border-radius:24px;padding:28px;text-align:center;box-shadow:var(--shadow)}
+.verb-test-prompt{font-size:clamp(1.7rem,5vw,3rem);margin:30px 0;font-weight:700}
+.verb-test-prompt.arabic{font-family:"Noto Naskh Arabic",serif;direction:rtl}
+.verb-test-answer{margin:24px 0 4px}
+.verb-answer-main{font-size:1.45rem;font-weight:700;margin-bottom:16px}
+.verb-bio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;text-align:left}
+.verb-bio{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:9px 11px}
+.verb-bio span{display:block;color:#9a6a31;font-size:.75rem;text-transform:uppercase}
+.section-sarf .section-head{padding:22px 24px;border-radius:22px;background:var(--accent-soft);border:1px solid var(--accent-border);margin-bottom:18px}
+.sarf-overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:22px}
+.sarf-overview-card{background:#eef2ff;border:1px solid #c7d2fe;border-radius:18px;padding:16px}
+.sarf-overview-card span{display:block;color:#6366f1;font-size:.8rem;text-transform:uppercase;font-weight:700}
+.sarf-overview-card strong{display:block;color:#3730a3;font-size:1.6rem;margin-top:5px}
+.sarf-section-block{margin:0 0 28px}
+.sarf-section-title{color:#3730a3;border-bottom:2px solid #c7d2fe;padding-bottom:8px}
+.sarf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.sarf-card{background:#fff;border:1px solid #c7d2fe;border-radius:18px;padding:18px;box-shadow:0 6px 18px rgba(79,70,229,.05)}
+.sarf-card .arabic{font-size:1.75rem;color:#3730a3}
+.sarf-card h4{margin:5px 0 8px}.sarf-card p{margin:0;color:#53615b;line-height:1.6}
+.sarf-pattern{margin-top:10px;padding-top:10px;border-top:1px solid #e0e7ff;font-family:"Noto Naskh Arabic",serif;direction:rtl;text-align:right;font-size:1.15rem}
+@media(max-width:600px){.verb-test-card{padding:20px}.verb-data-grid,.verb-bio-grid{grid-template-columns:1fr 1fr}}
