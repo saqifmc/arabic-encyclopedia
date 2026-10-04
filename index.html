@@ -7,7 +7,7 @@
   <title>My Arabic Encyclopedia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,9 +21,9 @@
       <button data-view="progress">Progress</button>
       <button data-view="vocabulary">Vocabulary</button>
       <button data-view="roots">Roots</button>
-      <button data-view="verbs">Verbs & Ṣarf</button>
+      <button data-view="verbs">Verbs & Sarf</button>
       <button data-view="speaking">Speaking</button>
-      <button data-view="nahw">Naḥw</button>
+      <button data-view="nahw">Nahw</button>
       <button data-view="revision">Revision</button>
     </nav>
   </header>
@@ -62,13 +62,13 @@
       </div>
 
       <div class="cards">
-        <button class="dashboard-card" data-view="progress"><span>📈</span><strong>Progress</strong><small>Track what you have covered</small></button>
-        <button class="dashboard-card" data-view="vocabulary"><span>📖</span><strong>Vocabulary</strong><small>Browse all words</small></button>
-        <button class="dashboard-card" data-view="roots"><span>🌳</span><strong>Roots</strong><small>Explore word families</small></button>
-        <button class="dashboard-card" data-view="verbs"><span>🔄</span><strong>Verbs & Ṣarf</strong><small>Forms I–X</small></button>
-        <button class="dashboard-card" data-view="speaking"><span>💬</span><strong>Speaking Phrases</strong><small>Useful spoken Arabic</small></button>
-        <button class="dashboard-card" data-view="nahw"><span>📐</span><strong>Naḥw Concepts</strong><small>Your grammar reference</small></button>
-        <button class="dashboard-card" data-view="revision"><span>🧠</span><strong>Revision</strong><small>Focus on weaker items</small></button>
+        <button class="dashboard-card" data-view="progress"><strong>Progress</strong><small>Track what you have covered</small></button>
+        <button class="dashboard-card" data-view="vocabulary"><strong>Vocabulary</strong><small>Browse all words</small></button>
+        <button class="dashboard-card" data-view="roots"><strong>Roots</strong><small>Explore word families</small></button>
+        <button class="dashboard-card" data-view="verbs"><strong>Verbs & Sarf</strong><small>Forms I–X</small></button>
+        <button class="dashboard-card" data-view="speaking"><strong>Speaking Phrases</strong><small>Useful spoken Arabic</small></button>
+        <button class="dashboard-card" data-view="nahw"><strong>Nahw Concepts</strong><small>Your grammar reference</small></button>
+        <button class="dashboard-card" data-view="revision"><strong>Revision</strong><small>Focus on weaker items</small></button>
       </div>
 
       <div id="stats" class="stats"></div>
@@ -131,7 +131,7 @@
 
     <section id="verbs" class="view section-verbs">
       <div class="section-head">
-        <div><h2>Verbs & Ṣarf</h2><p>Browse verbs by form and review their key patterns.</p></div>
+        <div><h2>Verbs & Sarf</h2><p>Browse verbs by form and review their key patterns.</p></div>
         <select id="formFilter"><option value="">All forms</option></select>
       </div>
       <div id="verbsDashboard" class="section-dashboard"></div>
@@ -149,15 +149,15 @@
 
     <section id="nahw" class="view section-nahw">
       <div class="section-head">
-        <div><h2>Naḥw Concepts</h2><p>Your personal Arabic grammar reference and revision bank.</p></div>
+        <div><h2>Nahw Concepts</h2><p>Your personal Arabic grammar reference and revision bank.</p></div>
         <select id="nahwTopicFilter"><option value="">All topics</option></select>
       </div>
       <div id="nahwDashboard" class="section-dashboard"></div>
       <div class="nahw-keyterms-panel">
         <div class="nahw-keyterms-head">
           <div>
-            <span class="eyebrow dark">NAḤW REFERENCE</span>
-            <h3>Key Terms of Naḥw</h3>
+            <span class="eyebrow dark">NAHW REFERENCE</span>
+            <h3>Key Terms of Nahw</h3>
             <p>Core terminology to recognise when reading grammar explanations and doing iʿrāb.</p>
           </div>
           <button id="showKeyTermsBtn" class="nahw-keyterms-btn">Show key terms</button>
@@ -177,8 +177,8 @@
           <option value="ar-en">Arabic → English</option>
           <option value="en-ar">English → Arabic</option>
           <option value="speaking">Speaking Phrases</option>
-          <option value="verbs">Verbs & Ṣarf</option>
-          <option value="nahw">Naḥw Concepts</option>
+          <option value="verbs">Verbs & Sarf</option>
+          <option value="nahw">Nahw Concepts</option>
         </select>
         <select id="revisionSubset">
           <option value="all">All items</option>
