@@ -175,7 +175,7 @@ function populateFilters(){
   fillSelect('nahwTopicFilter',unique(DATA.nahw.map(x=>x.topic)));
 }
 function renderAll(){
-  renderStats(); renderVocabulary(); renderRoots(); renderVerbs(); renderSpeaking(); renderNahw(); renderProgress();
+  renderStats(); renderSectionDashboards(); renderVocabulary(); renderRoots(); renderVerbs(); renderSpeaking(); renderNahw(); renderProgress();
 }
 function itemStatus(id){return progressFor(id).status || 'Not Started';}
 function renderStats(){
@@ -188,6 +188,29 @@ function renderStats(){
     ['Total Items',allItems.length],['Covered',covered],['Learning',learning],['Mastered',mastered],['Favourites',fav]
   ].map(([a,b])=>`<div class="stat"><span>${a}</span><strong>${b}</strong></div>`).join('');
 }
+
+function dashboardMarkup(items){
+  const total=items.length;
+  const covered=items.filter(x=>itemStatus(x.id)!=='Not Started').length;
+  const learning=items.filter(x=>itemStatus(x.id)==='Learning').length;
+  const mastered=items.filter(x=>itemStatus(x.id)==='Mastered').length;
+  const favourites=items.filter(x=>progressFor(x.id).favourite).length;
+  const pct=total?Math.round(covered/total*100):0;
+  return [
+    ['Total',total],['Covered',covered],['Learning',learning],['Mastered',mastered],['Favourites',favourites]
+  ].map(([label,value],i)=>`<div class="section-metric"><span>${label}</span><strong>${value}</strong>${i===1?`<div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div><div class="meta">${pct}% coverage</div>`:''}</div>`).join('');
+}
+function renderSectionDashboards(){
+  const map=[
+    ['vocabDashboard',DATA.vocabulary],
+    ['rootsDashboard',[...DATA.vocabulary,...DATA.verbs].filter(x=>x.root)],
+    ['verbsDashboard',DATA.verbs],
+    ['speakingDashboard',DATA.speaking],
+    ['nahwDashboard',DATA.nahw]
+  ];
+  map.forEach(([id,items])=>{const el=document.getElementById(id);if(el)el.innerHTML=dashboardMarkup(items);});
+}
+
 function statusControls(x){
   const p=progressFor(x.id);
   return `<div class="status-row">
@@ -314,8 +337,18 @@ function nahwCard(x){
 }
 function renderNahw(){
   const topic=document.getElementById('nahwTopicFilter')?.value||'';
-  const rows=DATA.nahw.filter(x=>!topic||x.topic===topic);
-  document.getElementById('nahwList').innerHTML=rows.map(nahwCard).join('')||'<p>No concepts yet.</p>';
+  const keyTerms=DATA.nahw.filter(x=>x.topic==='Key Terms');
+  const concepts=DATA.nahw.filter(x=>x.topic!=='Key Terms'&&(!topic||x.topic===topic));
+  const keyBox=document.getElementById('nahwKeyTerms');
+  if(keyBox){
+    keyBox.innerHTML=keyTerms.map(x=>`<article class="keyterm-card">
+      <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
+      <h4>${x.english}</h4>
+      <p>${x.summary||''}</p>
+      ${x.example?`<div class="example" lang="ar" dir="rtl">${x.example}</div><div class="meta">${x.example_en||''}</div>`:''}
+    </article>`).join('');
+  }
+  document.getElementById('nahwList').innerHTML=concepts.map(nahwCard).join('')||'<p>No concepts yet.</p>';
   bindDynamicButtons();
 }
 
@@ -396,6 +429,13 @@ function bindEvents(){
   document.getElementById('formFilter').addEventListener('input',renderVerbs);
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
   document.getElementById('nahwTopicFilter').addEventListener('input',renderNahw);
+  document.getElementById('showKeyTermsBtn')?.addEventListener('click',()=>{
+    const box=document.getElementById('nahwKeyTerms');
+    const btn=document.getElementById('showKeyTermsBtn');
+    if(!box||!btn)return;
+    const isHidden=box.classList.toggle('hidden');
+    btn.textContent=isHidden?'Show key terms':'Hide key terms';
+  });
   document.getElementById('revisionMode').addEventListener('change',newRevisionCard);
   document.getElementById('revisionSubset').addEventListener('change',newRevisionCard);
   document.getElementById('newCardBtn').addEventListener('click',newRevisionCard);
