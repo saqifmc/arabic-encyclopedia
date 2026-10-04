@@ -203,12 +203,51 @@ function dashboardMarkup(items){
 function renderSectionDashboards(){
   const map=[
     ['vocabDashboard',DATA.vocabulary],
-    ['rootsDashboard',[...DATA.vocabulary,...DATA.verbs].filter(x=>x.root)],
     ['verbsDashboard',DATA.verbs],
     ['speakingDashboard',DATA.speaking],
     ['nahwDashboard',DATA.nahw]
   ];
   map.forEach(([id,items])=>{const el=document.getElementById(id);if(el)el.innerHTML=dashboardMarkup(items);});
+  renderRootsDashboard();
+}
+
+function getRootGroups(){
+  const groups={};
+  [...DATA.vocabulary,...DATA.verbs].filter(x=>x.root).forEach(x=>{
+    groups[x.root]=groups[x.root]||[];
+    groups[x.root].push(x);
+  });
+  return groups;
+}
+
+function rootProgress(items){
+  const counts={
+    notStarted:items.filter(x=>itemStatus(x.id)==='Not Started').length,
+    covered:items.filter(x=>itemStatus(x.id)==='Covered').length,
+    learning:items.filter(x=>itemStatus(x.id)==='Learning').length,
+    confident:items.filter(x=>itemStatus(x.id)==='Confident').length,
+    mastered:items.filter(x=>itemStatus(x.id)==='Mastered').length
+  };
+  const weighted=counts.covered*.25+counts.learning*.4+counts.confident*.75+counts.mastered;
+  const pct=items.length?Math.round(weighted/items.length*100):0;
+  return {...counts,pct};
+}
+
+function renderRootsDashboard(){
+  const el=document.getElementById('rootsDashboard'); if(!el)return;
+  const groups=Object.values(getRootGroups());
+  const totalRoots=groups.length;
+  const started=groups.filter(items=>rootProgress(items).pct>0).length;
+  const strong=groups.filter(items=>rootProgress(items).pct>=75).length;
+  const mastered=groups.filter(items=>rootProgress(items).pct===100).length;
+  const avg=totalRoots?Math.round(groups.reduce((sum,items)=>sum+rootProgress(items).pct,0)/totalRoots):0;
+  el.innerHTML=[
+    ['Total Roots',totalRoots],
+    ['Started',started],
+    ['Strong (75%+)',strong],
+    ['Mastered Roots',mastered],
+    ['Average Progress',avg+'%']
+  ].map(([a,b])=>`<div class="section-metric"><span>${a}</span><strong>${b}</strong></div>`).join('');
 }
 
 function statusControls(x){
@@ -273,16 +312,27 @@ function renderVocabulary(){
   bindDynamicButtons();
 }
 function renderRoots(){
-  const groups={};
-  [...DATA.vocabulary,...DATA.verbs].filter(x=>x.root).forEach(x=>{groups[x.root]=groups[x.root]||[];groups[x.root].push(x);});
-  document.getElementById('rootsList').innerHTML=Object.entries(groups).map(([root,items])=>{
-    const covered=items.filter(x=>itemStatus(x.id)!=='Not Started').length;
-    const pct=Math.round(covered/items.length*100);
-    return `<div class="root-card">
+  const groups=getRootGroups();
+  const sort=document.getElementById('rootSort')?.value||'weakest';
+  let entries=Object.entries(groups).map(([root,items])=>({root,items,progress:rootProgress(items)}));
+  if(sort==='weakest') entries.sort((a,b)=>a.progress.pct-b.progress.pct||b.items.length-a.items.length);
+  if(sort==='strongest') entries.sort((a,b)=>b.progress.pct-a.progress.pct||b.items.length-a.items.length);
+  if(sort==='largest') entries.sort((a,b)=>b.items.length-a.items.length||a.root.localeCompare(b.root,'ar'));
+  if(sort==='alphabetical') entries.sort((a,b)=>a.root.localeCompare(b.root,'ar'));
+  document.getElementById('rootsList').innerHTML=entries.map(({root,items,progress:p})=>{
+    const state=p.pct===100?'mastered-root':p.pct===0?'not-started-root':'learning-root';
+    return `<div class="root-card ${state}">
       <div class="root-title" lang="ar" dir="rtl">${root}</div>
-      <div class="root-words" lang="ar" dir="rtl">${items.map(x=>x.arabic).join(' · ')}</div>
-      <div class="meta">${covered}/${items.length} covered · ${pct}%</div>
-      <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <div class="root-family-count">${items.length} related item${items.length===1?'':'s'}</div>
+      <div class="root-progress-head"><strong>Family progress</strong><span class="root-percent">${p.pct}%</span></div>
+      <div class="root-progress-bar"><div class="root-progress-fill" style="width:${p.pct}%"></div></div>
+      <div class="root-status-grid">
+        <div class="root-status-chip notstarted"><strong>${p.notStarted}</strong>Not started</div>
+        <div class="root-status-chip learning"><strong>${p.learning+p.covered}</strong>Learning</div>
+        <div class="root-status-chip confident"><strong>${p.confident}</strong>Confident</div>
+        <div class="root-status-chip mastered"><strong>${p.mastered}</strong>Mastered</div>
+      </div>
+      <div class="root-family-words" lang="ar" dir="rtl">${items.map(x=>x.arabic).join(' · ')}</div>
     </div>`;
   }).join('');
 }
@@ -427,6 +477,7 @@ function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'num
 function bindEvents(){
   ['vocabSearch','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id).addEventListener('input',renderVocabulary));
   document.getElementById('formFilter').addEventListener('input',renderVerbs);
+  document.getElementById('rootSort')?.addEventListener('input',renderRoots);
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
   document.getElementById('nahwTopicFilter').addEventListener('input',renderNahw);
   document.getElementById('showKeyTermsBtn')?.addEventListener('click',()=>{
