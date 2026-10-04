@@ -358,3 +358,13 @@ html,body,button,input,select,textarea{
 .sarf-card h4{margin:5px 0 8px}.sarf-card p{margin:0;color:#53615b;line-height:1.6}
 .sarf-pattern{margin-top:10px;padding-top:10px;border-top:1px solid #e0e7ff;font-family:"Noto Naskh Arabic",serif;direction:rtl;text-align:right;font-size:1.15rem}
 @media(max-width:600px){.verb-test-card{padding:20px}.verb-data-grid,.verb-bio-grid{grid-template-columns:1fr 1fr}}
+
+/* ===== Clickable dashboards + categorisation ===== */
+.progress-summary-clickable{appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:.15s ease}
+.progress-summary-clickable:hover,.section-metric.metric-clickable:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.progress-summary-clickable.selected,.section-metric.metric-clickable.selected{outline:3px solid rgba(37,99,235,.17)}
+.progress-drilldown{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;margin:18px 0 28px}
+.progress-drilldown-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.progress-drilldown-head h3{margin:0}
+.progress-item .arabic{font-size:1.65rem}
+.section-metric{appearance:none;text-align:left;font:inherit;color:inherit;width:100%}
