@@ -293,3 +293,22 @@ footer{text-align:center;color:var(--muted);padding:0 20px 40px;font-size:.9rem}
 .traffic-dot.covered{--dot:var(--status-covered)}
 .traffic-dot.confident{--dot:var(--status-confident)}
 .traffic-dot.mastered{--dot:var(--status-mastered)}
+
+/* ===== Interactive vocabulary dashboard + clickable root words ===== */
+.section-metric.metric-clickable{
+  appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer;width:100%;
+  transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease
+}
+.section-metric.metric-clickable:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.section-metric.metric-clickable.selected{outline:3px solid rgba(37,99,235,.18);border-color:#2563eb}
+.root-family-words{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-start}
+.root-word-link{
+  border:1px solid #ddd6fe;background:#faf7ff;color:#5b21b6;border-radius:999px;
+  padding:6px 10px;font-family:"Noto Naskh Arabic",serif;font-size:1.15rem;cursor:pointer
+}
+.root-word-link:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(91,33,182,.12)}
+.root-word-link.status-not-started{background:var(--status-not-soft);border-color:#cbd5e1;color:#475569}
+.root-word-link.status-covered{background:var(--status-covered-soft);border-color:#fcd34d;color:#92400e}
+.root-word-link.status-learning{background:var(--status-learning-soft);border-color:#fca5a5;color:#991b1b}
+.root-word-link.status-confident{background:var(--status-confident-soft);border-color:#bef264;color:#3f6212}
+.root-word-link.status-mastered{background:var(--status-mastered-soft);border-color:#86efac;color:#166534}
