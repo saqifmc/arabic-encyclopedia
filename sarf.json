@@ -1,0 +1,453 @@
+{
+  "sarf": [
+    {
+      "id": "sarf-001",
+      "arabic": "الصَّرْفُ",
+      "english": "Sarf",
+      "section": "Foundations",
+      "summary": "The study of Arabic word-forms and how they change or are derived, especially verbs and their related forms.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-002",
+      "arabic": "الْجِذْرُ",
+      "english": "Root",
+      "section": "Foundations",
+      "summary": "The original root letters from which related Arabic words and verb forms are built.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-003",
+      "arabic": "فَاءُ الْكَلِمَةِ، عَيْنُ الْكَلِمَةِ، لَامُ الْكَلِمَةِ",
+      "english": "First, second and third radicals",
+      "section": "Foundations",
+      "summary": "The three radical positions used when describing triliteral roots and morphological change.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-004",
+      "arabic": "الْفِعْلُ الْمَاضِي",
+      "english": "Past tense (Māḍī)",
+      "section": "Core Verb Forms",
+      "summary": "The past-tense form used as one of the main reference points in verb conjugation.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-005",
+      "arabic": "الْفِعْلُ الْمُضَارِعُ",
+      "english": "Present / imperfect (Muḍāriʿ)",
+      "section": "Core Verb Forms",
+      "summary": "The imperfect verb form, marked by one of the present-tense prefixes and used as the basis for several other conjugations.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-006",
+      "arabic": "فِعْلُ الْأَمْرِ",
+      "english": "Imperative",
+      "section": "Core Verb Forms",
+      "summary": "The command form. Module 2 explains how it is derived from the second-person muḍāriʿ and when hamzat al-waṣl is needed.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-007",
+      "arabic": "فِعْلُ النَّهْيِ",
+      "english": "Prohibitive",
+      "section": "Core Verb Forms",
+      "summary": "The negative command or prohibition, formed from the jussive second-person muḍāriʿ with لَا النَّاهِيَةُ.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-008",
+      "arabic": "الْمَعْرُوفُ",
+      "english": "Active voice",
+      "section": "Voice",
+      "summary": "The active form of the verb, in which the doer is expressed or understood.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-009",
+      "arabic": "الْمَجْهُولُ",
+      "english": "Passive voice",
+      "section": "Voice",
+      "summary": "The passive form of the verb, where the action is presented without naming the doer.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-010",
+      "arabic": "الْمَصْدَرُ",
+      "english": "Maṣdar",
+      "section": "Derived Nouns",
+      "summary": "The verbal noun associated with a verb or morphological pattern.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-011",
+      "arabic": "اِسْمُ الْفَاعِلِ",
+      "english": "Active participle",
+      "section": "Derived Nouns",
+      "summary": "A derived noun indicating the doer of an action.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-012",
+      "arabic": "اِسْمُ الْمَفْعُولِ",
+      "english": "Passive participle",
+      "section": "Derived Nouns",
+      "summary": "A derived noun indicating the object or recipient of an action.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-013",
+      "arabic": "الثُّلَاثِيُّ",
+      "english": "Triliteral",
+      "section": "Root Structure",
+      "summary": "A root or verb built from three original radicals.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-014",
+      "arabic": "الرُّبَاعِيُّ",
+      "english": "Quadriliteral",
+      "section": "Root Structure",
+      "summary": "A root or verb built from four original radicals.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-015",
+      "arabic": "الْمُجَرَّدُ",
+      "english": "Mujarrad",
+      "section": "Root Structure",
+      "summary": "A verb form containing the original root radicals without added derivational letters.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-016",
+      "arabic": "الْمَزِيدُ فِيهِ",
+      "english": "Mazīd fīh",
+      "section": "Root Structure",
+      "summary": "A derived form created by adding one or more letters to the original root.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-017",
+      "arabic": "الثُّلَاثِيُّ الْمَزِيدُ فِيهِ",
+      "english": "Derived triliteral",
+      "section": "Derived Triliteral",
+      "summary": "Module 2 presents fourteen derived triliteral chapters created by adding one, two or three letters to the triliteral root.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-018",
+      "arabic": "هَمْزَةُ الْوَصْلِ",
+      "english": "Hamzat al-waṣl",
+      "section": "Derived Triliteral",
+      "summary": "Module 2 divides derived triliteral chapters according to whether they use hamzat al-waṣl and also uses it in forming some imperatives.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-019",
+      "arabic": "الصَّحِيحُ",
+      "english": "Sound verb",
+      "section": "Verb Classification",
+      "summary": "A verb whose root is not classified as weak.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-020",
+      "arabic": "الْمُعْتَلُّ",
+      "english": "Weak verb",
+      "section": "Verb Classification",
+      "summary": "A verb containing one or more weak radicals. Module 3 develops its principal families in detail.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-021",
+      "arabic": "الْمِثَالُ",
+      "english": "Assimilated verb",
+      "section": "Weak Verbs",
+      "summary": "A weak verb whose first radical is a weak letter. Module 3 includes wāw-initial and yāʾ-initial examples.",
+      "source": [
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-022",
+      "arabic": "الْأَجْوَفُ",
+      "english": "Hollow verb",
+      "section": "Weak Verbs",
+      "summary": "A weak verb whose middle radical is a weak letter. Module 3 gives detailed wāw and yāʾ patterns and inflections.",
+      "source": [
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-023",
+      "arabic": "النَّاقِصُ",
+      "english": "Defective verb",
+      "section": "Weak Verbs",
+      "summary": "A weak verb whose final radical is a weak letter. Module 3 gives extensive vocabulary and inflection tables for it.",
+      "source": [
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-024",
+      "arabic": "اللَّفِيفُ",
+      "english": "Lafīf verb",
+      "section": "Weak Verbs",
+      "summary": "A verb containing two weak radicals.",
+      "source": [
+        "Sarf Module 2",
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-025",
+      "arabic": "اللَّفِيفُ الْمَفْرُوقُ",
+      "english": "Separated lafīf",
+      "section": "Weak Verbs",
+      "summary": "A lafīf verb whose two weak radicals are separated by a sound radical.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-026",
+      "arabic": "اللَّفِيفُ الْمَقْرُونُ",
+      "english": "Adjacent lafīf",
+      "section": "Weak Verbs",
+      "summary": "A lafīf verb whose two weak radicals are next to one another.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-027",
+      "arabic": "الْمَهْمُوزُ",
+      "english": "Hamzated verb",
+      "section": "Other Verb Classes",
+      "summary": "A verb containing hamzah as the first, middle or final radical.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-028",
+      "arabic": "الْمُضَاعَفُ",
+      "english": "Doubled verb",
+      "section": "Other Verb Classes",
+      "summary": "A verb containing repeated identical radicals; Module 2 distinguishes triliteral and quadriliteral doubled types.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-029",
+      "arabic": "الْإِعْلَالُ",
+      "english": "Weak-letter change (Iʿlāl)",
+      "section": "Weak Verb Changes",
+      "summary": "The sound changes affecting weak radicals during inflection. Module 3 explains these changes within the weak-verb families.",
+      "source": [
+        "Sarf Module 3"
+      ]
+    },
+    {
+      "id": "sarf-030",
+      "arabic": "فَعَّلَ",
+      "english": "Form II",
+      "section": "Derived Triliteral Patterns",
+      "summary": "Core pattern: past فَعَّلَ, present يُفَعِّلُ, standard maṣdar تَفْعِيلٌ.",
+      "source": [
+        "Sarf Module 2"
+      ],
+      "form": "II",
+      "past_pattern": "فَعَّلَ",
+      "present_pattern": "يُفَعِّلُ",
+      "masdar_pattern": "تَفْعِيلٌ"
+    },
+    {
+      "id": "sarf-031",
+      "arabic": "فَاعَلَ",
+      "english": "Form III",
+      "section": "Derived Triliteral Patterns",
+      "summary": "Core pattern: past فَاعَلَ, present يُفَاعِلُ, standard maṣdar مُفَاعَلَةٌ.",
+      "source": [
+        "Sarf Module 2"
+      ],
+      "form": "III",
+      "past_pattern": "فَاعَلَ",
+      "present_pattern": "يُفَاعِلُ",
+      "masdar_pattern": "مُفَاعَلَةٌ"
+    },
+    {
+      "id": "sarf-032",
+      "arabic": "أَفْعَلَ",
+      "english": "Form IV",
+      "section": "Derived Triliteral Patterns",
+      "summary": "Core pattern: past أَفْعَلَ, present يُفْعِلُ, standard maṣdar إِفْعَالٌ.",
+      "source": [
+        "Sarf Module 2"
+      ],
+      "form": "IV",
+      "past_pattern": "أَفْعَلَ",
+      "present_pattern": "يُفْعِلُ",
+      "masdar_pattern": "إِفْعَالٌ"
+    },
+    {
+      "id": "sarf-033",
+      "arabic": "تَفَعَّلَ",
+      "english": "Form V",
+      "section": "Derived Triliteral Patterns",
+      "summary": "Core pattern: past تَفَعَّلَ, present يَتَفَعَّلُ, standard maṣdar تَفَعُّلٌ.",
+      "source": [
+        "Sarf Module 2"
+      ],
+      "form": "V",
+      "past_pattern": "تَفَعَّلَ",
+      "present_pattern": "يَتَفَعَّلُ",
+      "masdar_pattern": "تَفَعُّلٌ"
+    },
+    {
+      "id": "sarf-034",
+      "arabic": "تَفَاعَلَ",
+      "english": "Form VI",
+      "section": "Derived Triliteral Patterns",
+      "summary": "Core pattern: past تَفَاعَلَ, present يَتَفَاعَلُ, standard maṣdar تَفَاعُلٌ.",
+      "source": [
+        "Sarf Module 2"
+      ],
+      "form": "VI",
+      "past_pattern": "تَفَاعَلَ",
+      "present_pattern": "يَتَفَاعَلُ",
+      "masdar_pattern": "تَفَاعُلٌ"
+    },
+    {
+      "id": "sarf-035",
+      "arabic": "اِنْفَعَلَ",
+      "english": "Form VII",
+      "section": "Derived Triliteral Patterns",
+      "summary": "Core pattern: past اِنْفَعَلَ, present يَنْفَعِلُ, standard maṣdar اِنْفِعَالٌ.",
+      "source": [
+        "Sarf Module 2"
+      ],
+      "form": "VII",
+      "past_pattern": "اِنْفَعَلَ",
+      "present_pattern": "يَنْفَعِلُ",
+      "masdar_pattern": "اِنْفِعَالٌ"
+    },
+    {
+      "id": "sarf-036",
+      "arabic": "اِفْتَعَلَ",
+      "english": "Form VIII",
+      "section": "Derived Triliteral Patterns",
+      "summary": "Core pattern: past اِفْتَعَلَ, present يَفْتَعِلُ, standard maṣdar اِفْتِعَالٌ.",
+      "source": [
+        "Sarf Module 2"
+      ],
+      "form": "VIII",
+      "past_pattern": "اِفْتَعَلَ",
+      "present_pattern": "يَفْتَعِلُ",
+      "masdar_pattern": "اِفْتِعَالٌ"
+    },
+    {
+      "id": "sarf-037",
+      "arabic": "اِفْعَلَّ",
+      "english": "Form IX",
+      "section": "Derived Triliteral Patterns",
+      "summary": "Core pattern: past اِفْعَلَّ, present يَفْعَلُّ, standard maṣdar اِفْعِلَالٌ.",
+      "source": [
+        "Sarf Module 2"
+      ],
+      "form": "IX",
+      "past_pattern": "اِفْعَلَّ",
+      "present_pattern": "يَفْعَلُّ",
+      "masdar_pattern": "اِفْعِلَالٌ"
+    },
+    {
+      "id": "sarf-038",
+      "arabic": "اِسْتَفْعَلَ",
+      "english": "Form X",
+      "section": "Derived Triliteral Patterns",
+      "summary": "Core pattern: past اِسْتَفْعَلَ, present يَسْتَفْعِلُ, standard maṣdar اِسْتِفْعَالٌ.",
+      "source": [
+        "Sarf Module 2"
+      ],
+      "form": "X",
+      "past_pattern": "اِسْتَفْعَلَ",
+      "present_pattern": "يَسْتَفْعِلُ",
+      "masdar_pattern": "اِسْتِفْعَالٌ"
+    },
+    {
+      "id": "sarf-039",
+      "arabic": "الرُّبَاعِيُّ الْمُجَرَّدُ",
+      "english": "Simple quadriliteral",
+      "section": "Quadriliteral",
+      "summary": "Module 2 gives one simple quadriliteral form, illustrated with دَحْرَجَ.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    },
+    {
+      "id": "sarf-040",
+      "arabic": "الرُّبَاعِيُّ الْمَزِيدُ فِيهِ",
+      "english": "Derived quadriliteral",
+      "section": "Quadriliteral",
+      "summary": "Module 2 gives three derived quadriliteral forms, again distinguished by their patterns and hamzat al-waṣl behaviour.",
+      "source": [
+        "Sarf Module 2"
+      ]
+    }
+  ]
+}
