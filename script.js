@@ -82,22 +82,41 @@ async function signInWithGoogle(){
       return;
     }
   }
+
   setAuthMessage('Opening Google sign-in…');
+
   try{
+    await firebaseAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
     const provider=new firebase.auth.GoogleAuthProvider();
     provider.setCustomParameters({prompt:'select_account'});
-    const isStandalone=window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
-    const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
-    if(isStandalone || isiOS){
-      await firebaseAuth.signInWithRedirect(provider);
-    }else{
-      await firebaseAuth.signInWithPopup(provider);
-    }
+
+    // GitHub Pages is hosted outside Firebase Hosting. Firebase recommends
+    // popup auth for this setup because redirect auth can be blocked by
+    // modern browser cross-site storage protections.
+    const result=await firebaseAuth.signInWithPopup(provider);
+
+    currentUser=result?.user||firebaseAuth.currentUser||null;
+    if(!currentUser) throw new Error('Google sign-in finished without returning a user.');
+
+    setAuthMessage('Signed in. Loading your progress…');
+    await loadRemoteProgress();
+    updateAuthUI();
+    setAuthMessage('');
   }catch(err){
     console.error('Google sign-in error',err);
-    const msg=err?.code==='auth/unauthorized-domain'
-      ? 'This GitHub Pages domain needs to be added to Firebase Authentication → Settings → Authorized domains.'
-      : (err?.message || 'Google sign-in failed.');
+
+    let msg=err?.message || 'Google sign-in failed.';
+    if(err?.code==='auth/unauthorized-domain'){
+      msg='This GitHub Pages domain needs to be added to Firebase Authentication → Settings → Authorized domains.';
+    }else if(err?.code==='auth/popup-closed-by-user'){
+      msg='The Google sign-in window was closed before sign-in finished. Please try again.';
+    }else if(err?.code==='auth/popup-blocked'){
+      msg='Your browser blocked the Google sign-in window. Allow pop-ups for this site and try again.';
+    }else if(err?.code==='auth/cancelled-popup-request'){
+      msg='Another Google sign-in window is already open. Close it and try again.';
+    }
+
     setAuthMessage(msg);
   }
 }
@@ -176,11 +195,6 @@ function setup(){
         syncReady=false;
       }
       updateAuthUI();
-    });
-
-    firebaseAuth.getRedirectResult().catch(err=>{
-      console.error('Firebase redirect sign-in error',err);
-      setAuthMessage(err?.message||'Google sign-in could not be completed.');
     });
   }else{
     updateAuthUI();
