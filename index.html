@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#174f3f" />
   <title>My Arabic Encyclopedia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,32 +18,71 @@
     </div>
     <nav>
       <button data-view="home">Home</button>
+      <button data-view="progress">Progress</button>
       <button data-view="vocabulary">Vocabulary</button>
       <button data-view="roots">Roots</button>
       <button data-view="verbs">Verbs & Ṣarf</button>
-      <button data-view="speaking">Speaking Phrases</button>
+      <button data-view="speaking">Speaking</button>
       <button data-view="revision">Revision</button>
     </nav>
   </header>
 
+  
+    <section id="accountPanel" class="account-panel">
+      <div id="signedOutBox">
+        <div>
+          <strong>Sync your progress</strong>
+          <p>Sign in with your email to keep revision progress synced across phone and laptop.</p>
+        </div>
+        <div class="auth-form">
+          <input id="authEmail" type="email" placeholder="Your email address" autocomplete="email">
+          <button id="magicLinkBtn">Send sign-in link</button>
+        </div>
+        <div id="authMessage" class="auth-message"></div>
+      </div>
+      <div id="signedInBox" class="hidden">
+        <div>
+          <strong>Progress sync is on</strong>
+          <p id="signedInEmail"></p>
+        </div>
+        <button id="signOutBtn" class="ghost">Sign out</button>
+      </div>
+    </section>
+
   <main>
     <section id="home" class="view active">
       <div class="hero">
-        <h1>Build, browse and revise your Arabic</h1>
-        <p>Search vocabulary, explore roots and verb forms, practise speaking phrases, and revise with flashcards.</p>
+        <div>
+          <span class="eyebrow">PERSONAL ARABIC LEARNING SYSTEM</span>
+          <h1>Build, track and revise your Arabic</h1>
+          <p>Keep your vocabulary and phrases organised, mark what you have covered, and focus revision on what still needs work.</p>
+        </div>
         <input id="globalSearch" type="search" placeholder="Search Arabic, English, root or topic..." />
       </div>
 
       <div class="cards">
+        <button class="dashboard-card" data-view="progress"><span>📈</span><strong>Progress</strong><small>Track what you have covered</small></button>
         <button class="dashboard-card" data-view="vocabulary"><span>📖</span><strong>Vocabulary</strong><small>Browse all words</small></button>
         <button class="dashboard-card" data-view="roots"><span>🌳</span><strong>Roots</strong><small>Explore word families</small></button>
         <button class="dashboard-card" data-view="verbs"><span>🔄</span><strong>Verbs & Ṣarf</strong><small>Forms I–X</small></button>
         <button class="dashboard-card" data-view="speaking"><span>💬</span><strong>Speaking Phrases</strong><small>Useful spoken Arabic</small></button>
-        <button class="dashboard-card" data-view="revision"><span>🧠</span><strong>Revision</strong><small>Flashcards and recall</small></button>
+        <button class="dashboard-card" data-view="revision"><span>🧠</span><strong>Revision</strong><small>Focus on weaker items</small></button>
       </div>
 
       <div id="stats" class="stats"></div>
       <div id="searchResults" class="results hidden"></div>
+    </section>
+
+    <section id="progress" class="view">
+      <div class="section-head">
+        <div><h2>Progress Dashboard</h2><p>Your current coverage across vocabulary and speaking phrases.</p></div>
+        <button id="resetProgressBtn" class="ghost danger">Reset progress</button>
+      </div>
+      <div id="progressSummary" class="progress-summary"></div>
+      <h3>By Topic</h3>
+      <div id="topicProgress" class="topic-progress"></div>
+      <h3>Recently Covered</h3>
+      <div id="recentlyCovered" class="list"></div>
     </section>
 
     <section id="vocabulary" class="view">
@@ -52,7 +92,15 @@
       </div>
       <div class="filters">
         <select id="typeFilter"><option value="">All types</option></select>
-        <select id="statusFilter"><option value="">All statuses</option></select>
+        <select id="statusFilter">
+          <option value="">All statuses</option>
+          <option>Not Started</option>
+          <option>Covered</option>
+          <option>Learning</option>
+          <option>Confident</option>
+          <option>Mastered</option>
+        </select>
+        <label class="check"><input id="favouriteFilter" type="checkbox"> Favourites only</label>
       </div>
       <div id="vocabList" class="list"></div>
     </section>
@@ -82,7 +130,7 @@
 
     <section id="revision" class="view">
       <div class="section-head">
-        <div><h2>Revision</h2><p>Test yourself without looking at the answer first.</p></div>
+        <div><h2>Revision</h2><p>Choose a subset and test yourself without looking at the answer first.</p></div>
       </div>
       <div class="revision-controls">
         <select id="revisionMode">
@@ -90,22 +138,41 @@
           <option value="en-ar">English → Arabic</option>
           <option value="speaking">Speaking Phrases</option>
         </select>
+        <select id="revisionSubset">
+          <option value="all">All items</option>
+          <option value="not-started">Not Started</option>
+          <option value="learning">Learning</option>
+          <option value="covered">Covered</option>
+          <option value="confident">Confident</option>
+          <option value="favourites">Favourites</option>
+        </select>
         <button id="newCardBtn">New Card</button>
       </div>
 
       <div class="flashcard">
+        <div class="flash-topline">
+          <span id="flashMeta" class="pill">Revision</span>
+          <button id="flashFavourite" class="star-btn" aria-label="Toggle favourite">☆</button>
+        </div>
         <div id="flashPrompt" class="flash-prompt"></div>
         <button id="revealBtn">Reveal Answer</button>
         <div id="flashAnswer" class="flash-answer hidden"></div>
         <div id="ratingButtons" class="rating-buttons hidden">
-          <button data-rating="Again">Again</button>
-          <button data-rating="Learning">Learning</button>
-          <button data-rating="Know It">Know It</button>
+          <button data-rating="Again" class="rate-again">Again</button>
+          <button data-rating="Learning" class="rate-learning">Learning</button>
+          <button data-rating="Know It" class="rate-know">Know It</button>
         </div>
+        <div id="revisionInfo" class="revision-info"></div>
       </div>
     </section>
   </main>
 
+  <footer>
+    Progress is saved in this browser on this device.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,132 +1,375 @@
+let supabaseClient = null;
+let currentUser = null;
+let remoteProgress = {};
+let syncReady = false;
+
+function initSupabase(){
+  const cfg = window.ARABIC_APP_CONFIG || {};
+  const valid = cfg.SUPABASE_URL && cfg.SUPABASE_KEY &&
+    !cfg.SUPABASE_URL.startsWith('PASTE_') && !cfg.SUPABASE_KEY.startsWith('PASTE_');
+  if(!valid) return false;
+  supabaseClient = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_KEY, {
+    auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}
+  });
+  return true;
+}
+
+async function refreshAuth(){
+  if(!supabaseClient){ updateAuthUI(); return; }
+  const {data:{session}} = await supabaseClient.auth.getSession();
+  currentUser = session?.user || null;
+  if(currentUser) await loadRemoteProgress();
+  updateAuthUI();
+}
+
+async function loadRemoteProgress(){
+  if(!supabaseClient || !currentUser) return;
+  const {data,error}=await supabaseClient.from('progress').select('*');
+  if(error){ console.error(error); return; }
+  remoteProgress={};
+  (data||[]).forEach(r=>{
+    remoteProgress[r.item_id]={
+      status:r.status,
+      favourite:r.favourite,
+      dateCovered:r.date_covered,
+      lastRevised:r.last_revised,
+      timesRevised:r.times_revised,
+      correctCount:r.correct_count,
+      incorrectCount:r.incorrect_count
+    };
+  });
+  syncReady=true;
+  localStorage.setItem(STORE_KEY,JSON.stringify({...loadProgress(),...remoteProgress}));
+  renderAll();
+  if(currentCard) updateFlashMeta();
+}
+
+async function pushProgress(id, value){
+  if(!supabaseClient || !currentUser) return;
+  const row={
+    user_id:currentUser.id,item_id:id,status:value.status||'Not Started',
+    favourite:!!value.favourite,date_covered:value.dateCovered||null,
+    last_revised:value.lastRevised||null,times_revised:value.timesRevised||0,
+    correct_count:value.correctCount||0,incorrect_count:value.incorrectCount||0,
+    updated_at:new Date().toISOString()
+  };
+  const {error}=await supabaseClient.from('progress').upsert(row,{onConflict:'user_id,item_id'});
+  if(error) console.error('Progress sync error',error);
+}
+
+async function sendMagicLink(){
+  if(!supabaseClient){
+    setAuthMessage('Add your Supabase URL and publishable key to config.js first.');
+    return;
+  }
+  const email=document.getElementById('authEmail').value.trim();
+  if(!email){setAuthMessage('Enter your email address.');return;}
+  setAuthMessage('Sending sign-in link…');
+  const redirectTo=window.location.origin+window.location.pathname;
+  const {error}=await supabaseClient.auth.signInWithOtp({
+    email,
+    options:{emailRedirectTo:redirectTo}
+  });
+  setAuthMessage(error?error.message:'Check your email and open the sign-in link.');
+}
+
+async function signOut(){
+  if(supabaseClient) await supabaseClient.auth.signOut();
+  currentUser=null;remoteProgress={};syncReady=false;updateAuthUI();
+}
+
+function setAuthMessage(msg){
+  const el=document.getElementById('authMessage'); if(el) el.textContent=msg||'';
+}
+function updateAuthUI(){
+  const out=document.getElementById('signedOutBox');
+  const inn=document.getElementById('signedInBox');
+  if(!out||!inn)return;
+  out.classList.toggle('hidden',!!currentUser);
+  inn.classList.toggle('hidden',!currentUser);
+  if(currentUser){
+    document.getElementById('signedInEmail').textContent=`Signed in as ${currentUser.email}. Changes now sync between devices.`;
+  }
+}
+
 let DATA = { vocabulary: [], speaking: [] };
 let currentCard = null;
+const STORE_KEY = 'arabicEncyclopediaProgressV2';
+const STATUSES = ['Not Started','Covered','Learning','Confident','Mastered'];
 
+function loadProgress(){
+  try{return JSON.parse(localStorage.getItem(STORE_KEY)) || {};}catch(e){return {}}
+}
+function saveProgress(p){ localStorage.setItem(STORE_KEY, JSON.stringify(p)); }
+function progressFor(id){
+  const p=loadProgress();
+  return p[id] || {status:'Not Started',favourite:false,dateCovered:null,lastRevised:null,timesRevised:0,correctCount:0,incorrectCount:0};
+}
+function patchProgress(id, patch){
+  const all=loadProgress();
+  const old=progressFor(id);
+  const next={...old,...patch};
+  if(patch.status && patch.status!=='Not Started' && !old.dateCovered) next.dateCovered=new Date().toISOString();
+  all[id]=next; saveProgress(all);
+  if(currentUser) pushProgress(id,next);
+  renderAll();
+}
 async function loadData(){
-  const res = await fetch('vocab.json');
-  DATA = await res.json();
+  const res=await fetch('vocab.json');
+  DATA=await res.json();
   setup();
 }
-
 function setup(){
   bindNavigation();
-  renderStats();
   populateFilters();
-  renderVocabulary();
-  renderRoots();
-  renderVerbs();
-  renderSpeaking();
-  newRevisionCard();
   bindEvents();
+  document.getElementById('magicLinkBtn')?.addEventListener('click',sendMagicLink);
+  document.getElementById('signOutBtn')?.addEventListener('click',signOut);
+  renderAll();
+  newRevisionCard();
+  if(initSupabase()){
+    supabaseClient.auth.onAuthStateChange(async (_event,session)=>{
+      currentUser=session?.user||null;
+      if(currentUser) await loadRemoteProgress();
+      updateAuthUI();
+    });
+    refreshAuth();
+  } else {
+    updateAuthUI();
+    setAuthMessage('Supabase is not connected yet. Your progress is currently stored only on this device.');
+  }
 }
-
 function bindNavigation(){
-  document.querySelectorAll('[data-view]').forEach(btn=>{
-    btn.addEventListener('click',()=>showView(btn.dataset.view));
-  });
+  document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));
 }
 function showView(id){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  if(id==='progress') renderProgress();
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function renderStats(){
-  const total = DATA.vocabulary.length;
-  const verbs = DATA.vocabulary.filter(x=>x.type==='Verb').length;
-  const learning = DATA.vocabulary.filter(x=>x.status==='Learning').length;
-  const mastered = DATA.vocabulary.filter(x=>x.status==='Mastered').length;
-  const speaking = DATA.speaking.length;
-  document.getElementById('stats').innerHTML = [
-    ['Total Words',total],['Verbs',verbs],['Speaking Phrases',speaking],['Learning',learning],['Mastered',mastered]
-  ].map(([a,b])=>`<div class="stat"><span>${a}</span><strong>${b}</strong></div>`).join('');
-}
-function unique(arr){ return [...new Set(arr.filter(Boolean))].sort(); }
+function unique(arr){return [...new Set(arr.filter(Boolean))].sort();}
 function fillSelect(id,values){
   const el=document.getElementById(id);
   values.forEach(v=>el.insertAdjacentHTML('beforeend',`<option value="${v}">${v}</option>`));
 }
 function populateFilters(){
   fillSelect('typeFilter',unique(DATA.vocabulary.map(x=>x.type)));
-  fillSelect('statusFilter',unique(DATA.vocabulary.map(x=>x.status)));
   fillSelect('formFilter',unique(DATA.vocabulary.map(x=>x.form)));
   fillSelect('speakingTopicFilter',unique(DATA.speaking.map(x=>x.topic)));
 }
+function renderAll(){
+  renderStats(); renderVocabulary(); renderRoots(); renderVerbs(); renderSpeaking(); renderProgress();
+}
+function itemStatus(id){return progressFor(id).status || 'Not Started';}
+function renderStats(){
+  const allItems=[...DATA.vocabulary,...DATA.speaking];
+  const covered=allItems.filter(x=>itemStatus(x.id)!=='Not Started').length;
+  const mastered=allItems.filter(x=>itemStatus(x.id)==='Mastered').length;
+  const learning=allItems.filter(x=>itemStatus(x.id)==='Learning').length;
+  const fav=allItems.filter(x=>progressFor(x.id).favourite).length;
+  document.getElementById('stats').innerHTML=[
+    ['Total Items',allItems.length],['Covered',covered],['Learning',learning],['Mastered',mastered],['Favourites',fav]
+  ].map(([a,b])=>`<div class="stat"><span>${a}</span><strong>${b}</strong></div>`).join('');
+}
+function statusControls(x){
+  const p=progressFor(x.id);
+  return `<div class="status-row">
+    ${STATUSES.map(s=>`<button class="status-btn ${p.status===s?'active':''}" data-status-id="${x.id}" data-status="${s}">${s}</button>`).join('')}
+    <button class="star-btn ${p.favourite?'on':''}" data-fav-id="${x.id}" title="Favourite">${p.favourite?'★':'☆'}</button>
+  </div>`;
+}
 function vocabCard(x){
+  const p=progressFor(x.id);
   return `<article class="item">
-    <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
-    <h3>${x.english}</h3>
-    <div class="meta">Root: ${x.root||'—'} · Type: ${x.type} ${x.form?`· Form ${x.form}`:''} · ${x.status}</div>
+    <div class="item-head">
+      <div style="flex:1">
+        <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
+        <h3>${x.english}</h3>
+      </div>
+      <span class="pill">${p.status}</span>
+    </div>
+    <div class="meta">Root: ${x.root||'—'} · Type: ${x.type} ${x.form?`· Form ${x.form}`:''}</div>
     ${x.past?`<div class="meta">Past: <span lang="ar" dir="rtl">${x.past}</span> · Present: <span lang="ar" dir="rtl">${x.present}</span> · Maṣdar: <span lang="ar" dir="rtl">${x.masdar}</span></div>`:''}
     ${x.example?`<div class="example" lang="ar" dir="rtl">${x.example}</div><div class="meta">${x.example_en}</div>`:''}
+    <div class="meta">Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}${p.lastRevised?` · Last revised ${formatDate(p.lastRevised)}`:''}</div>
+    ${statusControls(x)}
   </article>`;
+}
+function speakingCard(x){
+  const p=progressFor(x.id);
+  return `<article class="item">
+    <div class="item-head">
+      <div style="flex:1">
+        <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
+        <h3>${x.english}</h3>
+      </div>
+      <span class="pill">${p.status}</span>
+    </div>
+    <div class="meta">${x.topic} · Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}</div>
+    ${statusControls(x)}
+  </article>`;
+}
+function bindDynamicButtons(){
+  document.querySelectorAll('[data-status-id]').forEach(btn=>btn.onclick=()=>{
+    patchProgress(btn.dataset.statusId,{status:btn.dataset.status});
+  });
+  document.querySelectorAll('[data-fav-id]').forEach(btn=>btn.onclick=()=>{
+    const p=progressFor(btn.dataset.favId);
+    patchProgress(btn.dataset.favId,{favourite:!p.favourite});
+  });
 }
 function renderVocabulary(){
   const q=(document.getElementById('vocabSearch')?.value||'').toLowerCase();
   const type=document.getElementById('typeFilter')?.value||'';
   const status=document.getElementById('statusFilter')?.value||'';
+  const fav=document.getElementById('favouriteFilter')?.checked||false;
   const rows=DATA.vocabulary.filter(x=>{
     const hay=[x.arabic,x.english,x.root,x.topic,x.source].join(' ').toLowerCase();
-    return hay.includes(q) && (!type||x.type===type) && (!status||x.status===status);
+    const p=progressFor(x.id);
+    return hay.includes(q)&&(!type||x.type===type)&&(!status||p.status===status)&&(!fav||p.favourite);
   });
   document.getElementById('vocabList').innerHTML=rows.map(vocabCard).join('')||'<p>No matches.</p>';
+  bindDynamicButtons();
 }
 function renderRoots(){
   const groups={};
-  DATA.vocabulary.filter(x=>x.root).forEach(x=>{
-    groups[x.root]=groups[x.root]||[];
-    groups[x.root].push(x);
-  });
-  document.getElementById('rootsList').innerHTML=Object.entries(groups).map(([root,items])=>`
-    <div class="root-card">
+  DATA.vocabulary.filter(x=>x.root).forEach(x=>{groups[x.root]=groups[x.root]||[];groups[x.root].push(x);});
+  document.getElementById('rootsList').innerHTML=Object.entries(groups).map(([root,items])=>{
+    const covered=items.filter(x=>itemStatus(x.id)!=='Not Started').length;
+    const pct=Math.round(covered/items.length*100);
+    return `<div class="root-card">
       <div class="root-title" lang="ar" dir="rtl">${root}</div>
       <div class="root-words" lang="ar" dir="rtl">${items.map(x=>x.arabic).join(' · ')}</div>
-      <div class="meta">${items.length} item${items.length>1?'s':''}</div>
-    </div>`).join('');
+      <div class="meta">${covered}/${items.length} covered · ${pct}%</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join('');
 }
 function renderVerbs(){
   const form=document.getElementById('formFilter')?.value||'';
   const rows=DATA.vocabulary.filter(x=>x.type==='Verb'&&(!form||x.form===form));
   document.getElementById('verbsList').innerHTML=rows.map(vocabCard).join('');
+  bindDynamicButtons();
 }
 function renderSpeaking(){
   const topic=document.getElementById('speakingTopicFilter')?.value||'';
   const rows=DATA.speaking.filter(x=>!topic||x.topic===topic);
-  document.getElementById('speakingList').innerHTML=rows.map(x=>`
-    <article class="item">
-      <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
-      <h3>${x.english}</h3>
-      <div class="meta">${x.topic} · ${x.status}</div>
-    </article>`).join('');
+  document.getElementById('speakingList').innerHTML=rows.map(speakingCard).join('');
+  bindDynamicButtons();
+}
+function renderProgress(){
+  const all=[...DATA.vocabulary,...DATA.speaking];
+  const count=s=>all.filter(x=>itemStatus(x.id)===s).length;
+  const covered=all.length-count('Not Started');
+  const pct=all.length?Math.round(covered/all.length*100):0;
+  document.getElementById('progressSummary').innerHTML=[
+    ['Overall Covered',`${covered}/${all.length}`],['Coverage',`${pct}%`],['Learning',count('Learning')],['Confident',count('Confident')],['Mastered',count('Mastered')]
+  ].map(([a,b])=>`<div class="summary-card"><span>${a}</span><strong>${b}</strong></div>`).join('');
+  const topics={};
+  all.forEach(x=>{const t=x.topic||'Uncategorised';topics[t]=topics[t]||[];topics[t].push(x);});
+  document.getElementById('topicProgress').innerHTML=Object.entries(topics).sort().map(([topic,items])=>{
+    const c=items.filter(x=>itemStatus(x.id)!=='Not Started').length;
+    const p=Math.round(c/items.length*100);
+    return `<div class="topic-row"><div class="topic-top"><strong>${topic}</strong><span>${c}/${items.length} covered</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${p}%"></div></div></div>`;
+  }).join('');
+  const recent=all.map(x=>({x,p:progressFor(x.id)})).filter(o=>o.p.dateCovered).sort((a,b)=>new Date(b.p.dateCovered)-new Date(a.p.dateCovered)).slice(0,6);
+  document.getElementById('recentlyCovered').innerHTML=recent.length?recent.map(o=>`
+    <article class="item"><div class="arabic" lang="ar" dir="rtl">${o.x.arabic}</div><strong>${o.x.english}</strong>
+    <div class="meta">${o.p.status} · Covered ${formatDate(o.p.dateCovered)}</div></article>`).join(''):'<p class="meta">Nothing marked as covered yet.</p>';
+}
+function revisionPool(){
+  const mode=document.getElementById('revisionMode')?.value||'ar-en';
+  const subset=document.getElementById('revisionSubset')?.value||'all';
+  let pool=mode==='speaking'?DATA.speaking:DATA.vocabulary;
+  pool=pool.filter(x=>{
+    const p=progressFor(x.id);
+    if(subset==='all') return true;
+    if(subset==='favourites') return p.favourite;
+    const map={'not-started':'Not Started','learning':'Learning','covered':'Covered','confident':'Confident'};
+    return p.status===map[subset];
+  });
+  return pool;
 }
 function newRevisionCard(){
   const mode=document.getElementById('revisionMode')?.value||'ar-en';
-  const pool=mode==='speaking'?DATA.speaking:DATA.vocabulary;
-  currentCard=pool[Math.floor(Math.random()*pool.length)];
+  const pool=revisionPool();
   const prompt=document.getElementById('flashPrompt');
   const answer=document.getElementById('flashAnswer');
-  answer.classList.add('hidden');
   document.getElementById('ratingButtons').classList.add('hidden');
-  if(mode==='ar-en'){
-    prompt.textContent=currentCard.arabic; prompt.className='flash-prompt arabic';
-    answer.textContent=currentCard.english; answer.className='flash-answer hidden';
-  } else if(mode==='en-ar'){
-    prompt.textContent=currentCard.english; prompt.className='flash-prompt';
-    answer.textContent=currentCard.arabic; answer.className='flash-answer arabic hidden';
-  } else {
-    prompt.textContent=currentCard.english; prompt.className='flash-prompt';
-    answer.textContent=currentCard.arabic; answer.className='flash-answer arabic hidden';
+  answer.classList.add('hidden');
+  if(!pool.length){
+    currentCard=null;
+    prompt.textContent='No items match this revision filter.';
+    prompt.className='flash-prompt';
+    answer.textContent='';
+    updateFlashMeta();
+    return;
   }
+  currentCard=pool[Math.floor(Math.random()*pool.length)];
+  if(mode==='ar-en'){
+    prompt.textContent=currentCard.arabic;prompt.className='flash-prompt arabic';
+    answer.textContent=currentCard.english;answer.className='flash-answer hidden';
+  }else{
+    prompt.textContent=currentCard.english;prompt.className='flash-prompt';
+    answer.textContent=currentCard.arabic;answer.className='flash-answer arabic hidden';
+  }
+  updateFlashMeta();
 }
+function updateFlashMeta(){
+  const meta=document.getElementById('flashMeta');
+  const star=document.getElementById('flashFavourite');
+  const info=document.getElementById('revisionInfo');
+  if(!currentCard){meta.textContent='Revision';star.textContent='☆';info.textContent='';return;}
+  const p=progressFor(currentCard.id);
+  meta.textContent=`${p.status} · ${currentCard.topic||'General'}`;
+  star.textContent=p.favourite?'★':'☆';
+  star.classList.toggle('on',p.favourite);
+  info.textContent=`Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}${p.lastRevised?` · Last ${formatDate(p.lastRevised)}`:''}`;
+}
+function rateCurrent(rating){
+  if(!currentCard)return;
+  const p=progressFor(currentCard.id);
+  const now=new Date().toISOString();
+  let patch={timesRevised:(p.timesRevised||0)+1,lastRevised:now};
+  if(rating==='Again'){patch.incorrectCount=(p.incorrectCount||0)+1;patch.status='Learning';}
+  if(rating==='Learning'){patch.correctCount=(p.correctCount||0)+1;patch.status='Learning';}
+  if(rating==='Know It'){patch.correctCount=(p.correctCount||0)+1;patch.status=p.status==='Confident'?'Mastered':'Confident';}
+  const all=loadProgress(); all[currentCard.id]={...p,...patch};
+  if(!all[currentCard.id].dateCovered) all[currentCard.id].dateCovered=now;
+  saveProgress(all);
+  if(currentUser) pushProgress(currentCard.id, all[currentCard.id]);
+  renderAll(); newRevisionCard();
+}
+function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});}
 function bindEvents(){
-  ['vocabSearch','typeFilter','statusFilter'].forEach(id=>document.getElementById(id).addEventListener('input',renderVocabulary));
+  ['vocabSearch','typeFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id).addEventListener('input',renderVocabulary));
   document.getElementById('formFilter').addEventListener('input',renderVerbs);
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
   document.getElementById('revisionMode').addEventListener('change',newRevisionCard);
+  document.getElementById('revisionSubset').addEventListener('change',newRevisionCard);
   document.getElementById('newCardBtn').addEventListener('click',newRevisionCard);
   document.getElementById('revealBtn').addEventListener('click',()=>{
+    if(!currentCard)return;
     document.getElementById('flashAnswer').classList.remove('hidden');
     document.getElementById('ratingButtons').classList.remove('hidden');
   });
-  document.querySelectorAll('[data-rating]').forEach(btn=>btn.addEventListener('click',newRevisionCard));
+  document.querySelectorAll('[data-rating]').forEach(btn=>btn.addEventListener('click',()=>rateCurrent(btn.dataset.rating)));
+  document.getElementById('flashFavourite').addEventListener('click',()=>{
+    if(!currentCard)return;
+    const p=progressFor(currentCard.id);
+    patchProgress(currentCard.id,{favourite:!p.favourite});updateFlashMeta();
+  });
+  document.getElementById('resetProgressBtn').addEventListener('click',()=>{
+    if(confirm('Reset all saved learning progress on this device?')){
+      localStorage.removeItem(STORE_KEY);
+      if(currentUser && supabaseClient){
+        supabaseClient.from('progress').delete().eq('user_id',currentUser.id).then(()=>{});
+      }
+      renderAll();newRevisionCard();
+    }
+  });
   document.getElementById('globalSearch').addEventListener('input',e=>{
     const q=e.target.value.trim().toLowerCase();
     const box=document.getElementById('searchResults');
@@ -134,8 +377,8 @@ function bindEvents(){
     const vocab=DATA.vocabulary.filter(x=>[x.arabic,x.english,x.root,x.topic].join(' ').toLowerCase().includes(q));
     const speaking=DATA.speaking.filter(x=>[x.arabic,x.english,x.topic].join(' ').toLowerCase().includes(q));
     box.classList.remove('hidden');
-    box.innerHTML=[...vocab.map(vocabCard),...speaking.map(x=>`<article class="item"><div class="arabic" lang="ar" dir="rtl">${x.arabic}</div><h3>${x.english}</h3><div class="meta">${x.topic}</div></article>`)].join('')||'<p>No matches.</p>';
+    box.innerHTML=[...vocab.map(vocabCard),...speaking.map(speakingCard)].join('')||'<p>No matches.</p>';
+    bindDynamicButtons();
   });
 }
-
 loadData();

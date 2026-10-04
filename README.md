@@ -1,42 +1,33 @@
-# My Arabic Encyclopedia
+# Arabic Encyclopedia — Version 3 (Supabase Sync)
 
-A simple personal Arabic vocabulary and revision website designed for GitHub Pages.
+This version keeps your GitHub Pages site and adds optional cross-device progress syncing.
 
-## Files
-- `index.html` — website structure
-- `style.css` — design and Arabic RTL styling
-- `script.js` — search, filters and flashcards
-- `vocab.json` — your vocabulary and speaking phrases
+## Files to upload to GitHub
+- index.html
+- style.css
+- script.js
+- vocab.json
+- config.js
 
-## How to add new vocabulary
-Open `vocab.json` and add a new object inside the `vocabulary` list.
+You can also keep README.md and supabase-setup.sql in the repository.
+
+## Supabase setup
+1. Open your Supabase project.
+2. Go to SQL Editor.
+3. Open `supabase-setup.sql`, copy all of it, paste it into the SQL Editor, and run it.
+4. In Supabase, find your Project URL and the browser-safe publishable key (or legacy anon key).
+5. Open `config.js` and replace the two placeholders.
+6. Do NOT use the service_role key.
+7. In Authentication URL configuration, set your Site URL to your GitHub Pages URL.
+8. Add the same GitHub Pages URL to Redirect URLs.
 
 Example:
+https://YOUR-GITHUB-USERNAME.github.io/arabic-encyclopedia/
 
-```json
-{
-  "arabic": "كَتَبَ",
-  "english": "to write",
-  "root": "ك ت ب",
-  "type": "Verb",
-  "form": "I",
-  "past": "كَتَبَ",
-  "present": "يَكْتُبُ",
-  "masdar": "كِتَابَةٌ",
-  "topic": "Study",
-  "source": "Lesson",
-  "example": "كَتَبَ الطَّالِبُ الدَّرْسَ.",
-  "example_en": "The student wrote the lesson.",
-  "status": "Learning"
-}
-```
+## How sync works
+- Not signed in: progress still saves to localStorage on that device.
+- Signed in: progress is also saved in Supabase.
+- Sign into the same account on another device to load the synced progress.
 
-## Publish on GitHub Pages
-1. Create a new public repository on GitHub.
-2. Upload all five files in this folder.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Choose the `main` branch and `/ (root)`.
-6. Save.
-
-GitHub will provide the live site address.
+## Security
+The progress table uses Row Level Security so authenticated users can only read and change their own rows.

@@ -13,7 +13,8 @@
       "source": "Reading",
       "example": "الْكِتَابُ مَفْقُودٌ.",
       "example_en": "The book is missing.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-1"
     },
     {
       "arabic": "مَلَأَ",
@@ -28,7 +29,8 @@
       "source": "Reading",
       "example": "مَلَأَ الْإِنَاءَ.",
       "example_en": "He filled the container.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-2"
     },
     {
       "arabic": "يَمْلَأُ",
@@ -43,7 +45,8 @@
       "source": "Reading",
       "example": "يَمْلَأُ الْكُوبَ بِالْمَاءِ.",
       "example_en": "He fills the cup with water.",
-      "status": "Familiar"
+      "status": "Familiar",
+      "id": "vocab-3"
     },
     {
       "arabic": "مَمْلُوءٌ",
@@ -58,7 +61,8 @@
       "source": "Reading",
       "example": "الْكُوبُ مَمْلُوءٌ بِالْمَاءِ.",
       "example_en": "The cup is full of water.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-4"
     },
     {
       "arabic": "مَلِيءٌ",
@@ -73,7 +77,8 @@
       "source": "Reading",
       "example": "الْبَيْتُ مَلِيءٌ بِالنَّاسِ.",
       "example_en": "The house is full of people.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-5"
     },
     {
       "arabic": "اِسْتَيْقَظَ",
@@ -88,7 +93,8 @@
       "source": "Reading",
       "example": "اِسْتَيْقَظَ الطَّالِبُ مُبَكِّرًا.",
       "example_en": "The student woke up early.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-6"
     },
     {
       "arabic": "يَسْتَيْقِظُ",
@@ -103,7 +109,8 @@
       "source": "Reading",
       "example": "يَسْتَيْقِظُ مُبَكِّرًا.",
       "example_en": "He wakes up early.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-7"
     },
     {
       "arabic": "اِبْتَسَمَ",
@@ -118,7 +125,8 @@
       "source": "Reading",
       "example": "اِبْتَسَمَ الطِّفْلُ.",
       "example_en": "The child smiled.",
-      "status": "Familiar"
+      "status": "Familiar",
+      "id": "vocab-8"
     },
     {
       "arabic": "يَرْجُو",
@@ -133,7 +141,8 @@
       "source": "Reading",
       "example": "يَرْجُو النَّجَاحَ.",
       "example_en": "He hopes for success.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-9"
     },
     {
       "arabic": "رَغِبَ فِي",
@@ -148,7 +157,8 @@
       "source": "Reading",
       "example": "رَغِبَ فِي التَّعَلُّمِ.",
       "example_en": "He wanted to learn.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-10"
     },
     {
       "arabic": "شَرَحَ",
@@ -163,7 +173,8 @@
       "source": "Lesson",
       "example": "شَرَحَ الْمُعَلِّمُ الدَّرْسَ.",
       "example_en": "The teacher explained the lesson.",
-      "status": "Familiar"
+      "status": "Familiar",
+      "id": "vocab-11"
     },
     {
       "arabic": "مَسْرُورٌ",
@@ -178,7 +189,8 @@
       "source": "Reading",
       "example": "هُوَ مَسْرُورٌ.",
       "example_en": "He is happy.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-12"
     },
     {
       "arabic": "عَطَشٌ",
@@ -193,7 +205,8 @@
       "source": "Reading",
       "example": "عِنْدِي عَطَشٌ.",
       "example_en": "I am thirsty.",
-      "status": "New"
+      "status": "New",
+      "id": "vocab-13"
     },
     {
       "arabic": "رَضِيعٌ",
@@ -208,7 +221,8 @@
       "source": "Reading",
       "example": "هٰذَا طِفْلٌ رَضِيعٌ.",
       "example_en": "This is an infant.",
-      "status": "New"
+      "status": "New",
+      "id": "vocab-14"
     },
     {
       "arabic": "أَحْيَانًا",
@@ -223,7 +237,8 @@
       "source": "Reading",
       "example": "أَحْيَانًا أَقْرَأُ فِي الْمَسَاءِ.",
       "example_en": "Sometimes I read in the evening.",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "vocab-15"
     }
   ],
   "speaking": [
@@ -231,61 +246,71 @@
       "arabic": "السَّلَامُ عَلَيْكُمْ",
       "english": "Peace be upon you / hello",
       "topic": "Greetings",
-      "status": "Familiar"
+      "status": "Familiar",
+      "id": "speaking-1"
     },
     {
       "arabic": "وَعَلَيْكُمُ السَّلَامُ",
       "english": "And peace be upon you",
       "topic": "Greetings",
-      "status": "Familiar"
+      "status": "Familiar",
+      "id": "speaking-2"
     },
     {
       "arabic": "كَيْفَ حَالُكَ؟",
       "english": "How are you?",
       "topic": "Greetings",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "speaking-3"
     },
     {
       "arabic": "أَنَا بِخَيْرٍ، الْحَمْدُ لِلّٰهِ.",
       "english": "I am well, praise be to Allah.",
       "topic": "Greetings",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "speaking-4"
     },
     {
       "arabic": "مَا اسْمُكَ؟",
       "english": "What is your name?",
       "topic": "Introductions",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "speaking-5"
     },
     {
       "arabic": "اسْمِي ...",
       "english": "My name is ...",
       "topic": "Introductions",
-      "status": "Familiar"
+      "status": "Familiar",
+      "id": "speaking-6"
     },
     {
       "arabic": "مِنْ أَيْنَ أَنْتَ؟",
       "english": "Where are you from?",
       "topic": "Introductions",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "speaking-7"
     },
     {
       "arabic": "أُرِيدُ هٰذَا.",
       "english": "I want this.",
       "topic": "Shopping",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "speaking-8"
     },
     {
       "arabic": "كَمِ السِّعْرُ؟",
       "english": "How much is it?",
       "topic": "Shopping",
-      "status": "New"
+      "status": "New",
+      "id": "speaking-9"
     },
     {
       "arabic": "لَا أَفْهَمُ.",
       "english": "I do not understand.",
       "topic": "Conversation Responses",
-      "status": "Learning"
+      "status": "Learning",
+      "id": "speaking-10"
     }
   ]
 }
