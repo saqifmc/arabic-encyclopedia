@@ -1,8 +1,13 @@
-// Supabase browser configuration
-// Safe to expose ONLY the Project URL and publishable/anon key when RLS is enabled.
-// NEVER put your service_role key here.
+// Firebase browser configuration.
+// These web-app config values are designed to be used client-side.
+// Keep Firestore protected with Authentication + Security Rules.
 
-window.ARABIC_APP_CONFIG = {
-  SUPABASE_URL: "https://ttdvjlhyjhichenqdipk.supabase.co",
-  SUPABASE_KEY: "sb_publishable_4qMPlihf0gZw-umgHOA2Kw_jMYDvwq9"
+window.FIREBASE_CONFIG = {
+  apiKey: "AIzaSyBDThUhwy2ceK4HTHunHjBaC2v1yBGMjxI",
+  authDomain: "arabic-encyclopedia.firebaseapp.com",
+  projectId: "arabic-encyclopedia",
+  storageBucket: "arabic-encyclopedia.firebasestorage.app",
+  messagingSenderId: "551291256429",
+  appId: "1:551291256429:web:610136cd869df10b4f4964",
+  measurementId: "G-WZN145Z30J"
 };
