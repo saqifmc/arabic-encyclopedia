@@ -784,7 +784,7 @@ function renderQuranicTarkeeb(){
     </div>
     <div class="translation-note">
       <strong>Translation reference</strong>
-      <p>English wording and terminology are aligned to M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). Verse lines are concise study renderings; word glosses follow the Arabic segmentation for grammar study.</p>
+      <p>English terminology is checked against M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). The verse line and the word-by-word glosses are kept internally consistent with the Arabic segmentation.</p>
     </div>`;
 
   list.innerHTML=surah.ayahs.map(a=>`
