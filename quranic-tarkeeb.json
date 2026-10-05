@@ -1,0 +1,1458 @@
+{
+  "surahs": [
+    {
+      "number": 1,
+      "slug": "fatihah",
+      "arabic_name": "سُورَةُ الْفَاتِحَةِ",
+      "english_name": "Al-Fātiḥah",
+      "note": "Opening chapter",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+          "sense": "In God's name, invoking His mercy.",
+          "summary": "جَارٌّ وَمَجْرُورٌ + مُضَافٌ إِلَيْهِ + نَعْتَانِ مَجْرُورَانِ.",
+          "parts": [
+            [
+              "بِـ",
+              "حَرْفُ جَرٍّ",
+              "Preposition."
+            ],
+            [
+              "اسْمِ",
+              "اِسْمٌ مَجْرُورٌ وَهُوَ مُضَافٌ",
+              "Majrūr by بِـ and functioning as muḍāf."
+            ],
+            [
+              "اللَّهِ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Genitive complement."
+            ],
+            [
+              "الرَّحْمَٰنِ الرَّحِيمِ",
+              "نَعْتَانِ مَجْرُورَانِ",
+              "Two adjectives following the divine name."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+          "sense": "All praise belongs to God, Lord of all worlds.",
+          "summary": "جُمْلَةٌ اسْمِيَّةٌ: مُبْتَدَأٌ + خَبَرٌ شِبْهُ جُمْلَةٍ.",
+          "parts": [
+            [
+              "الْحَمْدُ",
+              "مُبْتَدَأٌ مَرْفُوعٌ",
+              "Subject/topic of the nominal sentence."
+            ],
+            [
+              "لِلَّهِ",
+              "جَارٌّ وَمَجْرُورٌ فِي مَحَلِّ خَبَرٍ",
+              "Shibh al-jumlah functioning as the predicate."
+            ],
+            [
+              "رَبِّ",
+              "بَدَلٌ أَوْ عَطْفُ بَيَانٍ مَجْرُورٌ",
+              "Explains the divine name; also muḍāf."
+            ],
+            [
+              "الْعَالَمِينَ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Genitive complement."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "الرَّحْمَٰنِ الرَّحِيمِ",
+          "sense": "The Lord of perfect and continual mercy.",
+          "summary": "نَعْتَانِ مَجْرُورَانِ تَابِعَانِ لِمَا قَبْلَهُمَا.",
+          "parts": [
+            [
+              "الرَّحْمَٰنِ",
+              "نَعْتٌ مَجْرُورٌ",
+              "Adjective continuing the description."
+            ],
+            [
+              "الرَّحِيمِ",
+              "نَعْتٌ مَجْرُورٌ",
+              "Second adjective."
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "arabic": "مَالِكِ يَوْمِ الدِّينِ",
+          "sense": "Master of the Day of Judgement.",
+          "summary": "نَعْتٌ مَجْرُورٌ + إِضَافَةٌ دَاخِلَ إِضَافَةٍ.",
+          "parts": [
+            [
+              "مَالِكِ",
+              "نَعْتٌ مَجْرُورٌ وَهُوَ مُضَافٌ",
+              "Continuing the description; also muḍāf."
+            ],
+            [
+              "يَوْمِ",
+              "مُضَافٌ إِلَيْهِ وَهُوَ مُضَافٌ",
+              "Genitive complement and itself muḍāf."
+            ],
+            [
+              "الدِّينِ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Completes the second iḍāfah."
+            ]
+          ]
+        },
+        {
+          "n": 5,
+          "arabic": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+          "sense": "You alone we worship, and You alone we ask for help.",
+          "summary": "مَفْعُولٌ بِهِ مُقَدَّمٌ + فِعْلٌ وَفَاعِلٌ مُسْتَتِرٌ، ثُمَّ عَطْفٌ.",
+          "parts": [
+            [
+              "إِيَّاكَ",
+              "مَفْعُولٌ بِهِ مُقَدَّمٌ",
+              "Fronted object for emphasis/restriction."
+            ],
+            [
+              "نَعْبُدُ",
+              "فِعْلٌ مُضَارِعٌ وَفَاعِلُهُ مُسْتَتِرٌ",
+              "Present verb; hidden subject نَحْنُ."
+            ],
+            [
+              "وَإِيَّاكَ",
+              "عَطْفٌ + مَفْعُولٌ بِهِ مُقَدَّمٌ",
+              "Coordinated second clause with fronted object."
+            ],
+            [
+              "نَسْتَعِينُ",
+              "فِعْلٌ مُضَارِعٌ وَفَاعِلُهُ مُسْتَتِرٌ",
+              "Present verb; hidden subject نَحْنُ."
+            ]
+          ]
+        },
+        {
+          "n": 6,
+          "arabic": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+          "sense": "Guide us to the straight path.",
+          "summary": "فِعْلُ أَمْرٍ + فَاعِلٌ مُسْتَتِرٌ + مَفْعُولَانِ + نَعْتٌ.",
+          "parts": [
+            [
+              "اهْدِ",
+              "فِعْلُ أَمْرٍ",
+              "Imperative; hidden subject أَنْتَ."
+            ],
+            [
+              "نَا",
+              "مَفْعُولٌ بِهِ أَوَّلٌ",
+              "Attached object pronoun: us."
+            ],
+            [
+              "الصِّرَاطَ",
+              "مَفْعُولٌ بِهِ ثَانٍ",
+              "Second object."
+            ],
+            [
+              "الْمُسْتَقِيمَ",
+              "نَعْتٌ مَنْصُوبٌ",
+              "Adjective agreeing with الصِّرَاطَ."
+            ]
+          ]
+        },
+        {
+          "n": 7,
+          "arabic": "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+          "sense": "The path of those You have favoured, not those under anger nor those astray.",
+          "summary": "بَدَلٌ + اِسْمٌ مَوْصُولٌ + صِلَةُ الْمَوْصُولِ + بَدَلٌ أَوْ نَعْتٌ + عَطْفٌ.",
+          "parts": [
+            [
+              "صِرَاطَ",
+              "بَدَلٌ أَوْ عَطْفُ بَيَانٍ مَنْصُوبٌ",
+              "Explains the previous الصِّرَاطَ; also muḍāf."
+            ],
+            [
+              "الَّذِينَ",
+              "اِسْمٌ مَوْصُولٌ فِي مَحَلِّ جَرٍّ",
+              "Muḍāf ilayh."
+            ],
+            [
+              "أَنْعَمْتَ عَلَيْهِمْ",
+              "صِلَةُ الْمَوْصُولِ",
+              "Relative clause; no independent محلّ of iʿrāb."
+            ],
+            [
+              "غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ",
+              "بَدَلٌ أَوْ نَعْتٌ",
+              "Excluding/qualifying description."
+            ],
+            [
+              "وَلَا الضَّالِّينَ",
+              "مَعْطُوفٌ مَجْرُورٌ",
+              "Coordinated final description."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 105,
+      "slug": "fil",
+      "arabic_name": "سُورَةُ الْفِيلِ",
+      "english_name": "Al-Fīl",
+      "note": "The Elephant",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ",
+          "sense": "Have you not considered what your Lord did with the people of the elephant?",
+          "summary": "هَمْزَةُ اِسْتِفْهَامٍ + لَمْ جَازِمَةٌ + فِعْلٌ مُضَارِعٌ مَجْزُومٌ، ثُمَّ جُمْلَةٌ اِسْتِفْهَامِيَّةٌ بِكَيْفَ.",
+          "parts": [
+            [
+              "أَلَمْ",
+              "هَمْزَةُ اِسْتِفْهَامٍ + لَمْ",
+              "Interrogation plus negating/jussive particle."
+            ],
+            [
+              "تَرَ",
+              "فِعْلٌ مُضَارِعٌ مَجْزُومٌ",
+              "Majzūm after لَمْ; final weak letter deleted."
+            ],
+            [
+              "كَيْفَ فَعَلَ",
+              "اِسْمُ اِسْتِفْهَامٍ + فِعْلٌ مَاضٍ",
+              "Introduces the manner of the action."
+            ],
+            [
+              "رَبُّكَ",
+              "فَاعِلٌ مَرْفُوعٌ",
+              "Subject of فَعَلَ."
+            ],
+            [
+              "بِأَصْحَابِ الْفِيلِ",
+              "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
+              "Prepositional phrase with iḍāfah."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ",
+          "sense": "Did He not bring their scheme to ruin?",
+          "summary": "لَمْ + فِعْلٌ مُضَارِعٌ مَجْزُومٌ + مَفْعُولٌ بِهِ + شِبْهُ جُمْلَةٍ.",
+          "parts": [
+            [
+              "أَلَمْ يَجْعَلْ",
+              "اِسْتِفْهَامٌ + فِعْلٌ مَجْزُومٌ",
+              "The verb is majzūm after لَمْ."
+            ],
+            [
+              "كَيْدَهُمْ",
+              "مَفْعُولٌ بِهِ مَنْصُوبٌ",
+              "Object of يَجْعَلْ."
+            ],
+            [
+              "فِي تَضْلِيلٍ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Prepositional complement."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ",
+          "sense": "And He sent against them birds in successive groups.",
+          "summary": "وَاوُ عَطْفٍ + فِعْلٌ مَاضٍ + جَارٌّ وَمَجْرُورٌ + مَفْعُولٌ بِهِ + نَعْتٌ.",
+          "parts": [
+            [
+              "وَأَرْسَلَ",
+              "وَاوُ عَطْفٍ + فِعْلٌ مَاضٍ",
+              "Coordinated past-tense clause."
+            ],
+            [
+              "عَلَيْهِمْ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Attached to أَرْسَلَ."
+            ],
+            [
+              "طَيْرًا",
+              "مَفْعُولٌ بِهِ مَنْصُوبٌ",
+              "Object."
+            ],
+            [
+              "أَبَابِيلَ",
+              "نَعْتٌ",
+              "Description of the birds."
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "arabic": "تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ",
+          "sense": "Striking them with stones of baked clay.",
+          "summary": "جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ نَعْتٍ لِلطَّيْرِ.",
+          "parts": [
+            [
+              "تَرْمِيهِمْ",
+              "فِعْلٌ مُضَارِعٌ + فَاعِلٌ مُسْتَتِرٌ + مَفْعُولٌ بِهِ",
+              "The birds are understood as the subject."
+            ],
+            [
+              "بِحِجَارَةٍ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Instrument/means."
+            ],
+            [
+              "مِنْ سِجِّيلٍ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Describes the material/source of the stones."
+            ]
+          ]
+        },
+        {
+          "n": 5,
+          "arabic": "فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ",
+          "sense": "So He made them like eaten-up straw.",
+          "summary": "فَاءٌ + فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ + شِبْهُ جُمْلَةٍ + نَعْتٌ.",
+          "parts": [
+            [
+              "فَجَعَلَهُمْ",
+              "فَاءٌ + فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ",
+              "Result clause."
+            ],
+            [
+              "كَعَصْفٍ",
+              "كَافُ التَّشْبِيهِ + اِسْمٌ مَجْرُورٌ",
+              "Simile phrase."
+            ],
+            [
+              "مَأْكُولٍ",
+              "نَعْتٌ مَجْرُورٌ",
+              "Adjective of عَصْفٍ."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 106,
+      "slug": "quraysh",
+      "arabic_name": "سُورَةُ قُرَيْشٍ",
+      "english_name": "Quraysh",
+      "note": "Quraysh",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "لِإِيلَافِ قُرَيْشٍ",
+          "sense": "For the security and accustomed unity of Quraysh.",
+          "summary": "لَامُ التَّعْلِيلِ + اِسْمٌ مَجْرُورٌ + مُضَافٌ إِلَيْهِ.",
+          "parts": [
+            [
+              "لِإِيلَافِ",
+              "لَامُ التَّعْلِيلِ + اِسْمٌ مَجْرُورٌ",
+              "Purpose/reason phrase."
+            ],
+            [
+              "قُرَيْشٍ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Completes the iḍāfah."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ",
+          "sense": "Their familiarity with the winter and summer journeys.",
+          "summary": "بَدَلٌ أَوْ عَطْفُ بَيَانٍ + مَفْعُولٌ بِهِ لِلْمَصْدَرِ + إِضَافَةٌ.",
+          "parts": [
+            [
+              "إِيلَافِهِمْ",
+              "بَدَلٌ أَوْ عَطْفُ بَيَانٍ",
+              "Explains the first إِيلَافِ."
+            ],
+            [
+              "رِحْلَةَ",
+              "مَفْعُولٌ بِهِ لِلْمَصْدَرِ",
+              "Object governed by the verbal noun إِيلَاف."
+            ],
+            [
+              "الشِّتَاءِ وَالصَّيْفِ",
+              "مُضَافٌ إِلَيْهِ + مَعْطُوفٌ",
+              "Winter and summer in an iḍāfah relationship."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ",
+          "sense": "So let them worship the Lord of this House.",
+          "summary": "فَاءٌ + لَامُ الْأَمْرِ + فِعْلٌ مُضَارِعٌ مَجْزُومٌ + مَفْعُولٌ بِهِ + إِضَافَةٌ.",
+          "parts": [
+            [
+              "فَلْيَعْبُدُوا",
+              "فَاءٌ + لَامُ الْأَمْرِ + فِعْلٌ مَجْزُومٌ",
+              "Command with lām al-amr."
+            ],
+            [
+              "رَبَّ",
+              "مَفْعُولٌ بِهِ مَنْصُوبٌ وَهُوَ مُضَافٌ",
+              "Object and muḍāf."
+            ],
+            [
+              "هَٰذَا الْبَيْتِ",
+              "مُضَافٌ إِلَيْهِ + بَدَلٌ أَوْ عَطْفُ بَيَانٍ",
+              "Demonstrative phrase completing the relation."
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "arabic": "الَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ",
+          "sense": "The One who fed them against hunger and gave them security from fear.",
+          "summary": "اِسْمٌ مَوْصُولٌ + صِلَتَانِ فِعْلِيَّتَانِ مَعْطُوفَتَانِ.",
+          "parts": [
+            [
+              "الَّذِي",
+              "اِسْمٌ مَوْصُولٌ",
+              "Refers back to رَبَّ."
+            ],
+            [
+              "أَطْعَمَهُمْ",
+              "فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ",
+              "First relative clause."
+            ],
+            [
+              "مِنْ جُوعٍ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Prepositional complement."
+            ],
+            [
+              "وَآمَنَهُمْ",
+              "عَطْفٌ + فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ",
+              "Second coordinated relative clause."
+            ],
+            [
+              "مِنْ خَوْفٍ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Prepositional complement."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 107,
+      "slug": "maun",
+      "arabic_name": "سُورَةُ الْمَاعُونِ",
+      "english_name": "Al-Māʿūn",
+      "note": "Common Kindnesses",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ",
+          "sense": "Have you considered the one who denies the Judgement?",
+          "summary": "اِسْتِفْهَامٌ + فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ + صِلَةُ مَوْصُولٍ.",
+          "parts": [
+            [
+              "أَرَأَيْتَ",
+              "هَمْزَةُ اِسْتِفْهَامٍ + فِعْلٌ مَاضٍ",
+              "Interrogative expression."
+            ],
+            [
+              "الَّذِي",
+              "اِسْمٌ مَوْصُولٌ فِي مَحَلِّ مَفْعُولٍ بِهِ",
+              "Object of أَرَأَيْتَ."
+            ],
+            [
+              "يُكَذِّبُ بِالدِّينِ",
+              "صِلَةُ الْمَوْصُولِ",
+              "Relative clause."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ",
+          "sense": "That is the one who repels the orphan.",
+          "summary": "فَاءٌ + مُبْتَدَأٌ + خَبَرٌ اِسْمٌ مَوْصُولٌ + صِلَةٌ فِعْلِيَّةٌ.",
+          "parts": [
+            [
+              "فَذَٰلِكَ",
+              "فَاءٌ + مُبْتَدَأٌ",
+              "Demonstrative as mubtadaʾ."
+            ],
+            [
+              "الَّذِي",
+              "خَبَرٌ أَوْ بَدَلٌ",
+              "Relative pronoun identifying the person."
+            ],
+            [
+              "يَدُعُّ الْيَتِيمَ",
+              "صِلَةُ الْمَوْصُولِ",
+              "Verb with direct object."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ",
+          "sense": "And he does not encourage feeding the needy.",
+          "summary": "وَاوُ عَطْفٍ + لَا نَافِيَةٌ + فِعْلٌ مُضَارِعٌ + جَارٌّ وَمَجْرُورٌ.",
+          "parts": [
+            [
+              "وَلَا",
+              "عَطْفٌ + لَا النَّافِيَةُ",
+              "Negates the following verb without jussive effect."
+            ],
+            [
+              "يَحُضُّ",
+              "فِعْلٌ مُضَارِعٌ مَرْفُوعٌ",
+              "Present verb remains marfūʿ."
+            ],
+            [
+              "عَلَىٰ طَعَامِ الْمِسْكِينِ",
+              "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
+              "Prepositional phrase with iḍāfah."
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "arabic": "فَوَيْلٌ لِّلْمُصَلِّينَ",
+          "sense": "So woe to those who pray.",
+          "summary": "فَاءٌ + مُبْتَدَأٌ مَرْفُوعٌ + جَارٌّ وَمَجْرُورٌ خَبَرٌ.",
+          "parts": [
+            [
+              "فَوَيْلٌ",
+              "فَاءٌ + مُبْتَدَأٌ مَرْفُوعٌ",
+              "Nominal sentence."
+            ],
+            [
+              "لِلْمُصَلِّينَ",
+              "جَارٌّ وَمَجْرُورٌ فِي مَحَلِّ خَبَرٍ",
+              "Shibh al-jumlah functioning as khabar."
+            ]
+          ]
+        },
+        {
+          "n": 5,
+          "arabic": "الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ",
+          "sense": "Those who are heedless of their prayer.",
+          "summary": "اِسْمٌ مَوْصُولٌ + جُمْلَةٌ اسْمِيَّةٌ صِلَةٌ.",
+          "parts": [
+            [
+              "الَّذِينَ",
+              "نَعْتٌ أَوْ بَدَلٌ",
+              "Describes الْمُصَلِّينَ."
+            ],
+            [
+              "هُمْ",
+              "مُبْتَدَأٌ",
+              "Beginning of the relative clause."
+            ],
+            [
+              "عَنْ صَلَاتِهِمْ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Attached to سَاهُونَ."
+            ],
+            [
+              "سَاهُونَ",
+              "خَبَرٌ مَرْفُوعٌ",
+              "Predicate."
+            ]
+          ]
+        },
+        {
+          "n": 6,
+          "arabic": "الَّذِينَ هُمْ يُرَاءُونَ",
+          "sense": "Those who act only to be seen.",
+          "summary": "اِسْمٌ مَوْصُولٌ + مُبْتَدَأٌ + جُمْلَةٌ فِعْلِيَّةٌ خَبَرٌ.",
+          "parts": [
+            [
+              "الَّذِينَ",
+              "بَدَلٌ أَوْ نَعْتٌ",
+              "Further description."
+            ],
+            [
+              "هُمْ",
+              "مُبْتَدَأٌ",
+              "Subject of nominal clause."
+            ],
+            [
+              "يُرَاءُونَ",
+              "جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ خَبَرٍ",
+              "Verbal clause as predicate."
+            ]
+          ]
+        },
+        {
+          "n": 7,
+          "arabic": "وَيَمْنَعُونَ الْمَاعُونَ",
+          "sense": "And they withhold ordinary acts of help.",
+          "summary": "وَاوُ عَطْفٍ + فِعْلٌ مُضَارِعٌ + مَفْعُولٌ بِهِ.",
+          "parts": [
+            [
+              "وَيَمْنَعُونَ",
+              "عَطْفٌ + فِعْلٌ مُضَارِعٌ",
+              "Coordinated present-tense verb."
+            ],
+            [
+              "الْمَاعُونَ",
+              "مَفْعُولٌ بِهِ مَنْصُوبٌ",
+              "Direct object."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 108,
+      "slug": "kawthar",
+      "arabic_name": "سُورَةُ الْكَوْثَرِ",
+      "english_name": "Al-Kawthar",
+      "note": "Abundance",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
+          "sense": "We have certainly granted you abundant good.",
+          "summary": "إِنَّ + اِسْمُهَا + جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ خَبَرِهَا.",
+          "parts": [
+            [
+              "إِنَّا",
+              "إِنَّ + نَا اِسْمُهَا",
+              "Particle of emphasis with its noun."
+            ],
+            [
+              "أَعْطَيْنَاكَ",
+              "فِعْلٌ مَاضٍ + فَاعِلٌ + مَفْعُولٌ بِهِ أَوَّلٌ",
+              "Verbal clause as khabar of إِنَّ."
+            ],
+            [
+              "الْكَوْثَرَ",
+              "مَفْعُولٌ بِهِ ثَانٍ",
+              "Second object of أَعْطَى."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "فَصَلِّ لِرَبِّكَ وَانْحَرْ",
+          "sense": "So pray to your Lord and sacrifice.",
+          "summary": "فَاءُ السَّبَبِيَّةِ/التَّفْرِيعِ + فِعْلَا أَمْرٍ مَعْطُوفَانِ.",
+          "parts": [
+            [
+              "فَصَلِّ",
+              "فَاءٌ + فِعْلُ أَمْرٍ",
+              "Command."
+            ],
+            [
+              "لِرَبِّكَ",
+              "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
+              "Attached to صَلِّ."
+            ],
+            [
+              "وَانْحَرْ",
+              "وَاوُ عَطْفٍ + فِعْلُ أَمْرٍ",
+              "Second coordinated command."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ",
+          "sense": "Indeed, the one who hates you is the one cut off.",
+          "summary": "إِنَّ + اِسْمٌ مَنْصُوبٌ + ضَمِيرُ فَصْلٍ + خَبَرٌ مَرْفُوعٌ.",
+          "parts": [
+            [
+              "إِنَّ",
+              "حَرْفُ تَوْكِيدٍ وَنَصْبٍ",
+              "Emphasis and naṣb."
+            ],
+            [
+              "شَانِئَكَ",
+              "اِسْمُ إِنَّ مَنْصُوبٌ",
+              "Noun of إِنَّ."
+            ],
+            [
+              "هُوَ",
+              "ضَمِيرُ فَصْلٍ",
+              "Separating/emphatic pronoun."
+            ],
+            [
+              "الْأَبْتَرُ",
+              "خَبَرُ إِنَّ مَرْفُوعٌ",
+              "Predicate of إِنَّ."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 109,
+      "slug": "kafirun",
+      "arabic_name": "سُورَةُ الْكَافِرُونَ",
+      "english_name": "Al-Kāfirūn",
+      "note": "The Disbelievers",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "قُلْ يَا أَيُّهَا الْكَافِرُونَ",
+          "sense": "Say: O disbelievers.",
+          "summary": "فِعْلُ أَمْرٍ + نِدَاءٌ.",
+          "parts": [
+            [
+              "قُلْ",
+              "فِعْلُ أَمْرٍ",
+              "Command; hidden subject أَنْتَ."
+            ],
+            [
+              "يَا",
+              "حَرْفُ نِدَاءٍ",
+              "Vocative particle."
+            ],
+            [
+              "أَيُّهَا",
+              "مُنَادَى مَبْنِيٌّ + هَا لِلتَّنْبِيهِ",
+              "Vocative construction."
+            ],
+            [
+              "الْكَافِرُونَ",
+              "نَعْتٌ لِأَيٍّ مَرْفُوعٌ",
+              "Describes أَيّ."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "لَا أَعْبُدُ مَا تَعْبُدُونَ",
+          "sense": "I do not worship what you worship.",
+          "summary": "لَا نَافِيَةٌ + جُمْلَةٌ فِعْلِيَّةٌ + اِسْمٌ مَوْصُولٌ وَصِلَتُهُ.",
+          "parts": [
+            [
+              "لَا",
+              "لَا النَّافِيَةُ",
+              "Negation without changing the verb's iʿrāb."
+            ],
+            [
+              "أَعْبُدُ",
+              "فِعْلٌ مُضَارِعٌ مَرْفُوعٌ",
+              "Present verb."
+            ],
+            [
+              "مَا",
+              "اِسْمٌ مَوْصُولٌ فِي مَحَلِّ مَفْعُولٍ بِهِ",
+              "Relative pronoun as object."
+            ],
+            [
+              "تَعْبُدُونَ",
+              "صِلَةُ الْمَوْصُولِ",
+              "Relative clause."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ",
+          "sense": "Nor are you worshippers of what I worship.",
+          "summary": "عَطْفٌ + لَا نَافِيَةٌ + جُمْلَةٌ اسْمِيَّةٌ.",
+          "parts": [
+            [
+              "وَلَا",
+              "عَطْفٌ + نَفْيٌ",
+              "Coordinated negation."
+            ],
+            [
+              "أَنْتُمْ",
+              "مُبْتَدَأٌ",
+              "Subject/topic."
+            ],
+            [
+              "عَابِدُونَ",
+              "خَبَرٌ مَرْفُوعٌ",
+              "Predicate."
+            ],
+            [
+              "مَا أَعْبُدُ",
+              "مَعْمُولُ اِسْمِ الْفَاعِلِ",
+              "Relative phrase governed by عَابِدُونَ."
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "arabic": "وَلَا أَنَا عَابِدٌ مَّا عَبَدتُّمْ",
+          "sense": "Nor am I a worshipper of what you have worshipped.",
+          "summary": "عَطْفٌ + نَفْيٌ + مُبْتَدَأٌ + خَبَرٌ + اِسْمٌ مَوْصُولٌ.",
+          "parts": [
+            [
+              "وَلَا",
+              "عَطْفٌ + نَفْيٌ",
+              "Coordinated negation."
+            ],
+            [
+              "أَنَا",
+              "مُبْتَدَأٌ",
+              "Subject/topic."
+            ],
+            [
+              "عَابِدٌ",
+              "خَبَرٌ مَرْفُوعٌ",
+              "Predicate."
+            ],
+            [
+              "مَا عَبَدْتُمْ",
+              "اِسْمٌ مَوْصُولٌ + صِلَتُهُ",
+              "Relative phrase."
+            ]
+          ]
+        },
+        {
+          "n": 5,
+          "arabic": "وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ",
+          "sense": "Nor are you worshippers of what I worship.",
+          "summary": "جُمْلَةٌ اسْمِيَّةٌ مَعْطُوفَةٌ مَنْفِيَّةٌ.",
+          "parts": [
+            [
+              "أَنْتُمْ",
+              "مُبْتَدَأٌ",
+              "Subject."
+            ],
+            [
+              "عَابِدُونَ",
+              "خَبَرٌ",
+              "Predicate."
+            ],
+            [
+              "مَا أَعْبُدُ",
+              "اِسْمٌ مَوْصُولٌ + صِلَةٌ",
+              "Relative phrase."
+            ]
+          ]
+        },
+        {
+          "n": 6,
+          "arabic": "لَكُمْ دِينُكُمْ وَلِيَ دِينِ",
+          "sense": "You have your religion, and I have mine.",
+          "summary": "خَبَرٌ مُقَدَّمٌ شِبْهُ جُمْلَةٍ + مُبْتَدَأٌ مُؤَخَّرٌ، ثُمَّ عَطْفٌ.",
+          "parts": [
+            [
+              "لَكُمْ",
+              "جَارٌّ وَمَجْرُورٌ خَبَرٌ مُقَدَّمٌ",
+              "Fronted predicate."
+            ],
+            [
+              "دِينُكُمْ",
+              "مُبْتَدَأٌ مُؤَخَّرٌ مَرْفُوعٌ",
+              "Delayed subject."
+            ],
+            [
+              "وَلِيَ",
+              "عَطْفٌ + جَارٌّ وَمَجْرُورٌ خَبَرٌ مُقَدَّمٌ",
+              "Second fronted predicate."
+            ],
+            [
+              "دِينِ",
+              "مُبْتَدَأٌ مُؤَخَّرٌ",
+              "Delayed subject; yāʾ possessive understood/attached."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 110,
+      "slug": "nasr",
+      "arabic_name": "سُورَةُ النَّصْرِ",
+      "english_name": "An-Naṣr",
+      "note": "Divine Help",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
+          "sense": "When God's help and victory come.",
+          "summary": "إِذَا ظَرْفٌ لِمَا يُسْتَقْبَلُ + جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ إِضَافَةٍ.",
+          "parts": [
+            [
+              "إِذَا",
+              "ظَرْفٌ لِمَا يُسْتَقْبَلُ مُتَضَمِّنٌ مَعْنَى الشَّرْطِ",
+              "Time adverb carrying conditional meaning."
+            ],
+            [
+              "جَاءَ",
+              "فِعْلٌ مَاضٍ",
+              "Past form used in the conditional/time clause."
+            ],
+            [
+              "نَصْرُ اللَّهِ",
+              "فَاعِلٌ مَرْفُوعٌ + إِضَافَةٌ",
+              "Subject with iḍāfah."
+            ],
+            [
+              "وَالْفَتْحُ",
+              "مَعْطُوفٌ مَرْفُوعٌ",
+              "Coordinated noun."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا",
+          "sense": "And you see people entering God's religion in crowds.",
+          "summary": "فِعْلٌ وَفَاعِلٌ + مَفْعُولٌ بِهِ + جُمْلَةٌ حَالِيَّةٌ + حَالٌ.",
+          "parts": [
+            [
+              "وَرَأَيْتَ",
+              "عَطْفٌ + فِعْلٌ مَاضٍ + فَاعِلٌ",
+              "The tāʾ is the subject."
+            ],
+            [
+              "النَّاسَ",
+              "مَفْعُولٌ بِهِ",
+              "Object of رَأَيْتَ."
+            ],
+            [
+              "يَدْخُلُونَ فِي دِينِ اللَّهِ",
+              "جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ حَالٍ",
+              "Describes the people while entering."
+            ],
+            [
+              "أَفْوَاجًا",
+              "حَالٌ مَنْصُوبٌ",
+              "State/manner: in groups."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ ۚ إِنَّهُ كَانَ تَوَّابًا",
+          "sense": "Then glorify your Lord with praise and seek His forgiveness; He is ever accepting of repentance.",
+          "summary": "جَوَابُ إِذَا: فِعْلَا أَمْرٍ، ثُمَّ إِنَّ + جُمْلَةُ كَانَ خَبَرًا.",
+          "parts": [
+            [
+              "فَسَبِّحْ",
+              "فَاءُ جَوَابِ إِذَا + فِعْلُ أَمْرٍ",
+              "Main response to the conditional/time clause."
+            ],
+            [
+              "بِحَمْدِ رَبِّكَ",
+              "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
+              "Attached to سَبِّحْ."
+            ],
+            [
+              "وَاسْتَغْفِرْهُ",
+              "عَطْفٌ + فِعْلُ أَمْرٍ + مَفْعُولٌ بِهِ",
+              "Second command."
+            ],
+            [
+              "إِنَّهُ",
+              "إِنَّ + اِسْمُهَا",
+              "Emphatic nominal clause."
+            ],
+            [
+              "كَانَ تَوَّابًا",
+              "كَانَ + اِسْمٌ مُسْتَتِرٌ + خَبَرٌ مَنْصُوبٌ",
+              "Kāna clause functioning as the khabar of إِنَّ."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 111,
+      "slug": "masad",
+      "arabic_name": "سُورَةُ الْمَسَدِ",
+      "english_name": "Al-Masad",
+      "note": "Palm Fibre",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ",
+          "sense": "Ruined are the hands of Abu Lahab, and ruined is he.",
+          "summary": "فِعْلٌ مَاضٍ + فَاعِلٌ مُثَنًّى + إِضَافَةٌ، ثُمَّ جُمْلَةٌ مَعْطُوفَةٌ.",
+          "parts": [
+            [
+              "تَبَّتْ",
+              "فِعْلٌ مَاضٍ",
+              "Past verb; tāʾ of feminine agreement."
+            ],
+            [
+              "يَدَا",
+              "فَاعِلٌ مَرْفُوعٌ بِالْأَلِفِ وَهُوَ مُضَافٌ",
+              "Dual subject and muḍāf."
+            ],
+            [
+              "أَبِي لَهَبٍ",
+              "مُضَافٌ إِلَيْهِ + إِضَافَةٌ",
+              "Genitive chain."
+            ],
+            [
+              "وَتَبَّ",
+              "عَطْفٌ + فِعْلٌ مَاضٍ",
+              "Second coordinated clause; subject understood from context."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ",
+          "sense": "His wealth and what he earned did not benefit him.",
+          "summary": "مَا نَافِيَةٌ + فِعْلٌ مَاضٍ + فَاعِلٌ، ثُمَّ عَطْفٌ.",
+          "parts": [
+            [
+              "مَا",
+              "مَا النَّافِيَةُ",
+              "Negation."
+            ],
+            [
+              "أَغْنَىٰ عَنْهُ",
+              "فِعْلٌ مَاضٍ + جَارٌّ وَمَجْرُورٌ",
+              "Verb with prepositional complement."
+            ],
+            [
+              "مَالُهُ",
+              "فَاعِلٌ مَرْفُوعٌ",
+              "Subject."
+            ],
+            [
+              "وَمَا كَسَبَ",
+              "عَطْفٌ + مَا مَوْصُولَةٌ + صِلَتُهَا",
+              "What he earned, coordinated with his wealth."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ",
+          "sense": "He will enter a blazing fire.",
+          "summary": "سِينُ الِاسْتِقْبَالِ + فِعْلٌ مُضَارِعٌ + مَفْعُولٌ بِهِ/مَنْصُوبٌ + نَعْتٌ.",
+          "parts": [
+            [
+              "سَيَصْلَىٰ",
+              "سِينٌ + فِعْلٌ مُضَارِعٌ",
+              "Future marker plus present verb."
+            ],
+            [
+              "نَارًا",
+              "مَنْصُوبٌ",
+              "Object/complement of the verb."
+            ],
+            [
+              "ذَاتَ لَهَبٍ",
+              "نَعْتٌ مَنْصُوبٌ + إِضَافَةٌ",
+              "Description of the fire."
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "arabic": "وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ",
+          "sense": "And his wife, the carrier of firewood.",
+          "summary": "وَاوُ عَطْفٍ + مُبْتَدَأٌ، وَقِرَاءَةُ النَّصْبِ فِي حَمَّالَةَ عَلَى الذَّمِّ.",
+          "parts": [
+            [
+              "وَامْرَأَتُهُ",
+              "وَاوُ عَطْفٍ + مُبْتَدَأٌ مَرْفُوعٌ",
+              "His wife, coordinated/introduced as a noun."
+            ],
+            [
+              "حَمَّالَةَ",
+              "مَنْصُوبٌ عَلَى الذَّمِّ",
+              "Accusative of condemnation in the canonical reading."
+            ],
+            [
+              "الْحَطَبِ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Genitive complement."
+            ]
+          ]
+        },
+        {
+          "n": 5,
+          "arabic": "فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ",
+          "sense": "Around her neck is a rope of palm fibre.",
+          "summary": "خَبَرٌ مُقَدَّمٌ شِبْهُ جُمْلَةٍ + مُبْتَدَأٌ مُؤَخَّرٌ + نَعْتٌ شِبْهُ جُمْلَةٍ.",
+          "parts": [
+            [
+              "فِي جِيدِهَا",
+              "جَارٌّ وَمَجْرُورٌ خَبَرٌ مُقَدَّمٌ",
+              "Fronted predicate."
+            ],
+            [
+              "حَبْلٌ",
+              "مُبْتَدَأٌ مُؤَخَّرٌ مَرْفُوعٌ",
+              "Delayed subject."
+            ],
+            [
+              "مِنْ مَسَدٍ",
+              "جَارٌّ وَمَجْرُورٌ فِي مَحَلِّ نَعْتٍ",
+              "Prepositional phrase describing the rope."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 112,
+      "slug": "ikhlas",
+      "arabic_name": "سُورَةُ الْإِخْلَاصِ",
+      "english_name": "Al-Ikhlāṣ",
+      "note": "Sincerity",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ",
+          "sense": "Say: He is God, One.",
+          "summary": "فِعْلُ أَمْرٍ + جُمْلَةٌ اسْمِيَّةٌ مَقُولُ الْقَوْلِ.",
+          "parts": [
+            [
+              "قُلْ",
+              "فِعْلُ أَمْرٍ",
+              "Command."
+            ],
+            [
+              "هُوَ",
+              "مُبْتَدَأٌ",
+              "Subject/topic."
+            ],
+            [
+              "اللَّهُ",
+              "خَبَرٌ أَوْ بَدَلٌ",
+              "Predicate or explanatory apposition depending on analysis."
+            ],
+            [
+              "أَحَدٌ",
+              "خَبَرٌ ثَانٍ أَوْ خَبَرٌ",
+              "Further predication: One."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "اللَّهُ الصَّمَدُ",
+          "sense": "God is the Eternal Refuge.",
+          "summary": "جُمْلَةٌ اسْمِيَّةٌ: مُبْتَدَأٌ + خَبَرٌ.",
+          "parts": [
+            [
+              "اللَّهُ",
+              "مُبْتَدَأٌ مَرْفُوعٌ",
+              "Subject/topic."
+            ],
+            [
+              "الصَّمَدُ",
+              "خَبَرٌ مَرْفُوعٌ",
+              "Predicate."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+          "sense": "He did not beget, nor was He begotten.",
+          "summary": "لَمْ جَازِمَةٌ + فِعْلَانِ مُضَارِعَانِ مَجْزُومَانِ، الثَّانِي مَبْنِيٌّ لِلْمَجْهُولِ.",
+          "parts": [
+            [
+              "لَمْ يَلِدْ",
+              "لَمْ + فِعْلٌ مُضَارِعٌ مَجْزُومٌ",
+              "Active verb in the jussive."
+            ],
+            [
+              "وَلَمْ",
+              "عَطْفٌ + لَمْ",
+              "Second negated clause."
+            ],
+            [
+              "يُولَدْ",
+              "فِعْلٌ مُضَارِعٌ مَجْزُومٌ مَبْنِيٌّ لِلْمَجْهُولِ",
+              "Passive present verb, majzūm."
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "arabic": "وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
+          "sense": "And no one is comparable to Him.",
+          "summary": "لَمْ + يَكُنْ مِنْ أَخَوَاتِ كَانَ + خَبَرٌ مُقَدَّمٌ + اِسْمٌ مُؤَخَّرٌ.",
+          "parts": [
+            [
+              "وَلَمْ يَكُنْ",
+              "عَطْفٌ + لَمْ + فِعْلٌ نَاقِصٌ مَجْزُومٌ",
+              "يَكُنْ is majzūm after لَمْ."
+            ],
+            [
+              "لَهُ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Related to كُفُوًا."
+            ],
+            [
+              "كُفُوًا",
+              "خَبَرُ يَكُنْ مُقَدَّمٌ مَنْصُوبٌ",
+              "Fronted predicate."
+            ],
+            [
+              "أَحَدٌ",
+              "اِسْمُ يَكُنْ مُؤَخَّرٌ مَرْفُوعٌ",
+              "Delayed noun of يَكُنْ."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 113,
+      "slug": "falaq",
+      "arabic_name": "سُورَةُ الْفَلَقِ",
+      "english_name": "Al-Falaq",
+      "note": "Daybreak",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
+          "sense": "Say: I seek refuge with the Lord of daybreak.",
+          "summary": "فِعْلُ أَمْرٍ + جُمْلَةٌ فِعْلِيَّةٌ مَقُولُ الْقَوْلِ + جَارٌّ وَمَجْرُورٌ.",
+          "parts": [
+            [
+              "قُلْ",
+              "فِعْلُ أَمْرٍ",
+              "Command."
+            ],
+            [
+              "أَعُوذُ",
+              "فِعْلٌ مُضَارِعٌ وَفَاعِلُهُ مُسْتَتِرٌ",
+              "Present verb; hidden subject أَنَا."
+            ],
+            [
+              "بِرَبِّ الْفَلَقِ",
+              "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
+              "Prepositional phrase with iḍāfah."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "مِن شَرِّ مَا خَلَقَ",
+          "sense": "From the evil of what He created.",
+          "summary": "جَارٌّ وَمَجْرُورٌ + اِسْمٌ مَوْصُولٌ + صِلَةٌ.",
+          "parts": [
+            [
+              "مِنْ شَرِّ",
+              "جَارٌّ وَمَجْرُورٌ وَهُوَ مُضَافٌ",
+              "Attached to أَعُوذُ."
+            ],
+            [
+              "مَا",
+              "اِسْمٌ مَوْصُولٌ فِي مَحَلِّ جَرٍّ",
+              "Muḍāf ilayh."
+            ],
+            [
+              "خَلَقَ",
+              "صِلَةُ الْمَوْصُولِ",
+              "Relative clause."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+          "sense": "And from the evil of darkness when it settles.",
+          "summary": "عَطْفٌ + جَارٌّ وَمَجْرُورٌ + إِذَا الظَّرْفِيَّةُ.",
+          "parts": [
+            [
+              "وَمِنْ شَرِّ",
+              "عَطْفٌ + جَارٌّ وَمَجْرُورٌ",
+              "Coordinated prepositional phrase."
+            ],
+            [
+              "غَاسِقٍ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Genitive complement."
+            ],
+            [
+              "إِذَا وَقَبَ",
+              "ظَرْفٌ + جُمْلَةٌ فِعْلِيَّةٌ",
+              "Time clause."
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "arabic": "وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ",
+          "sense": "And from the evil of those who blow upon knots.",
+          "summary": "عَطْفٌ + جَارٌّ وَمَجْرُورٌ + نَعْتٌ/مُتَعَلِّقٌ.",
+          "parts": [
+            [
+              "وَمِنْ شَرِّ",
+              "عَطْفٌ + جَارٌّ وَمَجْرُورٌ",
+              "Continues the series."
+            ],
+            [
+              "النَّفَّاثَاتِ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Genitive complement."
+            ],
+            [
+              "فِي الْعُقَدِ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Attached to النَّفَّاثَاتِ / their action."
+            ]
+          ]
+        },
+        {
+          "n": 5,
+          "arabic": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+          "sense": "And from the evil of an envier when he envies.",
+          "summary": "عَطْفٌ + جَارٌّ وَمَجْرُورٌ + إِذَا الظَّرْفِيَّةُ.",
+          "parts": [
+            [
+              "وَمِنْ شَرِّ",
+              "عَطْفٌ + جَارٌّ وَمَجْرُورٌ",
+              "Continues the series."
+            ],
+            [
+              "حَاسِدٍ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Genitive complement."
+            ],
+            [
+              "إِذَا حَسَدَ",
+              "ظَرْفٌ + جُمْلَةٌ فِعْلِيَّةٌ",
+              "Time/condition clause."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 114,
+      "slug": "nas",
+      "arabic_name": "سُورَةُ النَّاسِ",
+      "english_name": "An-Nās",
+      "note": "People",
+      "ayahs": [
+        {
+          "n": 1,
+          "arabic": "قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
+          "sense": "Say: I seek refuge with the Lord of people.",
+          "summary": "فِعْلُ أَمْرٍ + جُمْلَةٌ فِعْلِيَّةٌ + جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ.",
+          "parts": [
+            [
+              "قُلْ",
+              "فِعْلُ أَمْرٍ",
+              "Command."
+            ],
+            [
+              "أَعُوذُ",
+              "فِعْلٌ مُضَارِعٌ وَفَاعِلُهُ مُسْتَتِرٌ",
+              "Hidden subject أَنَا."
+            ],
+            [
+              "بِرَبِّ النَّاسِ",
+              "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
+              "Prepositional phrase with iḍāfah."
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "arabic": "مَلِكِ النَّاسِ",
+          "sense": "The King of people.",
+          "summary": "بَدَلٌ أَوْ نَعْتٌ مَجْرُورٌ + إِضَافَةٌ.",
+          "parts": [
+            [
+              "مَلِكِ",
+              "بَدَلٌ أَوْ نَعْتٌ مَجْرُورٌ وَهُوَ مُضَافٌ",
+              "Continues the description of رَبِّ."
+            ],
+            [
+              "النَّاسِ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Genitive complement."
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "arabic": "إِلَٰهِ النَّاسِ",
+          "sense": "The God of people.",
+          "summary": "بَدَلٌ أَوْ نَعْتٌ مَجْرُورٌ + إِضَافَةٌ.",
+          "parts": [
+            [
+              "إِلَٰهِ",
+              "بَدَلٌ أَوْ نَعْتٌ مَجْرُورٌ وَهُوَ مُضَافٌ",
+              "Another description."
+            ],
+            [
+              "النَّاسِ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Genitive complement."
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "arabic": "مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ",
+          "sense": "From the evil of the retreating whisperer.",
+          "summary": "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ + نَعْتٌ مَجْرُورٌ.",
+          "parts": [
+            [
+              "مِنْ شَرِّ",
+              "جَارٌّ وَمَجْرُورٌ وَهُوَ مُضَافٌ",
+              "Attached to أَعُوذُ."
+            ],
+            [
+              "الْوَسْوَاسِ",
+              "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
+              "Genitive complement."
+            ],
+            [
+              "الْخَنَّاسِ",
+              "نَعْتٌ مَجْرُورٌ",
+              "Adjective describing الْوَسْوَاسِ."
+            ]
+          ]
+        },
+        {
+          "n": 5,
+          "arabic": "الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ",
+          "sense": "Who whispers in the hearts of people.",
+          "summary": "اِسْمٌ مَوْصُولٌ + صِلَةُ مَوْصُولٍ + جَارٌّ وَمَجْرُورٌ.",
+          "parts": [
+            [
+              "الَّذِي",
+              "نَعْتٌ أَوْ بَدَلٌ",
+              "Refers to the whisperer."
+            ],
+            [
+              "يُوَسْوِسُ",
+              "فِعْلٌ مُضَارِعٌ",
+              "Verb of the relative clause."
+            ],
+            [
+              "فِي صُدُورِ النَّاسِ",
+              "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
+              "Prepositional phrase attached to يُوَسْوِسُ."
+            ]
+          ]
+        },
+        {
+          "n": 6,
+          "arabic": "مِنَ الْجِنَّةِ وَالنَّاسِ",
+          "sense": "From among jinn and people.",
+          "summary": "جَارٌّ وَمَجْرُورٌ + مَعْطُوفٌ.",
+          "parts": [
+            [
+              "مِنَ الْجِنَّةِ",
+              "جَارٌّ وَمَجْرُورٌ",
+              "Explains the source/kind of the whisperer."
+            ],
+            [
+              "وَالنَّاسِ",
+              "مَعْطُوفٌ مَجْرُورٌ",
+              "Coordinated with الْجِنَّةِ."
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
