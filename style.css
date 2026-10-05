@@ -413,3 +413,22 @@ html,body,button,input,select,textarea{
 }
 .foundation-title-box h2{margin:0 0 4px}
 .foundation-title-box p{margin:0}
+
+/* Shared Foundations header panel */
+.foundation-panel{
+  border:1.5px solid #7fe7d7;
+  border-radius:22px;
+  background:#eefaf7;
+  padding:28px 24px 26px;
+  margin-bottom:22px;
+}
+.foundation-panel h2{
+  margin:0 0 8px;
+}
+.foundation-panel p{
+  margin:0 0 20px;
+}
+.foundation-panel select{
+  width:min(480px,100%);
+  background:#fff;
+}
