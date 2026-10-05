@@ -193,7 +193,7 @@ const SECTION_METRIC_FILTERS = { vocabulary:'all', verbs:'all' };
 let ROOT_METRIC_FILTER = 'all';
 let PROGRESS_METRIC_FILTER = 'all';
 
-let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [] };
+let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [], sarf: [], quranicTarkeeb: [] };
 let currentCard = null;
 const STORE_KEY = 'arabicEncyclopediaProgressV2';
 const STATUSES = ['Not Started','Covered','Learning','Confident','Mastered'];
@@ -216,15 +216,16 @@ function patchProgress(id, patch){
   renderAll();
 }
 async function loadData(){
-  const [vocabRes, verbsRes, speakingRes, nahwRes, sarfRes] = await Promise.all([
-    fetch('vocab.json'), fetch('verbs.json'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json')
+  const [vocabRes, verbsRes, speakingRes, nahwRes, sarfRes, quranRes] = await Promise.all([
+    fetch('vocab.json'), fetch('verbs.json'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json'), fetch('quranic-tarkeeb.json')
   ]);
   const vocabData=await vocabRes.json();
   const verbsData=await verbsRes.json();
   const speakingData=await speakingRes.json();
   const nahwData=await nahwRes.json();
   const sarfData=await sarfRes.json();
-  DATA={vocabulary:vocabData.vocabulary||[],verbs:verbsData.verbs||[],speaking:speakingData.speaking||[],nahw:nahwData.nahw||[],sarf:sarfData.sarf||[]};
+  const quranData=await quranRes.json();
+  DATA={vocabulary:vocabData.vocabulary||[],verbs:verbsData.verbs||[],speaking:speakingData.speaking||[],nahw:nahwData.nahw||[],sarf:sarfData.sarf||[],quranicTarkeeb:quranData.surahs||[]};
   setup();
 }
 function setup(){
@@ -310,7 +311,7 @@ function populateFilters(){
   fillSelect('nahwTopicFilter',unique(DATA.nahw.map(x=>x.topic)));
 }
 function renderAll(){
-  renderStats(); renderSectionDashboards(); renderVocabulary(); renderRoots(); renderVerbs(); renderSarf(); renderSpeaking(); renderNahw(); renderProgress();
+  renderStats(); renderSectionDashboards(); renderVocabulary(); renderRoots(); renderVerbs(); renderSarf(); renderSpeaking(); renderNahw(); renderQuranicTarkeeb(); renderProgress();
 }
 function itemStatus(id){return progressFor(id).status || 'Not Started';}
 function statusClass(status){
@@ -700,6 +701,49 @@ function renderNahw(){
     </section>`).join('')||'<p>No Nahw concepts match this section.</p>';
 }
 
+
+function quranTarkeebPart([word,label,note]){
+  return `<div>
+    <span class="q-word" lang="ar" dir="rtl">${word}</span>
+    <b lang="ar" dir="rtl">${label}</b>
+    <small>${note}</small>
+  </div>`;
+}
+
+function renderQuranicTarkeeb(){
+  const select=document.getElementById('quranSurahFilter');
+  const intro=document.getElementById('quranSurahIntro');
+  const list=document.getElementById('quranAyahList');
+  if(!select||!intro||!list) return;
+
+  const selected=Number(select.value||1);
+  const surah=DATA.quranicTarkeeb.find(x=>Number(x.number)===selected) || DATA.quranicTarkeeb[0];
+  if(!surah){
+    intro.innerHTML='<p>No Qur\'anic Tarkeeb data is available.</p>';
+    list.innerHTML='';
+    return;
+  }
+
+  intro.innerHTML=`
+    <div>
+      <div class="arabic quran-surah-title" lang="ar" dir="rtl">${surah.arabic_name}</div>
+      <h3>Sūrah ${surah.english_name} — Tarkeeb</h3>
+      <p>${surah.number===1?'Opening chapter':`Sūrah ${surah.number} · ${surah.note||''}`} · ${surah.ayahs.length} āyah${surah.ayahs.length===1?'':'s'}</p>
+    </div>
+    <div class="translation-note">
+      <strong>Translation reference</strong>
+      <p>M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). The English lines here are concise study paraphrases rather than a reproduction of the published translation.</p>
+    </div>`;
+
+  list.innerHTML=surah.ayahs.map(a=>`
+    <article class="quran-ayah-card">
+      <div class="ayah-number">${a.n}</div>
+      <div class="quran-arabic" lang="ar" dir="rtl">${a.arabic}</div>
+      <div class="quran-sense">${a.sense||''}</div>
+      <div class="tarkeeb-summary" lang="ar" dir="rtl"><strong>التَّرْكِيبُ:</strong> ${a.summary||''}</div>
+      <div class="tarkeeb-grid">${(a.parts||[]).map(quranTarkeebPart).join('')}</div>
+    </article>`).join('');
+}
 function revisionPool(){
   const mode=document.getElementById('revisionMode')?.value||'vocab-ar-en';
   const subset=document.getElementById('revisionSubset')?.value||'all';
@@ -846,6 +890,7 @@ function bindEvents(){
   document.getElementById('rootSort')?.addEventListener('input',renderRoots);
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
   document.getElementById('nahwTopicFilter')?.addEventListener('input',renderNahw);
+  document.getElementById('quranSurahFilter')?.addEventListener('change',renderQuranicTarkeeb);
   document.getElementById('revisionMode').addEventListener('change',newRevisionCard);
   document.getElementById('revisionSubset').addEventListener('change',newRevisionCard);
   document.getElementById('newCardBtn').addEventListener('click',newRevisionCard);
