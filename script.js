@@ -701,11 +701,18 @@ function renderNahw(){
 }
 
 function revisionPool(){
-  const mode=document.getElementById('revisionMode')?.value||'ar-en';
+  const mode=document.getElementById('revisionMode')?.value||'vocab-ar-en';
   const subset=document.getElementById('revisionSubset')?.value||'all';
-  let pool;
-  if(mode==='verbs') pool=DATA.verbs;
-  else pool=DATA.vocabulary;
+
+  let pool=mode.startsWith('verb-') ? DATA.verbs : DATA.vocabulary;
+
+  if(mode==='vocab-root') pool=pool.filter(x=>x.root);
+  if(mode==='verb-past-present') pool=pool.filter(x=>x.past&&x.present);
+  if(mode==='verb-present-past') pool=pool.filter(x=>x.present&&x.past);
+  if(mode==='verb-root') pool=pool.filter(x=>x.root);
+  if(mode==='verb-form') pool=pool.filter(x=>x.form);
+  if(mode==='verb-masdar') pool=pool.filter(x=>x.masdar);
+
   pool=pool.filter(x=>{
     const p=progressFor(x.id);
     if(subset==='all') return true;
@@ -713,15 +720,19 @@ function revisionPool(){
     const map={'not-started':'Not Started','learning':'Learning','covered':'Covered','confident':'Confident'};
     return p.status===map[subset];
   });
+
   return pool;
 }
+
 function newRevisionCard(){
-  const mode=document.getElementById('revisionMode')?.value||'ar-en';
+  const mode=document.getElementById('revisionMode')?.value||'vocab-ar-en';
   const pool=revisionPool();
   const prompt=document.getElementById('flashPrompt');
   const answer=document.getElementById('flashAnswer');
+
   document.getElementById('ratingButtons').classList.add('hidden');
   answer.classList.add('hidden');
+
   if(!pool.length){
     currentCard=null;
     prompt.textContent='No items match this revision filter.';
@@ -730,14 +741,70 @@ function newRevisionCard(){
     updateFlashMeta();
     return;
   }
+
   currentCard=pool[Math.floor(Math.random()*pool.length)];
-  if(mode==='ar-en'){
-    prompt.textContent=currentCard.arabic;prompt.className='flash-prompt arabic';
-    answer.textContent=currentCard.english;answer.className='flash-answer hidden';
-  } else {
-    prompt.textContent=currentCard.english;prompt.className='flash-prompt';
-    answer.textContent=currentCard.arabic;answer.className='flash-answer arabic hidden';
+
+  let promptText='';
+  let answerText='';
+  let promptArabic=false;
+  let answerArabic=false;
+
+  switch(mode){
+    case 'vocab-ar-en':
+    case 'verb-ar-en':
+      promptText=currentCard.arabic||currentCard.past||'';
+      answerText=currentCard.english||'';
+      promptArabic=true;
+      break;
+
+    case 'vocab-en-ar':
+    case 'verb-en-ar':
+      promptText=currentCard.english||'';
+      answerText=currentCard.arabic||currentCard.past||'';
+      answerArabic=true;
+      break;
+
+    case 'vocab-root':
+    case 'verb-root':
+      promptText=currentCard.arabic||currentCard.past||'';
+      answerText=currentCard.root||'—';
+      promptArabic=true;
+      answerArabic=true;
+      break;
+
+    case 'verb-past-present':
+      promptText=currentCard.past||currentCard.arabic||'';
+      answerText=currentCard.present||'—';
+      promptArabic=true;
+      answerArabic=true;
+      break;
+
+    case 'verb-present-past':
+      promptText=currentCard.present||'';
+      answerText=currentCard.past||currentCard.arabic||'—';
+      promptArabic=true;
+      answerArabic=true;
+      break;
+
+    case 'verb-form':
+      promptText=currentCard.arabic||currentCard.past||'';
+      answerText=currentCard.form||'—';
+      promptArabic=true;
+      break;
+
+    case 'verb-masdar':
+      promptText=currentCard.arabic||currentCard.past||'';
+      answerText=currentCard.masdar||'—';
+      promptArabic=true;
+      answerArabic=true;
+      break;
   }
+
+  prompt.textContent=promptText;
+  prompt.className='flash-prompt'+(promptArabic?' arabic':'');
+  answer.textContent=answerText;
+  answer.className='flash-answer hidden'+(answerArabic?' arabic':'');
+
   updateFlashMeta();
 }
 function updateFlashMeta(){
