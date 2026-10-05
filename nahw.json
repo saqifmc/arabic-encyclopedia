@@ -122,10 +122,10 @@
     },
     {
       "id": "nahw-foundation-013",
-      "arabic": "مَفْعُولٌ",
-      "english": "Mafʿūl — object",
-      "topic": "Verbal Sentence",
-      "summary": "The noun affected by the action; the direct object is normally manṣūb.",
+      "arabic": "مَفْعُولٌ بِهِ",
+      "english": "Mafʿūl bihi — direct object",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "The direct object affected by the verb. It is normally manṣūb.",
       "example": "قَرَأَ الطَّالِبُ الْكِتَابَ.",
       "example_en": "The student read the book.",
       "status": "Not Started"
@@ -184,8 +184,8 @@
       "id": "nahw-foundation-019",
       "arabic": "حَالٌ",
       "english": "Ḥāl — state",
-      "topic": "Description & Complements",
-      "summary": "A normally manṣūb word describing the state of someone or something during an action.",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "A normally manṣūb word describing the state or condition of a person or thing at the time of an action.",
       "example": "جَاءَ زَيْدٌ رَاكِبًا.",
       "example_en": "Zayd came riding.",
       "status": "Not Started"
@@ -194,8 +194,8 @@
       "id": "nahw-foundation-020",
       "arabic": "تَمْيِيزٌ",
       "english": "Tamyīz — specification",
-      "topic": "Description & Complements",
-      "summary": "A normally manṣūb noun that clarifies an otherwise vague quantity or relationship.",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "A normally manṣūb noun that removes ambiguity or clarifies a quantity, measure, comparison or relationship.",
       "example": "اِشْتَرَيْتُ لِتْرًا مَاءً.",
       "example_en": "I bought a litre of water.",
       "status": "Not Started"
@@ -354,8 +354,8 @@
       "id": "nahw-foundation-036",
       "arabic": "اِسْتِثْنَاءٌ",
       "english": "Istithnāʾ — exception",
-      "topic": "Exception, Condition & Sentence Functions",
-      "summary": "A construction excluding something from a preceding general statement.",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "The excluded noun after إِلَّا may be manṣūb in a complete affirmative exception construction.",
       "example": "جَاءَ الطُّلَّابُ إِلَّا زَيْدًا.",
       "example_en": "The students came except Zayd.",
       "status": "Not Started"
@@ -518,6 +518,386 @@
       "summary": "A word or element that is omitted from the spoken or written sentence but is understood from the grammar or context. In analysis, it is often supplied mentally to explain the structure.",
       "example": "فِي الْبَيْتِ رَجُلٌ.",
       "example_en": "There is a man in the house — the khabar can be understood as a maḥdhūf word such as كَائِنٌ or مُسْتَقِرٌّ.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-053",
+      "arabic": "الْمَنْصُوبَاتُ",
+      "english": "Al-Manṣūbāt — the accusative constructions",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "A group of nouns and sentence-elements that commonly appear in the manṣūb state. Core examples include the objects, ḥāl, tamyīz, the excluded noun in some exception structures, the noun of إِنَّ and its sisters, the predicate of كَانَ and its sisters, and certain forms of the vocative.",
+      "example": "رَأَيْتُ زَيْدًا رَاكِبًا.",
+      "example_en": "I saw Zayd riding — زَيْدًا is an object and رَاكِبًا is ḥāl; both are manṣūb.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-054",
+      "arabic": "مَفْعُولٌ مُطْلَقٌ",
+      "english": "Mafʿūl muṭlaq — absolute object",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "A verbal noun from the same root as the verb, used to emphasise the action, describe its manner/type, or state its number. It is manṣūb.",
+      "example": "شَكَرْتُهُ شُكْرًا.",
+      "example_en": "I thanked him sincerely — شُكْرًا is mafʿūl muṭlaq.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-055",
+      "arabic": "مَفْعُولٌ فِيهِ",
+      "english": "Mafʿūl fīhi — adverbial object of time/place",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "A noun of time or place showing when or where an action occurs. It is also called ẓarf and is commonly manṣūb.",
+      "example": "سَافَرْتُ لَيْلًا.",
+      "example_en": "I travelled at night — لَيْلًا is mafʿūl fīhi.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-056",
+      "arabic": "مَفْعُولٌ لِأَجْلِهِ",
+      "english": "Mafʿūl li-ajlihi — object of reason/purpose",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "A verbal noun explaining the reason or motive for an action. It is commonly manṣūb.",
+      "example": "دَرَسْتُ رَغْبَةً فِي النَّجَاحِ.",
+      "example_en": "I studied out of a desire to succeed — رَغْبَةً is mafʿūl li-ajlihi.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-057",
+      "arabic": "مَفْعُولٌ مَعَهُ",
+      "english": "Mafʿūl maʿahu — object of accompaniment",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "A noun after wāw meaning 'together with', indicating accompaniment rather than simple coordination. It is manṣūb.",
+      "example": "سِرْتُ وَالنَّهْرَ.",
+      "example_en": "I walked alongside the river — النَّهْرَ is mafʿūl maʿahu.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-058",
+      "arabic": "اِسْمُ إِنَّ وَأَخَوَاتِهَا",
+      "english": "The noun of Inna and its sisters",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "After إِنَّ and its sisters, the noun becomes manṣūb while the predicate remains marfūʿ.",
+      "example": "إِنَّ زَيْدًا طَالِبٌ.",
+      "example_en": "Indeed Zayd is a student — زَيْدًا is the noun of إِنَّ and is manṣūb.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-059",
+      "arabic": "خَبَرُ كَانَ وَأَخَوَاتِهَا",
+      "english": "The predicate of Kāna and its sisters",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "After كَانَ and its sisters, the noun remains marfūʿ and the predicate becomes manṣūb.",
+      "example": "كَانَ زَيْدٌ طَالِبًا.",
+      "example_en": "Zayd was a student — طَالِبًا is the predicate of كَانَ and is manṣūb.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-060",
+      "arabic": "اِسْمُ لَا النَّافِيَةِ لِلْجِنْسِ",
+      "english": "The noun of lā of absolute negation",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "With لَا النَّافِيَةُ لِلْجِنْسِ, the following indefinite noun functions as its noun and is in the position of naṣb, often built on the sign it would take in the accusative.",
+      "example": "لَا رَجُلَ فِي الْبَيْتِ.",
+      "example_en": "There is no man in the house — رَجُلَ is the noun of لَا النَّافِيَةِ لِلْجِنْسِ.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-061",
+      "arabic": "الْمُنَادَى",
+      "english": "Al-Munādā — the vocative noun",
+      "topic": "Al-Manṣūbāt (الْمَنْصُوبَاتُ)",
+      "summary": "The noun being called after a vocative particle. Some forms of the munādā are manṣūb, while others are built on the sign of rafʿ in the position of naṣb.",
+      "example": "يَا طَالِبًا، اِجْتَهِدْ.",
+      "example_en": "O student, work hard — طَالِبًا is an indefinite non-specific vocative and is manṣūb.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-062",
+      "arabic": "كَانَ وَأَخَوَاتُهَا",
+      "english": "Kāna and its sisters",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "Incomplete verbs that enter a nominal sentence: they keep the noun marfūʿ and make the predicate manṣūb.",
+      "example": "كَانَ الْجَوُّ جَمِيلًا.",
+      "example_en": "The weather was beautiful — الْجَوُّ is the noun of kāna and جَمِيلًا is its predicate.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-063",
+      "arabic": "كَانَ",
+      "english": "Kāna — was / became in a state",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. General past state. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-064",
+      "arabic": "أَصْبَحَ",
+      "english": "Aṣbaḥa — became in the morning / became",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Often indicates entering a state, originally in the morning. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-065",
+      "arabic": "أَضْحَى",
+      "english": "Aḍḥā — became in the daytime / became",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Often indicates entering a state, originally in the forenoon/daytime. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-066",
+      "arabic": "أَمْسَى",
+      "english": "Amsā — became in the evening / became",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Often indicates entering a state, originally in the evening. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-067",
+      "arabic": "بَاتَ",
+      "english": "Bāta — spent the night in a state",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Indicates remaining in a state during the night. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-068",
+      "arabic": "ظَلَّ",
+      "english": "Ẓalla — remained / continued",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Indicates continuation in a state, often during the daytime. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-069",
+      "arabic": "صَارَ",
+      "english": "Ṣāra — became",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Indicates transformation from one state to another. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-070",
+      "arabic": "لَيْسَ",
+      "english": "Laysa — is not",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. A defective verb used for negation. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-071",
+      "arabic": "مَا زَالَ",
+      "english": "Mā zāla — still / continues",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Indicates continuation; normally used with a negating or similar particle. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-072",
+      "arabic": "مَا بَرِحَ",
+      "english": "Mā bariḥa — continues / remains",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Indicates continuation; normally used with negation or a similar construction. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-073",
+      "arabic": "مَا انْفَكَّ",
+      "english": "Mā انفakka — continues / remains",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Indicates continuation; normally used with negation or a similar construction. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-074",
+      "arabic": "مَا فَتِئَ",
+      "english": "Mā fatiʾa — continues / remains",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Indicates continuation; normally used with negation or a similar construction. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-075",
+      "arabic": "مَا دَامَ",
+      "english": "Mā dāma — as long as",
+      "topic": "Kāna & Her Sisters (كَانَ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of كَانَ. Used with مَا المصدرية الظرفية to indicate duration. It makes its noun marfūʿ and its predicate manṣūb.",
+      "example": "كَانَ زَيْدٌ مُجْتَهِدًا.",
+      "example_en": "Zayd was hardworking — illustrating the kāna pattern.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-076",
+      "arabic": "إِنَّ وَأَخَوَاتُهَا",
+      "english": "Inna and its sisters",
+      "topic": "Inna & Her Sisters (إِنَّ وَأَخَوَاتُهَا)",
+      "summary": "Particles that enter a nominal sentence, making the noun manṣūb while the predicate remains marfūʿ.",
+      "example": "إِنَّ زَيْدًا طَالِبٌ.",
+      "example_en": "Indeed Zayd is a student.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-077",
+      "arabic": "إِنَّ",
+      "english": "Inna — indeed / certainly",
+      "topic": "Inna & Her Sisters (إِنَّ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of إِنَّ. Used for emphasis. It makes its noun manṣūb and leaves its predicate marfūʿ.",
+      "example": "إِنَّ زَيْدًا طَالِبٌ.",
+      "example_en": "Example showing the particle governing its noun and predicate.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-078",
+      "arabic": "أَنَّ",
+      "english": "Anna — that / indeed that",
+      "topic": "Inna & Her Sisters (إِنَّ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of إِنَّ. Introduces a subordinate clause with the meaning 'that'. It makes its noun manṣūb and leaves its predicate marfūʿ.",
+      "example": "أَنَّ زَيْدًا طَالِبٌ.",
+      "example_en": "Example showing the particle governing its noun and predicate.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-079",
+      "arabic": "كَأَنَّ",
+      "english": "Kaʾanna — as if / it is as though",
+      "topic": "Inna & Her Sisters (إِنَّ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of إِنَّ. Used for comparison or resemblance. It makes its noun manṣūb and leaves its predicate marfūʿ.",
+      "example": "كَأَنَّ زَيْدًا طَالِبٌ.",
+      "example_en": "Example showing the particle governing its noun and predicate.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-080",
+      "arabic": "لَكِنَّ",
+      "english": "Lākinna — but / however",
+      "topic": "Inna & Her Sisters (إِنَّ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of إِنَّ. Used for correction or contrast. It makes its noun manṣūb and leaves its predicate marfūʿ.",
+      "example": "لَكِنَّ زَيْدًا طَالِبٌ.",
+      "example_en": "Example showing the particle governing its noun and predicate.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-081",
+      "arabic": "لَيْتَ",
+      "english": "Layta — if only / would that",
+      "topic": "Inna & Her Sisters (إِنَّ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of إِنَّ. Used for wishing. It makes its noun manṣūb and leaves its predicate marfūʿ.",
+      "example": "لَيْتَ زَيْدًا طَالِبٌ.",
+      "example_en": "Example showing the particle governing its noun and predicate.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-082",
+      "arabic": "لَعَلَّ",
+      "english": "Laʿalla — perhaps / hopefully",
+      "topic": "Inna & Her Sisters (إِنَّ وَأَخَوَاتُهَا)",
+      "summary": "One of the sisters of إِنَّ. Used for hope, expectation or possibility. It makes its noun manṣūb and leaves its predicate marfūʿ.",
+      "example": "لَعَلَّ زَيْدًا طَالِبٌ.",
+      "example_en": "Example showing the particle governing its noun and predicate.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-083",
+      "arabic": "إِنَّمَا",
+      "english": "Innamā — only / indeed only",
+      "topic": "Restriction & Emphasis (الْحَصْرُ وَالتَّوْكِيدُ)",
+      "summary": "A common expression of restriction (ḥaṣr). It is analysed as إِنَّ + مَا الْكَافَّةُ; the mā prevents إِنَّ from governing, so the following nominal sentence keeps its normal iʿrāb.",
+      "example": "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ.",
+      "example_en": "The believers are only brothers — الْمُؤْمِنُونَ remains marfūʿ.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-084",
+      "arabic": "مَا الْكَافَّةُ",
+      "english": "Mā al-kāffah — the mā that prevents governance",
+      "topic": "Restriction & Emphasis (الْحَصْرُ وَالتَّوْكِيدُ)",
+      "summary": "A mā that can stop a governing particle such as إِنَّ from carrying out its normal grammatical effect, as in إِنَّمَا.",
+      "example": "إِنَّمَا زَيْدٌ طَالِبٌ.",
+      "example_en": "Zayd is only a student — مَا prevents إِنَّ from making زَيْدٌ manṣūb.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-085",
+      "arabic": "حَرْفُ حَصْرٍ",
+      "english": "Ḥarf / expression of ḥaṣr — restriction/exclusivity",
+      "topic": "Restriction & Emphasis (الْحَصْرُ وَالتَّوْكِيدُ)",
+      "summary": "A particle or construction used to restrict a meaning to one thing: 'only' or 'nothing except'. Common patterns include إِنَّمَا and مَا ... إِلَّا.",
+      "example": "مَا جَاءَ إِلَّا زَيْدٌ.",
+      "example_en": "No one came except Zayd — the meaning is restricted to Zayd.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-086",
+      "arabic": "قَدْ",
+      "english": "Qad — particle of completion, certainty or possibility",
+      "topic": "Particles & Sentence Meaning",
+      "summary": "With a past-tense verb, قَدْ commonly gives a meaning of completion or certainty ('indeed / already'). With a present-tense verb, it may indicate possibility or sometimes frequency depending on context.",
+      "example": "قَدْ نَجَحَ الطَّالِبُ.",
+      "example_en": "The student has indeed/already succeeded.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-087",
+      "arabic": "النِّدَاءُ",
+      "english": "Nidāʾ — vocative / calling",
+      "topic": "Nidāʾ (النِّدَاءُ)",
+      "summary": "The construction used to call or address someone or something. It consists of a vocative particle and a munādā.",
+      "example": "يَا زَيْدُ.",
+      "example_en": "O Zayd.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-088",
+      "arabic": "أَدَوَاتُ النِّدَاءِ",
+      "english": "Vocative particles",
+      "topic": "Nidāʾ (النِّدَاءُ)",
+      "summary": "Common vocative particles include يَا, أَيَا, هَيَا, أَيْ and the hamzah of calling. يَا is the most common.",
+      "example": "يَا طَالِبُ، أَقْبِلْ.",
+      "example_en": "O student, come forward.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-089",
+      "arabic": "يَا",
+      "english": "Yā — O! (vocative particle)",
+      "topic": "Nidāʾ (النِّدَاءُ)",
+      "summary": "The most common particle of nidāʾ, used to call someone or something.",
+      "example": "يَا مُحَمَّدُ.",
+      "example_en": "O Muhammad.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-090",
+      "arabic": "أَنْوَاعُ الْمُنَادَى",
+      "english": "Types of munādā",
+      "topic": "Nidāʾ (النِّدَاءُ)",
+      "summary": "The main types include the proper-name vocative, intended indefinite, non-specific indefinite, muḍāf, and a noun resembling a muḍāf. Their endings differ: some are built on the sign of rafʿ in the position of naṣb, while others are explicitly manṣūb.",
+      "example": "يَا زَيْدُ، يَا طَالِبُ، يَا طَالِبًا، يَا طَالِبَ الْعِلْمِ.",
+      "example_en": "Examples of different forms of the vocative noun.",
       "status": "Not Started"
     }
   ]
