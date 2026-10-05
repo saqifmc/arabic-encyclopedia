@@ -594,3 +594,46 @@ html,body,button,input,select,textarea{
   max-width:480px;
   flex:0 1 480px;
 }
+
+/* About section */
+.section-about{--section-header:#7c2d12}
+.section-about .section-head{
+  background:var(--section-header);
+  border:1px solid var(--section-header);
+  border-radius:22px;
+  padding:24px;
+  margin-bottom:22px;
+  box-shadow:0 10px 24px rgba(15,23,42,.08);
+}
+.section-about .section-head h2,
+.section-about .section-head p{color:#fff !important}
+.about-card{
+  background:#fff;
+  border:1px solid #eadfd8;
+  border-radius:20px;
+  padding:28px;
+  box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.about-basmallah{
+  font-size:2rem;
+  text-align:center;
+  margin-bottom:26px;
+  color:#7c2d12;
+}
+.about-intro-placeholder{
+  background:#fffaf7;
+  border:1px dashed #d6b8a6;
+  border-radius:14px;
+  padding:20px;
+  margin-bottom:28px;
+}
+.about-intro-placeholder h3{margin-top:0}
+.about-signoff{
+  border-top:1px solid #eadfd8;
+  padding-top:18px;
+}
+.about-signoff p{margin:3px 0}
+#home .dashboard-card[data-view="about"]{
+  --card-accent:#7c2d12;
+  --card-soft:#fff7ed;
+}
