@@ -509,6 +509,16 @@
       "example": "زَيْدٌ طَالِبٌ.",
       "example_en": "Zayd is a student — زَيْدٌ is the musnad ilayh.",
       "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-052",
+      "arabic": "مَحْذُوفٌ",
+      "english": "Maḥdhūf — omitted / understood",
+      "topic": "Sentence Structure & Predication",
+      "summary": "A word or element that is omitted from the spoken or written sentence but is understood from the grammar or context. In analysis, it is often supplied mentally to explain the structure.",
+      "example": "فِي الْبَيْتِ رَجُلٌ.",
+      "example_en": "There is a man in the house — the khabar can be understood as a maḥdhūf word such as كَائِنٌ or مُسْتَقِرٌّ.",
+      "status": "Not Started"
     }
   ]
 }
