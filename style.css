@@ -1104,3 +1104,10 @@ html,body,button,input,select,textarea{
 .section-quranic .tarkeeb-grammar b{
   color:#b42318;
 }
+
+/* Vocabulary source sets and Qur'an high-frequency metadata */
+.vocab-set-tabs{margin:4px 0 16px}
+.vocab-source-row{display:flex;flex-wrap:wrap;gap:7px;margin:9px 0 2px}
+.vocab-source-tag,.quran-frequency-tag{display:inline-flex;align-items:center;min-height:26px;padding:4px 9px;border-radius:999px;font-size:.75rem;line-height:1.15}
+.vocab-source-tag{background:#eff6ff;border:1px solid #cbdcf7;color:#1d4ed8}
+.quran-frequency-tag{background:#ecfdf5;border:1px solid #c7ead7;color:#047857;font-weight:700}
