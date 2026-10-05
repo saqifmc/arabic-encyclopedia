@@ -380,9 +380,20 @@
       </div>
       <div class="revision-controls">
         <select id="revisionMode">
-          <option value="ar-en">Arabic → English</option>
-          <option value="en-ar">English → Arabic</option>
-          <option value="verbs">Verbs</option>
+          <optgroup label="Vocabulary">
+            <option value="vocab-ar-en">Arabic → English</option>
+            <option value="vocab-en-ar">English → Arabic</option>
+            <option value="vocab-root">Word → Root</option>
+          </optgroup>
+          <optgroup label="Verbs">
+            <option value="verb-ar-en">Arabic → English</option>
+            <option value="verb-en-ar">English → Arabic</option>
+            <option value="verb-past-present">Past → Present</option>
+            <option value="verb-present-past">Present → Past</option>
+            <option value="verb-root">Verb → Root</option>
+            <option value="verb-form">Verb → Form</option>
+            <option value="verb-masdar">Verb → Maṣdar</option>
+          </optgroup>
         </select>
         <select id="revisionSubset">
           <option value="all">All items</option>
@@ -420,6 +431,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261005-nahw-foundations"></script>
+  <script src="script.js?v=20261005-revision-expanded"></script>
 </body>
 </html>
