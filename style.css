@@ -893,3 +893,118 @@ html,body,button,input,select,textarea{
   direction:rtl;
   text-align:right;
 }
+
+/* Quranic Tarkeeb v3: clear RTL word sequence + separate grammar cards */
+.analysis-kicker{
+  display:block;
+  margin-bottom:8px;
+  font-size:.7rem;
+  line-height:1;
+  letter-spacing:.11em;
+  font-weight:800;
+  color:#64748b;
+}
+.quran-english .analysis-kicker{
+  margin-bottom:7px;
+}
+.quran-word-section{
+  margin:0 0 16px;
+  padding:15px;
+  border:1px solid #dce8df;
+  border-radius:16px;
+  background:#fbfdfb;
+}
+.quran-word-strip{
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row-reverse;
+  gap:9px;
+  direction:ltr;
+  justify-content:flex-start;
+}
+.quran-word-chip{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  min-width:104px;
+  padding:10px 12px;
+  border:1px solid #cfe5d6;
+  border-radius:12px;
+  background:#f2fbf5;
+  text-align:center;
+}
+.quran-word-chip .arabic{
+  font-size:1.22rem;
+  line-height:1.5;
+  color:#14532d;
+  font-weight:700;
+  direction:rtl;
+}
+.quran-word-chip .english{
+  font-size:.78rem;
+  line-height:1.3;
+  color:#374151;
+  direction:ltr;
+}
+.grammar-section{
+  margin-top:14px;
+}
+.section-quranic .tarkeeb-grid{
+  display:flex !important;
+  flex-wrap:wrap;
+  flex-direction:row-reverse;
+  gap:12px;
+  direction:ltr !important;
+}
+.section-quranic .tarkeeb-grid>.tarkeeb-word-card{
+  flex:1 1 220px;
+  min-width:220px;
+  max-width:100%;
+  direction:ltr !important;
+  text-align:left;
+  background:#fff;
+  border:1px solid #dfe8e2;
+  border-radius:15px;
+  padding:14px;
+}
+.grammar-chunk{
+  text-align:right;
+  direction:rtl;
+  font-size:1.2rem;
+  font-weight:700;
+  color:#14532d;
+  padding-bottom:10px;
+  margin-bottom:10px;
+  border-bottom:1px solid #e5ece7;
+}
+.section-quranic .tarkeeb-grammar{
+  margin:0;
+  padding:0;
+  border:0;
+}
+.section-quranic .tarkeeb-grammar b{
+  display:block;
+  direction:rtl;
+  text-align:right;
+  color:#166534;
+  margin-bottom:6px;
+}
+.section-quranic .tarkeeb-grammar small{
+  display:block;
+  direction:ltr;
+  text-align:left;
+  color:#59636d;
+  line-height:1.45;
+}
+@media(max-width:650px){
+  .quran-word-chip{
+    min-width:86px;
+    flex:1 1 92px;
+  }
+  .section-quranic .tarkeeb-grid>.tarkeeb-word-card{
+    flex:1 1 100%;
+    min-width:0;
+  }
+}
