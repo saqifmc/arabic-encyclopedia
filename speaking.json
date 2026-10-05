@@ -1,3 +1,166 @@
 {
-  "speaking": []
+  "speaking": [
+    {
+      "id": "spk001",
+      "arabic": "إِنِّي أَرَى أَلْوَانَ الْغُرْفَةِ.",
+      "english": "I see the colours of the room.",
+      "topic": "Description & Observation"
+    },
+    {
+      "id": "spk002",
+      "arabic": "هٰذَا ضَيْفٌ.",
+      "english": "This is a guest.",
+      "topic": "Description & Observation"
+    },
+    {
+      "id": "spk003",
+      "arabic": "يُوجَدُ ضَيْفٌ فِي الْمَنْزِلِ.",
+      "english": "There is a guest in the house.",
+      "topic": "Description & Observation"
+    },
+    {
+      "id": "spk004",
+      "arabic": "هٰذَا الشَّخْصُ عَرَبِيٌّ.",
+      "english": "This person is Arab.",
+      "topic": "Description & Observation"
+    },
+    {
+      "id": "spk005",
+      "arabic": "هٰذَا الشَّخْصُ أَجْنَبِيٌّ.",
+      "english": "This person is a foreigner.",
+      "topic": "Description & Observation"
+    },
+    {
+      "id": "spk006",
+      "arabic": "بِكُلِّ بَسَاطَةٍ",
+      "english": "Quite simply.",
+      "topic": "Useful Expressions"
+    },
+    {
+      "id": "spk007",
+      "arabic": "أَعْتَقِدُ أَنَّ...",
+      "english": "I think that…",
+      "topic": "Useful Expressions"
+    },
+    {
+      "id": "spk008",
+      "arabic": "إِنِّي أَرَى الصُّورَةَ.",
+      "english": "I see the picture.",
+      "topic": "Description & Observation"
+    },
+    {
+      "id": "spk009",
+      "arabic": "أَنَا أَرَى الصُّورَةَ.",
+      "english": "I see the picture — simpler version.",
+      "topic": "Description & Observation"
+    },
+    {
+      "id": "spk010",
+      "arabic": "أَعْتَقِدُ أَنَّ هٰذَا الشَّخْصَ عَرَبِيٌّ.",
+      "english": "I think that this person is Arab.",
+      "topic": "Description & Observation"
+    },
+    {
+      "id": "spk011",
+      "arabic": "أَعْتَقِدُ أَنَّ هٰذَا الشَّخْصَ أَجْنَبِيٌّ.",
+      "english": "I think that this person is a foreigner.",
+      "topic": "Description & Observation"
+    },
+    {
+      "id": "spk012",
+      "arabic": "السَّلَامُ عَلَيْكُمْ.",
+      "english": "Peace be upon you.",
+      "topic": "Greetings & Meeting People"
+    },
+    {
+      "id": "spk013",
+      "arabic": "وَعَلَيْكُمُ السَّلَامُ.",
+      "english": "And peace be upon you.",
+      "topic": "Greetings & Meeting People"
+    },
+    {
+      "id": "spk014",
+      "arabic": "أَهْلًا وَسَهْلًا بِكَ.",
+      "english": "Welcome.",
+      "topic": "Greetings & Meeting People"
+    },
+    {
+      "id": "spk015",
+      "arabic": "مَرْحَبًا بِكَ.",
+      "english": "Hello / Welcome.",
+      "topic": "Greetings & Meeting People"
+    },
+    {
+      "id": "spk016",
+      "arabic": "تَشَرَّفْنَا بِكَ.",
+      "english": "It is an honour to meet you.",
+      "topic": "Greetings & Meeting People"
+    },
+    {
+      "id": "spk017",
+      "arabic": "سَعِيدٌ جِدًّا بِلِقَائِكَ.",
+      "english": "I am very pleased to meet you.",
+      "topic": "Greetings & Meeting People"
+    },
+    {
+      "id": "spk018",
+      "arabic": "الشَّرَفُ لِي.",
+      "english": "The honour / pleasure is mine.",
+      "topic": "Greetings & Meeting People"
+    },
+    {
+      "id": "spk019",
+      "arabic": "أَنَا أَيْضًا.",
+      "english": "Me too.",
+      "topic": "Useful Expressions"
+    },
+    {
+      "id": "spk020",
+      "arabic": "أَنَا بَرِيطَانِيٌّ.",
+      "english": "I am British.",
+      "topic": "Personal Information"
+    },
+    {
+      "id": "spk021",
+      "arabic": "أَنَا بَرِيطَانِيٌّ، وَأَسْكُنُ فِي لَنْدَنَ.",
+      "english": "I am British, and I live in London.",
+      "topic": "Personal Information"
+    },
+    {
+      "id": "spk022",
+      "arabic": "هٰذِهِ هِيَ زِيَارَتِي الْأُولَى لِلْقَاهِرَةِ.",
+      "english": "This is my first visit to Cairo.",
+      "topic": "Personal Information"
+    },
+    {
+      "id": "spk023",
+      "arabic": "هِوَايَتِي قِرَاءَةُ الْكُتُبِ.",
+      "english": "My hobby is reading books.",
+      "topic": "Hobbies & Goals"
+    },
+    {
+      "id": "spk024",
+      "arabic": "مِنْ هِوَايَاتِي قِرَاءَةُ الْكُتُبِ وَمُمَارَسَةُ الرِّيَاضَةِ.",
+      "english": "Among my hobbies are reading books and doing sport.",
+      "topic": "Hobbies & Goals"
+    },
+    {
+      "id": "spk025",
+      "arabic": "مِنْ أَهْدَافِي إِتْقَانُ اللُّغَةِ الْعَرَبِيَّةِ.",
+      "english": "One of my goals is to master the Arabic language.",
+      "topic": "Hobbies & Goals"
+    },
+    {
+      "id": "spk026",
+      "arabic": "أَتَمَنَّى لَكَ التَّوْفِيقَ.",
+      "english": "I wish you success — speaking to a male.",
+      "topic": "Wishes & Encouragement"
+    },
+    {
+      "id": "spk027",
+      "arabic": "أَتَمَنَّى لَكِ التَّوْفِيقَ.",
+      "english": "I wish you success — speaking to a female.",
+      "topic": "Wishes & Encouragement"
+    }
+  ]
 }
