@@ -16,22 +16,26 @@
             [
               "بِـ",
               "حَرْفُ جَرٍّ",
-              "Preposition."
+              "Preposition.",
+              "with / in / by"
             ],
             [
               "اسْمِ",
               "اِسْمٌ مَجْرُورٌ وَهُوَ مُضَافٌ",
-              "Majrūr by بِـ and functioning as muḍāf."
+              "Majrūr by بِـ and functioning as muḍāf.",
+              "name"
             ],
             [
               "اللَّهِ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Genitive complement."
+              "Genitive complement.",
+              "Allah / God"
             ],
             [
               "الرَّحْمَٰنِ الرَّحِيمِ",
               "نَعْتَانِ مَجْرُورَانِ",
-              "Two adjectives following the divine name."
+              "Two adjectives following the divine name.",
+              "the Entirely Merciful, the Especially Merciful"
             ]
           ]
         },
@@ -44,22 +48,26 @@
             [
               "الْحَمْدُ",
               "مُبْتَدَأٌ مَرْفُوعٌ",
-              "Subject/topic of the nominal sentence."
+              "Subject/topic of the nominal sentence.",
+              "all praise"
             ],
             [
               "لِلَّهِ",
               "جَارٌّ وَمَجْرُورٌ فِي مَحَلِّ خَبَرٍ",
-              "Shibh al-jumlah functioning as the predicate."
+              "Shibh al-jumlah functioning as the predicate.",
+              "belongs to Allah"
             ],
             [
               "رَبِّ",
               "بَدَلٌ أَوْ عَطْفُ بَيَانٍ مَجْرُورٌ",
-              "Explains the divine name; also muḍāf."
+              "Explains the divine name; also muḍāf.",
+              "Lord of"
             ],
             [
               "الْعَالَمِينَ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Genitive complement."
+              "Genitive complement.",
+              "the worlds"
             ]
           ]
         },
@@ -72,12 +80,14 @@
             [
               "الرَّحْمَٰنِ",
               "نَعْتٌ مَجْرُورٌ",
-              "Adjective continuing the description."
+              "Adjective continuing the description.",
+              "the Entirely Merciful"
             ],
             [
               "الرَّحِيمِ",
               "نَعْتٌ مَجْرُورٌ",
-              "Second adjective."
+              "Second adjective.",
+              "the Especially Merciful"
             ]
           ]
         },
@@ -90,17 +100,20 @@
             [
               "مَالِكِ",
               "نَعْتٌ مَجْرُورٌ وَهُوَ مُضَافٌ",
-              "Continuing the description; also muḍāf."
+              "Continuing the description; also muḍāf.",
+              "Master / Owner of"
             ],
             [
               "يَوْمِ",
               "مُضَافٌ إِلَيْهِ وَهُوَ مُضَافٌ",
-              "Genitive complement and itself muḍāf."
+              "Genitive complement and itself muḍāf.",
+              "the Day of"
             ],
             [
               "الدِّينِ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Completes the second iḍāfah."
+              "Completes the second iḍāfah.",
+              "Judgement / Recompense"
             ]
           ]
         },
@@ -113,22 +126,26 @@
             [
               "إِيَّاكَ",
               "مَفْعُولٌ بِهِ مُقَدَّمٌ",
-              "Fronted object for emphasis/restriction."
+              "Fronted object for emphasis/restriction.",
+              "You alone"
             ],
             [
               "نَعْبُدُ",
               "فِعْلٌ مُضَارِعٌ وَفَاعِلُهُ مُسْتَتِرٌ",
-              "Present verb; hidden subject نَحْنُ."
+              "Present verb; hidden subject نَحْنُ.",
+              "we worship"
             ],
             [
               "وَإِيَّاكَ",
               "عَطْفٌ + مَفْعُولٌ بِهِ مُقَدَّمٌ",
-              "Coordinated second clause with fronted object."
+              "Coordinated second clause with fronted object.",
+              "and You alone"
             ],
             [
               "نَسْتَعِينُ",
               "فِعْلٌ مُضَارِعٌ وَفَاعِلُهُ مُسْتَتِرٌ",
-              "Present verb; hidden subject نَحْنُ."
+              "Present verb; hidden subject نَحْنُ.",
+              "we ask for help"
             ]
           ]
         },
@@ -141,22 +158,26 @@
             [
               "اهْدِ",
               "فِعْلُ أَمْرٍ",
-              "Imperative; hidden subject أَنْتَ."
+              "Imperative; hidden subject أَنْتَ.",
+              "guide"
             ],
             [
               "نَا",
               "مَفْعُولٌ بِهِ أَوَّلٌ",
-              "Attached object pronoun: us."
+              "Attached object pronoun: us.",
+              "us"
             ],
             [
               "الصِّرَاطَ",
               "مَفْعُولٌ بِهِ ثَانٍ",
-              "Second object."
+              "Second object.",
+              "the path"
             ],
             [
               "الْمُسْتَقِيمَ",
               "نَعْتٌ مَنْصُوبٌ",
-              "Adjective agreeing with الصِّرَاطَ."
+              "Adjective agreeing with الصِّرَاطَ.",
+              "the straight"
             ]
           ]
         },
@@ -169,27 +190,32 @@
             [
               "صِرَاطَ",
               "بَدَلٌ أَوْ عَطْفُ بَيَانٍ مَنْصُوبٌ",
-              "Explains the previous الصِّرَاطَ; also muḍāf."
+              "Explains the previous الصِّرَاطَ; also muḍāf.",
+              "the path of"
             ],
             [
               "الَّذِينَ",
               "اِسْمٌ مَوْصُولٌ فِي مَحَلِّ جَرٍّ",
-              "Muḍāf ilayh."
+              "Muḍāf ilayh.",
+              "those who"
             ],
             [
               "أَنْعَمْتَ عَلَيْهِمْ",
               "صِلَةُ الْمَوْصُولِ",
-              "Relative clause; no independent محلّ of iʿrāb."
+              "Relative clause; no independent محلّ of iʿrāb.",
+              "You have favoured / blessed"
             ],
             [
               "غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ",
               "بَدَلٌ أَوْ نَعْتٌ",
-              "Excluding/qualifying description."
+              "Excluding/qualifying description.",
+              "not those who incurred anger"
             ],
             [
               "وَلَا الضَّالِّينَ",
               "مَعْطُوفٌ مَجْرُورٌ",
-              "Coordinated final description."
+              "Coordinated final description.",
+              "nor those who went astray"
             ]
           ]
         }
@@ -211,27 +237,32 @@
             [
               "أَلَمْ",
               "هَمْزَةُ اِسْتِفْهَامٍ + لَمْ",
-              "Interrogation plus negating/jussive particle."
+              "Interrogation plus negating/jussive particle.",
+              "did ... not?"
             ],
             [
               "تَرَ",
               "فِعْلٌ مُضَارِعٌ مَجْزُومٌ",
-              "Majzūm after لَمْ; final weak letter deleted."
+              "Majzūm after لَمْ; final weak letter deleted.",
+              "you see"
             ],
             [
               "كَيْفَ فَعَلَ",
               "اِسْمُ اِسْتِفْهَامٍ + فِعْلٌ مَاضٍ",
-              "Introduces the manner of the action."
+              "Introduces the manner of the action.",
+              "how [He] dealt / acted"
             ],
             [
               "رَبُّكَ",
               "فَاعِلٌ مَرْفُوعٌ",
-              "Subject of فَعَلَ."
+              "Subject of فَعَلَ.",
+              "your Lord"
             ],
             [
               "بِأَصْحَابِ الْفِيلِ",
               "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
-              "Prepositional phrase with iḍāfah."
+              "Prepositional phrase with iḍāfah.",
+              "with the people of the elephant"
             ]
           ]
         },
@@ -244,17 +275,20 @@
             [
               "أَلَمْ يَجْعَلْ",
               "اِسْتِفْهَامٌ + فِعْلٌ مَجْزُومٌ",
-              "The verb is majzūm after لَمْ."
+              "The verb is majzūm after لَمْ.",
+              "did He not make"
             ],
             [
               "كَيْدَهُمْ",
               "مَفْعُولٌ بِهِ مَنْصُوبٌ",
-              "Object of يَجْعَلْ."
+              "Object of يَجْعَلْ.",
+              "their plot / scheme"
             ],
             [
               "فِي تَضْلِيلٍ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Prepositional complement."
+              "Prepositional complement.",
+              "go astray / come to ruin"
             ]
           ]
         },
@@ -267,22 +301,26 @@
             [
               "وَأَرْسَلَ",
               "وَاوُ عَطْفٍ + فِعْلٌ مَاضٍ",
-              "Coordinated past-tense clause."
+              "Coordinated past-tense clause.",
+              "and He sent"
             ],
             [
               "عَلَيْهِمْ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Attached to أَرْسَلَ."
+              "Attached to أَرْسَلَ.",
+              "against / upon them"
             ],
             [
               "طَيْرًا",
               "مَفْعُولٌ بِهِ مَنْصُوبٌ",
-              "Object."
+              "Object.",
+              "birds"
             ],
             [
               "أَبَابِيلَ",
               "نَعْتٌ",
-              "Description of the birds."
+              "Description of the birds.",
+              "in flocks / successive groups"
             ]
           ]
         },
@@ -295,17 +333,20 @@
             [
               "تَرْمِيهِمْ",
               "فِعْلٌ مُضَارِعٌ + فَاعِلٌ مُسْتَتِرٌ + مَفْعُولٌ بِهِ",
-              "The birds are understood as the subject."
+              "The birds are understood as the subject.",
+              "pelting / striking them"
             ],
             [
               "بِحِجَارَةٍ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Instrument/means."
+              "Instrument/means.",
+              "with stones"
             ],
             [
               "مِنْ سِجِّيلٍ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Describes the material/source of the stones."
+              "Describes the material/source of the stones.",
+              "of baked clay"
             ]
           ]
         },
@@ -318,17 +359,20 @@
             [
               "فَجَعَلَهُمْ",
               "فَاءٌ + فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ",
-              "Result clause."
+              "Result clause.",
+              "so He made them"
             ],
             [
               "كَعَصْفٍ",
               "كَافُ التَّشْبِيهِ + اِسْمٌ مَجْرُورٌ",
-              "Simile phrase."
+              "Simile phrase.",
+              "like straw / chaff"
             ],
             [
               "مَأْكُولٍ",
               "نَعْتٌ مَجْرُورٌ",
-              "Adjective of عَصْفٍ."
+              "Adjective of عَصْفٍ.",
+              "eaten up"
             ]
           ]
         }
@@ -350,12 +394,14 @@
             [
               "لِإِيلَافِ",
               "لَامُ التَّعْلِيلِ + اِسْمٌ مَجْرُورٌ",
-              "Purpose/reason phrase."
+              "Purpose/reason phrase.",
+              "for the security / familiarity of"
             ],
             [
               "قُرَيْشٍ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Completes the iḍāfah."
+              "Completes the iḍāfah.",
+              "Quraysh"
             ]
           ]
         },
@@ -368,17 +414,20 @@
             [
               "إِيلَافِهِمْ",
               "بَدَلٌ أَوْ عَطْفُ بَيَانٍ",
-              "Explains the first إِيلَافِ."
+              "Explains the first إِيلَافِ.",
+              "their security / familiarity"
             ],
             [
               "رِحْلَةَ",
               "مَفْعُولٌ بِهِ لِلْمَصْدَرِ",
-              "Object governed by the verbal noun إِيلَاف."
+              "Object governed by the verbal noun إِيلَاف.",
+              "journey"
             ],
             [
               "الشِّتَاءِ وَالصَّيْفِ",
               "مُضَافٌ إِلَيْهِ + مَعْطُوفٌ",
-              "Winter and summer in an iḍāfah relationship."
+              "Winter and summer in an iḍāfah relationship.",
+              "of winter and summer"
             ]
           ]
         },
@@ -391,17 +440,20 @@
             [
               "فَلْيَعْبُدُوا",
               "فَاءٌ + لَامُ الْأَمْرِ + فِعْلٌ مَجْزُومٌ",
-              "Command with lām al-amr."
+              "Command with lām al-amr.",
+              "so let them worship"
             ],
             [
               "رَبَّ",
               "مَفْعُولٌ بِهِ مَنْصُوبٌ وَهُوَ مُضَافٌ",
-              "Object and muḍāf."
+              "Object and muḍāf.",
+              "the Lord of"
             ],
             [
               "هَٰذَا الْبَيْتِ",
               "مُضَافٌ إِلَيْهِ + بَدَلٌ أَوْ عَطْفُ بَيَانٍ",
-              "Demonstrative phrase completing the relation."
+              "Demonstrative phrase completing the relation.",
+              "this House"
             ]
           ]
         },
@@ -414,27 +466,32 @@
             [
               "الَّذِي",
               "اِسْمٌ مَوْصُولٌ",
-              "Refers back to رَبَّ."
+              "Refers back to رَبَّ.",
+              "the One who / who"
             ],
             [
               "أَطْعَمَهُمْ",
               "فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ",
-              "First relative clause."
+              "First relative clause.",
+              "fed them"
             ],
             [
               "مِنْ جُوعٍ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Prepositional complement."
+              "Prepositional complement.",
+              "against / from hunger"
             ],
             [
               "وَآمَنَهُمْ",
               "عَطْفٌ + فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ",
-              "Second coordinated relative clause."
+              "Second coordinated relative clause.",
+              "and made them safe"
             ],
             [
               "مِنْ خَوْفٍ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Prepositional complement."
+              "Prepositional complement.",
+              "from fear"
             ]
           ]
         }
@@ -456,17 +513,20 @@
             [
               "أَرَأَيْتَ",
               "هَمْزَةُ اِسْتِفْهَامٍ + فِعْلٌ مَاضٍ",
-              "Interrogative expression."
+              "Interrogative expression.",
+              "have you seen / considered"
             ],
             [
               "الَّذِي",
               "اِسْمٌ مَوْصُولٌ فِي مَحَلِّ مَفْعُولٍ بِهِ",
-              "Object of أَرَأَيْتَ."
+              "Object of أَرَأَيْتَ.",
+              "the One who / who"
             ],
             [
               "يُكَذِّبُ بِالدِّينِ",
               "صِلَةُ الْمَوْصُولِ",
-              "Relative clause."
+              "Relative clause.",
+              "denies the Judgement"
             ]
           ]
         },
@@ -479,17 +539,20 @@
             [
               "فَذَٰلِكَ",
               "فَاءٌ + مُبْتَدَأٌ",
-              "Demonstrative as mubtadaʾ."
+              "Demonstrative as mubtadaʾ.",
+              "then that is"
             ],
             [
               "الَّذِي",
               "خَبَرٌ أَوْ بَدَلٌ",
-              "Relative pronoun identifying the person."
+              "Relative pronoun identifying the person.",
+              "the One who / who"
             ],
             [
               "يَدُعُّ الْيَتِيمَ",
               "صِلَةُ الْمَوْصُولِ",
-              "Verb with direct object."
+              "Verb with direct object.",
+              "repels the orphan"
             ]
           ]
         },
@@ -502,17 +565,20 @@
             [
               "وَلَا",
               "عَطْفٌ + لَا النَّافِيَةُ",
-              "Negates the following verb without jussive effect."
+              "Negates the following verb without jussive effect.",
+              "and does not / nor"
             ],
             [
               "يَحُضُّ",
               "فِعْلٌ مُضَارِعٌ مَرْفُوعٌ",
-              "Present verb remains marfūʿ."
+              "Present verb remains marfūʿ.",
+              "urge / encourage"
             ],
             [
               "عَلَىٰ طَعَامِ الْمِسْكِينِ",
               "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
-              "Prepositional phrase with iḍāfah."
+              "Prepositional phrase with iḍāfah.",
+              "the feeding of the needy"
             ]
           ]
         },
@@ -525,12 +591,14 @@
             [
               "فَوَيْلٌ",
               "فَاءٌ + مُبْتَدَأٌ مَرْفُوعٌ",
-              "Nominal sentence."
+              "Nominal sentence.",
+              "so woe"
             ],
             [
               "لِلْمُصَلِّينَ",
               "جَارٌّ وَمَجْرُورٌ فِي مَحَلِّ خَبَرٍ",
-              "Shibh al-jumlah functioning as khabar."
+              "Shibh al-jumlah functioning as khabar.",
+              "to those who pray"
             ]
           ]
         },
@@ -543,22 +611,26 @@
             [
               "الَّذِينَ",
               "نَعْتٌ أَوْ بَدَلٌ",
-              "Describes الْمُصَلِّينَ."
+              "Describes الْمُصَلِّينَ.",
+              "those who"
             ],
             [
               "هُمْ",
               "مُبْتَدَأٌ",
-              "Beginning of the relative clause."
+              "Beginning of the relative clause.",
+              "they"
             ],
             [
               "عَنْ صَلَاتِهِمْ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Attached to سَاهُونَ."
+              "Attached to سَاهُونَ.",
+              "concerning / of their prayer"
             ],
             [
               "سَاهُونَ",
               "خَبَرٌ مَرْفُوعٌ",
-              "Predicate."
+              "Predicate.",
+              "heedless"
             ]
           ]
         },
@@ -571,17 +643,20 @@
             [
               "الَّذِينَ",
               "بَدَلٌ أَوْ نَعْتٌ",
-              "Further description."
+              "Further description.",
+              "those who"
             ],
             [
               "هُمْ",
               "مُبْتَدَأٌ",
-              "Subject of nominal clause."
+              "Subject of nominal clause.",
+              "they"
             ],
             [
               "يُرَاءُونَ",
               "جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ خَبَرٍ",
-              "Verbal clause as predicate."
+              "Verbal clause as predicate.",
+              "show off / act to be seen"
             ]
           ]
         },
@@ -594,12 +669,14 @@
             [
               "وَيَمْنَعُونَ",
               "عَطْفٌ + فِعْلٌ مُضَارِعٌ",
-              "Coordinated present-tense verb."
+              "Coordinated present-tense verb.",
+              "and they withhold"
             ],
             [
               "الْمَاعُونَ",
               "مَفْعُولٌ بِهِ مَنْصُوبٌ",
-              "Direct object."
+              "Direct object.",
+              "small kindnesses / assistance"
             ]
           ]
         }
@@ -621,17 +698,20 @@
             [
               "إِنَّا",
               "إِنَّ + نَا اِسْمُهَا",
-              "Particle of emphasis with its noun."
+              "Particle of emphasis with its noun.",
+              "indeed We"
             ],
             [
               "أَعْطَيْنَاكَ",
               "فِعْلٌ مَاضٍ + فَاعِلٌ + مَفْعُولٌ بِهِ أَوَّلٌ",
-              "Verbal clause as khabar of إِنَّ."
+              "Verbal clause as khabar of إِنَّ.",
+              "have given you"
             ],
             [
               "الْكَوْثَرَ",
               "مَفْعُولٌ بِهِ ثَانٍ",
-              "Second object of أَعْطَى."
+              "Second object of أَعْطَى.",
+              "abundance / al-Kawthar"
             ]
           ]
         },
@@ -644,17 +724,20 @@
             [
               "فَصَلِّ",
               "فَاءٌ + فِعْلُ أَمْرٍ",
-              "Command."
+              "Command.",
+              "so pray"
             ],
             [
               "لِرَبِّكَ",
               "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
-              "Attached to صَلِّ."
+              "Attached to صَلِّ.",
+              "to your Lord"
             ],
             [
               "وَانْحَرْ",
               "وَاوُ عَطْفٍ + فِعْلُ أَمْرٍ",
-              "Second coordinated command."
+              "Second coordinated command.",
+              "and sacrifice"
             ]
           ]
         },
@@ -667,22 +750,26 @@
             [
               "إِنَّ",
               "حَرْفُ تَوْكِيدٍ وَنَصْبٍ",
-              "Emphasis and naṣb."
+              "Emphasis and naṣb.",
+              "indeed"
             ],
             [
               "شَانِئَكَ",
               "اِسْمُ إِنَّ مَنْصُوبٌ",
-              "Noun of إِنَّ."
+              "Noun of إِنَّ.",
+              "the one who hates you"
             ],
             [
               "هُوَ",
               "ضَمِيرُ فَصْلٍ",
-              "Separating/emphatic pronoun."
+              "Separating/emphatic pronoun.",
+              "he / it is he"
             ],
             [
               "الْأَبْتَرُ",
               "خَبَرُ إِنَّ مَرْفُوعٌ",
-              "Predicate of إِنَّ."
+              "Predicate of إِنَّ.",
+              "the one cut off"
             ]
           ]
         }
@@ -704,22 +791,26 @@
             [
               "قُلْ",
               "فِعْلُ أَمْرٍ",
-              "Command; hidden subject أَنْتَ."
+              "Command; hidden subject أَنْتَ.",
+              "say"
             ],
             [
               "يَا",
               "حَرْفُ نِدَاءٍ",
-              "Vocative particle."
+              "Vocative particle.",
+              "O"
             ],
             [
               "أَيُّهَا",
               "مُنَادَى مَبْنِيٌّ + هَا لِلتَّنْبِيهِ",
-              "Vocative construction."
+              "Vocative construction.",
+              "O you / O"
             ],
             [
               "الْكَافِرُونَ",
               "نَعْتٌ لِأَيٍّ مَرْفُوعٌ",
-              "Describes أَيّ."
+              "Describes أَيّ.",
+              "disbelievers"
             ]
           ]
         },
@@ -732,22 +823,26 @@
             [
               "لَا",
               "لَا النَّافِيَةُ",
-              "Negation without changing the verb's iʿrāb."
+              "Negation without changing the verb's iʿrāb.",
+              "not / do not"
             ],
             [
               "أَعْبُدُ",
               "فِعْلٌ مُضَارِعٌ مَرْفُوعٌ",
-              "Present verb."
+              "Present verb.",
+              "I worship"
             ],
             [
               "مَا",
               "اِسْمٌ مَوْصُولٌ فِي مَحَلِّ مَفْعُولٍ بِهِ",
-              "Relative pronoun as object."
+              "Relative pronoun as object.",
+              "what / that which"
             ],
             [
               "تَعْبُدُونَ",
               "صِلَةُ الْمَوْصُولِ",
-              "Relative clause."
+              "Relative clause.",
+              "you worship"
             ]
           ]
         },
@@ -760,22 +855,26 @@
             [
               "وَلَا",
               "عَطْفٌ + نَفْيٌ",
-              "Coordinated negation."
+              "Coordinated negation.",
+              "and does not / nor"
             ],
             [
               "أَنْتُمْ",
               "مُبْتَدَأٌ",
-              "Subject/topic."
+              "Subject/topic.",
+              "you (plural)"
             ],
             [
               "عَابِدُونَ",
               "خَبَرٌ مَرْفُوعٌ",
-              "Predicate."
+              "Predicate.",
+              "worshippers"
             ],
             [
               "مَا أَعْبُدُ",
               "مَعْمُولُ اِسْمِ الْفَاعِلِ",
-              "Relative phrase governed by عَابِدُونَ."
+              "Relative phrase governed by عَابِدُونَ.",
+              "what I worship"
             ]
           ]
         },
@@ -788,22 +887,26 @@
             [
               "وَلَا",
               "عَطْفٌ + نَفْيٌ",
-              "Coordinated negation."
+              "Coordinated negation.",
+              "and does not / nor"
             ],
             [
               "أَنَا",
               "مُبْتَدَأٌ",
-              "Subject/topic."
+              "Subject/topic.",
+              "I"
             ],
             [
               "عَابِدٌ",
               "خَبَرٌ مَرْفُوعٌ",
-              "Predicate."
+              "Predicate.",
+              "a worshipper"
             ],
             [
               "مَا عَبَدْتُمْ",
               "اِسْمٌ مَوْصُولٌ + صِلَتُهُ",
-              "Relative phrase."
+              "Relative phrase.",
+              "what you worshipped"
             ]
           ]
         },
@@ -816,17 +919,20 @@
             [
               "أَنْتُمْ",
               "مُبْتَدَأٌ",
-              "Subject."
+              "Subject.",
+              "you (plural)"
             ],
             [
               "عَابِدُونَ",
               "خَبَرٌ",
-              "Predicate."
+              "Predicate.",
+              "worshippers"
             ],
             [
               "مَا أَعْبُدُ",
               "اِسْمٌ مَوْصُولٌ + صِلَةٌ",
-              "Relative phrase."
+              "Relative phrase.",
+              "what I worship"
             ]
           ]
         },
@@ -839,22 +945,26 @@
             [
               "لَكُمْ",
               "جَارٌّ وَمَجْرُورٌ خَبَرٌ مُقَدَّمٌ",
-              "Fronted predicate."
+              "Fronted predicate.",
+              "for you / yours"
             ],
             [
               "دِينُكُمْ",
               "مُبْتَدَأٌ مُؤَخَّرٌ مَرْفُوعٌ",
-              "Delayed subject."
+              "Delayed subject.",
+              "your religion"
             ],
             [
               "وَلِيَ",
               "عَطْفٌ + جَارٌّ وَمَجْرُورٌ خَبَرٌ مُقَدَّمٌ",
-              "Second fronted predicate."
+              "Second fronted predicate.",
+              "and for me / mine"
             ],
             [
               "دِينِ",
               "مُبْتَدَأٌ مُؤَخَّرٌ",
-              "Delayed subject; yāʾ possessive understood/attached."
+              "Delayed subject; yāʾ possessive understood/attached.",
+              "my religion"
             ]
           ]
         }
@@ -876,22 +986,26 @@
             [
               "إِذَا",
               "ظَرْفٌ لِمَا يُسْتَقْبَلُ مُتَضَمِّنٌ مَعْنَى الشَّرْطِ",
-              "Time adverb carrying conditional meaning."
+              "Time adverb carrying conditional meaning.",
+              "when"
             ],
             [
               "جَاءَ",
               "فِعْلٌ مَاضٍ",
-              "Past form used in the conditional/time clause."
+              "Past form used in the conditional/time clause.",
+              "comes / came"
             ],
             [
               "نَصْرُ اللَّهِ",
               "فَاعِلٌ مَرْفُوعٌ + إِضَافَةٌ",
-              "Subject with iḍāfah."
+              "Subject with iḍāfah.",
+              "the help of Allah"
             ],
             [
               "وَالْفَتْحُ",
               "مَعْطُوفٌ مَرْفُوعٌ",
-              "Coordinated noun."
+              "Coordinated noun.",
+              "and the victory / opening"
             ]
           ]
         },
@@ -904,22 +1018,26 @@
             [
               "وَرَأَيْتَ",
               "عَطْفٌ + فِعْلٌ مَاضٍ + فَاعِلٌ",
-              "The tāʾ is the subject."
+              "The tāʾ is the subject.",
+              "and you see"
             ],
             [
               "النَّاسَ",
               "مَفْعُولٌ بِهِ",
-              "Object of رَأَيْتَ."
+              "Object of رَأَيْتَ.",
+              "the people"
             ],
             [
               "يَدْخُلُونَ فِي دِينِ اللَّهِ",
               "جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ حَالٍ",
-              "Describes the people while entering."
+              "Describes the people while entering.",
+              "entering the religion of Allah"
             ],
             [
               "أَفْوَاجًا",
               "حَالٌ مَنْصُوبٌ",
-              "State/manner: in groups."
+              "State/manner: in groups.",
+              "in crowds / groups"
             ]
           ]
         },
@@ -932,27 +1050,32 @@
             [
               "فَسَبِّحْ",
               "فَاءُ جَوَابِ إِذَا + فِعْلُ أَمْرٍ",
-              "Main response to the conditional/time clause."
+              "Main response to the conditional/time clause.",
+              "then glorify"
             ],
             [
               "بِحَمْدِ رَبِّكَ",
               "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
-              "Attached to سَبِّحْ."
+              "Attached to سَبِّحْ.",
+              "with the praise of your Lord"
             ],
             [
               "وَاسْتَغْفِرْهُ",
               "عَطْفٌ + فِعْلُ أَمْرٍ + مَفْعُولٌ بِهِ",
-              "Second command."
+              "Second command.",
+              "and seek His forgiveness"
             ],
             [
               "إِنَّهُ",
               "إِنَّ + اِسْمُهَا",
-              "Emphatic nominal clause."
+              "Emphatic nominal clause.",
+              "indeed He"
             ],
             [
               "كَانَ تَوَّابًا",
               "كَانَ + اِسْمٌ مُسْتَتِرٌ + خَبَرٌ مَنْصُوبٌ",
-              "Kāna clause functioning as the khabar of إِنَّ."
+              "Kāna clause functioning as the khabar of إِنَّ.",
+              "is ever accepting of repentance"
             ]
           ]
         }
@@ -974,22 +1097,26 @@
             [
               "تَبَّتْ",
               "فِعْلٌ مَاضٍ",
-              "Past verb; tāʾ of feminine agreement."
+              "Past verb; tāʾ of feminine agreement.",
+              "perished / ruined"
             ],
             [
               "يَدَا",
               "فَاعِلٌ مَرْفُوعٌ بِالْأَلِفِ وَهُوَ مُضَافٌ",
-              "Dual subject and muḍāf."
+              "Dual subject and muḍāf.",
+              "the two hands of"
             ],
             [
               "أَبِي لَهَبٍ",
               "مُضَافٌ إِلَيْهِ + إِضَافَةٌ",
-              "Genitive chain."
+              "Genitive chain.",
+              "Abu Lahab"
             ],
             [
               "وَتَبَّ",
               "عَطْفٌ + فِعْلٌ مَاضٍ",
-              "Second coordinated clause; subject understood from context."
+              "Second coordinated clause; subject understood from context.",
+              "and he perished"
             ]
           ]
         },
@@ -1002,22 +1129,26 @@
             [
               "مَا",
               "مَا النَّافِيَةُ",
-              "Negation."
+              "Negation.",
+              "what / that which"
             ],
             [
               "أَغْنَىٰ عَنْهُ",
               "فِعْلٌ مَاضٍ + جَارٌّ وَمَجْرُورٌ",
-              "Verb with prepositional complement."
+              "Verb with prepositional complement.",
+              "benefited him / availed him"
             ],
             [
               "مَالُهُ",
               "فَاعِلٌ مَرْفُوعٌ",
-              "Subject."
+              "Subject.",
+              "his wealth"
             ],
             [
               "وَمَا كَسَبَ",
               "عَطْفٌ + مَا مَوْصُولَةٌ + صِلَتُهَا",
-              "What he earned, coordinated with his wealth."
+              "What he earned, coordinated with his wealth.",
+              "and what he earned"
             ]
           ]
         },
@@ -1030,17 +1161,20 @@
             [
               "سَيَصْلَىٰ",
               "سِينٌ + فِعْلٌ مُضَارِعٌ",
-              "Future marker plus present verb."
+              "Future marker plus present verb.",
+              "he will enter / burn in"
             ],
             [
               "نَارًا",
               "مَنْصُوبٌ",
-              "Object/complement of the verb."
+              "Object/complement of the verb.",
+              "a fire"
             ],
             [
               "ذَاتَ لَهَبٍ",
               "نَعْتٌ مَنْصُوبٌ + إِضَافَةٌ",
-              "Description of the fire."
+              "Description of the fire.",
+              "of flame"
             ]
           ]
         },
@@ -1053,17 +1187,20 @@
             [
               "وَامْرَأَتُهُ",
               "وَاوُ عَطْفٍ + مُبْتَدَأٌ مَرْفُوعٌ",
-              "His wife, coordinated/introduced as a noun."
+              "His wife, coordinated/introduced as a noun.",
+              "and his wife"
             ],
             [
               "حَمَّالَةَ",
               "مَنْصُوبٌ عَلَى الذَّمِّ",
-              "Accusative of condemnation in the canonical reading."
+              "Accusative of condemnation in the canonical reading.",
+              "carrier of"
             ],
             [
               "الْحَطَبِ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Genitive complement."
+              "Genitive complement.",
+              "firewood"
             ]
           ]
         },
@@ -1076,17 +1213,20 @@
             [
               "فِي جِيدِهَا",
               "جَارٌّ وَمَجْرُورٌ خَبَرٌ مُقَدَّمٌ",
-              "Fronted predicate."
+              "Fronted predicate.",
+              "around / on her neck"
             ],
             [
               "حَبْلٌ",
               "مُبْتَدَأٌ مُؤَخَّرٌ مَرْفُوعٌ",
-              "Delayed subject."
+              "Delayed subject.",
+              "a rope"
             ],
             [
               "مِنْ مَسَدٍ",
               "جَارٌّ وَمَجْرُورٌ فِي مَحَلِّ نَعْتٍ",
-              "Prepositional phrase describing the rope."
+              "Prepositional phrase describing the rope.",
+              "of palm fibre"
             ]
           ]
         }
@@ -1108,22 +1248,26 @@
             [
               "قُلْ",
               "فِعْلُ أَمْرٍ",
-              "Command."
+              "Command.",
+              "say"
             ],
             [
               "هُوَ",
               "مُبْتَدَأٌ",
-              "Subject/topic."
+              "Subject/topic.",
+              "he / it is he"
             ],
             [
               "اللَّهُ",
               "خَبَرٌ أَوْ بَدَلٌ",
-              "Predicate or explanatory apposition depending on analysis."
+              "Predicate or explanatory apposition depending on analysis.",
+              "Allah / God"
             ],
             [
               "أَحَدٌ",
               "خَبَرٌ ثَانٍ أَوْ خَبَرٌ",
-              "Further predication: One."
+              "Further predication: One.",
+              "One"
             ]
           ]
         },
@@ -1136,12 +1280,14 @@
             [
               "اللَّهُ",
               "مُبْتَدَأٌ مَرْفُوعٌ",
-              "Subject/topic."
+              "Subject/topic.",
+              "Allah / God"
             ],
             [
               "الصَّمَدُ",
               "خَبَرٌ مَرْفُوعٌ",
-              "Predicate."
+              "Predicate.",
+              "the Eternal Refuge / Self-Sufficient"
             ]
           ]
         },
@@ -1154,17 +1300,20 @@
             [
               "لَمْ يَلِدْ",
               "لَمْ + فِعْلٌ مُضَارِعٌ مَجْزُومٌ",
-              "Active verb in the jussive."
+              "Active verb in the jussive.",
+              "He did not beget"
             ],
             [
               "وَلَمْ",
               "عَطْفٌ + لَمْ",
-              "Second negated clause."
+              "Second negated clause.",
+              "and did not"
             ],
             [
               "يُولَدْ",
               "فِعْلٌ مُضَارِعٌ مَجْزُومٌ مَبْنِيٌّ لِلْمَجْهُولِ",
-              "Passive present verb, majzūm."
+              "Passive present verb, majzūm.",
+              "was He begotten"
             ]
           ]
         },
@@ -1177,22 +1326,26 @@
             [
               "وَلَمْ يَكُنْ",
               "عَطْفٌ + لَمْ + فِعْلٌ نَاقِصٌ مَجْزُومٌ",
-              "يَكُنْ is majzūm after لَمْ."
+              "يَكُنْ is majzūm after لَمْ.",
+              "and there is not / was not"
             ],
             [
               "لَهُ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Related to كُفُوًا."
+              "Related to كُفُوًا.",
+              "for Him / to Him"
             ],
             [
               "كُفُوًا",
               "خَبَرُ يَكُنْ مُقَدَّمٌ مَنْصُوبٌ",
-              "Fronted predicate."
+              "Fronted predicate.",
+              "comparable / equivalent"
             ],
             [
               "أَحَدٌ",
               "اِسْمُ يَكُنْ مُؤَخَّرٌ مَرْفُوعٌ",
-              "Delayed noun of يَكُنْ."
+              "Delayed noun of يَكُنْ.",
+              "One"
             ]
           ]
         }
@@ -1214,17 +1367,20 @@
             [
               "قُلْ",
               "فِعْلُ أَمْرٍ",
-              "Command."
+              "Command.",
+              "say"
             ],
             [
               "أَعُوذُ",
               "فِعْلٌ مُضَارِعٌ وَفَاعِلُهُ مُسْتَتِرٌ",
-              "Present verb; hidden subject أَنَا."
+              "Present verb; hidden subject أَنَا.",
+              "I seek refuge"
             ],
             [
               "بِرَبِّ الْفَلَقِ",
               "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
-              "Prepositional phrase with iḍāfah."
+              "Prepositional phrase with iḍāfah.",
+              "with the Lord of daybreak"
             ]
           ]
         },
@@ -1237,17 +1393,20 @@
             [
               "مِنْ شَرِّ",
               "جَارٌّ وَمَجْرُورٌ وَهُوَ مُضَافٌ",
-              "Attached to أَعُوذُ."
+              "Attached to أَعُوذُ.",
+              "from the evil of"
             ],
             [
               "مَا",
               "اِسْمٌ مَوْصُولٌ فِي مَحَلِّ جَرٍّ",
-              "Muḍāf ilayh."
+              "Muḍāf ilayh.",
+              "what / that which"
             ],
             [
               "خَلَقَ",
               "صِلَةُ الْمَوْصُولِ",
-              "Relative clause."
+              "Relative clause.",
+              "He created"
             ]
           ]
         },
@@ -1260,17 +1419,20 @@
             [
               "وَمِنْ شَرِّ",
               "عَطْفٌ + جَارٌّ وَمَجْرُورٌ",
-              "Coordinated prepositional phrase."
+              "Coordinated prepositional phrase.",
+              "and from the evil of"
             ],
             [
               "غَاسِقٍ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Genitive complement."
+              "Genitive complement.",
+              "darkness / a darkening one"
             ],
             [
               "إِذَا وَقَبَ",
               "ظَرْفٌ + جُمْلَةٌ فِعْلِيَّةٌ",
-              "Time clause."
+              "Time clause.",
+              "when it settles / grows dark"
             ]
           ]
         },
@@ -1283,17 +1445,20 @@
             [
               "وَمِنْ شَرِّ",
               "عَطْفٌ + جَارٌّ وَمَجْرُورٌ",
-              "Continues the series."
+              "Continues the series.",
+              "and from the evil of"
             ],
             [
               "النَّفَّاثَاتِ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Genitive complement."
+              "Genitive complement.",
+              "those who blow"
             ],
             [
               "فِي الْعُقَدِ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Attached to النَّفَّاثَاتِ / their action."
+              "Attached to النَّفَّاثَاتِ / their action.",
+              "on / into the knots"
             ]
           ]
         },
@@ -1306,17 +1471,20 @@
             [
               "وَمِنْ شَرِّ",
               "عَطْفٌ + جَارٌّ وَمَجْرُورٌ",
-              "Continues the series."
+              "Continues the series.",
+              "and from the evil of"
             ],
             [
               "حَاسِدٍ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Genitive complement."
+              "Genitive complement.",
+              "an envier"
             ],
             [
               "إِذَا حَسَدَ",
               "ظَرْفٌ + جُمْلَةٌ فِعْلِيَّةٌ",
-              "Time/condition clause."
+              "Time/condition clause.",
+              "when he envies"
             ]
           ]
         }
@@ -1338,17 +1506,20 @@
             [
               "قُلْ",
               "فِعْلُ أَمْرٍ",
-              "Command."
+              "Command.",
+              "say"
             ],
             [
               "أَعُوذُ",
               "فِعْلٌ مُضَارِعٌ وَفَاعِلُهُ مُسْتَتِرٌ",
-              "Hidden subject أَنَا."
+              "Hidden subject أَنَا.",
+              "I seek refuge"
             ],
             [
               "بِرَبِّ النَّاسِ",
               "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
-              "Prepositional phrase with iḍāfah."
+              "Prepositional phrase with iḍāfah.",
+              "with the Lord of people"
             ]
           ]
         },
@@ -1361,12 +1532,14 @@
             [
               "مَلِكِ",
               "بَدَلٌ أَوْ نَعْتٌ مَجْرُورٌ وَهُوَ مُضَافٌ",
-              "Continues the description of رَبِّ."
+              "Continues the description of رَبِّ.",
+              "King of"
             ],
             [
               "النَّاسِ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Genitive complement."
+              "Genitive complement.",
+              "the people"
             ]
           ]
         },
@@ -1379,12 +1552,14 @@
             [
               "إِلَٰهِ",
               "بَدَلٌ أَوْ نَعْتٌ مَجْرُورٌ وَهُوَ مُضَافٌ",
-              "Another description."
+              "Another description.",
+              "God of"
             ],
             [
               "النَّاسِ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Genitive complement."
+              "Genitive complement.",
+              "the people"
             ]
           ]
         },
@@ -1397,17 +1572,20 @@
             [
               "مِنْ شَرِّ",
               "جَارٌّ وَمَجْرُورٌ وَهُوَ مُضَافٌ",
-              "Attached to أَعُوذُ."
+              "Attached to أَعُوذُ.",
+              "from the evil of"
             ],
             [
               "الْوَسْوَاسِ",
               "مُضَافٌ إِلَيْهِ مَجْرُورٌ",
-              "Genitive complement."
+              "Genitive complement.",
+              "the whisperer"
             ],
             [
               "الْخَنَّاسِ",
               "نَعْتٌ مَجْرُورٌ",
-              "Adjective describing الْوَسْوَاسِ."
+              "Adjective describing الْوَسْوَاسِ.",
+              "the retreating / withdrawing"
             ]
           ]
         },
@@ -1420,17 +1598,20 @@
             [
               "الَّذِي",
               "نَعْتٌ أَوْ بَدَلٌ",
-              "Refers to the whisperer."
+              "Refers to the whisperer.",
+              "the One who / who"
             ],
             [
               "يُوَسْوِسُ",
               "فِعْلٌ مُضَارِعٌ",
-              "Verb of the relative clause."
+              "Verb of the relative clause.",
+              "whispers"
             ],
             [
               "فِي صُدُورِ النَّاسِ",
               "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ",
-              "Prepositional phrase attached to يُوَسْوِسُ."
+              "Prepositional phrase attached to يُوَسْوِسُ.",
+              "in the breasts / hearts of people"
             ]
           ]
         },
@@ -1443,12 +1624,14 @@
             [
               "مِنَ الْجِنَّةِ",
               "جَارٌّ وَمَجْرُورٌ",
-              "Explains the source/kind of the whisperer."
+              "Explains the source/kind of the whisperer.",
+              "from among the jinn"
             ],
             [
               "وَالنَّاسِ",
               "مَعْطُوفٌ مَجْرُورٌ",
-              "Coordinated with الْجِنَّةِ."
+              "Coordinated with الْجِنَّةِ.",
+              "and mankind / people"
             ]
           ]
         }
