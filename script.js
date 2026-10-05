@@ -671,25 +671,33 @@ function renderProgress(){
 }
 
 function nahwCard(x){
-  return `<article class="item nahw-reference-card">
-    <div class="item-head">
-      <div style="flex:1">
-        <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
-        <h3>${x.english}</h3>
-      </div>
-    </div>
-    <div class="meta">${x.topic}</div>
+  return `<article class="sarf-card nahw-foundation-card">
+    <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
+    <h4>${x.english}</h4>
     <p>${x.summary||''}</p>
     ${x.example?`<div class="example" lang="ar" dir="rtl">${x.example}</div><div class="meta">${x.example_en||''}</div>`:''}
   </article>`;
 }
-function renderNahw(){
-  const topic=document.getElementById('nahwTopicFilter')?.value||'';
-  let concepts=DATA.nahw.filter(x=>!topic||x.topic===topic);
 
-  const keyBox=document.getElementById('nahwKeyTerms');
-  if(keyBox)keyBox.innerHTML='';
-  document.getElementById('nahwList').innerHTML=concepts.map(nahwCard).join('')||'<p>No concepts match this filter.</p>';
+function renderNahw(){
+  const f=document.getElementById('nahwTopicFilter')?.value||'';
+  const rows=DATA.nahw.filter(x=>!f||x.topic===f);
+  const sections={};
+  rows.forEach(x=>{const s=x.topic||'General';(sections[s]??=[]).push(x);});
+
+  const o=document.getElementById('nahwOverview');
+  if(o)o.innerHTML=[
+    ['Concepts',DATA.nahw.length],
+    ['Sections',unique(DATA.nahw.map(x=>x.topic)).length],
+    ['With Examples',DATA.nahw.filter(x=>x.example).length]
+  ].map(([a,b])=>`<div class="sarf-overview-card"><span>${a}</span><strong>${b}</strong></div>`).join('');
+
+  const l=document.getElementById('nahwList');
+  if(l)l.innerHTML=Object.entries(sections).map(([s,it])=>`
+    <section class="sarf-section-block nahw-section-block">
+      <h3 class="sarf-section-title">${s}</h3>
+      <div class="sarf-grid">${it.map(nahwCard).join('')}</div>
+    </section>`).join('')||'<p>No Nahw concepts match this section.</p>';
 }
 
 function revisionPool(){
@@ -770,14 +778,7 @@ function bindEvents(){
   document.getElementById('sarfSectionFilter')?.addEventListener('input',renderSarf);
   document.getElementById('rootSort')?.addEventListener('input',renderRoots);
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
-  document.getElementById('nahwTopicFilter').addEventListener('input',renderNahw);
-  document.getElementById('showKeyTermsBtn')?.addEventListener('click',()=>{
-    const box=document.getElementById('nahwKeyTerms');
-    const btn=document.getElementById('showKeyTermsBtn');
-    if(!box||!btn)return;
-    const isHidden=box.classList.toggle('hidden');
-    btn.textContent=isHidden?'Show key terms':'Hide key terms';
-  });
+  document.getElementById('nahwTopicFilter')?.addEventListener('input',renderNahw);
   document.getElementById('revisionMode').addEventListener('change',newRevisionCard);
   document.getElementById('revisionSubset').addEventListener('change',newRevisionCard);
   document.getElementById('newCardBtn').addEventListener('click',newRevisionCard);
