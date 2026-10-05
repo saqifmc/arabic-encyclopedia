@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261005-pagination-speed" />
+  <link rel="stylesheet" href="style.css?v=20261005-status-roots" />
 </head>
 <body>
   <header class="topbar">
@@ -159,12 +159,17 @@
           <strong>Root-family progress</strong>
           <p>Each root is measured by the words you have learned within that family.</p>
         </div>
-        <select id="rootSort">
-          <option value="weakest">Weakest first</option>
-          <option value="strongest">Strongest first</option>
-          <option value="largest">Largest families</option>
-          <option value="alphabetical">Alphabetical</option>
-        </select>
+        <div class="root-filter-controls">
+          <select id="rootLetterFilter" aria-label="Filter roots by Arabic letter">
+            <option value="">All Arabic letters</option>
+          </select>
+          <select id="rootSort">
+            <option value="alphabetical">Arabic alphabetical order</option>
+            <option value="weakest">Weakest first</option>
+            <option value="strongest">Strongest first</option>
+            <option value="largest">Largest families</option>
+          </select>
+        </div>
       </div>
       <div id="rootsList" class="root-grid"></div>
     </section>
@@ -362,6 +367,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261005-pagination-speed"></script>
+  <script src="script.js?v=20261005-status-roots"></script>
 </body>
 </html>
