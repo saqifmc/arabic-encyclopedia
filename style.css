@@ -671,3 +671,61 @@ html,body,button,input,select,textarea{
 .quran-ayah-card .tarkeeb-summary{
   margin-top:12px;
 }
+
+/* Every Quranic word receives its own English gloss */
+.tarkeeb-word-card{
+  gap:12px;
+}
+.tarkeeb-word-glosses{
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row-reverse;
+  justify-content:flex-start;
+  gap:8px;
+  width:100%;
+}
+.quran-word-gloss{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  min-width:92px;
+  padding:9px 11px;
+  border:1px solid #d5e8dc;
+  border-radius:12px;
+  background:#f7fcf9;
+  text-align:center;
+}
+.quran-word-gloss .arabic{
+  font-size:1.25rem;
+  font-weight:700;
+  color:#14532d;
+  line-height:1.5;
+}
+.quran-word-gloss .english{
+  font-size:.8rem;
+  line-height:1.25;
+  color:#4b5563;
+  direction:ltr;
+}
+.tarkeeb-grammar{
+  border-top:1px solid #e7eee9;
+  padding-top:10px;
+}
+.tarkeeb-grammar b{
+  display:block;
+  direction:rtl;
+  text-align:right;
+  color:#166534;
+}
+.tarkeeb-grammar small{
+  display:block;
+  margin-top:4px;
+}
+@media(max-width:650px){
+  .quran-word-gloss{
+    min-width:78px;
+    flex:1 1 90px;
+  }
+}
