@@ -574,3 +574,23 @@ html,body,button,input,select,textarea{
 .reference-group .dashboard-card{
   border-top-color:var(--card-accent);
 }
+
+/* Match Sarf Foundations header dimensions to Nahw Foundations */
+.section-sarf .foundation-panel{
+  display:flex;
+  gap:20px;
+  justify-content:space-between;
+  align-items:end;
+  flex-wrap:wrap;
+  padding:24px;
+  margin-bottom:22px;
+}
+.section-sarf .foundation-panel p{
+  margin:0;
+}
+.section-sarf .foundation-panel select{
+  width:auto;
+  min-width:280px;
+  max-width:480px;
+  flex:0 1 480px;
+}
