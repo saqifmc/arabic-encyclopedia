@@ -162,20 +162,20 @@
     },
     {
       "id": "nahw-foundation-017",
-      "arabic": "نَعْتٌ",
-      "english": "Naʿt — adjective",
+      "arabic": "نَعْتٌ / صِفَةٌ",
+      "english": "Naʿt / Ṣifah — adjective",
       "topic": "Description & Complements",
-      "summary": "An adjective that follows the noun it describes in key grammatical features.",
+      "summary": "An adjective describing a noun. نَعْتٌ and صِفَةٌ are commonly used for the adjective; it follows the noun it describes in key grammatical features such as iʿrāb, definiteness, gender and number.",
       "example": "جَاءَ طَالِبٌ مُجْتَهِدٌ.",
       "example_en": "A hardworking student came.",
       "status": "Not Started"
     },
     {
       "id": "nahw-foundation-018",
-      "arabic": "مَنْعُوتٌ",
-      "english": "Manʿūt — described noun",
+      "arabic": "مَنْعُوتٌ / مَوْصُوفٌ",
+      "english": "Manʿūt / Mawṣūf — described noun",
       "topic": "Description & Complements",
-      "summary": "The noun being described by a naʿt.",
+      "summary": "The noun being described by a naʿt/ṣifah. مَنْعُوتٌ and مَوْصُوفٌ are common terms for the described noun.",
       "example": "جَاءَ طَالِبٌ مُجْتَهِدٌ.",
       "example_en": "A hardworking student came.",
       "status": "Not Started"
@@ -488,6 +488,26 @@
       "summary": "The word or meaning that a shibh al-jumlah is grammatically connected to. A جارّ ومجرور or ظرف usually depends on a verb, an adjective, a verbal noun, or an understood word such as a hidden khabar.",
       "example": "فِي الْبَيْتِ رَجُلٌ.",
       "example_en": "There is a man in the house — فِي الْبَيْتِ is shibh al-jumlah and its mutaʿalliq is an understood khabar such as كَائِنٌ or مُسْتَقِرٌّ.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-050",
+      "arabic": "مُسْنَدٌ",
+      "english": "Musnad — predicate / what is attributed",
+      "topic": "Sentence Structure & Predication",
+      "summary": "The part of the sentence that is attributed to or stated about the musnad ilayh. In a simple nominal sentence, the khabar is the musnad; in a verbal sentence, the verb is commonly treated as the musnad.",
+      "example": "زَيْدٌ طَالِبٌ.",
+      "example_en": "Zayd is a student — طَالِبٌ is the musnad.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-051",
+      "arabic": "مُسْنَدٌ إِلَيْهِ",
+      "english": "Musnad ilayh — subject / what the statement is about",
+      "topic": "Sentence Structure & Predication",
+      "summary": "The word or element to which the musnad is attributed. In a nominal sentence, the mubtadaʾ is the musnad ilayh; in a verbal sentence, the fāʿil or its equivalent fills this role.",
+      "example": "زَيْدٌ طَالِبٌ.",
+      "example_en": "Zayd is a student — زَيْدٌ is the musnad ilayh.",
       "status": "Not Started"
     }
   ]
