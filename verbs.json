@@ -11446,6 +11446,734 @@
       "topic": "الْمَهْمُوزُ",
       "type": "Verb",
       "root_status": "morphological analysis from the Module 4 headword"
+    },
+    {
+      "id": "verb-sarf-459",
+      "arabic": "نَصَرَ",
+      "english": "to help",
+      "root": "ن ص ر",
+      "past": "نَصَرَ",
+      "present": "يَنْصُرُ",
+      "form": "I",
+      "bab": "بَابُ نَصَرَ يَنْصُرُ",
+      "bab_number": 1,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُنْصُرْ",
+      "prohibition": "لَا تَنْصُرْ",
+      "masdar": "نَصْرٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Six chapters of the simple triliteral"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-460",
+      "arabic": "ضَرَبَ",
+      "english": "to hit / strike",
+      "root": "ض ر ب",
+      "past": "ضَرَبَ",
+      "present": "يَضْرِبُ",
+      "form": "I",
+      "bab": "بَابُ ضَرَبَ يَضْرِبُ",
+      "bab_number": 2,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعِلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِضْرِبْ",
+      "prohibition": "لَا تَضْرِبْ",
+      "masdar": "ضَرْبٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Six chapters of the simple triliteral"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-461",
+      "arabic": "سَمِعَ",
+      "english": "to hear",
+      "root": "س م ع",
+      "past": "سَمِعَ",
+      "present": "يَسْمَعُ",
+      "form": "I",
+      "bab": "بَابُ سَمِعَ يَسْمَعُ",
+      "bab_number": 3,
+      "pattern": {
+        "past": "فَعِلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِسْمَعْ",
+      "prohibition": "لَا تَسْمَعْ",
+      "masdar": "سَمَاعٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Six chapters of the simple triliteral"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-462",
+      "arabic": "فَتَحَ",
+      "english": "to open",
+      "root": "ف ت ح",
+      "past": "فَتَحَ",
+      "present": "يَفْتَحُ",
+      "form": "I",
+      "bab": "بَابُ فَتَحَ يَفْتَحُ",
+      "bab_number": 4,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِفْتَحْ",
+      "prohibition": "لَا تَفْتَحْ",
+      "masdar": "فَتْحٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Six chapters of the simple triliteral"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-463",
+      "arabic": "كَرُمَ",
+      "english": "to be noble / generous",
+      "root": "ك ر م",
+      "past": "كَرُمَ",
+      "present": "يَكْرُمُ",
+      "form": "I",
+      "bab": "بَابُ كَرُمَ يَكْرُمُ",
+      "bab_number": 5,
+      "pattern": {
+        "past": "فَعُلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُكْرُمْ",
+      "prohibition": "لَا تَكْرُمْ",
+      "masdar": "كَرَمٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Six chapters of the simple triliteral"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-464",
+      "arabic": "حَسِبَ",
+      "english": "to reckon / calculate",
+      "root": "ح س ب",
+      "past": "حَسِبَ",
+      "present": "يَحْسِبُ",
+      "form": "I",
+      "bab": "بَابُ حَسِبَ يَحْسِبُ",
+      "bab_number": 6,
+      "pattern": {
+        "past": "فَعِلَ",
+        "present": "يَفْعِلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِحْسِبْ",
+      "prohibition": "لَا تَحْسِبْ",
+      "masdar": "حِسْبَانٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Six chapters of the simple triliteral"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-465",
+      "arabic": "دَخَلَ",
+      "english": "to enter",
+      "root": "د خ ل",
+      "past": "دَخَلَ",
+      "present": "يَدْخُلُ",
+      "form": "I",
+      "bab": "بَابُ نَصَرَ يَنْصُرُ",
+      "bab_number": 1,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُدْخُلْ",
+      "prohibition": "لَا تَدْخُلْ",
+      "masdar": "دُخُولٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-466",
+      "arabic": "قَتَلَ",
+      "english": "to kill",
+      "root": "ق ت ل",
+      "past": "قَتَلَ",
+      "present": "يَقْتُلُ",
+      "form": "I",
+      "bab": "بَابُ نَصَرَ يَنْصُرُ",
+      "bab_number": 1,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُقْتُلْ",
+      "prohibition": "لَا تَقْتُلْ",
+      "masdar": "قَتْلٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-467",
+      "arabic": "حَمَلَ",
+      "english": "to carry",
+      "root": "ح م ل",
+      "past": "حَمَلَ",
+      "present": "يَحْمِلُ",
+      "form": "I",
+      "bab": "بَابُ ضَرَبَ يَضْرِبُ",
+      "bab_number": 2,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعِلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِحْمِلْ",
+      "prohibition": "لَا تَحْمِلْ",
+      "masdar": "حَمْلٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-468",
+      "arabic": "نَصَحَ",
+      "english": "to advise",
+      "root": "ن ص ح",
+      "past": "نَصَحَ",
+      "present": "يَنْصَحُ",
+      "form": "I",
+      "bab": "بَابُ فَتَحَ يَفْتَحُ",
+      "bab_number": 4,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِنْصَحْ",
+      "prohibition": "لَا تَنْصَحْ",
+      "masdar": "نُصْحٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-469",
+      "arabic": "شَرَحَ",
+      "english": "to explain",
+      "root": "ش ر ح",
+      "past": "شَرَحَ",
+      "present": "يَشْرَحُ",
+      "form": "I",
+      "bab": "بَابُ فَتَحَ يَفْتَحُ",
+      "bab_number": 4,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِشْرَحْ",
+      "prohibition": "لَا تَشْرَحْ",
+      "masdar": "شَرْحٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-470",
+      "arabic": "نَظَرَ",
+      "english": "to look / see",
+      "root": "ن ظ ر",
+      "past": "نَظَرَ",
+      "present": "يَنْظُرُ",
+      "form": "I",
+      "bab": "بَابُ نَصَرَ يَنْصُرُ",
+      "bab_number": 1,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُنْظُرْ",
+      "prohibition": "لَا تَنْظُرْ",
+      "masdar": "نَظَرٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-471",
+      "arabic": "عَمِلَ",
+      "english": "to work / do",
+      "root": "ع م ل",
+      "past": "عَمِلَ",
+      "present": "يَعْمَلُ",
+      "form": "I",
+      "bab": "بَابُ سَمِعَ يَسْمَعُ",
+      "bab_number": 3,
+      "pattern": {
+        "past": "فَعِلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِعْمَلْ",
+      "prohibition": "لَا تَعْمَلْ",
+      "masdar": "عَمَلٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-472",
+      "arabic": "كَثُرَ",
+      "english": "to be many / become numerous",
+      "root": "ك ث ر",
+      "past": "كَثُرَ",
+      "present": "يَكْثُرُ",
+      "form": "I",
+      "bab": "بَابُ كَرُمَ يَكْرُمُ",
+      "bab_number": 5,
+      "pattern": {
+        "past": "فَعُلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُكْثُرْ",
+      "prohibition": "لَا تَكْثُرْ",
+      "masdar": "كَثْرَةٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-473",
+      "arabic": "جَمَعَ",
+      "english": "to gather / collect",
+      "root": "ج م ع",
+      "past": "جَمَعَ",
+      "present": "يَجْمَعُ",
+      "form": "I",
+      "bab": "بَابُ فَتَحَ يَفْتَحُ",
+      "bab_number": 4,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِجْمَعْ",
+      "prohibition": "لَا تَجْمَعْ",
+      "masdar": "جَمْعٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-474",
+      "arabic": "شَرِبَ",
+      "english": "to drink",
+      "root": "ش ر ب",
+      "past": "شَرِبَ",
+      "present": "يَشْرَبُ",
+      "form": "I",
+      "bab": "بَابُ سَمِعَ يَسْمَعُ",
+      "bab_number": 3,
+      "pattern": {
+        "past": "فَعِلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِشْرَبْ",
+      "prohibition": "لَا تَشْرَبْ",
+      "masdar": "شُرْبٌ",
+      "source": [
+        "Sarf Module 1 (2023-24)"
+      ],
+      "source_section": [
+        "Worksheet for the Triliteral Verb"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-475",
+      "arabic": "جَلَسَ",
+      "english": "to sit",
+      "root": "ج ل س",
+      "past": "جَلَسَ",
+      "present": "يَجْلِسُ",
+      "form": "I",
+      "bab": "بَابُ ضَرَبَ يَضْرِبُ",
+      "bab_number": 2,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعِلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِجْلِسْ",
+      "prohibition": "لَا تَجْلِسْ",
+      "masdar": "جُلُوسٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 1 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-476",
+      "arabic": "ذَهَبَ",
+      "english": "to go",
+      "root": "ذ ه ب",
+      "past": "ذَهَبَ",
+      "present": "يَذْهَبُ",
+      "form": "I",
+      "bab": "بَابُ فَتَحَ يَفْتَحُ",
+      "bab_number": 4,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِذْهَبْ",
+      "prohibition": "لَا تَذْهَبْ",
+      "masdar": "ذَهَابٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 1 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-477",
+      "arabic": "سَقَطَ",
+      "english": "to fall",
+      "root": "س ق ط",
+      "past": "سَقَطَ",
+      "present": "يَسْقُطُ",
+      "form": "I",
+      "bab": "بَابُ نَصَرَ يَنْصُرُ",
+      "bab_number": 1,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُسْقُطْ",
+      "prohibition": "لَا تَسْقُطْ",
+      "masdar": "سُقُوطٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 1 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-478",
+      "arabic": "ظَلَمَ",
+      "english": "to oppress / wrong",
+      "root": "ظ ل م",
+      "past": "ظَلَمَ",
+      "present": "يَظْلِمُ",
+      "form": "I",
+      "bab": "بَابُ ضَرَبَ يَضْرِبُ",
+      "bab_number": 2,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعِلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِظْلِمْ",
+      "prohibition": "لَا تَظْلِمْ",
+      "masdar": "ظُلْمٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 2 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-479",
+      "arabic": "جَعَلَ",
+      "english": "to make / place",
+      "root": "ج ع ل",
+      "past": "جَعَلَ",
+      "present": "يَجْعَلُ",
+      "form": "I",
+      "bab": "بَابُ فَتَحَ يَفْتَحُ",
+      "bab_number": 4,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِجْعَلْ",
+      "prohibition": "لَا تَجْعَلْ",
+      "masdar": "جَعْلٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 2 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-480",
+      "arabic": "رَزَقَ",
+      "english": "to provide",
+      "root": "ر ز ق",
+      "past": "رَزَقَ",
+      "present": "يَرْزُقُ",
+      "form": "I",
+      "bab": "بَابُ نَصَرَ يَنْصُرُ",
+      "bab_number": 1,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُرْزُقْ",
+      "prohibition": "لَا تَرْزُقْ",
+      "masdar": "رِزْقٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 5 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-481",
+      "arabic": "عَبَدَ",
+      "english": "to worship",
+      "root": "ع ب د",
+      "past": "عَبَدَ",
+      "present": "يَعْبُدُ",
+      "form": "I",
+      "bab": "بَابُ نَصَرَ يَنْصُرُ",
+      "bab_number": 1,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُعْبُدْ",
+      "prohibition": "لَا تَعْبُدْ",
+      "masdar": "عِبَادَةٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 5 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-482",
+      "arabic": "عَرَفَ",
+      "english": "to know / recognise",
+      "root": "ع ر ف",
+      "past": "عَرَفَ",
+      "present": "يَعْرِفُ",
+      "form": "I",
+      "bab": "بَابُ ضَرَبَ يَضْرِبُ",
+      "bab_number": 2,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعِلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِعْرِفْ",
+      "prohibition": "لَا تَعْرِفْ",
+      "masdar": "مَعْرِفَةٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 5 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-483",
+      "arabic": "بَعَثَ",
+      "english": "to send / resurrect",
+      "root": "ب ع ث",
+      "past": "بَعَثَ",
+      "present": "يَبْعَثُ",
+      "form": "I",
+      "bab": "بَابُ فَتَحَ يَفْتَحُ",
+      "bab_number": 4,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعَلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اِبْعَثْ",
+      "prohibition": "لَا تَبْعَثْ",
+      "masdar": "بَعْثٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 5 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
+    },
+    {
+      "id": "verb-sarf-484",
+      "arabic": "خَلَقَ",
+      "english": "to create",
+      "root": "خ ل ق",
+      "past": "خَلَقَ",
+      "present": "يَخْلُقُ",
+      "form": "I",
+      "bab": "بَابُ نَصَرَ يَنْصُرُ",
+      "bab_number": 1,
+      "pattern": {
+        "past": "فَعَلَ",
+        "present": "يَفْعُلُ"
+      },
+      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
+      "verb_type": "الصَّحِيحُ",
+      "command": "اُخْلُقْ",
+      "prohibition": "لَا تَخْلُقْ",
+      "masdar": "خَلْقٌ",
+      "source": [
+        "Module 0B - Verbs - Introduction"
+      ],
+      "source_section": [
+        "Lesson 5 vocabulary"
+      ],
+      "topic": "الصَّحِيحُ",
+      "type": "Verb"
     }
   ]
 }
