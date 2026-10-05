@@ -1136,3 +1136,51 @@ html,body,button,input,select,textarea{
 .list-load-more:hover{background:#f8fafc}
 .list-load-more span{font-weight:400;color:#64748b}
 .list-count{font-size:.8rem;color:#64748b}
+
+
+/* Fast catalogue-style pagination */
+.catalog-pagination{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:0 0 16px;
+  padding:12px 14px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:0 4px 12px rgba(15,23,42,.04);
+}
+.list > .catalog-pagination:last-child{margin:18px 0 0}
+.pagination-summary{font-size:.88rem;color:var(--muted);white-space:nowrap}
+.pagination-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.pagination-page,.pagination-arrow{
+  min-width:38px;
+  min-height:38px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--ink);
+  border-radius:10px;
+  padding:7px 10px;
+  font:inherit;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.pagination-page.active{background:var(--green);border-color:var(--green);color:#fff;font-weight:700}
+.pagination-arrow:disabled{opacity:.4;cursor:default}
+.pagination-page:not(.active):hover,.pagination-arrow:not(:disabled):hover{background:#f6faf8}
+.pagination-ellipsis{padding:0 2px;color:var(--muted)}
+.search-result-note{padding:12px 4px;color:var(--muted);font-size:.9rem}
+
+/* Reduce tap delay and unnecessary animation work on mobile */
+button,a,input,select,summary{touch-action:manipulation}
+@media (hover:none){
+  nav button:hover,.revision-controls button:hover,.flashcard>button:hover,.dashboard-card:hover{transform:none}
+}
+@media(max-width:650px){
+  .catalog-pagination{align-items:flex-start}
+  .pagination-summary{width:100%}
+  .pagination-controls{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+  .pagination-page,.pagination-arrow{flex:0 0 auto}
+}
