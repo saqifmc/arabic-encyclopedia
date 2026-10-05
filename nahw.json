@@ -479,6 +479,16 @@
       "example": "فِي الْبَيْتِ رَجُلٌ.",
       "example_en": "There is a man in the house — فِي الْبَيْتِ is shibh al-jumlah and functions as a fronted khabar.",
       "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-049",
+      "arabic": "مُتَعَلِّقٌ",
+      "english": "Mutaʿalliq — the word a phrase is connected to",
+      "topic": "Adverbials & Prepositions",
+      "summary": "The word or meaning that a shibh al-jumlah is grammatically connected to. A جارّ ومجرور or ظرف usually depends on a verb, an adjective, a verbal noun, or an understood word such as a hidden khabar.",
+      "example": "فِي الْبَيْتِ رَجُلٌ.",
+      "example_en": "There is a man in the house — فِي الْبَيْتِ is shibh al-jumlah and its mutaʿalliq is an understood khabar such as كَائِنٌ or مُسْتَقِرٌّ.",
+      "status": "Not Started"
     }
   ]
 }
