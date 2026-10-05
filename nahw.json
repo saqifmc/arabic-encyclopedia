@@ -335,9 +335,9 @@
       "arabic": "بَدَلٌ",
       "english": "Badal — substitute/apposition",
       "topic": "Followers (التَّوَابِعُ)",
-      "summary": "A following noun that restates or substitutes for the noun before it.",
+      "summary": "A follower that replaces, restates or clarifies the noun before it. The badal follows the mubdal minhu in iʿrāb.",
       "example": "جَاءَ أَخُوكَ زَيْدٌ.",
-      "example_en": "Your brother Zayd came.",
+      "example_en": "Your brother Zayd came — زَيْدٌ is the badal and أَخُوكَ is the mubdal minhu.",
       "status": "Not Started"
     },
     {
@@ -388,6 +388,86 @@
       "summary": "A construction used to ask a question.",
       "example": "هَلْ أَنْتَ طَالِبٌ؟",
       "example_en": "Are you a student?",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-040",
+      "arabic": "مُبْدَلٌ مِنْهُ",
+      "english": "Mubdal minhu — the word replaced by the badal",
+      "topic": "Followers (التَّوَابِعُ)",
+      "summary": "The noun that comes before the badal and is then restated, clarified or replaced by it. The badal follows the mubdal minhu in grammatical case.",
+      "example": "جَاءَ أَخُوكَ زَيْدٌ.",
+      "example_en": "Your brother Zayd came — أَخُوكَ is the mubdal minhu and زَيْدٌ is the badal.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-041",
+      "arabic": "مُبْتَدَأٌ مُؤَخَّرٌ",
+      "english": "Mubtadaʾ muʾakhkhar — delayed subject/topic",
+      "topic": "Nominal Sentence",
+      "summary": "A mubtadaʾ that appears after its khabar instead of at the beginning of the nominal sentence. It remains marfūʿ.",
+      "example": "فِي الْبَيْتِ رَجُلٌ.",
+      "example_en": "There is a man in the house — رَجُلٌ is the delayed mubtadaʾ.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-042",
+      "arabic": "خَبَرٌ مُقَدَّمٌ",
+      "english": "Khabar muqaddam — fronted predicate",
+      "topic": "Nominal Sentence",
+      "summary": "A khabar that is placed before the mubtadaʾ. It is often a prepositional phrase or adverbial expression.",
+      "example": "فِي الْبَيْتِ رَجُلٌ.",
+      "example_en": "There is a man in the house — فِي الْبَيْتِ is the fronted khabar.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-043",
+      "arabic": "مَا النَّافِيَةُ",
+      "english": "Mā al-nāfiyah — negative mā",
+      "topic": "Negation & Governing Particles",
+      "summary": "A particle of negation. In its basic use it negates a statement but does not make the present verb manṣūb or majzūm.",
+      "example": "مَا ذَهَبَ زَيْدٌ.",
+      "example_en": "Zayd did not go.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-044",
+      "arabic": "لَمْ",
+      "english": "Lam — negation with jussive",
+      "topic": "Negation & Governing Particles",
+      "summary": "A particle of negation, jussive governance and past meaning. It makes the following present-tense verb majzūm while giving the sentence a past negative meaning.",
+      "example": "لَمْ يَذْهَبْ زَيْدٌ.",
+      "example_en": "Zayd did not go — يَذْهَبْ is majzūm after لَمْ.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-045",
+      "arabic": "لَا النَّافِيَةُ",
+      "english": "Lā al-nāfiyah — negative lā",
+      "topic": "Negation & Governing Particles",
+      "summary": "A particle used to negate. In the basic present-tense use, it does not make the verb manṣūb or majzūm, so the verb normally remains marfūʿ.",
+      "example": "لَا يَذْهَبُ زَيْدٌ.",
+      "example_en": "Zayd does not go — يَذْهَبُ remains marfūʿ.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-046",
+      "arabic": "لَنْ",
+      "english": "Lan — future negation with accusative",
+      "topic": "Negation & Governing Particles",
+      "summary": "A particle of future negation and naṣb. It makes the following present-tense verb manṣūb.",
+      "example": "لَنْ يَذْهَبَ زَيْدٌ.",
+      "example_en": "Zayd will not go — يَذْهَبَ is manṣūb after لَنْ.",
+      "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-047",
+      "arabic": "أَثَرُ أَدَوَاتِ النَّفْيِ فِي الْإِعْرَابِ",
+      "english": "Effect of negation particles on iʿrāb",
+      "topic": "Negation & Governing Particles",
+      "summary": "Different particles affect the following verb differently: مَا and لَا النَّافِيَةُ normally do not change the iʿrāb of the present verb; لَمْ makes it majzūm; and لَنْ makes it manṣūb.",
+      "example": "لَا يَذْهَبُ، لَمْ يَذْهَبْ، لَنْ يَذْهَبَ.",
+      "example_en": "He does not go; he did not go; he will not go — showing marfūʿ, majzūm and manṣūb forms.",
       "status": "Not Started"
     }
   ]
