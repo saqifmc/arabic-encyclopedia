@@ -378,7 +378,7 @@ html,body,button,input,select,textarea{
 .quran-ayah-list{display:grid;gap:22px}
 .quran-ayah-card{position:relative;background:#fff;border:1px solid #dfe7e3;border-radius:18px;padding:25px;box-shadow:0 8px 24px rgba(25,63,50,.06)}
 .ayah-number{position:absolute;top:18px;left:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#174f3f;color:#fff;font-weight:700}
-.quran-arabic{font-family:"Noto Naskh Arabic",serif;font-size:2rem;line-height:1.9;text-align:right;color:#153d33;padding-left:46px}
+.quran-arabic{font-family:"Noto Naskh Arabic",serif;font-size:2rem;line-height:1.9;direction:rtl;unicode-bidi:isolate;text-align:right;color:#153d33;padding-left:46px;width:100%;}
 .quran-sense{font-size:1.03rem;font-style:italic;margin:5px 0 18px;color:#42534c}
 .tarkeeb-summary{font-family:"Noto Naskh Arabic",serif;font-size:1.25rem;line-height:1.8;background:#f2f8f5;border-radius:12px;padding:12px 15px;margin:12px 0 16px;color:#174f3f;text-align:right}
 .tarkeeb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px}
