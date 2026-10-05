@@ -60,6 +60,7 @@ async function loadRemoteProgress(){
     });
     const local=loadProgress();
     const merged={...local,...remoteProgress};
+    PROGRESS_CACHE=merged;
     localStorage.setItem(STORE_KEY,JSON.stringify(merged));
     syncReady=true;
 
@@ -193,9 +194,10 @@ const SECTION_METRIC_FILTERS = { vocabulary:'all', verbs:'all' };
 let ROOT_METRIC_FILTER = 'all';
 let VOCAB_COLLECTION_FILTER = 'all';
 let VERB_COLLECTION_FILTER = 'all';
-const LIST_PAGE_SIZE = 60;
-let VOCAB_VISIBLE_COUNT = LIST_PAGE_SIZE;
-let VERB_VISIBLE_COUNT = LIST_PAGE_SIZE;
+const VOCAB_PAGE_SIZE = 24;
+const VERB_PAGE_SIZE = 24;
+let VOCAB_PAGE = 1;
+let VERB_PAGE = 1;
 let PROGRESS_METRIC_FILTER = 'all';
 
 let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [], sarf: [], quranicTarkeeb: [] };
@@ -203,10 +205,16 @@ let currentCard = null;
 const STORE_KEY = 'arabicEncyclopediaProgressV2';
 const STATUSES = ['Not Started','Covered','Learning','Confident','Mastered'];
 
+let PROGRESS_CACHE=null;
 function loadProgress(){
-  try{return JSON.parse(localStorage.getItem(STORE_KEY)) || {};}catch(e){return {}}
+  if(PROGRESS_CACHE) return PROGRESS_CACHE;
+  try{PROGRESS_CACHE=JSON.parse(localStorage.getItem(STORE_KEY)) || {};}catch(e){PROGRESS_CACHE={};}
+  return PROGRESS_CACHE;
 }
-function saveProgress(p){ localStorage.setItem(STORE_KEY, JSON.stringify(p)); }
+function saveProgress(p){
+  PROGRESS_CACHE=p;
+  localStorage.setItem(STORE_KEY, JSON.stringify(p));
+}
 function progressFor(id){
   const p=loadProgress();
   return p[id] || {status:'Not Started',favourite:false,dateCovered:null,lastRevised:null,timesRevised:0,correctCount:0,incorrectCount:0};
@@ -408,12 +416,13 @@ function bindSectionDashboardFilters(){
       const section=btn.dataset.sectionName, filter=btn.dataset.sectionFilter;
       SECTION_METRIC_FILTERS[section]=filter;
       if(section==='vocabulary'){
+        VOCAB_PAGE=1;
         const status=document.getElementById('statusFilter'),fav=document.getElementById('favouriteFilter');
         if(status)status.value='';if(fav)fav.checked=false;
       }
       renderSectionDashboards();
       if(section==='vocabulary')renderVocabulary();
-      if(section==='verbs')renderVerbs();
+      if(section==='verbs'){VERB_PAGE=1;renderVerbs();}
       const target={vocabulary:'vocabList',verbs:'verbsList'}[section];
       document.getElementById(target)?.scrollIntoView({behavior:'smooth',block:'start'});
     };
@@ -462,6 +471,7 @@ function openRootItem(id){
   const vocabItem=DATA.vocabulary.find(x=>x.id===id);
   const verbItem=DATA.verbs.find(x=>x.id===id);
   if(vocabItem){
+    VOCAB_PAGE=1;
     showView('vocabulary');
     const q=document.getElementById('vocabSearch');
     const type=document.getElementById('typeFilter');
@@ -475,6 +485,7 @@ function openRootItem(id){
     if(fav) fav.checked=false;
     renderVocabulary();
   } else if(verbItem){
+    VERB_PAGE=1;
     showView('verbs');
     const form=document.getElementById('formFilter');
     if(form) form.value='';
@@ -600,25 +611,42 @@ function bindDynamicButtons(){
     patchProgress(btn.dataset.favId,{favourite:!p.favourite});
   });
 }
-function listLoadMoreMarkup(kind,visible,total){
-  if(total<=visible) return '';
-  const remaining=total-visible;
-  return `<div class="list-load-more-wrap">
-    <button type="button" class="list-load-more" data-load-more="${kind}">
-      Load more <span>(${remaining} remaining)</span>
-    </button>
-    <div class="list-count">Showing ${Math.min(visible,total)} of ${total}</div>
-  </div>`;
+function paginationMarkup(kind,currentPage,total,pageSize){
+  const totalPages=Math.max(1,Math.ceil(total/pageSize));
+  if(total===0) return '';
+  const page=Math.min(Math.max(1,currentPage),totalPages);
+  const start=(page-1)*pageSize+1;
+  const end=Math.min(page*pageSize,total);
+  const pages=[];
+  const candidates=new Set([1,totalPages,page-2,page-1,page,page+1,page+2].filter(n=>n>=1&&n<=totalPages));
+  let last=0;
+  [...candidates].sort((a,b)=>a-b).forEach(n=>{
+    if(last && n-last>1) pages.push('<span class="pagination-ellipsis">…</span>');
+    pages.push(`<button type="button" class="pagination-page ${n===page?'active':''}" data-page-kind="${kind}" data-page="${n}" aria-label="Page ${n}">${n}</button>`);
+    last=n;
+  });
+  return `<nav class="catalog-pagination" aria-label="${kind} pages">
+    <div class="pagination-summary">Showing ${start}–${end} of ${total}</div>
+    <div class="pagination-controls">
+      <button type="button" class="pagination-arrow" data-page-kind="${kind}" data-page="${page-1}" ${page===1?'disabled':''}>‹ Previous</button>
+      ${pages.join('')}
+      <button type="button" class="pagination-arrow" data-page-kind="${kind}" data-page="${page+1}" ${page===totalPages?'disabled':''}>Next ›</button>
+    </div>
+  </nav>`;
 }
 
-function bindListLoadMore(){
-  document.querySelectorAll('[data-load-more]').forEach(btn=>btn.onclick=()=>{
-    if(btn.dataset.loadMore==='vocabulary'){
-      VOCAB_VISIBLE_COUNT+=LIST_PAGE_SIZE;
+function bindPagination(){
+  document.querySelectorAll('[data-page-kind]').forEach(btn=>btn.onclick=()=>{
+    if(btn.disabled) return;
+    const page=Number(btn.dataset.page)||1;
+    if(btn.dataset.pageKind==='vocabulary'){
+      VOCAB_PAGE=page;
       renderVocabulary();
-    }else if(btn.dataset.loadMore==='verbs'){
-      VERB_VISIBLE_COUNT+=LIST_PAGE_SIZE;
+      document.getElementById('vocabList')?.scrollIntoView({behavior:'smooth',block:'start'});
+    }else if(btn.dataset.pageKind==='verbs'){
+      VERB_PAGE=page;
       renderVerbs();
+      document.getElementById('verbsList')?.scrollIntoView({behavior:'smooth',block:'start'});
     }
   });
 }
@@ -641,13 +669,17 @@ function renderVocabulary(){
   rows.sort((a,b)=>String(a.category||'').localeCompare(String(b.category||''))||String(a.topic||'').localeCompare(String(b.topic||''))||String(a.english||'').localeCompare(String(b.english||'')));
   rows=sortRecentlyCoveredLast(rows);
   const totalRows=rows.length;
-  const visibleRows=rows.slice(0,VOCAB_VISIBLE_COUNT);
-  document.getElementById('vocabList').innerHTML=`
+  const totalPages=Math.max(1,Math.ceil(totalRows/VOCAB_PAGE_SIZE));
+  VOCAB_PAGE=Math.min(VOCAB_PAGE,totalPages);
+  const pageStart=(VOCAB_PAGE-1)*VOCAB_PAGE_SIZE;
+  const visibleRows=rows.slice(pageStart,pageStart+VOCAB_PAGE_SIZE);
+  const pager=paginationMarkup('vocabulary',VOCAB_PAGE,totalRows,VOCAB_PAGE_SIZE);
+  document.getElementById('vocabList').innerHTML=pager+`
     <div class="traffic-legend">
       <span class="traffic-dot not">Not Started</span><span class="traffic-dot learning">Learning</span><span class="traffic-dot covered">Covered</span><span class="traffic-dot confident">Confident</span><span class="traffic-dot mastered">Mastered</span>
-    </div>`+(visibleRows.map(vocabCard).join('')||'<p>No matches.</p>')+listLoadMoreMarkup('vocabulary',VOCAB_VISIBLE_COUNT,totalRows);
+    </div>`+(visibleRows.map(vocabCard).join('')||'<p>No matches.</p>')+pager;
   bindDynamicButtons();
-  bindListLoadMore();
+  bindPagination();
 }
 
 function renderRoots(){
@@ -687,10 +719,14 @@ function renderVerbs(){
   let rows=DATA.verbs.filter(x=>{const h=[x.arabic,x.english,x.quran_english,x.root,x.form,x.bab,x.category,x.verb_type,x.masdar,...sourceValues(x)].join(' ').toLowerCase();const collections=Array.isArray(x.collections)?x.collections:[];const inCollection=VERB_COLLECTION_FILTER==='all'||collections.includes(VERB_COLLECTION_FILTER);return inCollection&&(!form||x.form===form)&&(!type||x.verb_type===type)&&(!bab||x.bab===bab)&&h.includes(q)});rows=filterByMetric(rows,SECTION_METRIC_FILTERS.verbs);
   rows=sortRecentlyCoveredLast(rows);
   const totalRows=rows.length;
-  const visibleRows=rows.slice(0,VERB_VISIBLE_COUNT);
-  document.getElementById('verbsList').innerHTML=(visibleRows.map(verbCard).join('')||'<p>No verbs match these filters.</p>')+listLoadMoreMarkup('verbs',VERB_VISIBLE_COUNT,totalRows);
+  const totalPages=Math.max(1,Math.ceil(totalRows/VERB_PAGE_SIZE));
+  VERB_PAGE=Math.min(VERB_PAGE,totalPages);
+  const pageStart=(VERB_PAGE-1)*VERB_PAGE_SIZE;
+  const visibleRows=rows.slice(pageStart,pageStart+VERB_PAGE_SIZE);
+  const pager=paginationMarkup('verbs',VERB_PAGE,totalRows,VERB_PAGE_SIZE);
+  document.getElementById('verbsList').innerHTML=pager+(visibleRows.map(verbCard).join('')||'<p>No verbs match these filters.</p>')+pager;
   bindDynamicButtons();
-  bindListLoadMore();
+  bindPagination();
 }
 function renderSpeaking(){
   const topic=document.getElementById('speakingTopicFilter')?.value||'';
@@ -971,20 +1007,20 @@ function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'num
 function bindEvents(){
   document.querySelectorAll('[data-vocab-set]').forEach(btn=>btn.addEventListener('click',()=>{
     VOCAB_COLLECTION_FILTER=btn.dataset.vocabSet;
-    VOCAB_VISIBLE_COUNT=LIST_PAGE_SIZE;
+    VOCAB_PAGE=1;
     document.querySelectorAll('[data-vocab-set]').forEach(b=>b.classList.toggle('active',b===btn));
     SECTION_METRIC_FILTERS.vocabulary='all';
     renderSectionDashboards();
     renderVocabulary();
   }));
-  ['vocabSearch','categoryFilter','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{VOCAB_VISIBLE_COUNT=LIST_PAGE_SIZE;SECTION_METRIC_FILTERS.vocabulary='all';renderSectionDashboards();renderVocabulary();}));
-  document.getElementById('formFilter').addEventListener('input',()=>{VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
-  document.getElementById('verbTypeFilter')?.addEventListener('input',()=>{VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
-  document.getElementById('babFilter')?.addEventListener('input',()=>{VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
-  document.getElementById('verbSearch')?.addEventListener('input',()=>{VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;renderVerbs();});
+  ['vocabSearch','categoryFilter','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{VOCAB_PAGE=1;SECTION_METRIC_FILTERS.vocabulary='all';renderSectionDashboards();renderVocabulary();}));
+  document.getElementById('formFilter').addEventListener('input',()=>{VERB_PAGE=1;SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
+  document.getElementById('verbTypeFilter')?.addEventListener('input',()=>{VERB_PAGE=1;SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
+  document.getElementById('babFilter')?.addEventListener('input',()=>{VERB_PAGE=1;SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
+  document.getElementById('verbSearch')?.addEventListener('input',()=>{VERB_PAGE=1;renderVerbs();});
   document.querySelectorAll('[data-verb-set]').forEach(btn=>btn.addEventListener('click',()=>{
     VERB_COLLECTION_FILTER=btn.dataset.verbSet;
-    VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;
+    VERB_PAGE=1;
     document.querySelectorAll('[data-verb-set]').forEach(b=>b.classList.toggle('active',b===btn));
     SECTION_METRIC_FILTERS.verbs='all';
     renderSectionDashboards();
@@ -1017,6 +1053,7 @@ function bindEvents(){
   document.getElementById('resetProgressBtn').addEventListener('click',()=>{
     if(confirm('Reset all saved learning progress on this device?')){
       localStorage.removeItem(STORE_KEY);
+      PROGRESS_CACHE={};
       if(currentUser && firebaseDb){
         firebaseDb.collection('users').doc(currentUser.uid).collection('progress').get().then(async snap=>{
           const batch=firebaseDb.batch();
@@ -1037,7 +1074,9 @@ function bindEvents(){
     const nahw=DATA.nahw.filter(x=>[x.arabic,x.english,x.topic,x.summary].join(' ').toLowerCase().includes(q));
     const sarf=DATA.sarf.filter(x=>[x.arabic,x.english,x.section,x.summary].join(' ').toLowerCase().includes(q));
     box.classList.remove('hidden');
-    box.innerHTML=[...vocab.map(vocabCard),...verbs.map(verbCard),...speaking.map(speakingCard),...nahw.map(nahwCard),...sarf.map(sarfCard)].join('')||'<p>No matches.</p>';
+    const allResults=[...vocab.map(vocabCard),...verbs.map(verbCard),...speaking.map(speakingCard),...nahw.map(nahwCard),...sarf.map(sarfCard)];
+    const shown=allResults.slice(0,40);
+    box.innerHTML=(shown.join('')||'<p>No matches.</p>')+(allResults.length>40?`<p class="search-result-note">Showing the first 40 of ${allResults.length} matches. Refine your search to narrow the list.</p>`:'');
     bindDynamicButtons();
   });
 }
