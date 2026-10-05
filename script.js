@@ -702,9 +702,10 @@ function renderNahw(){
 }
 
 
-function quranTarkeebPart([word,label,note]){
-  return `<div>
+function quranTarkeebPart([word,label,note,gloss]){
+  return `<div class="tarkeeb-word-card">
     <span class="q-word" lang="ar" dir="rtl">${word}</span>
+    ${gloss?`<span class="word-gloss">${gloss}</span>`:''}
     <b lang="ar" dir="rtl">${label}</b>
     <small>${note}</small>
   </div>`;
@@ -732,14 +733,13 @@ function renderQuranicTarkeeb(){
     </div>
     <div class="translation-note">
       <strong>Translation reference</strong>
-      <p>M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). The English lines here are concise study paraphrases rather than a reproduction of the published translation.</p>
+      <p>M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). The page uses word-by-word English glosses alongside the Arabic and grammar analysis.</p>
     </div>`;
 
   list.innerHTML=surah.ayahs.map(a=>`
     <article class="quran-ayah-card">
       <div class="ayah-number">${a.n}</div>
       <div class="quran-arabic" lang="ar" dir="rtl">${a.arabic}</div>
-      <div class="quran-sense">${a.sense||''}</div>
       <div class="tarkeeb-summary" lang="ar" dir="rtl"><strong>التَّرْكِيبُ:</strong> ${a.summary||''}</div>
       <div class="tarkeeb-grid">${(a.parts||[]).map(quranTarkeebPart).join('')}</div>
     </article>`).join('');
