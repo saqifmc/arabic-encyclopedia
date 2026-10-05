@@ -729,3 +729,140 @@ html,body,button,input,select,textarea{
     flex:1 1 90px;
   }
 }
+
+/* Quranic Tarkeeb — cleaner verse + analysis layout */
+.section-quranic .quran-intro-card{
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
+  gap:20px;
+  align-items:stretch;
+  background:#fff;
+  border:1px solid #dbe7df;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.section-quranic .quran-surah-title{
+  font-size:2rem;
+  margin-bottom:6px;
+  color:#166534;
+}
+.section-quranic .quran-intro-card h3{
+  margin:0 0 6px;
+}
+.section-quranic .translation-note{
+  background:#f6fbf7;
+  border:1px solid #dbe7df;
+  border-radius:14px;
+  padding:16px;
+}
+.section-quranic .translation-note p{
+  margin:.4rem 0 0;
+}
+
+.quran-ayah-list{
+  display:grid;
+  gap:18px;
+}
+.quran-ayah-card{
+  position:relative;
+  background:#fff;
+  border:1px solid #dce7df;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.quran-verse-pair{
+  background:#fbfdfb;
+  border:1px solid #e2ece5;
+  border-radius:16px;
+  padding:18px 20px;
+  margin-bottom:16px;
+}
+.quran-arabic{
+  font-size:1.8rem;
+  line-height:2;
+  text-align:right;
+  color:#0f5132;
+}
+.quran-english{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid #e2ece5;
+  font-size:1rem;
+  line-height:1.55;
+  color:#374151;
+}
+.tarkeeb-summary{
+  background:#f0fdf4;
+  border:1px solid #ccebd5;
+  border-radius:14px;
+  padding:12px 14px;
+  margin:0 0 14px;
+  color:#14532d;
+}
+.tarkeeb-grid{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+  direction:ltr;
+}
+.tarkeeb-grid>div{
+  min-width:0;
+  background:#fff;
+  border:1px solid #dfe9e2;
+  border-radius:16px;
+  padding:14px;
+  box-shadow:none;
+}
+.tarkeeb-word-glosses{
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row-reverse;
+  gap:7px;
+  justify-content:flex-start;
+}
+.quran-word-gloss{
+  min-width:0;
+  flex:1 1 88px;
+  padding:8px 9px;
+  background:#f7fbf8;
+  border:1px solid #d6e8dc;
+  border-radius:10px;
+}
+.quran-word-gloss .arabic{
+  font-size:1.15rem;
+}
+.quran-word-gloss .english{
+  font-size:.76rem;
+}
+.tarkeeb-grammar{
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px solid #e7eee9;
+}
+.tarkeeb-grammar b{
+  font-size:1rem;
+}
+.tarkeeb-grammar small{
+  color:#59636d;
+  line-height:1.45;
+}
+.ayah-number{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  background:#166534;
+  color:#fff;
+  font-weight:700;
+  margin-bottom:12px;
+}
+@media(max-width:760px){
+  .section-quranic .quran-intro-card{
+    grid-template-columns:1fr;
+  }
+  .quran-arabic{font-size:1.55rem}
+  .tarkeeb-grid{grid-template-columns:1fr}
+}
