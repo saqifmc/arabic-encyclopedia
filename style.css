@@ -393,3 +393,13 @@ html,body,button,input,select,textarea{
   .quran-arabic{font-size:1.65rem;padding-left:40px}
   .tarkeeb-grid{display:flex;flex-direction:column;gap:11px}.tarkeeb-grid>div{width:100%}
 }
+
+/* Homepage tested vs reference grouping */
+.home-topic-group{margin-top:28px}
+.home-group-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #dce7e2}
+.home-group-head h2{margin:3px 0 2px}
+.home-group-head p{margin:0;color:var(--muted)}
+.home-topic-group .dashboard-card{cursor:pointer;text-align:left}
+.tested-group .dashboard-card{border-top:3px solid var(--green)}
+.reference-group .dashboard-card{border-top:3px solid #7b8790;background:#fbfcfc}
+.reference-group .dashboard-card:hover{border-color:#aab7b1;box-shadow:var(--shadow)}
