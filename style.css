@@ -1184,3 +1184,33 @@ button,a,input,select,summary{touch-action:manipulation}
   .pagination-controls{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;-webkit-overflow-scrolling:touch}
   .pagination-page,.pagination-arrow{flex:0 0 auto}
 }
+
+
+/* Reliable progress controls */
+.status-row{position:relative;z-index:2}
+.status-btn,.star-btn{
+  position:relative;
+  z-index:3;
+  pointer-events:auto;
+  user-select:none;
+  -webkit-user-select:none;
+  touch-action:manipulation;
+}
+.status-btn:active,.star-btn:active{transform:scale(.97)}
+
+/* Arabic root browsing */
+.root-filter-controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.root-filter-controls select{min-width:190px}
+#rootLetterFilter{
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:1.1rem;
+}
+@media(max-width:700px){
+  .root-filter-controls{width:100%}
+  .root-filter-controls select{max-width:none;flex:1 1 180px}
+}
