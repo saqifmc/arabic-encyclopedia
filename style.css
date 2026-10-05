@@ -432,3 +432,80 @@ html,body,button,input,select,textarea{
   width:min(480px,100%);
   background:#fff;
 }
+
+/* Consistent coloured section headers */
+.section-vocab{--section-header:#2563eb}
+.section-verbs{--section-header:#d97706}
+.section-roots{--section-header:#7c3aed}
+.section-sarf{--section-header:#4f46e5}
+.section-nahw{--section-header:#0f766e}
+.section-quranic{--section-header:#166534}
+.section-speaking{--section-header:#be185d}
+#revision{--section-header:#475569}
+#progress{--section-header:#047857}
+
+.section-vocab .section-head,
+.section-verbs .section-head,
+.section-roots .section-head,
+.section-nahw .section-head,
+.section-quranic .section-head,
+.section-speaking .section-head,
+#revision .section-head,
+#progress .section-head,
+.section-sarf .foundation-panel{
+  background:var(--section-header);
+  border:1px solid var(--section-header);
+  border-radius:22px;
+  padding:24px;
+  margin-bottom:22px;
+  box-shadow:0 10px 24px rgba(15,23,42,.08);
+}
+
+.section-vocab .section-head h2,
+.section-verbs .section-head h2,
+.section-roots .section-head h2,
+.section-nahw .section-head h2,
+.section-quranic .section-head h2,
+.section-speaking .section-head h2,
+#revision .section-head h2,
+#progress .section-head h2,
+.section-sarf .foundation-panel h2{
+  color:#fff !important;
+}
+
+.section-vocab .section-head p,
+.section-verbs .section-head p,
+.section-roots .section-head p,
+.section-nahw .section-head p,
+.section-quranic .section-head p,
+.section-speaking .section-head p,
+#revision .section-head p,
+#progress .section-head p,
+.section-sarf .foundation-panel p{
+  color:rgba(255,255,255,.92) !important;
+}
+
+.section-quranic .section-head .eyebrow{
+  color:rgba(255,255,255,.82) !important;
+}
+
+.section-vocab .section-head input,
+.section-verbs .section-head input,
+.section-vocab .section-head select,
+.section-verbs .section-head select,
+.section-roots .section-head select,
+.section-nahw .section-head select,
+.section-quranic .section-head select,
+.section-speaking .section-head select,
+#revision .section-head select,
+#progress .section-head select,
+.section-sarf .foundation-panel select{
+  background:#fff;
+  color:#1f2937;
+  border-color:rgba(255,255,255,.55);
+}
+
+/* Keep Sarf's select comfortably readable inside the indigo header. */
+.section-sarf .foundation-panel select{
+  width:min(480px,100%);
+}
