@@ -217,7 +217,7 @@ function patchProgress(id, patch){
 }
 async function loadData(){
   const [vocabRes, verbsRes, speakingRes, nahwRes, sarfRes, quranRes] = await Promise.all([
-    fetch('vocab.json'), fetch('verbs.json'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json'), fetch('quranic-tarkeeb.json')
+    fetch('vocab.json'), fetch('verbs.json?v=20261005-remove-bala'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json'), fetch('quranic-tarkeeb.json')
   ]);
   const vocabData=await vocabRes.json();
   const verbsData=await verbsRes.json();
