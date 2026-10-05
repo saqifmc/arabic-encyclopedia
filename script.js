@@ -702,12 +702,40 @@ function renderNahw(){
 }
 
 
-function quranTarkeebPart([word,label,note,gloss]){
+const QURAN_WORD_GLOSSES={
+  "بِـ":"in / with / by","اسْمِ":"name","اللَّهِ":"God","الرَّحْمَٰنِ":"Lord of Mercy","الرَّحِيمِ":"Giver of Mercy",
+  "الْحَمْدُ":"praise","لِلَّهِ":"belongs to God","رَبِّ":"Lord of","الْعَالَمِينَ":"the Worlds","مَالِكِ":"Master of","يَوْمِ":"Day of","الدِّينِ":"Judgement",
+  "إِيَّاكَ":"You alone","نَعْبُدُ":"we worship","وَإِيَّاكَ":"and You alone","نَسْتَعِينُ":"we ask for help","اهْدِ":"guide","نَا":"us","الصِّرَاطَ":"the path","الْمُسْتَقِيمَ":"straight",
+  "صِرَاطَ":"path of","الَّذِينَ":"those who","أَنْعَمْتَ":"You have blessed","عَلَيْهِمْ":"them / upon them","غَيْرِ":"not / other than","الْمَغْضُوبِ":"those who incur anger","وَلَا":"and not / nor","الضَّالِّينَ":"those who have gone astray",
+  "أَلَمْ":"did ... not?","تَرَ":"you see","كَيْفَ":"how","فَعَلَ":"dealt / did","رَبُّكَ":"your Lord","بِأَصْحَابِ":"with the people of","الْفِيلِ":"the elephant","يَجْعَلْ":"make","كَيْدَهُمْ":"their plans","فِي":"in","تَضْلِيلٍ":"confusion / ruin",
+  "وَأَرْسَلَ":"and He sent","طَيْرًا":"birds","أَبَابِيلَ":"in ranks / flocks","تَرْمِيهِمْ":"pelting them","بِحِجَارَةٍ":"with stones","مِنْ":"from / of","سِجِّيلٍ":"hard-baked clay","فَجَعَلَهُمْ":"so He made them","كَعَصْفٍ":"like stubble","مَأْكُولٍ":"cropped / eaten",
+  "لِإِيلَافِ":"for the security of","قُرَيْشٍ":"Quraysh","إِيلَافِهِمْ":"their security","رِحْلَةَ":"journey","الشِّتَاءِ":"winter","وَالصَّيْفِ":"and summer","فَلْيَعْبُدُوا":"so let them worship","رَبَّ":"Lord of","هَٰذَا":"this","الْبَيْتِ":"House",
+  "الَّذِي":"who / the One who","أَطْعَمَهُمْ":"fed them","جُوعٍ":"hunger","وَآمَنَهُمْ":"and made them safe","خَوْفٍ":"fear",
+  "أَرَأَيْتَ":"have you considered","يُكَذِّبُ":"denies","بِالدِّينِ":"the Judgement","فَذَٰلِكَ":"it is he / that one","يَدُعُّ":"pushes aside","الْيَتِيمَ":"the orphan","يَحُضُّ":"urges","عَلَىٰ":"to / towards","طَعَامِ":"feeding / food of","الْمِسْكِينِ":"the needy",
+  "فَوَيْلٌ":"so woe","لِلْمُصَلِّينَ":"to those who pray","هُمْ":"they","عَنْ":"of / away from","صَلَاتِهِمْ":"their prayer","سَاهُونَ":"heedless","يُرَاءُونَ":"show off","وَيَمْنَعُونَ":"and withhold","الْمَاعُونَ":"common kindnesses",
+  "إِنَّا":"We have truly / indeed We","أَعْطَيْنَاكَ":"We have given you","الْكَوْثَرَ":"abundance","فَصَلِّ":"so pray","لِرَبِّكَ":"to your Lord","وَانْحَرْ":"and sacrifice","إِنَّ":"indeed","شَانِئَكَ":"the one who hates you","هُوَ":"he / it is he","الْأَبْتَرُ":"the one cut off",
+  "قُلْ":"say","يَا":"O","أَيُّهَا":"O you","الْكَافِرُونَ":"disbelievers","لَا":"not / do not","أَعْبُدُ":"I worship","مَا":"what / that which","تَعْبُدُونَ":"you worship","أَنْتُمْ":"you","عَابِدُونَ":"worshippers","أَنَا":"I","عَابِدٌ":"a worshipper","عَبَدْتُمْ":"you worshipped","لَكُمْ":"for you / yours","دِينُكُمْ":"your religion","وَلِيَ":"and for me / mine","دِينِ":"my religion",
+  "إِذَا":"when","جَاءَ":"comes","نَصْرُ":"help","وَالْفَتْحُ":"and victory","وَرَأَيْتَ":"and you see","النَّاسَ":"people","يَدْخُلُونَ":"entering","أَفْوَاجًا":"in crowds","فَسَبِّحْ":"then glorify","بِحَمْدِ":"with praise of","رَبِّكَ":"your Lord","وَاسْتَغْفِرْهُ":"and ask His forgiveness","إِنَّهُ":"indeed He","كَانَ":"is / was","تَوَّابًا":"ever accepting of repentance",
+  "تَبَّتْ":"ruined / perished","يَدَا":"the two hands of","أَبِي":"Abu / father of","لَهَبٍ":"Lahab","وَتَبَّ":"and he is ruined","أَغْنَىٰ":"will help / avail","عَنْهُ":"him","مَالُهُ":"his wealth","وَمَا":"nor what / and what","كَسَبَ":"he gained","سَيَصْلَىٰ":"he will burn in","نَارًا":"a Fire","ذَاتَ":"possessing / of","وَامْرَأَتُهُ":"and his wife","حَمَّالَةَ":"carrier of","الْحَطَبِ":"firewood","جِيدِهَا":"her neck","حَبْلٌ":"a rope","مَسَدٍ":"palm fibre",
+  "اللَّهُ":"God","أَحَدٌ":"One","الصَّمَدُ":"the Eternal","لَمْ":"did not","يَلِدْ":"beget","وَلَمْ":"nor did","يُولَدْ":"was He begotten","يَكُنْ":"is / be","لَهُ":"to Him / for Him","كُفُوًا":"comparable","أَعُوذُ":"I seek refuge",
+  "بِرَبِّ":"with the Lord of","الْفَلَقِ":"daybreak","شَرِّ":"harm / evil of","خَلَقَ":"He created","وَمِنْ":"and from","غَاسِقٍ":"night / darkness","وَقَبَ":"gathers / settles","النَّفَّاثَاتِ":"those who blow","الْعُقَدِ":"the knots","حَاسِدٍ":"an envier","حَسَدَ":"he envies",
+  "النَّاسِ":"people","مَلِكِ":"Controller / King of","إِلَٰهِ":"God of","الْوَسْوَاسِ":"the whisperer","الْخَنَّاسِ":"slinking / retreating","يُوَسْوِسُ":"whispers","صُدُورِ":"hearts / breasts of","مِنَ":"from / among","الْجِنَّةِ":"the jinn","وَالنَّاسِ":"and people"
+};
+
+function quranWordGlosses(text){
+  return text.split(/\s+/).filter(Boolean).map(token=>{
+    const meaning=QURAN_WORD_GLOSSES[token]||'—';
+    return `<span class="quran-word-gloss"><span class="arabic" lang="ar" dir="rtl">${token}</span><span class="english">${meaning}</span></span>`;
+  }).join('');
+}
+
+function quranTarkeebPart([word,label,note]){
   return `<div class="tarkeeb-word-card">
-    <span class="q-word" lang="ar" dir="rtl">${word}</span>
-    ${gloss?`<span class="word-gloss">${gloss}</span>`:''}
-    <b lang="ar" dir="rtl">${label}</b>
-    <small>${note}</small>
+    <div class="tarkeeb-word-glosses">${quranWordGlosses(word)}</div>
+    <div class="tarkeeb-grammar">
+      <b lang="ar" dir="rtl">${label}</b>
+      <small>${note}</small>
+    </div>
   </div>`;
 }
 
