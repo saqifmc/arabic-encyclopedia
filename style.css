@@ -866,3 +866,30 @@ html,body,button,input,select,textarea{
   .quran-arabic{font-size:1.55rem}
   .tarkeeb-grid{grid-template-columns:1fr}
 }
+
+/* Quranic Tarkeeb: Arabic reading order must run right-to-left */
+.section-quranic .tarkeeb-grid{
+  direction:rtl !important;
+  grid-auto-flow:row !important;
+}
+.section-quranic .tarkeeb-grid > .tarkeeb-word-card{
+  direction:rtl !important;
+  text-align:right;
+}
+.section-quranic .tarkeeb-word-glosses{
+  direction:rtl !important;
+  flex-direction:row !important;
+  justify-content:flex-start !important;
+}
+.section-quranic .quran-word-gloss{
+  direction:rtl;
+}
+.section-quranic .quran-word-gloss .english,
+.section-quranic .tarkeeb-grammar small{
+  direction:ltr;
+  text-align:left;
+}
+.section-quranic .tarkeeb-grammar b{
+  direction:rtl;
+  text-align:right;
+}
