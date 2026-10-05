@@ -193,6 +193,9 @@ const SECTION_METRIC_FILTERS = { vocabulary:'all', verbs:'all' };
 let ROOT_METRIC_FILTER = 'all';
 let VOCAB_COLLECTION_FILTER = 'all';
 let VERB_COLLECTION_FILTER = 'all';
+const LIST_PAGE_SIZE = 60;
+let VOCAB_VISIBLE_COUNT = LIST_PAGE_SIZE;
+let VERB_VISIBLE_COUNT = LIST_PAGE_SIZE;
 let PROGRESS_METRIC_FILTER = 'all';
 
 let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [], sarf: [], quranicTarkeeb: [] };
@@ -280,7 +283,7 @@ function bindNavigation(){
 function showView(id){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  if(id==='progress') renderProgress();
+  renderActiveView();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function unique(arr){return [...new Set(arr.filter(Boolean))].sort();}
@@ -313,8 +316,22 @@ function populateFilters(){
   fillSelect('speakingTopicFilter',unique(DATA.speaking.map(x=>x.topic)));
   fillSelect('nahwTopicFilter',unique(DATA.nahw.map(x=>x.topic)));
 }
+function renderActiveView(){
+  const id=document.querySelector('.view.active')?.id||'home';
+  if(id==='vocabulary') renderVocabulary();
+  else if(id==='roots') renderRoots();
+  else if(id==='verbs') renderVerbs();
+  else if(id==='sarf') renderSarf();
+  else if(id==='speaking') renderSpeaking();
+  else if(id==='nahw') renderNahw();
+  else if(id==='quranic-tarkeeb') renderQuranicTarkeeb();
+  else if(id==='progress') renderProgress();
+}
+
 function renderAll(){
-  renderStats(); renderSectionDashboards(); renderVocabulary(); renderRoots(); renderVerbs(); renderSarf(); renderSpeaking(); renderNahw(); renderQuranicTarkeeb(); renderProgress();
+  renderStats();
+  renderSectionDashboards();
+  renderActiveView();
 }
 function itemStatus(id){return progressFor(id).status || 'Not Started';}
 function statusClass(status){
@@ -583,6 +600,29 @@ function bindDynamicButtons(){
     patchProgress(btn.dataset.favId,{favourite:!p.favourite});
   });
 }
+function listLoadMoreMarkup(kind,visible,total){
+  if(total<=visible) return '';
+  const remaining=total-visible;
+  return `<div class="list-load-more-wrap">
+    <button type="button" class="list-load-more" data-load-more="${kind}">
+      Load more <span>(${remaining} remaining)</span>
+    </button>
+    <div class="list-count">Showing ${Math.min(visible,total)} of ${total}</div>
+  </div>`;
+}
+
+function bindListLoadMore(){
+  document.querySelectorAll('[data-load-more]').forEach(btn=>btn.onclick=()=>{
+    if(btn.dataset.loadMore==='vocabulary'){
+      VOCAB_VISIBLE_COUNT+=LIST_PAGE_SIZE;
+      renderVocabulary();
+    }else if(btn.dataset.loadMore==='verbs'){
+      VERB_VISIBLE_COUNT+=LIST_PAGE_SIZE;
+      renderVerbs();
+    }
+  });
+}
+
 function renderVocabulary(){
   const q=(document.getElementById('vocabSearch')?.value||'').toLowerCase();
   const category=document.getElementById('categoryFilter')?.value||'';
@@ -600,11 +640,14 @@ function renderVocabulary(){
   rows=filterByMetric(rows,SECTION_METRIC_FILTERS.vocabulary);
   rows.sort((a,b)=>String(a.category||'').localeCompare(String(b.category||''))||String(a.topic||'').localeCompare(String(b.topic||''))||String(a.english||'').localeCompare(String(b.english||'')));
   rows=sortRecentlyCoveredLast(rows);
+  const totalRows=rows.length;
+  const visibleRows=rows.slice(0,VOCAB_VISIBLE_COUNT);
   document.getElementById('vocabList').innerHTML=`
     <div class="traffic-legend">
       <span class="traffic-dot not">Not Started</span><span class="traffic-dot learning">Learning</span><span class="traffic-dot covered">Covered</span><span class="traffic-dot confident">Confident</span><span class="traffic-dot mastered">Mastered</span>
-    </div>`+(rows.map(vocabCard).join('')||'<p>No matches.</p>');
+    </div>`+(visibleRows.map(vocabCard).join('')||'<p>No matches.</p>')+listLoadMoreMarkup('vocabulary',VOCAB_VISIBLE_COUNT,totalRows);
   bindDynamicButtons();
+  bindListLoadMore();
 }
 
 function renderRoots(){
@@ -642,7 +685,12 @@ function renderRoots(){
 function renderVerbs(){
   const form=document.getElementById('formFilter')?.value||'',type=document.getElementById('verbTypeFilter')?.value||'',bab=document.getElementById('babFilter')?.value||'',q=(document.getElementById('verbSearch')?.value||'').toLowerCase();
   let rows=DATA.verbs.filter(x=>{const h=[x.arabic,x.english,x.quran_english,x.root,x.form,x.bab,x.category,x.verb_type,x.masdar,...sourceValues(x)].join(' ').toLowerCase();const collections=Array.isArray(x.collections)?x.collections:[];const inCollection=VERB_COLLECTION_FILTER==='all'||collections.includes(VERB_COLLECTION_FILTER);return inCollection&&(!form||x.form===form)&&(!type||x.verb_type===type)&&(!bab||x.bab===bab)&&h.includes(q)});rows=filterByMetric(rows,SECTION_METRIC_FILTERS.verbs);
-  rows=sortRecentlyCoveredLast(rows);document.getElementById('verbsList').innerHTML=rows.map(verbCard).join('')||'<p>No verbs match these filters.</p>';bindDynamicButtons();
+  rows=sortRecentlyCoveredLast(rows);
+  const totalRows=rows.length;
+  const visibleRows=rows.slice(0,VERB_VISIBLE_COUNT);
+  document.getElementById('verbsList').innerHTML=(visibleRows.map(verbCard).join('')||'<p>No verbs match these filters.</p>')+listLoadMoreMarkup('verbs',VERB_VISIBLE_COUNT,totalRows);
+  bindDynamicButtons();
+  bindListLoadMore();
 }
 function renderSpeaking(){
   const topic=document.getElementById('speakingTopicFilter')?.value||'';
@@ -923,18 +971,20 @@ function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'num
 function bindEvents(){
   document.querySelectorAll('[data-vocab-set]').forEach(btn=>btn.addEventListener('click',()=>{
     VOCAB_COLLECTION_FILTER=btn.dataset.vocabSet;
+    VOCAB_VISIBLE_COUNT=LIST_PAGE_SIZE;
     document.querySelectorAll('[data-vocab-set]').forEach(b=>b.classList.toggle('active',b===btn));
     SECTION_METRIC_FILTERS.vocabulary='all';
     renderSectionDashboards();
     renderVocabulary();
   }));
-  ['vocabSearch','categoryFilter','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.vocabulary='all';renderSectionDashboards();renderVocabulary();}));
-  document.getElementById('formFilter').addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
-  document.getElementById('verbTypeFilter')?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
-  document.getElementById('babFilter')?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
-  document.getElementById('verbSearch')?.addEventListener('input',renderVerbs);
+  ['vocabSearch','categoryFilter','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{VOCAB_VISIBLE_COUNT=LIST_PAGE_SIZE;SECTION_METRIC_FILTERS.vocabulary='all';renderSectionDashboards();renderVocabulary();}));
+  document.getElementById('formFilter').addEventListener('input',()=>{VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
+  document.getElementById('verbTypeFilter')?.addEventListener('input',()=>{VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
+  document.getElementById('babFilter')?.addEventListener('input',()=>{VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
+  document.getElementById('verbSearch')?.addEventListener('input',()=>{VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;renderVerbs();});
   document.querySelectorAll('[data-verb-set]').forEach(btn=>btn.addEventListener('click',()=>{
     VERB_COLLECTION_FILTER=btn.dataset.verbSet;
+    VERB_VISIBLE_COUNT=LIST_PAGE_SIZE;
     document.querySelectorAll('[data-verb-set]').forEach(b=>b.classList.toggle('active',b===btn));
     SECTION_METRIC_FILTERS.verbs='all';
     renderSectionDashboards();
