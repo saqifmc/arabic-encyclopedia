@@ -24,7 +24,7 @@
       <button data-view="verbs">Verbs</button>
       <button data-view="revision">Revision</button>
       <button data-view="sarf">Sarf</button>
-      <button data-view="nahw">Nahw</button>
+      <button data-view="nahw">Nahw Foundations</button>
       <button data-view="quranic-tarkeeb">Quranic Tarkeeb</button>
       <button data-view="speaking">Speaking</button>
     </nav>
@@ -89,7 +89,7 @@
         </div>
         <div class="cards">
           <button class="dashboard-card reference-card" data-view="sarf"><strong>Sarf</strong><small>Foundational morphology reference</small></button>
-          <button class="dashboard-card reference-card" data-view="nahw"><strong>Nahw Concepts</strong><small>Grammar reference by topic</small></button>
+          <button class="dashboard-card reference-card" data-view="nahw"><strong>Nahw Foundations</strong><small>Foundational grammar organised by section</small></button>
           <button class="dashboard-card reference-card" data-view="quranic-tarkeeb"><strong>Quranic Tarkeeb</strong><small>Qur'anic sentence structure</small></button>
           <button class="dashboard-card reference-card" data-view="speaking"><strong>Speaking Phrases</strong><small>Browse phrases by category</small></button>
         </div>
@@ -219,24 +219,15 @@
 
     <section id="nahw" class="view section-nahw">
       <div class="section-head">
-        <div><h2>Nahw Concepts</h2><p>Browse grammar concepts by topic. This section is reference-only and is not included in testing or progress tracking.</p></div>
-        <select id="nahwTopicFilter"><option value="">All topics</option></select>
-      </div>
-      <div class="nahw-keyterms-panel">
-        <div class="nahw-keyterms-head">
-          <div>
-            <span class="eyebrow dark">NAHW REFERENCE</span>
-            <h3>Key Terms of Nahw</h3>
-            <p>Core terminology to recognise when reading grammar explanations and doing iʿrāb.</p>
-          </div>
-          <button id="showKeyTermsBtn" class="nahw-keyterms-btn">Show key terms</button>
+        <div>
+          <h2>Nahw Foundations</h2>
+          <p>A structured reference to the foundational concepts of Arabic grammar, organised by Nahw section.</p>
         </div>
-        <div id="nahwKeyTerms" class="keyterms-grid hidden"></div>
+        <select id="nahwTopicFilter"><option value="">All Nahw sections</option></select>
       </div>
-      <h3 class="concepts-title">Grammar Concepts</h3>
-      <div id="nahwList" class="list"></div>
+      <div id="nahwOverview" class="sarf-overview"></div>
+      <div id="nahwList"></div>
     </section>
-
 
     <section id="quranic-tarkeeb" class="view section-quranic">
       <div class="section-head">
@@ -426,6 +417,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261005-tested-reference"></script>
+  <script src="script.js?v=20261005-nahw-foundations"></script>
 </body>
 </html>
