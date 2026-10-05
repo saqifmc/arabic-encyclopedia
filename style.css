@@ -637,3 +637,11 @@ html,body,button,input,select,textarea{
   --card-accent:#7c2d12;
   --card-soft:#fff7ed;
 }
+
+/* Selectable Quranic Tarkeeb */
+.section-quranic .section-head select{
+  min-width:250px;
+}
+.quran-intro-card{
+  align-items:center;
+}
