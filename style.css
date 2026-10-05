@@ -1008,3 +1008,51 @@ html,body,button,input,select,textarea{
     min-width:0;
   }
 }
+
+/* Distinguish English translation from Tarkeeb analysis */
+.section-quranic .quran-verse-pair{
+  background:#f7faff;
+  border-color:#dbe7f7;
+}
+.section-quranic .quran-english{
+  color:#1e3a5f;
+  border-top-color:#dbe7f7;
+}
+.section-quranic .quran-english .analysis-kicker{
+  color:#3b82f6;
+}
+
+.section-quranic .quran-word-section{
+  background:#f7faff;
+  border-color:#dbe7f7;
+}
+.section-quranic .quran-word-section .analysis-kicker{
+  color:#3b82f6;
+}
+.section-quranic .quran-word-chip{
+  background:#f3f7fd;
+  border-color:#cdddf3;
+}
+.section-quranic .quran-word-chip .arabic{
+  color:#1d4ed8;
+}
+
+.section-quranic .tarkeeb-summary{
+  background:#f5f0ff;
+  border-color:#ded0f5;
+  color:#5b21b6;
+}
+.section-quranic .grammar-section .analysis-kicker{
+  color:#7c3aed;
+}
+.section-quranic .tarkeeb-grid>.tarkeeb-word-card{
+  background:#fbf9ff;
+  border-color:#e3d8f5;
+}
+.section-quranic .grammar-chunk{
+  color:#6d28d9;
+  border-bottom-color:#eadff8;
+}
+.section-quranic .tarkeeb-grammar b{
+  color:#6d28d9;
+}
