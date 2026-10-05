@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261005-quran-high-frequency-vocab" />
+  <link rel="stylesheet" href="style.css?v=20261005-quran-high-frequency-verbs" />
 </head>
 <body>
   <header class="topbar">
@@ -169,6 +169,11 @@
       </div>
 
       <div id="verbsDashboard" class="section-dashboard"></div>
+
+      <div class="verb-tabs verb-set-tabs" aria-label="Verb sets">
+        <button type="button" class="verb-tab active" data-verb-set="all">All Verbs</button>
+        <button type="button" class="verb-tab" data-verb-set="Qur'an High Frequency Verbs">Qur'an High Frequency</button>
+      </div>
 
       <div class="filters">
         <select id="formFilter"><option value="">All forms</option></select>
@@ -350,6 +355,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261005-quran-high-frequency-vocab"></script>
+  <script src="script.js?v=20261005-quran-high-frequency-verbs"></script>
 </body>
 </html>
