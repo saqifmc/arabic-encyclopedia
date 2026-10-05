@@ -191,6 +191,7 @@ function updateAuthUI(){
 
 const SECTION_METRIC_FILTERS = { vocabulary:'all', verbs:'all' };
 let ROOT_METRIC_FILTER = 'all';
+let VOCAB_COLLECTION_FILTER = 'all';
 let PROGRESS_METRIC_FILTER = 'all';
 
 let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [], sarf: [], quranicTarkeeb: [] };
@@ -217,7 +218,7 @@ function patchProgress(id, patch){
 }
 async function loadData(){
   const [vocabRes, verbsRes, speakingRes, nahwRes, sarfRes, quranRes] = await Promise.all([
-    fetch('vocab.json'), fetch('verbs.json?v=20261005-saheeh-babs'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json'), fetch('quranic-tarkeeb.json')
+    fetch('vocab.json?v=20261005-quran-high-frequency-vocab'), fetch('verbs.json?v=20261005-saheeh-babs'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json'), fetch('quranic-tarkeeb.json')
   ]);
   const vocabData=await vocabRes.json();
   const verbsData=await verbsRes.json();
@@ -484,6 +485,7 @@ function vocabCard(x){
       <span class="pill ${statusClass(p.status)}">${p.status}</span>
     </div>
     <div class="meta">${x.category||'General'} · ${x.topic||'General'} · Type: ${x.type}${x.root?` · Root: ${x.root}`:''} ${x.form?`· Form ${x.form}`:''}</div>
+    <div class="vocab-source-row">${sourceValues(x).map(s=>`<span class="vocab-source-tag">${s}</span>`).join('')}${x.quran_frequency?`<span class="quran-frequency-tag">Qur'an occurrences: ${x.quran_frequency}</span>`:''}</div>
     ${x.past?`<div class="meta">Past: <span lang="ar" dir="rtl">${x.past}</span> · Present: <span lang="ar" dir="rtl">${x.present}</span> · Maṣdar: <span lang="ar" dir="rtl">${x.masdar}</span></div>`:''}
     ${x.example?`<div class="example" lang="ar" dir="rtl">${x.example}</div><div class="meta">${x.example_en}</div>`:''}
     <div class="meta">Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}${p.lastRevised?` · Last revised ${formatDate(p.lastRevised)}`:''}</div>
@@ -583,9 +585,11 @@ function renderVocabulary(){
   const status=document.getElementById('statusFilter')?.value||'';
   const fav=document.getElementById('favouriteFilter')?.checked||false;
   let rows=DATA.vocabulary.filter(x=>{
-    const hay=[x.arabic,x.english,x.root,x.topic,x.category,...sourceValues(x)].join(' ').toLowerCase();
+    const hay=[x.arabic,x.english,x.root,x.topic,x.quran_topic,x.category,...sourceValues(x)].join(' ').toLowerCase();
     const p=progressFor(x.id);
-    return hay.includes(q)&&(!category||x.category===category)&&(!type||x.type===type)&&(!source||sourceValues(x).includes(source))&&(!status||p.status===status)&&(!fav||p.favourite);
+    const collections=Array.isArray(x.collections)?x.collections:[];
+    const inCollection=VOCAB_COLLECTION_FILTER==='all'||collections.includes(VOCAB_COLLECTION_FILTER);
+    return inCollection&&hay.includes(q)&&(!category||x.category===category)&&(!type||x.type===type)&&(!source||sourceValues(x).includes(source))&&(!status||p.status===status)&&(!fav||p.favourite);
   });
   rows=filterByMetric(rows,SECTION_METRIC_FILTERS.vocabulary);
   rows.sort((a,b)=>String(a.category||'').localeCompare(String(b.category||''))||String(a.topic||'').localeCompare(String(b.topic||''))||String(a.english||'').localeCompare(String(b.english||'')));
@@ -911,6 +915,13 @@ function rateCurrent(rating){
 }
 function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});}
 function bindEvents(){
+  document.querySelectorAll('[data-vocab-set]').forEach(btn=>btn.addEventListener('click',()=>{
+    VOCAB_COLLECTION_FILTER=btn.dataset.vocabSet;
+    document.querySelectorAll('[data-vocab-set]').forEach(b=>b.classList.toggle('active',b===btn));
+    SECTION_METRIC_FILTERS.vocabulary='all';
+    renderSectionDashboards();
+    renderVocabulary();
+  }));
   ['vocabSearch','categoryFilter','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.vocabulary='all';renderSectionDashboards();renderVocabulary();}));
   document.getElementById('formFilter').addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
   document.getElementById('verbTypeFilter')?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
@@ -956,7 +967,7 @@ function bindEvents(){
     const q=e.target.value.trim().toLowerCase();
     const box=document.getElementById('searchResults');
     if(!q){box.classList.add('hidden');box.innerHTML='';return;}
-    const vocab=DATA.vocabulary.filter(x=>[x.arabic,x.english,x.root,x.topic].join(' ').toLowerCase().includes(q));
+    const vocab=DATA.vocabulary.filter(x=>[x.arabic,x.english,x.root,x.topic,x.quran_topic,...sourceValues(x)].join(' ').toLowerCase().includes(q));
     const verbs=DATA.verbs.filter(x=>[x.arabic,x.english,x.root,x.topic,x.form,x.bab].join(' ').toLowerCase().includes(q));
     const speaking=DATA.speaking.filter(x=>[x.arabic,x.english,x.topic].join(' ').toLowerCase().includes(q));
     const nahw=DATA.nahw.filter(x=>[x.arabic,x.english,x.topic,x.summary].join(' ').toLowerCase().includes(q));
