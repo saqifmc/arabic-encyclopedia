@@ -1056,3 +1056,51 @@ html,body,button,input,select,textarea{
 .section-quranic .tarkeeb-grammar b{
   color:#6d28d9;
 }
+
+/* Quranic Tarkeeb colour update: translation green, tarkeeb red */
+.section-quranic .quran-verse-pair{
+  background:#f4fbf6;
+  border-color:#cfe5d6;
+}
+.section-quranic .quran-english{
+  color:#166534;
+  border-top-color:#d7eadc;
+}
+.section-quranic .quran-english .analysis-kicker{
+  color:#15803d;
+}
+
+.section-quranic .quran-word-section{
+  background:#f4fbf6;
+  border-color:#cfe5d6;
+}
+.section-quranic .quran-word-section .analysis-kicker{
+  color:#15803d;
+}
+.section-quranic .quran-word-chip{
+  background:#f1faf4;
+  border-color:#cfe5d6;
+}
+.section-quranic .quran-word-chip .arabic{
+  color:#166534;
+}
+
+.section-quranic .tarkeeb-summary{
+  background:#fff5f5;
+  border-color:#f3c7c7;
+  color:#b42318;
+}
+.section-quranic .grammar-section .analysis-kicker{
+  color:#c62828;
+}
+.section-quranic .tarkeeb-grid>.tarkeeb-word-card{
+  background:#fffafa;
+  border-color:#f0d0d0;
+}
+.section-quranic .grammar-chunk{
+  color:#b42318;
+  border-bottom-color:#f2dede;
+}
+.section-quranic .tarkeeb-grammar b{
+  color:#b42318;
+}
