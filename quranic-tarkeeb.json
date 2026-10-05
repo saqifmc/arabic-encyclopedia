@@ -37,6 +37,24 @@
               "Two adjectives following the divine name.",
               "the Entirely Merciful, the Especially Merciful"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "بِسْمِ",
+              "english": "In the name of"
+            },
+            {
+              "arabic": "اللَّهِ",
+              "english": "God"
+            },
+            {
+              "arabic": "الرَّحْمَٰنِ",
+              "english": "the Lord of Mercy"
+            },
+            {
+              "arabic": "الرَّحِيمِ",
+              "english": "the Giver of Mercy"
+            }
           ]
         },
         {
@@ -69,6 +87,24 @@
               "Genitive complement.",
               "the worlds"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "الْحَمْدُ",
+              "english": "Praise"
+            },
+            {
+              "arabic": "لِلَّهِ",
+              "english": "belongs to God"
+            },
+            {
+              "arabic": "رَبِّ",
+              "english": "Lord of"
+            },
+            {
+              "arabic": "الْعَالَمِينَ",
+              "english": "the Worlds"
+            }
           ]
         },
         {
@@ -89,6 +125,16 @@
               "Second adjective.",
               "the Especially Merciful"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "الرَّحْمَٰنِ",
+              "english": "the Lord of Mercy"
+            },
+            {
+              "arabic": "الرَّحِيمِ",
+              "english": "the Giver of Mercy"
+            }
           ]
         },
         {
@@ -115,6 +161,20 @@
               "Completes the second iḍāfah.",
               "Judgement / Recompense"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "مَالِكِ",
+              "english": "Master of"
+            },
+            {
+              "arabic": "يَوْمِ",
+              "english": "the Day of"
+            },
+            {
+              "arabic": "الدِّينِ",
+              "english": "Judgement"
+            }
           ]
         },
         {
@@ -147,6 +207,24 @@
               "Present verb; hidden subject نَحْنُ.",
               "we ask for help"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "إِيَّاكَ",
+              "english": "It is You"
+            },
+            {
+              "arabic": "نَعْبُدُ",
+              "english": "we worship"
+            },
+            {
+              "arabic": "وَإِيَّاكَ",
+              "english": "it is You"
+            },
+            {
+              "arabic": "نَسْتَعِينُ",
+              "english": "we ask for help"
+            }
           ]
         },
         {
@@ -179,6 +257,20 @@
               "Adjective agreeing with الصِّرَاطَ.",
               "the straight"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "اهْدِنَا",
+              "english": "Guide us"
+            },
+            {
+              "arabic": "الصِّرَاطَ",
+              "english": "to the path"
+            },
+            {
+              "arabic": "الْمُسْتَقِيمَ",
+              "english": "straight"
+            }
           ]
         },
         {
@@ -217,6 +309,44 @@
               "Coordinated final description.",
               "nor those who went astray"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "صِرَاطَ",
+              "english": "the path of"
+            },
+            {
+              "arabic": "الَّذِينَ",
+              "english": "those who"
+            },
+            {
+              "arabic": "أَنْعَمْتَ",
+              "english": "You have blessed"
+            },
+            {
+              "arabic": "عَلَيْهِمْ",
+              "english": "them"
+            },
+            {
+              "arabic": "غَيْرِ",
+              "english": "not / other than"
+            },
+            {
+              "arabic": "الْمَغْضُوبِ",
+              "english": "those subject to anger"
+            },
+            {
+              "arabic": "عَلَيْهِمْ",
+              "english": "upon them"
+            },
+            {
+              "arabic": "وَلَا",
+              "english": "and not"
+            },
+            {
+              "arabic": "الضَّالِّينَ",
+              "english": "those who have gone astray"
+            }
           ]
         }
       ],
@@ -265,6 +395,36 @@
               "Prepositional phrase with iḍāfah.",
               "with the people of the elephant"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "أَلَمْ",
+              "english": "do ... not"
+            },
+            {
+              "arabic": "تَرَ",
+              "english": "you see"
+            },
+            {
+              "arabic": "كَيْفَ",
+              "english": "how"
+            },
+            {
+              "arabic": "فَعَلَ",
+              "english": "dealt with"
+            },
+            {
+              "arabic": "رَبُّكَ",
+              "english": "your Lord"
+            },
+            {
+              "arabic": "بِأَصْحَابِ",
+              "english": "with the army of"
+            },
+            {
+              "arabic": "الْفِيلِ",
+              "english": "the elephant"
+            }
           ]
         },
         {
@@ -291,6 +451,28 @@
               "Prepositional complement.",
               "go astray / come to ruin"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "أَلَمْ",
+              "english": "did He not"
+            },
+            {
+              "arabic": "يَجْعَلْ",
+              "english": "utterly confound"
+            },
+            {
+              "arabic": "كَيْدَهُمْ",
+              "english": "their plans"
+            },
+            {
+              "arabic": "فِي",
+              "english": "in"
+            },
+            {
+              "arabic": "تَضْلِيلٍ",
+              "english": "ruin / confusion"
+            }
           ]
         },
         {
@@ -323,6 +505,24 @@
               "Description of the birds.",
               "in flocks / successive groups"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَأَرْسَلَ",
+              "english": "He sent"
+            },
+            {
+              "arabic": "عَلَيْهِمْ",
+              "english": "against them"
+            },
+            {
+              "arabic": "طَيْرًا",
+              "english": "birds"
+            },
+            {
+              "arabic": "أَبَابِيلَ",
+              "english": "in ranks"
+            }
           ]
         },
         {
@@ -349,6 +549,24 @@
               "Describes the material/source of the stones.",
               "of baked clay"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "تَرْمِيهِم",
+              "english": "pelting them"
+            },
+            {
+              "arabic": "بِحِجَارَةٍ",
+              "english": "with pellets"
+            },
+            {
+              "arabic": "مِّن",
+              "english": "of"
+            },
+            {
+              "arabic": "سِجِّيلٍ",
+              "english": "hard-baked clay"
+            }
           ]
         },
         {
@@ -375,6 +593,20 @@
               "Adjective of عَصْفٍ.",
               "eaten up"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "فَجَعَلَهُمْ",
+              "english": "He made them"
+            },
+            {
+              "arabic": "كَعَصْفٍ",
+              "english": "like stubble"
+            },
+            {
+              "arabic": "مَّأْكُولٍ",
+              "english": "cropped"
+            }
           ]
         }
       ],
@@ -405,6 +637,16 @@
               "Completes the iḍāfah.",
               "Quraysh"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "لِإِيلَافِ",
+              "english": "to make ... feel secure"
+            },
+            {
+              "arabic": "قُرَيْشٍ",
+              "english": "Quraysh"
+            }
           ]
         },
         {
@@ -431,6 +673,24 @@
               "Winter and summer in an iḍāfah relationship.",
               "of winter and summer"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "إِيلَافِهِمْ",
+              "english": "secure in"
+            },
+            {
+              "arabic": "رِحْلَةَ",
+              "english": "their journeys"
+            },
+            {
+              "arabic": "الشِّتَاءِ",
+              "english": "winter"
+            },
+            {
+              "arabic": "وَالصَّيْفِ",
+              "english": "and summer"
+            }
           ]
         },
         {
@@ -457,6 +717,24 @@
               "Demonstrative phrase completing the relation.",
               "this House"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "فَلْيَعْبُدُوا",
+              "english": "so let them worship"
+            },
+            {
+              "arabic": "رَبَّ",
+              "english": "the Lord of"
+            },
+            {
+              "arabic": "هَٰذَا",
+              "english": "this"
+            },
+            {
+              "arabic": "الْبَيْتِ",
+              "english": "House"
+            }
           ]
         },
         {
@@ -495,6 +773,36 @@
               "Prepositional complement.",
               "from fear"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "الَّذِي",
+              "english": "who"
+            },
+            {
+              "arabic": "أَطْعَمَهُم",
+              "english": "provides them with food"
+            },
+            {
+              "arabic": "مِّن",
+              "english": "from"
+            },
+            {
+              "arabic": "جُوعٍ",
+              "english": "hunger"
+            },
+            {
+              "arabic": "وَآمَنَهُم",
+              "english": "gives them safety"
+            },
+            {
+              "arabic": "مِّنْ",
+              "english": "from"
+            },
+            {
+              "arabic": "خَوْفٍ",
+              "english": "fear"
+            }
           ]
         }
       ],
@@ -531,6 +839,24 @@
               "Relative clause.",
               "denies the Judgement"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "أَرَأَيْتَ",
+              "english": "have you considered"
+            },
+            {
+              "arabic": "الَّذِي",
+              "english": "the person who"
+            },
+            {
+              "arabic": "يُكَذِّبُ",
+              "english": "denies"
+            },
+            {
+              "arabic": "بِالدِّينِ",
+              "english": "the Judgement"
+            }
           ]
         },
         {
@@ -557,6 +883,24 @@
               "Verb with direct object.",
               "repels the orphan"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "فَذَٰلِكَ",
+              "english": "it is he"
+            },
+            {
+              "arabic": "الَّذِي",
+              "english": "who"
+            },
+            {
+              "arabic": "يَدُعُّ",
+              "english": "pushes aside"
+            },
+            {
+              "arabic": "الْيَتِيمَ",
+              "english": "the orphan"
+            }
           ]
         },
         {
@@ -583,6 +927,28 @@
               "Prepositional phrase with iḍāfah.",
               "the feeding of the needy"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَلَا",
+              "english": "and does not"
+            },
+            {
+              "arabic": "يَحُضُّ",
+              "english": "urge"
+            },
+            {
+              "arabic": "عَلَىٰ",
+              "english": "others to"
+            },
+            {
+              "arabic": "طَعَامِ",
+              "english": "feed"
+            },
+            {
+              "arabic": "الْمِسْكِينِ",
+              "english": "the needy"
+            }
           ]
         },
         {
@@ -603,6 +969,16 @@
               "Shibh al-jumlah functioning as khabar.",
               "to those who pray"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "فَوَيْلٌ",
+              "english": "so woe"
+            },
+            {
+              "arabic": "لِّلْمُصَلِّينَ",
+              "english": "to those who pray"
+            }
           ]
         },
         {
@@ -635,6 +1011,28 @@
               "Predicate.",
               "heedless"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "الَّذِينَ",
+              "english": "those who"
+            },
+            {
+              "arabic": "هُمْ",
+              "english": "are"
+            },
+            {
+              "arabic": "عَن",
+              "english": "of"
+            },
+            {
+              "arabic": "صَلَاتِهِمْ",
+              "english": "their prayer"
+            },
+            {
+              "arabic": "سَاهُونَ",
+              "english": "heedless"
+            }
           ]
         },
         {
@@ -661,6 +1059,20 @@
               "Verbal clause as predicate.",
               "show off / act to be seen"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "الَّذِينَ",
+              "english": "those who"
+            },
+            {
+              "arabic": "هُمْ",
+              "english": "are"
+            },
+            {
+              "arabic": "يُرَاءُونَ",
+              "english": "all show"
+            }
           ]
         },
         {
@@ -681,6 +1093,16 @@
               "Direct object.",
               "small kindnesses / assistance"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَيَمْنَعُونَ",
+              "english": "and forbid"
+            },
+            {
+              "arabic": "الْمَاعُونَ",
+              "english": "common kindnesses"
+            }
           ]
         }
       ],
@@ -717,6 +1139,20 @@
               "Second object of أَعْطَى.",
               "abundance / al-Kawthar"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "إِنَّا",
+              "english": "We have truly"
+            },
+            {
+              "arabic": "أَعْطَيْنَاكَ",
+              "english": "given ... to you"
+            },
+            {
+              "arabic": "الْكَوْثَرَ",
+              "english": "abundance"
+            }
           ]
         },
         {
@@ -743,6 +1179,20 @@
               "Second coordinated command.",
               "and sacrifice"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "فَصَلِّ",
+              "english": "so pray"
+            },
+            {
+              "arabic": "لِرَبِّكَ",
+              "english": "to your Lord"
+            },
+            {
+              "arabic": "وَانْحَرْ",
+              "english": "and make your sacrifice to Him alone"
+            }
           ]
         },
         {
@@ -775,6 +1225,24 @@
               "Predicate of إِنَّ.",
               "the one cut off"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "إِنَّ",
+              "english": "indeed"
+            },
+            {
+              "arabic": "شَانِئَكَ",
+              "english": "the one who hates you"
+            },
+            {
+              "arabic": "هُوَ",
+              "english": "it is he"
+            },
+            {
+              "arabic": "الْأَبْتَرُ",
+              "english": "cut off"
+            }
           ]
         }
       ],
@@ -817,6 +1285,24 @@
               "Describes أَيّ.",
               "disbelievers"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "قُلْ",
+              "english": "say"
+            },
+            {
+              "arabic": "يَا",
+              "english": "O"
+            },
+            {
+              "arabic": "أَيُّهَا",
+              "english": "you"
+            },
+            {
+              "arabic": "الْكَافِرُونَ",
+              "english": "disbelievers"
+            }
           ]
         },
         {
@@ -849,6 +1335,24 @@
               "Relative clause.",
               "you worship"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "لَا",
+              "english": "do not"
+            },
+            {
+              "arabic": "أَعْبُدُ",
+              "english": "I worship"
+            },
+            {
+              "arabic": "مَا",
+              "english": "what"
+            },
+            {
+              "arabic": "تَعْبُدُونَ",
+              "english": "you worship"
+            }
           ]
         },
         {
@@ -881,6 +1385,28 @@
               "Relative phrase governed by عَابِدُونَ.",
               "what I worship"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَلَا",
+              "english": "and not"
+            },
+            {
+              "arabic": "أَنتُمْ",
+              "english": "you"
+            },
+            {
+              "arabic": "عَابِدُونَ",
+              "english": "worship"
+            },
+            {
+              "arabic": "مَا",
+              "english": "what"
+            },
+            {
+              "arabic": "أَعْبُدُ",
+              "english": "I worship"
+            }
           ]
         },
         {
@@ -913,6 +1439,28 @@
               "Relative phrase.",
               "what you worshipped"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَلَا",
+              "english": "and never"
+            },
+            {
+              "arabic": "أَنَا",
+              "english": "I"
+            },
+            {
+              "arabic": "عَابِدٌ",
+              "english": "will worship"
+            },
+            {
+              "arabic": "مَّا",
+              "english": "what"
+            },
+            {
+              "arabic": "عَبَدتُّمْ",
+              "english": "you worship"
+            }
           ]
         },
         {
@@ -939,6 +1487,28 @@
               "Relative phrase.",
               "what I worship"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَلَا",
+              "english": "and never"
+            },
+            {
+              "arabic": "أَنتُمْ",
+              "english": "you"
+            },
+            {
+              "arabic": "عَابِدُونَ",
+              "english": "will worship"
+            },
+            {
+              "arabic": "مَا",
+              "english": "what"
+            },
+            {
+              "arabic": "أَعْبُدُ",
+              "english": "I worship"
+            }
           ]
         },
         {
@@ -971,6 +1541,24 @@
               "Delayed subject; yāʾ possessive understood/attached.",
               "my religion"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "لَكُمْ",
+              "english": "you have"
+            },
+            {
+              "arabic": "دِينُكُمْ",
+              "english": "your religion"
+            },
+            {
+              "arabic": "وَلِيَ",
+              "english": "and I have"
+            },
+            {
+              "arabic": "دِينِ",
+              "english": "mine"
+            }
           ]
         }
       ],
@@ -1013,6 +1601,28 @@
               "Coordinated noun.",
               "and the victory / opening"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "إِذَا",
+              "english": "when"
+            },
+            {
+              "arabic": "جَاءَ",
+              "english": "comes"
+            },
+            {
+              "arabic": "نَصْرُ",
+              "english": "help"
+            },
+            {
+              "arabic": "اللَّهِ",
+              "english": "God’s"
+            },
+            {
+              "arabic": "وَالْفَتْحُ",
+              "english": "and He opens up your way"
+            }
           ]
         },
         {
@@ -1045,6 +1655,36 @@
               "State/manner: in groups.",
               "in crowds / groups"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَرَأَيْتَ",
+              "english": "when you see"
+            },
+            {
+              "arabic": "النَّاسَ",
+              "english": "people"
+            },
+            {
+              "arabic": "يَدْخُلُونَ",
+              "english": "embracing"
+            },
+            {
+              "arabic": "فِي",
+              "english": "in"
+            },
+            {
+              "arabic": "دِينِ",
+              "english": "faith"
+            },
+            {
+              "arabic": "اللَّهِ",
+              "english": "God’s"
+            },
+            {
+              "arabic": "أَفْوَاجًا",
+              "english": "in crowds"
+            }
           ]
         },
         {
@@ -1083,6 +1723,36 @@
               "Kāna clause functioning as the khabar of إِنَّ.",
               "is ever accepting of repentance"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "فَسَبِّحْ",
+              "english": "celebrate"
+            },
+            {
+              "arabic": "بِحَمْدِ",
+              "english": "the praise of"
+            },
+            {
+              "arabic": "رَبِّكَ",
+              "english": "your Lord"
+            },
+            {
+              "arabic": "وَاسْتَغْفِرْهُ",
+              "english": "and ask His forgiveness"
+            },
+            {
+              "arabic": "إِنَّهُ",
+              "english": "He"
+            },
+            {
+              "arabic": "كَانَ",
+              "english": "is always"
+            },
+            {
+              "arabic": "تَوَّابًا",
+              "english": "ready to accept repentance"
+            }
           ]
         }
       ],
@@ -1125,6 +1795,28 @@
               "Second coordinated clause; subject understood from context.",
               "and he perished"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "تَبَّتْ",
+              "english": "may ... be ruined"
+            },
+            {
+              "arabic": "يَدَا",
+              "english": "the hands of"
+            },
+            {
+              "arabic": "أَبِي",
+              "english": "Abu"
+            },
+            {
+              "arabic": "لَهَبٍ",
+              "english": "Lahab"
+            },
+            {
+              "arabic": "وَتَبَّ",
+              "english": "may he be ruined too"
+            }
           ]
         },
         {
@@ -1157,6 +1849,32 @@
               "What he earned, coordinated with his wealth.",
               "and what he earned"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "مَا",
+              "english": "neither"
+            },
+            {
+              "arabic": "أَغْنَىٰ",
+              "english": "will help"
+            },
+            {
+              "arabic": "عَنْهُ",
+              "english": "him"
+            },
+            {
+              "arabic": "مَالُهُ",
+              "english": "his wealth"
+            },
+            {
+              "arabic": "وَمَا",
+              "english": "nor"
+            },
+            {
+              "arabic": "كَسَبَ",
+              "english": "his gains"
+            }
           ]
         },
         {
@@ -1183,6 +1901,24 @@
               "Description of the fire.",
               "of flame"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "سَيَصْلَىٰ",
+              "english": "he will burn in"
+            },
+            {
+              "arabic": "نَارًا",
+              "english": "the Fire"
+            },
+            {
+              "arabic": "ذَاتَ",
+              "english": "flaming"
+            },
+            {
+              "arabic": "لَهَبٍ",
+              "english": "flame"
+            }
           ]
         },
         {
@@ -1209,6 +1945,20 @@
               "Genitive complement.",
               "firewood"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَامْرَأَتُهُ",
+              "english": "and so will his wife"
+            },
+            {
+              "arabic": "حَمَّالَةَ",
+              "english": "the carrier of"
+            },
+            {
+              "arabic": "الْحَطَبِ",
+              "english": "firewood"
+            }
           ]
         },
         {
@@ -1235,6 +1985,28 @@
               "Prepositional phrase describing the rope.",
               "of palm fibre"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "فِي",
+              "english": "around"
+            },
+            {
+              "arabic": "جِيدِهَا",
+              "english": "her neck"
+            },
+            {
+              "arabic": "حَبْلٌ",
+              "english": "a rope"
+            },
+            {
+              "arabic": "مِّن",
+              "english": "of"
+            },
+            {
+              "arabic": "مَّسَدٍ",
+              "english": "palm fibre"
+            }
           ]
         }
       ],
@@ -1277,6 +2049,24 @@
               "Further predication: One.",
               "One"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "قُلْ",
+              "english": "say"
+            },
+            {
+              "arabic": "هُوَ",
+              "english": "He is"
+            },
+            {
+              "arabic": "اللَّهُ",
+              "english": "God"
+            },
+            {
+              "arabic": "أَحَدٌ",
+              "english": "the One"
+            }
           ]
         },
         {
@@ -1297,6 +2087,16 @@
               "Predicate.",
               "the Eternal Refuge / Self-Sufficient"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "اللَّهُ",
+              "english": "God"
+            },
+            {
+              "arabic": "الصَّمَدُ",
+              "english": "the eternal"
+            }
           ]
         },
         {
@@ -1323,6 +2123,24 @@
               "Passive present verb, majzūm.",
               "was He begotten"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "لَمْ",
+              "english": "did not"
+            },
+            {
+              "arabic": "يَلِدْ",
+              "english": "beget"
+            },
+            {
+              "arabic": "وَلَمْ",
+              "english": "nor was"
+            },
+            {
+              "arabic": "يُولَدْ",
+              "english": "He begotten"
+            }
           ]
         },
         {
@@ -1355,6 +2173,28 @@
               "Delayed noun of يَكُنْ.",
               "One"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَلَمْ",
+              "english": "no"
+            },
+            {
+              "arabic": "يَكُن",
+              "english": "is"
+            },
+            {
+              "arabic": "لَّهُ",
+              "english": "to Him"
+            },
+            {
+              "arabic": "كُفُوًا",
+              "english": "comparable"
+            },
+            {
+              "arabic": "أَحَدٌ",
+              "english": "one"
+            }
           ]
         }
       ],
@@ -1391,6 +2231,24 @@
               "Prepositional phrase with iḍāfah.",
               "with the Lord of daybreak"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "قُلْ",
+              "english": "say"
+            },
+            {
+              "arabic": "أَعُوذُ",
+              "english": "I seek refuge"
+            },
+            {
+              "arabic": "بِرَبِّ",
+              "english": "with the Lord of"
+            },
+            {
+              "arabic": "الْفَلَقِ",
+              "english": "daybreak"
+            }
           ]
         },
         {
@@ -1417,6 +2275,24 @@
               "Relative clause.",
               "He created"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "مِن",
+              "english": "against"
+            },
+            {
+              "arabic": "شَرِّ",
+              "english": "the harm in"
+            },
+            {
+              "arabic": "مَا",
+              "english": "what"
+            },
+            {
+              "arabic": "خَلَقَ",
+              "english": "He has created"
+            }
           ]
         },
         {
@@ -1443,6 +2319,28 @@
               "Time clause.",
               "when it settles / grows dark"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَمِن",
+              "english": "and against"
+            },
+            {
+              "arabic": "شَرِّ",
+              "english": "the harm in"
+            },
+            {
+              "arabic": "غَاسِقٍ",
+              "english": "the night"
+            },
+            {
+              "arabic": "إِذَا",
+              "english": "when"
+            },
+            {
+              "arabic": "وَقَبَ",
+              "english": "darkness gathers"
+            }
           ]
         },
         {
@@ -1469,6 +2367,28 @@
               "Attached to النَّفَّاثَاتِ / their action.",
               "on / into the knots"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَمِن",
+              "english": "and against"
+            },
+            {
+              "arabic": "شَرِّ",
+              "english": "the harm in"
+            },
+            {
+              "arabic": "النَّفَّاثَاتِ",
+              "english": "witches who blow"
+            },
+            {
+              "arabic": "فِي",
+              "english": "on"
+            },
+            {
+              "arabic": "الْعُقَدِ",
+              "english": "knots"
+            }
           ]
         },
         {
@@ -1495,6 +2415,28 @@
               "Time/condition clause.",
               "when he envies"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "وَمِن",
+              "english": "and against"
+            },
+            {
+              "arabic": "شَرِّ",
+              "english": "the harm in"
+            },
+            {
+              "arabic": "حَاسِدٍ",
+              "english": "the envier"
+            },
+            {
+              "arabic": "إِذَا",
+              "english": "when"
+            },
+            {
+              "arabic": "حَسَدَ",
+              "english": "he envies"
+            }
           ]
         }
       ],
@@ -1531,6 +2473,24 @@
               "Prepositional phrase with iḍāfah.",
               "with the Lord of people"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "قُلْ",
+              "english": "say"
+            },
+            {
+              "arabic": "أَعُوذُ",
+              "english": "I seek refuge"
+            },
+            {
+              "arabic": "بِرَبِّ",
+              "english": "with the Lord of"
+            },
+            {
+              "arabic": "النَّاسِ",
+              "english": "people"
+            }
           ]
         },
         {
@@ -1551,6 +2511,16 @@
               "Genitive complement.",
               "the people"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "مَلِكِ",
+              "english": "the Controller of"
+            },
+            {
+              "arabic": "النَّاسِ",
+              "english": "people"
+            }
           ]
         },
         {
@@ -1571,6 +2541,16 @@
               "Genitive complement.",
               "the people"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "إِلَٰهِ",
+              "english": "the God of"
+            },
+            {
+              "arabic": "النَّاسِ",
+              "english": "people"
+            }
           ]
         },
         {
@@ -1597,6 +2577,24 @@
               "Adjective describing الْوَسْوَاسِ.",
               "the retreating / withdrawing"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "مِن",
+              "english": "against"
+            },
+            {
+              "arabic": "شَرِّ",
+              "english": "the harm of"
+            },
+            {
+              "arabic": "الْوَسْوَاسِ",
+              "english": "the whisperer"
+            },
+            {
+              "arabic": "الْخَنَّاسِ",
+              "english": "slinking"
+            }
           ]
         },
         {
@@ -1623,6 +2621,28 @@
               "Prepositional phrase attached to يُوَسْوِسُ.",
               "in the breasts / hearts of people"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "الَّذِي",
+              "english": "who"
+            },
+            {
+              "arabic": "يُوَسْوِسُ",
+              "english": "whispers"
+            },
+            {
+              "arabic": "فِي",
+              "english": "into"
+            },
+            {
+              "arabic": "صُدُورِ",
+              "english": "the hearts of"
+            },
+            {
+              "arabic": "النَّاسِ",
+              "english": "people"
+            }
           ]
         },
         {
@@ -1643,6 +2663,20 @@
               "Coordinated with الْجِنَّةِ.",
               "and mankind / people"
             ]
+          ],
+          "words": [
+            {
+              "arabic": "مِنَ",
+              "english": "whether"
+            },
+            {
+              "arabic": "الْجِنَّةِ",
+              "english": "jinn"
+            },
+            {
+              "arabic": "وَالنَّاسِ",
+              "english": "or people"
+            }
           ]
         }
       ],
