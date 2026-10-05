@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261005-quran-green-red" />
+  <link rel="stylesheet" href="style.css?v=20261005-quran-high-frequency-vocab" />
 </head>
 <body>
   <header class="topbar">
@@ -120,6 +120,11 @@
         <input id="vocabSearch" type="search" placeholder="Search vocabulary..." />
       </div>
       <div id="vocabDashboard" class="section-dashboard"></div>
+      <div class="verb-tabs vocab-set-tabs" aria-label="Vocabulary sets">
+        <button type="button" class="verb-tab active" data-vocab-set="all">All Vocabulary</button>
+        <button type="button" class="verb-tab" data-vocab-set="Madinah Book 1">Madinah Book 1</button>
+        <button type="button" class="verb-tab" data-vocab-set="Qur'an High Frequency">Qur'an High Frequency</button>
+      </div>
       <div class="filters">
         <select id="categoryFilter"><option value="">All categories</option></select>
         <select id="typeFilter"><option value="">All types</option></select>
@@ -345,6 +350,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261005-saheeh-babs"></script>
+  <script src="script.js?v=20261005-quran-high-frequency-vocab"></script>
 </body>
 </html>
