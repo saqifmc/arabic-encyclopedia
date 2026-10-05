@@ -779,18 +779,21 @@ function renderQuranicTarkeeb(){
   intro.innerHTML=`
     <div>
       <div class="arabic quran-surah-title" lang="ar" dir="rtl">${surah.arabic_name}</div>
-      <h3>Sūrah ${surah.english_name} — Tarkeeb</h3>
-      <p>${surah.number===1?'Opening chapter':`Sūrah ${surah.number} · ${surah.note||''}`} · ${surah.ayahs.length} āyah${surah.ayahs.length===1?'':'s'}</p>
+      <h3>Sūrah ${surah.english_name} — ${surah.english_title||surah.note||''}</h3>
+      <p>Sūrah ${surah.number} · ${surah.ayahs.length} āyah${surah.ayahs.length===1?'':'s'} · Tarkeeb & Iʿrāb</p>
     </div>
     <div class="translation-note">
       <strong>Translation reference</strong>
-      <p>M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). The word-by-word English meanings are aligned to Abdel Haleem's translation and terminology, while the segmentation follows the Arabic grammar.</p>
+      <p>English wording and terminology are aligned to M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). Verse lines are concise study renderings; word glosses follow the Arabic segmentation for grammar study.</p>
     </div>`;
 
   list.innerHTML=surah.ayahs.map(a=>`
     <article class="quran-ayah-card">
       <div class="ayah-number">${a.n}</div>
-      <div class="quran-arabic" lang="ar" dir="rtl">${a.arabic}</div>
+      <div class="quran-verse-pair">
+        <div class="quran-arabic" lang="ar" dir="rtl">${a.arabic}</div>
+        <div class="quran-english">${a.sense||''}</div>
+      </div>
       <div class="tarkeeb-summary" lang="ar" dir="rtl"><strong>التَّرْكِيبُ:</strong> ${a.summary||''}</div>
       <div class="tarkeeb-grid">${(a.parts||[]).map(quranTarkeebPart).join('')}</div>
     </article>`).join('');
