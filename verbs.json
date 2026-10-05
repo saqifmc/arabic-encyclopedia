@@ -89,28 +89,6 @@
       "type": "Verb"
     },
     {
-      "id": "verb-sarf-005",
-      "arabic": "بَالَ",
-      "english": "to urinate",
-      "root": "ب و ل",
-      "past": "بَالَ",
-      "present": "يَبُولُ",
-      "form": "I",
-      "category": "الثُّلَاثِيُّ الْمُجَرَّدُ",
-      "verb_type": "الْأَجْوَفُ",
-      "command": "بلْ",
-      "prohibition": "لَا تَبلْ",
-      "masdar": "البولَُ",
-      "source": [
-        "Sarf Module 3"
-      ],
-      "source_section": [
-        "Hollow Verb Vocabulary"
-      ],
-      "topic": "الْأَجْوَفُ",
-      "type": "Verb"
-    },
-    {
       "id": "verb-sarf-006",
       "arabic": "بَدَا",
       "english": "to appear / become evident",
