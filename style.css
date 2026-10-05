@@ -403,3 +403,13 @@ html,body,button,input,select,textarea{
 .tested-group .dashboard-card{border-top:3px solid var(--green)}
 .reference-group .dashboard-card{border-top:3px solid #7b8790;background:#fbfcfc}
 .reference-group .dashboard-card:hover{border-color:#aab7b1;box-shadow:var(--shadow)}
+
+/* Foundation page title treatment */
+.foundation-title-box{
+  border:2px solid var(--green);
+  border-radius:14px;
+  padding:14px 18px;
+  background:#f7fbf9;
+}
+.foundation-title-box h2{margin:0 0 4px}
+.foundation-title-box p{margin:0}
