@@ -702,59 +702,16 @@ function renderNahw(){
 }
 
 
-const QURAN_WORD_GLOSSES={
-  "بِـ":"in","اسْمِ":"the name of","اللَّهِ":"God","الرَّحْمَٰنِ":"the Lord of Mercy","الرَّحِيمِ":"the Giver of Mercy",
-  "الْحَمْدُ":"praise","لِلَّهِ":"belongs to God","رَبِّ":"Lord of","الْعَالَمِينَ":"the Worlds","مَالِكِ":"Master of","يَوْمِ":"the Day of","الدِّينِ":"Judgement",
-  "إِيَّاكَ":"You","نَعْبُدُ":"we worship","وَإِيَّاكَ":"and You","نَسْتَعِينُ":"we ask for help","اهْدِ":"guide","نَا":"us","الصِّرَاطَ":"the path","الْمُسْتَقِيمَ":"straight",
-  "صِرَاطَ":"the path of","الَّذِينَ":"those who","أَنْعَمْتَ":"You have blessed","عَلَيْهِمْ":"them","غَيْرِ":"not / other than","الْمَغْضُوبِ":"those who incur anger","وَلَا":"and","الضَّالِّينَ":"those who have gone astray",
-
-  "أَلَمْ":"do ... not","تَرَ":"you see","كَيْفَ":"how","فَعَلَ":"dealt with","رَبُّكَ":"your Lord","بِأَصْحَابِ":"with the army of","الْفِيلِ":"the elephant",
-  "يَجْعَلْ":"confound","كَيْدَهُمْ":"their plans","فِي":"in","تَضْلِيلٍ":"utter confusion / ruin",
-  "وَأَرْسَلَ":"He sent","عَلَيْهِمْ":"against them","طَيْرًا":"birds","أَبَابِيلَ":"ranks",
-  "تَرْمِيهِمْ":"pelting them","بِحِجَارَةٍ":"with pellets","مِنْ":"of / from","سِجِّيلٍ":"hard-baked clay",
-  "فَجَعَلَهُمْ":"He made them","كَعَصْفٍ":"like stubble","مَأْكُولٍ":"cropped",
-
-  "لِإِيلَافِ":"to make ... feel secure","قُرَيْشٍ":"Quraysh","إِيلَافِهِمْ":"secure in","رِحْلَةَ":"their journeys","الشِّتَاءِ":"winter","وَالصَّيْفِ":"and summer",
-  "فَلْيَعْبُدُوا":"so let them worship","رَبَّ":"the Lord of","هَٰذَا":"this","الْبَيْتِ":"House",
-  "الَّذِي":"who","أَطْعَمَهُمْ":"provides them with food","جُوعٍ":"hunger","وَآمَنَهُمْ":"gives them safety","خَوْفٍ":"fear",
-
-  "أَرَأَيْتَ":"have you considered","يُكَذِّبُ":"denies","بِالدِّينِ":"the Judgement","فَذَٰلِكَ":"it is he","يَدُعُّ":"pushes aside","الْيَتِيمَ":"the orphan",
-  "يَحُضُّ":"urge","عَلَىٰ":"to","طَعَامِ":"feed / feeding","الْمِسْكِينِ":"the needy",
-  "فَوَيْلٌ":"so woe","لِلْمُصَلِّينَ":"to those who pray","هُمْ":"they","عَنْ":"of","صَلَاتِهِمْ":"their prayer","سَاهُونَ":"heedless",
-  "يُرَاءُونَ":"are all show","وَيَمْنَعُونَ":"and forbid","الْمَاعُونَ":"common kindnesses",
-
-  "إِنَّا":"We have truly","أَعْطَيْنَاكَ":"given ... to you","الْكَوْثَرَ":"abundance","فَصَلِّ":"so pray","لِرَبِّكَ":"to your Lord","وَانْحَرْ":"and make your sacrifice to Him alone",
-  "إِنَّ":"indeed / truly","شَانِئَكَ":"the one who hates you","هُوَ":"it is he","الْأَبْتَرُ":"cut off",
-
-  "قُلْ":"say","يَا":"O","أَيُّهَا":"O you","الْكَافِرُونَ":"disbelievers","لَا":"do not / not","أَعْبُدُ":"I worship","مَا":"what","تَعْبُدُونَ":"you worship",
-  "أَنْتُمْ":"you","عَابِدُونَ":"worshippers","أَنَا":"I","عَابِدٌ":"a worshipper","عَبَدْتُمْ":"you worship","لَكُمْ":"you have / for you","دِينُكُمْ":"your religion","وَلِيَ":"and I have / for me","دِينِ":"my religion",
-
-  "إِذَا":"when","جَاءَ":"comes","نَصْرُ":"help","وَالْفَتْحُ":"and He opens up your way","وَرَأَيْتَ":"when you see","النَّاسَ":"people","يَدْخُلُونَ":"embracing","دِينِ":"faith / religion","أَفْوَاجًا":"in crowds",
-  "فَسَبِّحْ":"celebrate","بِحَمْدِ":"the praise of","رَبِّكَ":"your Lord","وَاسْتَغْفِرْهُ":"and ask His forgiveness","إِنَّهُ":"He","كَانَ":"is always","تَوَّابًا":"ready to accept repentance",
-
-  "تَبَّتْ":"may ... be ruined","يَدَا":"the hands of","أَبِي":"Abu","لَهَبٍ":"Lahab","وَتَبَّ":"may he be ruined too",
-  "أَغْنَىٰ":"will help","عَنْهُ":"him","مَالُهُ":"his wealth","وَمَا":"nor / and what","كَسَبَ":"his gains / he gained",
-  "سَيَصْلَىٰ":"he will burn in","نَارًا":"the Fire","ذَاتَ":"flaming / of","وَامْرَأَتُهُ":"and so will his wife","حَمَّالَةَ":"the carrier of","الْحَطَبِ":"firewood",
-  "جِيدِهَا":"her neck","حَبْلٌ":"a rope","مَسَدٍ":"palm fibre",
-
-  "اللَّهُ":"God","أَحَدٌ":"the One","الصَّمَدُ":"the eternal","لَمْ":"did not","يَلِدْ":"beget","وَلَمْ":"nor was","يُولَدْ":"He begotten","يَكُنْ":"is / be","لَهُ":"to Him","كُفُوًا":"comparable",
-
-  "أَعُوذُ":"I seek refuge","بِرَبِّ":"with the Lord of","الْفَلَقِ":"daybreak","شَرِّ":"the harm in","خَلَقَ":"He has created","وَمِنْ":"and against / from","غَاسِقٍ":"the night","وَقَبَ":"darkness gathers",
-  "النَّفَّاثَاتِ":"witches / those who blow","الْعُقَدِ":"knots","حَاسِدٍ":"the envier","حَسَدَ":"he envies",
-
-  "النَّاسِ":"people","مَلِكِ":"the Controller of","إِلَٰهِ":"the God of","الْوَسْوَاسِ":"the whisperer","الْخَنَّاسِ":"slinking","يُوَسْوِسُ":"whispers","صُدُورِ":"the hearts of","مِنَ":"whether / from among","الْجِنَّةِ":"jinn","وَالنَّاسِ":"or people"
-}
-
-function quranWordGlosses(text){
-  return text.split(/\s+/).filter(Boolean).map(token=>{
-    const meaning=QURAN_WORD_GLOSSES[token]||'—';
-    return `<span class="quran-word-gloss"><span class="arabic" lang="ar" dir="rtl">${token}</span><span class="english">${meaning}</span></span>`;
-  }).join('');
+function quranWordRow(words){
+  return (words||[]).map(w=>`<div class="quran-word-chip">
+    <span class="arabic" lang="ar" dir="rtl">${w.arabic}</span>
+    <span class="english">${w.english}</span>
+  </div>`).join('');
 }
 
 function quranTarkeebPart([word,label,note]){
   return `<div class="tarkeeb-word-card">
-    <div class="tarkeeb-word-glosses">${quranWordGlosses(word)}</div>
+    <div class="grammar-chunk arabic" lang="ar" dir="rtl">${word}</div>
     <div class="tarkeeb-grammar">
       <b lang="ar" dir="rtl">${label}</b>
       <small>${note}</small>
@@ -783,21 +740,33 @@ function renderQuranicTarkeeb(){
       <p>Sūrah ${surah.number} · ${surah.ayahs.length} āyah${surah.ayahs.length===1?'':'s'} · Tarkeeb & Iʿrāb</p>
     </div>
     <div class="translation-note">
-      <strong>Translation reference</strong>
-      <p>English terminology is checked against M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). The verse line and the word-by-word glosses are kept internally consistent with the Arabic segmentation.</p>
+      <strong>English reference</strong>
+      <p>English terminology and word meanings are based on M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). Word glosses are matched to each āyah rather than taken from a generic dictionary.</p>
     </div>`;
 
   list.innerHTML=surah.ayahs.map(a=>`
     <article class="quran-ayah-card">
       <div class="ayah-number">${a.n}</div>
+
       <div class="quran-verse-pair">
         <div class="quran-arabic" lang="ar" dir="rtl">${a.arabic}</div>
-        <div class="quran-english">${a.sense||''}</div>
+        <div class="quran-english"><span class="analysis-kicker">ENGLISH MEANING</span>${a.sense||''}</div>
       </div>
+
+      <div class="quran-word-section">
+        <div class="analysis-kicker">WORD BY WORD</div>
+        <div class="quran-word-strip" dir="rtl">${quranWordRow(a.words||[])}</div>
+      </div>
+
       <div class="tarkeeb-summary" lang="ar" dir="rtl"><strong>التَّرْكِيبُ:</strong> ${a.summary||''}</div>
-      <div class="tarkeeb-grid">${(a.parts||[]).map(quranTarkeebPart).join('')}</div>
+
+      <div class="grammar-section">
+        <div class="analysis-kicker">GRAMMAR ANALYSIS</div>
+        <div class="tarkeeb-grid">${(a.parts||[]).map(quranTarkeebPart).join('')}</div>
+      </div>
     </article>`).join('');
 }
+
 function revisionPool(){
   const mode=document.getElementById('revisionMode')?.value||'vocab-ar-en';
   const subset=document.getElementById('revisionSubset')?.value||'all';
