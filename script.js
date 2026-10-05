@@ -204,6 +204,7 @@ let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [], sarf: [], qurani
 let currentCard = null;
 const STORE_KEY = 'arabicEncyclopediaProgressV2';
 const STATUSES = ['Not Started','Covered','Learning','Confident','Mastered'];
+const ARABIC_ALPHABET = ['ا','ب','ت','ث','ج','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ك','ل','م','ن','ه','و','ي'];
 
 let PROGRESS_CACHE=null;
 function loadProgress(){
@@ -323,6 +324,7 @@ function populateFilters(){
   fillSelect('sarfSectionFilter',unique(DATA.sarf.map(x=>x.section)));
   fillSelect('speakingTopicFilter',unique(DATA.speaking.map(x=>x.topic)));
   fillSelect('nahwTopicFilter',unique(DATA.nahw.map(x=>x.topic)));
+  fillSelect('rootLetterFilter',ARABIC_ALPHABET);
 }
 function renderActiveView(){
   const id=document.querySelector('.view.active')?.id||'home';
@@ -603,14 +605,10 @@ function speakingCard(x){
   </article>`;
 }
 function bindDynamicButtons(){
-  document.querySelectorAll('[data-status-id]').forEach(btn=>btn.onclick=()=>{
-    patchProgress(btn.dataset.statusId,{status:btn.dataset.status});
-  });
-  document.querySelectorAll('[data-fav-id]').forEach(btn=>btn.onclick=()=>{
-    const p=progressFor(btn.dataset.favId);
-    patchProgress(btn.dataset.favId,{favourite:!p.favourite});
-  });
+  // Status/favourite controls use one delegated click handler in bindEvents().
+  // This keeps newly rendered testing/reference cards clickable without rebinding.
 }
+
 function paginationMarkup(kind,currentPage,total,pageSize){
   const totalPages=Math.max(1,Math.ceil(total/pageSize));
   if(total===0) return '';
@@ -682,10 +680,21 @@ function renderVocabulary(){
   bindPagination();
 }
 
+function rootInitial(root){
+  const clean=String(root||'')
+    .normalize('NFKD')
+    .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED\sـ]/g,'')
+    .replace(/[أإآٱ]/g,'ا')
+    .replace(/ى/g,'ي');
+  return clean.charAt(0);
+}
+
 function renderRoots(){
   const groups=getRootGroups();
-  const sort=document.getElementById('rootSort')?.value||'weakest';
+  const sort=document.getElementById('rootSort')?.value||'alphabetical';
+  const letter=document.getElementById('rootLetterFilter')?.value||'';
   let entries=Object.entries(groups).map(([root,items])=>({root,items,progress:rootProgress(items)}));
+  if(letter) entries=entries.filter(x=>rootInitial(x.root)===letter);
   if(ROOT_METRIC_FILTER==='not-started')entries=entries.filter(x=>x.progress.pct===0);
   if(ROOT_METRIC_FILTER==='started')entries=entries.filter(x=>x.progress.pct>0);
   if(ROOT_METRIC_FILTER==='strong')entries=entries.filter(x=>x.progress.pct>=75);
@@ -693,7 +702,7 @@ function renderRoots(){
   if(sort==='weakest') entries.sort((a,b)=>a.progress.pct-b.progress.pct||b.items.length-a.items.length);
   if(sort==='strongest') entries.sort((a,b)=>b.progress.pct-a.progress.pct||b.items.length-a.items.length);
   if(sort==='largest') entries.sort((a,b)=>b.items.length-a.items.length||a.root.localeCompare(b.root,'ar'));
-  if(sort==='alphabetical') entries.sort((a,b)=>a.root.localeCompare(b.root,'ar'));
+  if(sort==='alphabetical') entries.sort((a,b)=>String(a.root).localeCompare(String(b.root),'ar',{sensitivity:'base'}));
   document.getElementById('rootsList').innerHTML=entries.map(({root,items,progress:p})=>{
     const state=p.pct===100?'mastered-root':p.pct===0?'not-started-root':'learning-root';
     return `<div class="root-card ${state}">
@@ -709,7 +718,7 @@ function renderRoots(){
       </div>
       <div class="root-family-words" lang="ar" dir="rtl">${items.map(x=>`<button type="button" class="root-word-link ${statusClass(itemStatus(x.id))}" data-root-item-id="${x.id}">${x.arabic}</button>`).join(' ')}</div>
     </div>`;
-  }).join('');
+  }).join('')||'<p class="meta">No roots match this Arabic letter.</p>';
   document.querySelectorAll('[data-root-item-id]').forEach(btn=>{
     btn.onclick=()=>openRootItem(btn.dataset.rootItemId);
   });
@@ -1005,6 +1014,21 @@ function rateCurrent(rating){
 }
 function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});}
 function bindEvents(){
+  document.addEventListener('click',e=>{
+    const statusBtn=e.target.closest('[data-status-id]');
+    if(statusBtn){
+      e.preventDefault();
+      patchProgress(statusBtn.dataset.statusId,{status:statusBtn.dataset.status});
+      return;
+    }
+    const favBtn=e.target.closest('[data-fav-id]');
+    if(favBtn){
+      e.preventDefault();
+      const p=progressFor(favBtn.dataset.favId);
+      patchProgress(favBtn.dataset.favId,{favourite:!p.favourite});
+    }
+  });
+
   document.querySelectorAll('[data-vocab-set]').forEach(btn=>btn.addEventListener('click',()=>{
     VOCAB_COLLECTION_FILTER=btn.dataset.vocabSet;
     VOCAB_PAGE=1;
@@ -1033,6 +1057,7 @@ function bindEvents(){
   document.getElementById('verbTestMode')?.addEventListener('change',newVerbTestCard);
   document.getElementById('sarfSectionFilter')?.addEventListener('input',renderSarf);
   document.getElementById('rootSort')?.addEventListener('input',renderRoots);
+  document.getElementById('rootLetterFilter')?.addEventListener('input',renderRoots);
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
   document.getElementById('nahwTopicFilter')?.addEventListener('input',renderNahw);
   document.getElementById('quranSurahFilter')?.addEventListener('change',renderQuranicTarkeeb);
