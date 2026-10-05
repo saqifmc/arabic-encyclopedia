@@ -469,6 +469,16 @@
       "example": "لَا يَذْهَبُ، لَمْ يَذْهَبْ، لَنْ يَذْهَبَ.",
       "example_en": "He does not go; he did not go; he will not go — showing marfūʿ, majzūm and manṣūb forms.",
       "status": "Not Started"
+    },
+    {
+      "id": "nahw-foundation-048",
+      "arabic": "شِبْهُ الْجُمْلَةِ",
+      "english": "Shibh al-jumlah — شبه الجملة",
+      "topic": "Nominal Sentence",
+      "summary": "A phrase that functions like part of a sentence without being a complete sentence by itself. In Nahw, the most common types are a prepositional phrase (جارّ ومجرور) and an adverbial phrase (ظرف). It often functions as a khabar or relates to a verb.",
+      "example": "فِي الْبَيْتِ رَجُلٌ.",
+      "example_en": "There is a man in the house — فِي الْبَيْتِ is shibh al-jumlah and functions as a fronted khabar.",
+      "status": "Not Started"
     }
   ]
 }
