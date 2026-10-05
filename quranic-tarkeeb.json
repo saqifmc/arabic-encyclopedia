@@ -10,7 +10,7 @@
         {
           "n": 1,
           "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-          "sense": "In God's name, invoking His mercy.",
+          "sense": "In the name of God, the Lord of Mercy, the Giver of Mercy.",
           "summary": "جَارٌّ وَمَجْرُورٌ + مُضَافٌ إِلَيْهِ + نَعْتَانِ مَجْرُورَانِ.",
           "parts": [
             [
@@ -42,7 +42,7 @@
         {
           "n": 2,
           "arabic": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
-          "sense": "All praise belongs to God, Lord of all worlds.",
+          "sense": "Praise belongs to God, Lord of the Worlds.",
           "summary": "جُمْلَةٌ اسْمِيَّةٌ: مُبْتَدَأٌ + خَبَرٌ شِبْهُ جُمْلَةٍ.",
           "parts": [
             [
@@ -74,7 +74,7 @@
         {
           "n": 3,
           "arabic": "الرَّحْمَٰنِ الرَّحِيمِ",
-          "sense": "The Lord of perfect and continual mercy.",
+          "sense": "The Lord of Mercy, the Giver of Mercy.",
           "summary": "نَعْتَانِ مَجْرُورَانِ تَابِعَانِ لِمَا قَبْلَهُمَا.",
           "parts": [
             [
@@ -120,7 +120,7 @@
         {
           "n": 5,
           "arabic": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
-          "sense": "You alone we worship, and You alone we ask for help.",
+          "sense": "It is You we worship; it is You we ask for help.",
           "summary": "مَفْعُولٌ بِهِ مُقَدَّمٌ + فِعْلٌ وَفَاعِلٌ مُسْتَتِرٌ، ثُمَّ عَطْفٌ.",
           "parts": [
             [
@@ -184,7 +184,7 @@
         {
           "n": 7,
           "arabic": "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
-          "sense": "The path of those You have favoured, not those under anger nor those astray.",
+          "sense": "The path of those You have blessed, those who incur no anger and who have not gone astray.",
           "summary": "بَدَلٌ + اِسْمٌ مَوْصُولٌ + صِلَةُ الْمَوْصُولِ + بَدَلٌ أَوْ نَعْتٌ + عَطْفٌ.",
           "parts": [
             [
@@ -232,7 +232,7 @@
         {
           "n": 1,
           "arabic": "أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ",
-          "sense": "Have you not considered what your Lord did with the people of the elephant?",
+          "sense": "Do you not see how your Lord dealt with the army of the elephant?",
           "summary": "هَمْزَةُ اِسْتِفْهَامٍ + لَمْ جَازِمَةٌ + فِعْلٌ مُضَارِعٌ مَجْزُومٌ، ثُمَّ جُمْلَةٌ اِسْتِفْهَامِيَّةٌ بِكَيْفَ.",
           "parts": [
             [
@@ -270,7 +270,7 @@
         {
           "n": 2,
           "arabic": "أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ",
-          "sense": "Did He not bring their scheme to ruin?",
+          "sense": "Did He not utterly confound their plans?",
           "summary": "لَمْ + فِعْلٌ مُضَارِعٌ مَجْزُومٌ + مَفْعُولٌ بِهِ + شِبْهُ جُمْلَةٍ.",
           "parts": [
             [
@@ -296,7 +296,7 @@
         {
           "n": 3,
           "arabic": "وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ",
-          "sense": "And He sent against them birds in successive groups.",
+          "sense": "He sent ranks of birds against them.",
           "summary": "وَاوُ عَطْفٍ + فِعْلٌ مَاضٍ + جَارٌّ وَمَجْرُورٌ + مَفْعُولٌ بِهِ + نَعْتٌ.",
           "parts": [
             [
@@ -328,7 +328,7 @@
         {
           "n": 4,
           "arabic": "تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ",
-          "sense": "Striking them with stones of baked clay.",
+          "sense": "They pelted them with pellets of hard-baked clay.",
           "summary": "جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ نَعْتٍ لِلطَّيْرِ.",
           "parts": [
             [
@@ -354,7 +354,7 @@
         {
           "n": 5,
           "arabic": "فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ",
-          "sense": "So He made them like eaten-up straw.",
+          "sense": "He made them like cropped stubble.",
           "summary": "فَاءٌ + فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ + شِبْهُ جُمْلَةٍ + نَعْتٌ.",
           "parts": [
             [
@@ -390,7 +390,7 @@
         {
           "n": 1,
           "arabic": "لِإِيلَافِ قُرَيْشٍ",
-          "sense": "For the security and accustomed unity of Quraysh.",
+          "sense": "He did this to make Quraysh feel secure.",
           "summary": "لَامُ التَّعْلِيلِ + اِسْمٌ مَجْرُورٌ + مُضَافٌ إِلَيْهِ.",
           "parts": [
             [
@@ -410,7 +410,7 @@
         {
           "n": 2,
           "arabic": "إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ",
-          "sense": "Their familiarity with the winter and summer journeys.",
+          "sense": "Secure in their winter and summer journeys.",
           "summary": "بَدَلٌ أَوْ عَطْفُ بَيَانٍ + مَفْعُولٌ بِهِ لِلْمَصْدَرِ + إِضَافَةٌ.",
           "parts": [
             [
@@ -462,7 +462,7 @@
         {
           "n": 4,
           "arabic": "الَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ",
-          "sense": "The One who fed them against hunger and gave them security from fear.",
+          "sense": "The One who provides them with food against hunger and gives them safety from fear.",
           "summary": "اِسْمٌ مَوْصُولٌ + صِلَتَانِ فِعْلِيَّتَانِ مَعْطُوفَتَانِ.",
           "parts": [
             [
@@ -510,7 +510,7 @@
         {
           "n": 1,
           "arabic": "أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ",
-          "sense": "Have you considered the one who denies the Judgement?",
+          "sense": "Have you considered the person who denies the Judgement?",
           "summary": "اِسْتِفْهَامٌ + فِعْلٌ مَاضٍ + مَفْعُولٌ بِهِ + صِلَةُ مَوْصُولٍ.",
           "parts": [
             [
@@ -536,7 +536,7 @@
         {
           "n": 2,
           "arabic": "فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ",
-          "sense": "That is the one who repels the orphan.",
+          "sense": "It is he who pushes aside the orphan.",
           "summary": "فَاءٌ + مُبْتَدَأٌ + خَبَرٌ اِسْمٌ مَوْصُولٌ + صِلَةٌ فِعْلِيَّةٌ.",
           "parts": [
             [
@@ -562,7 +562,7 @@
         {
           "n": 3,
           "arabic": "وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ",
-          "sense": "And he does not encourage feeding the needy.",
+          "sense": "And does not urge others to feed the needy.",
           "summary": "وَاوُ عَطْفٍ + لَا نَافِيَةٌ + فِعْلٌ مُضَارِعٌ + جَارٌّ وَمَجْرُورٌ.",
           "parts": [
             [
@@ -608,7 +608,7 @@
         {
           "n": 5,
           "arabic": "الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ",
-          "sense": "Those who are heedless of their prayer.",
+          "sense": "But are heedless of their prayer.",
           "summary": "اِسْمٌ مَوْصُولٌ + جُمْلَةٌ اسْمِيَّةٌ صِلَةٌ.",
           "parts": [
             [
@@ -640,7 +640,7 @@
         {
           "n": 6,
           "arabic": "الَّذِينَ هُمْ يُرَاءُونَ",
-          "sense": "Those who act only to be seen.",
+          "sense": "Those who are all show.",
           "summary": "اِسْمٌ مَوْصُولٌ + مُبْتَدَأٌ + جُمْلَةٌ فِعْلِيَّةٌ خَبَرٌ.",
           "parts": [
             [
@@ -666,7 +666,7 @@
         {
           "n": 7,
           "arabic": "وَيَمْنَعُونَ الْمَاعُونَ",
-          "sense": "And they withhold ordinary acts of help.",
+          "sense": "And forbid common kindnesses.",
           "summary": "وَاوُ عَطْفٍ + فِعْلٌ مُضَارِعٌ + مَفْعُولٌ بِهِ.",
           "parts": [
             [
@@ -696,7 +696,7 @@
         {
           "n": 1,
           "arabic": "إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
-          "sense": "We have certainly granted you abundant good.",
+          "sense": "We have truly given abundance to you.",
           "summary": "إِنَّ + اِسْمُهَا + جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ خَبَرِهَا.",
           "parts": [
             [
@@ -722,7 +722,7 @@
         {
           "n": 2,
           "arabic": "فَصَلِّ لِرَبِّكَ وَانْحَرْ",
-          "sense": "So pray to your Lord and sacrifice.",
+          "sense": "So pray to your Lord and make your sacrifice to Him alone.",
           "summary": "فَاءُ السَّبَبِيَّةِ/التَّفْرِيعِ + فِعْلَا أَمْرٍ مَعْطُوفَانِ.",
           "parts": [
             [
@@ -748,7 +748,7 @@
         {
           "n": 3,
           "arabic": "إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ",
-          "sense": "Indeed, the one who hates you is the one cut off.",
+          "sense": "It is the one who hates you who has been cut off.",
           "summary": "إِنَّ + اِسْمٌ مَنْصُوبٌ + ضَمِيرُ فَصْلٍ + خَبَرٌ مَرْفُوعٌ.",
           "parts": [
             [
@@ -790,7 +790,7 @@
         {
           "n": 1,
           "arabic": "قُلْ يَا أَيُّهَا الْكَافِرُونَ",
-          "sense": "Say: O disbelievers.",
+          "sense": "Say: Disbelievers.",
           "summary": "فِعْلُ أَمْرٍ + نِدَاءٌ.",
           "parts": [
             [
@@ -854,7 +854,7 @@
         {
           "n": 3,
           "arabic": "وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ",
-          "sense": "Nor are you worshippers of what I worship.",
+          "sense": "You do not worship what I worship.",
           "summary": "عَطْفٌ + لَا نَافِيَةٌ + جُمْلَةٌ اسْمِيَّةٌ.",
           "parts": [
             [
@@ -886,7 +886,7 @@
         {
           "n": 4,
           "arabic": "وَلَا أَنَا عَابِدٌ مَّا عَبَدتُّمْ",
-          "sense": "Nor am I a worshipper of what you have worshipped.",
+          "sense": "I will never worship what you worship.",
           "summary": "عَطْفٌ + نَفْيٌ + مُبْتَدَأٌ + خَبَرٌ + اِسْمٌ مَوْصُولٌ.",
           "parts": [
             [
@@ -918,7 +918,7 @@
         {
           "n": 5,
           "arabic": "وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ",
-          "sense": "Nor are you worshippers of what I worship.",
+          "sense": "You will never worship what I worship.",
           "summary": "جُمْلَةٌ اسْمِيَّةٌ مَعْطُوفَةٌ مَنْفِيَّةٌ.",
           "parts": [
             [
@@ -944,7 +944,7 @@
         {
           "n": 6,
           "arabic": "لَكُمْ دِينُكُمْ وَلِيَ دِينِ",
-          "sense": "You have your religion, and I have mine.",
+          "sense": "You have your religion and I have mine.",
           "summary": "خَبَرٌ مُقَدَّمٌ شِبْهُ جُمْلَةٍ + مُبْتَدَأٌ مُؤَخَّرٌ، ثُمَّ عَطْفٌ.",
           "parts": [
             [
@@ -986,7 +986,7 @@
         {
           "n": 1,
           "arabic": "إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
-          "sense": "When God's help and victory come.",
+          "sense": "When God’s help comes and He opens up your way.",
           "summary": "إِذَا ظَرْفٌ لِمَا يُسْتَقْبَلُ + جُمْلَةٌ فِعْلِيَّةٌ فِي مَحَلِّ إِضَافَةٍ.",
           "parts": [
             [
@@ -1018,7 +1018,7 @@
         {
           "n": 2,
           "arabic": "وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا",
-          "sense": "And you see people entering God's religion in crowds.",
+          "sense": "When you see people embracing God’s faith in crowds.",
           "summary": "فِعْلٌ وَفَاعِلٌ + مَفْعُولٌ بِهِ + جُمْلَةٌ حَالِيَّةٌ + حَالٌ.",
           "parts": [
             [
@@ -1050,7 +1050,7 @@
         {
           "n": 3,
           "arabic": "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ ۚ إِنَّهُ كَانَ تَوَّابًا",
-          "sense": "Then glorify your Lord with praise and seek His forgiveness; He is ever accepting of repentance.",
+          "sense": "Celebrate the praise of your Lord and ask His forgiveness; He is always ready to accept repentance.",
           "summary": "جَوَابُ إِذَا: فِعْلَا أَمْرٍ، ثُمَّ إِنَّ + جُمْلَةُ كَانَ خَبَرًا.",
           "parts": [
             [
@@ -1098,7 +1098,7 @@
         {
           "n": 1,
           "arabic": "تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ",
-          "sense": "Ruined are the hands of Abu Lahab, and ruined is he.",
+          "sense": "May the hands of Abu Lahab be ruined; may he be ruined too.",
           "summary": "فِعْلٌ مَاضٍ + فَاعِلٌ مُثَنًّى + إِضَافَةٌ، ثُمَّ جُمْلَةٌ مَعْطُوفَةٌ.",
           "parts": [
             [
@@ -1130,7 +1130,7 @@
         {
           "n": 2,
           "arabic": "مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ",
-          "sense": "His wealth and what he earned did not benefit him.",
+          "sense": "Neither his wealth nor his gains will help him.",
           "summary": "مَا نَافِيَةٌ + فِعْلٌ مَاضٍ + فَاعِلٌ، ثُمَّ عَطْفٌ.",
           "parts": [
             [
@@ -1162,7 +1162,7 @@
         {
           "n": 3,
           "arabic": "سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ",
-          "sense": "He will enter a blazing fire.",
+          "sense": "He will burn in the Flaming Fire.",
           "summary": "سِينُ الِاسْتِقْبَالِ + فِعْلٌ مُضَارِعٌ + مَفْعُولٌ بِهِ/مَنْصُوبٌ + نَعْتٌ.",
           "parts": [
             [
@@ -1188,7 +1188,7 @@
         {
           "n": 4,
           "arabic": "وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ",
-          "sense": "And his wife, the carrier of firewood.",
+          "sense": "And so will his wife, the firewood-carrier.",
           "summary": "وَاوُ عَطْفٍ + مُبْتَدَأٌ، وَقِرَاءَةُ النَّصْبِ فِي حَمَّالَةَ عَلَى الذَّمِّ.",
           "parts": [
             [
@@ -1214,7 +1214,7 @@
         {
           "n": 5,
           "arabic": "فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ",
-          "sense": "Around her neck is a rope of palm fibre.",
+          "sense": "With a palm-fibre rope around her neck.",
           "summary": "خَبَرٌ مُقَدَّمٌ شِبْهُ جُمْلَةٍ + مُبْتَدَأٌ مُؤَخَّرٌ + نَعْتٌ شِبْهُ جُمْلَةٍ.",
           "parts": [
             [
@@ -1250,7 +1250,7 @@
         {
           "n": 1,
           "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ",
-          "sense": "Say: He is God, One.",
+          "sense": "Say: He is God the One.",
           "summary": "فِعْلُ أَمْرٍ + جُمْلَةٌ اسْمِيَّةٌ مَقُولُ الْقَوْلِ.",
           "parts": [
             [
@@ -1282,7 +1282,7 @@
         {
           "n": 2,
           "arabic": "اللَّهُ الصَّمَدُ",
-          "sense": "God is the Eternal Refuge.",
+          "sense": "God the eternal.",
           "summary": "جُمْلَةٌ اسْمِيَّةٌ: مُبْتَدَأٌ + خَبَرٌ.",
           "parts": [
             [
@@ -1302,7 +1302,7 @@
         {
           "n": 3,
           "arabic": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
-          "sense": "He did not beget, nor was He begotten.",
+          "sense": "He begot no one nor was He begotten.",
           "summary": "لَمْ جَازِمَةٌ + فِعْلَانِ مُضَارِعَانِ مَجْزُومَانِ، الثَّانِي مَبْنِيٌّ لِلْمَجْهُولِ.",
           "parts": [
             [
@@ -1328,7 +1328,7 @@
         {
           "n": 4,
           "arabic": "وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
-          "sense": "And no one is comparable to Him.",
+          "sense": "No one is comparable to Him.",
           "summary": "لَمْ + يَكُنْ مِنْ أَخَوَاتِ كَانَ + خَبَرٌ مُقَدَّمٌ + اِسْمٌ مُؤَخَّرٌ.",
           "parts": [
             [
@@ -1396,7 +1396,7 @@
         {
           "n": 2,
           "arabic": "مِن شَرِّ مَا خَلَقَ",
-          "sense": "From the evil of what He created.",
+          "sense": "Against the harm in what He has created.",
           "summary": "جَارٌّ وَمَجْرُورٌ + اِسْمٌ مَوْصُولٌ + صِلَةٌ.",
           "parts": [
             [
@@ -1422,7 +1422,7 @@
         {
           "n": 3,
           "arabic": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
-          "sense": "And from the evil of darkness when it settles.",
+          "sense": "The harm in the night when darkness gathers.",
           "summary": "عَطْفٌ + جَارٌّ وَمَجْرُورٌ + إِذَا الظَّرْفِيَّةُ.",
           "parts": [
             [
@@ -1448,7 +1448,7 @@
         {
           "n": 4,
           "arabic": "وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ",
-          "sense": "And from the evil of those who blow upon knots.",
+          "sense": "The harm in those who blow on knots.",
           "summary": "عَطْفٌ + جَارٌّ وَمَجْرُورٌ + نَعْتٌ/مُتَعَلِّقٌ.",
           "parts": [
             [
@@ -1474,7 +1474,7 @@
         {
           "n": 5,
           "arabic": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
-          "sense": "And from the evil of an envier when he envies.",
+          "sense": "The harm in the envier when he envies.",
           "summary": "عَطْفٌ + جَارٌّ وَمَجْرُورٌ + إِذَا الظَّرْفِيَّةُ.",
           "parts": [
             [
@@ -1536,7 +1536,7 @@
         {
           "n": 2,
           "arabic": "مَلِكِ النَّاسِ",
-          "sense": "The King of people.",
+          "sense": "The Controller of people.",
           "summary": "بَدَلٌ أَوْ نَعْتٌ مَجْرُورٌ + إِضَافَةٌ.",
           "parts": [
             [
@@ -1576,7 +1576,7 @@
         {
           "n": 4,
           "arabic": "مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ",
-          "sense": "From the evil of the retreating whisperer.",
+          "sense": "Against the harm of the slinking whisperer.",
           "summary": "جَارٌّ وَمَجْرُورٌ + إِضَافَةٌ + نَعْتٌ مَجْرُورٌ.",
           "parts": [
             [
@@ -1602,7 +1602,7 @@
         {
           "n": 5,
           "arabic": "الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ",
-          "sense": "Who whispers in the hearts of people.",
+          "sense": "Who whispers into the hearts of people.",
           "summary": "اِسْمٌ مَوْصُولٌ + صِلَةُ مَوْصُولٍ + جَارٌّ وَمَجْرُورٌ.",
           "parts": [
             [
@@ -1628,7 +1628,7 @@
         {
           "n": 6,
           "arabic": "مِنَ الْجِنَّةِ وَالنَّاسِ",
-          "sense": "From among jinn and people.",
+          "sense": "Whether they be jinn or people.",
           "summary": "جَارٌّ وَمَجْرُورٌ + مَعْطُوفٌ.",
           "parts": [
             [
