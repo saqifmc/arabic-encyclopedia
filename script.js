@@ -189,7 +189,7 @@ function updateAuthUI(){
   }
 }
 
-const SECTION_METRIC_FILTERS = { vocabulary:'all', verbs:'all', nahw:'all' };
+const SECTION_METRIC_FILTERS = { vocabulary:'all', verbs:'all' };
 let ROOT_METRIC_FILTER = 'all';
 let PROGRESS_METRIC_FILTER = 'all';
 
@@ -326,7 +326,7 @@ function sortRecentlyCoveredLast(items){
   });
 }
 function renderStats(){
-  const allItems=[...DATA.vocabulary,...DATA.verbs,...DATA.nahw];
+  const allItems=[...DATA.vocabulary,...DATA.verbs];
   const covered=allItems.filter(x=>itemStatus(x.id)!=='Not Started').length;
   const mastered=allItems.filter(x=>itemStatus(x.id)==='Mastered').length;
   const learning=allItems.filter(x=>itemStatus(x.id)==='Learning').length;
@@ -372,8 +372,7 @@ function dashboardMarkup(items,section){
 function renderSectionDashboards(){
   const map=[
     ['vocabDashboard',DATA.vocabulary,'vocabulary'],
-    ['verbsDashboard',DATA.verbs,'verbs'],
-    ['nahwDashboard',DATA.nahw,'nahw']
+    ['verbsDashboard',DATA.verbs,'verbs']
   ];
   map.forEach(([id,items,section])=>{
     const el=document.getElementById(id);
@@ -394,8 +393,7 @@ function bindSectionDashboardFilters(){
       renderSectionDashboards();
       if(section==='vocabulary')renderVocabulary();
       if(section==='verbs')renderVerbs();
-      if(section==='nahw')renderNahw();
-      const target={vocabulary:'vocabList',verbs:'verbsList',nahw:'nahwList'}[section];
+      const target={vocabulary:'vocabList',verbs:'verbsList'}[section];
       document.getElementById(target)?.scrollIntoView({behavior:'smooth',block:'start'});
     };
   });
@@ -644,7 +642,7 @@ function progressItemCard(x){
   return `<article class="item progress-item"><div class="item-head"><div><div class="arabic" lang="ar" dir="rtl">${x.arabic}</div><strong>${x.english}</strong></div><span class="pill ${statusClass(p.status)}">${p.status}</span></div><div class="meta">${x.topic||x.category||x.verb_type||'General'}</div></article>`;
 }
 function renderProgress(){
-  const all=[...DATA.vocabulary,...DATA.verbs,...DATA.nahw];
+  const all=[...DATA.vocabulary,...DATA.verbs];
   const count=s=>all.filter(x=>itemStatus(x.id)===s).length;
   const favourites=all.filter(x=>progressFor(x.id).favourite).length;
   const cards=[
@@ -673,30 +671,25 @@ function renderProgress(){
 }
 
 function nahwCard(x){
-  const p=progressFor(x.id);
-  return `<article class="item">
+  return `<article class="item nahw-reference-card">
     <div class="item-head">
       <div style="flex:1">
         <div class="arabic" lang="ar" dir="rtl">${x.arabic}</div>
         <h3>${x.english}</h3>
       </div>
-      <span class="pill ${statusClass(p.status)}">${p.status}</span>
     </div>
     <div class="meta">${x.topic}</div>
     <p>${x.summary||''}</p>
     ${x.example?`<div class="example" lang="ar" dir="rtl">${x.example}</div><div class="meta">${x.example_en||''}</div>`:''}
-    ${statusControls(x)}
   </article>`;
 }
 function renderNahw(){
   const topic=document.getElementById('nahwTopicFilter')?.value||'';
   let concepts=DATA.nahw.filter(x=>!topic||x.topic===topic);
-  concepts=filterByMetric(concepts,SECTION_METRIC_FILTERS.nahw);
-  concepts=sortRecentlyCoveredLast(concepts);
+
   const keyBox=document.getElementById('nahwKeyTerms');
   if(keyBox)keyBox.innerHTML='';
   document.getElementById('nahwList').innerHTML=concepts.map(nahwCard).join('')||'<p>No concepts match this filter.</p>';
-  bindDynamicButtons();
 }
 
 function revisionPool(){
@@ -704,7 +697,6 @@ function revisionPool(){
   const subset=document.getElementById('revisionSubset')?.value||'all';
   let pool;
   if(mode==='verbs') pool=DATA.verbs;
-  else if(mode==='nahw') pool=DATA.nahw;
   else pool=DATA.vocabulary;
   pool=pool.filter(x=>{
     const p=progressFor(x.id);
@@ -734,10 +726,6 @@ function newRevisionCard(){
   if(mode==='ar-en'){
     prompt.textContent=currentCard.arabic;prompt.className='flash-prompt arabic';
     answer.textContent=currentCard.english;answer.className='flash-answer hidden';
-  } else if(mode==='nahw'){
-    prompt.textContent=currentCard.english;prompt.className='flash-prompt';
-    answer.innerHTML=`<div class="arabic" lang="ar" dir="rtl">${currentCard.arabic}</div><div>${currentCard.summary||''}</div>`;
-    answer.className='flash-answer hidden';
   } else {
     prompt.textContent=currentCard.english;prompt.className='flash-prompt';
     answer.textContent=currentCard.arabic;answer.className='flash-answer arabic hidden';
@@ -782,7 +770,7 @@ function bindEvents(){
   document.getElementById('sarfSectionFilter')?.addEventListener('input',renderSarf);
   document.getElementById('rootSort')?.addEventListener('input',renderRoots);
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
-  document.getElementById('nahwTopicFilter').addEventListener('input',()=>{SECTION_METRIC_FILTERS.nahw='all';renderSectionDashboards();renderNahw();});
+  document.getElementById('nahwTopicFilter').addEventListener('input',renderNahw);
   document.getElementById('showKeyTermsBtn')?.addEventListener('click',()=>{
     const box=document.getElementById('nahwKeyTerms');
     const btn=document.getElementById('showKeyTermsBtn');
