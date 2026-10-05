@@ -509,3 +509,68 @@ html,body,button,input,select,textarea{
 .section-sarf .foundation-panel select{
   width:min(480px,100%);
 }
+
+/* Homepage cards match each section's dedicated colour */
+#home .dashboard-card{
+  border:1px solid var(--card-accent);
+  border-top:5px solid var(--card-accent);
+  background:var(--card-soft);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+#home .dashboard-card strong{
+  color:var(--card-accent);
+}
+#home .dashboard-card small{
+  color:#4b5563;
+}
+#home .dashboard-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 22px rgba(15,23,42,.10);
+  border-color:var(--card-accent);
+}
+
+/* Tested & tracked */
+#home .dashboard-card[data-view="progress"]{
+  --card-accent:#047857;
+  --card-soft:#ecfdf5;
+}
+#home .dashboard-card[data-view="vocabulary"]{
+  --card-accent:#2563eb;
+  --card-soft:#eff6ff;
+}
+#home .dashboard-card[data-view="roots"]{
+  --card-accent:#7c3aed;
+  --card-soft:#f5f3ff;
+}
+#home .dashboard-card[data-view="verbs"]{
+  --card-accent:#d97706;
+  --card-soft:#fff7ed;
+}
+#home .dashboard-card[data-view="revision"]{
+  --card-accent:#475569;
+  --card-soft:#f8fafc;
+}
+
+/* Reference only */
+#home .dashboard-card[data-view="sarf"]{
+  --card-accent:#4f46e5;
+  --card-soft:#eef2ff;
+}
+#home .dashboard-card[data-view="nahw"]{
+  --card-accent:#0f766e;
+  --card-soft:#f0fdfa;
+}
+#home .dashboard-card[data-view="quranic-tarkeeb"]{
+  --card-accent:#166534;
+  --card-soft:#f0fdf4;
+}
+#home .dashboard-card[data-view="speaking"]{
+  --card-accent:#be185d;
+  --card-soft:#fdf2f8;
+}
+
+/* Override the old generic tested/reference top-border rules */
+.tested-group .dashboard-card,
+.reference-group .dashboard-card{
+  border-top-color:var(--card-accent);
+}
