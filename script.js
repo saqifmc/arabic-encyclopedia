@@ -217,7 +217,7 @@ function patchProgress(id, patch){
 }
 async function loadData(){
   const [vocabRes, verbsRes, speakingRes, nahwRes, sarfRes, quranRes] = await Promise.all([
-    fetch('vocab.json'), fetch('verbs.json?v=20261005-remove-bala'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json'), fetch('quranic-tarkeeb.json')
+    fetch('vocab.json'), fetch('verbs.json?v=20261005-saheeh-babs'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json'), fetch('quranic-tarkeeb.json')
   ]);
   const vocabData=await vocabRes.json();
   const verbsData=await verbsRes.json();
@@ -306,6 +306,7 @@ function populateFilters(){
   fillSelect('sourceFilter',unique(DATA.vocabulary.flatMap(sourceValues)));
   fillSelect('formFilter',sortVerbForms(DATA.verbs.map(x=>x.form)));
   fillSelect('verbTypeFilter',unique(DATA.verbs.map(x=>x.verb_type)));
+  fillSelect('babFilter',[...new Map(DATA.verbs.filter(x=>x.bab).sort((a,b)=>(a.bab_number||99)-(b.bab_number||99)).map(x=>[x.bab,x.bab])).values()]);
   fillSelect('sarfSectionFilter',unique(DATA.sarf.map(x=>x.section)));
   fillSelect('speakingTopicFilter',unique(DATA.speaking.map(x=>x.topic)));
   fillSelect('nahwTopicFilter',unique(DATA.nahw.map(x=>x.topic)));
@@ -499,11 +500,11 @@ function verbCard(x){
   const p=progressFor(x.id);
   return `<article class="item verb-entry" data-item-id="${x.id}">
     <div class="item-head"><div style="flex:1"><div class="arabic" lang="ar" dir="rtl">${x.arabic}</div><h3>${x.english}</h3></div><span class="pill ${statusClass(p.status)}">${p.status}</span></div>
-    <div class="meta">Root: <span lang="ar" dir="rtl">${x.root||'—'}</span> · Form: ${x.form||'—'}</div>
-    <div class="verb-tag-row">${x.category?`<span class="verb-tag" lang="ar" dir="rtl">${x.category}</span>`:''}${x.verb_type?`<span class="verb-tag" lang="ar" dir="rtl">${x.verb_type}</span>`:''}${x.subtype?`<span class="verb-tag" lang="ar" dir="rtl">${x.subtype}</span>`:''}</div>
+    <div class="meta">Root: <span lang="ar" dir="rtl">${x.root||'—'}</span> · Form: ${x.form||'—'}${x.bab?` · Bāb: <span lang="ar" dir="rtl">${x.bab}</span>`:''}</div>
+    <div class="verb-tag-row">${x.category?`<span class="verb-tag" lang="ar" dir="rtl">${x.category}</span>`:''}${x.verb_type?`<span class="verb-tag" lang="ar" dir="rtl">${x.verb_type}</span>`:''}${x.bab?`<span class="verb-tag" lang="ar" dir="rtl">${x.bab}</span>`:''}${x.subtype?`<span class="verb-tag" lang="ar" dir="rtl">${x.subtype}</span>`:''}</div>
     <details class="verb-reference-details"><summary>Full reference</summary><div class="verb-data-grid">
       ${verbDataCell('Past',x.past,true)}${verbDataCell('Present',x.present,true)}${verbDataCell('Command',x.command,true)}${verbDataCell('Prohibition',x.prohibition,true)}${verbDataCell('Maṣdar',x.masdar,true)}
-      ${verbDataCell('Active participle',x.active_participle,true)}${verbDataCell('Passive participle',x.passive_participle,true)}${verbDataCell('Pattern',x.pattern,true)}${verbDataCell('Category',x.category,true)}${verbDataCell('Verb type',x.verb_type,true)}${verbDataCell('Source',sourceValues(x))}
+      ${verbDataCell('Active participle',x.active_participle,true)}${verbDataCell('Passive participle',x.passive_participle,true)}${verbDataCell('Pattern',x.pattern,true)}${verbDataCell('Bāb',x.bab,true)}${verbDataCell('Category',x.category,true)}${verbDataCell('Verb type',x.verb_type,true)}${verbDataCell('Source',sourceValues(x))}
     </div></details>
     <div class="meta">Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}</div>${statusControls(x)}
   </article>`;
@@ -515,8 +516,8 @@ function switchVerbPanel(panel){
   if(test&&!currentVerbTest)newVerbTestCard();
 }
 function verbTestPool(){
-  const f=document.getElementById('formFilter')?.value||'',t=document.getElementById('verbTypeFilter')?.value||'';
-  return DATA.verbs.filter(x=>(!f||x.form===f)&&(!t||x.verb_type===t));
+  const f=document.getElementById('formFilter')?.value||'',t=document.getElementById('verbTypeFilter')?.value||'',b=document.getElementById('babFilter')?.value||'';
+  return DATA.verbs.filter(x=>(!f||x.form===f)&&(!t||x.verb_type===t)&&(!b||x.bab===b));
 }
 function newVerbTestCard(){
   const pool=verbTestPool(),p=document.getElementById('verbTestPrompt'),a=document.getElementById('verbTestAnswer');if(!p||!a)return;
@@ -531,7 +532,7 @@ function newVerbTestCard(){
 function revealVerbTest(){
   if(!currentVerbTest)return;
   const m=document.getElementById('verbTestMode')?.value||'ar-en';
-  const main=m==='ar-en'?currentVerbTest.english:m==='en-ar'?currentVerbTest.arabic:m==='past-present'?currentVerbTest.present:m==='present-past'?currentVerbTest.past:m==='root'?currentVerbTest.root:m==='form'?currentVerbTest.form:(currentVerbTest.masdar||'—');
+  const main=m==='ar-en'?currentVerbTest.english:m==='en-ar'?currentVerbTest.arabic:m==='past-present'?currentVerbTest.present:m==='present-past'?currentVerbTest.past:m==='root'?currentVerbTest.root:m==='form'?currentVerbTest.form:m==='bab'?(currentVerbTest.bab||'—'):(currentVerbTest.masdar||'—');
   const b=document.getElementById('verbTestAnswer');
   b.innerHTML=`<div class="verb-answer-main">${main}</div><div class="verb-bio-grid">
     <div class="verb-bio"><span>Root</span><strong class="verb-ar">${currentVerbTest.root||'—'}</strong></div>
@@ -541,6 +542,7 @@ function revealVerbTest(){
     <div class="verb-bio"><span>Prohibition</span><strong class="verb-ar">${currentVerbTest.prohibition||'—'}</strong></div>
     <div class="verb-bio"><span>Maṣdar</span><strong class="verb-ar">${currentVerbTest.masdar||'—'}</strong></div>
     <div class="verb-bio"><span>Form</span><strong>${currentVerbTest.form||'—'}</strong></div>
+    <div class="verb-bio"><span>Bāb</span><strong class="verb-ar">${currentVerbTest.bab||'—'}</strong></div>
     <div class="verb-bio"><span>Category</span><strong class="verb-ar">${currentVerbTest.category||'—'}</strong></div>
     <div class="verb-bio"><span>Verb type</span><strong class="verb-ar">${currentVerbTest.verb_type||'—'}</strong></div>
   </div>${statusControls(currentVerbTest)}`;
@@ -628,8 +630,8 @@ function renderRoots(){
   });
 }
 function renderVerbs(){
-  const form=document.getElementById('formFilter')?.value||'',type=document.getElementById('verbTypeFilter')?.value||'',q=(document.getElementById('verbSearch')?.value||'').toLowerCase();
-  let rows=DATA.verbs.filter(x=>{const h=[x.arabic,x.english,x.root,x.form,x.category,x.verb_type,x.masdar].join(' ').toLowerCase();return(!form||x.form===form)&&(!type||x.verb_type===type)&&h.includes(q)});rows=filterByMetric(rows,SECTION_METRIC_FILTERS.verbs);
+  const form=document.getElementById('formFilter')?.value||'',type=document.getElementById('verbTypeFilter')?.value||'',bab=document.getElementById('babFilter')?.value||'',q=(document.getElementById('verbSearch')?.value||'').toLowerCase();
+  let rows=DATA.verbs.filter(x=>{const h=[x.arabic,x.english,x.root,x.form,x.bab,x.category,x.verb_type,x.masdar].join(' ').toLowerCase();return(!form||x.form===form)&&(!type||x.verb_type===type)&&(!bab||x.bab===bab)&&h.includes(q)});rows=filterByMetric(rows,SECTION_METRIC_FILTERS.verbs);
   rows=sortRecentlyCoveredLast(rows);document.getElementById('verbsList').innerHTML=rows.map(verbCard).join('')||'<p>No verbs match these filters.</p>';bindDynamicButtons();
 }
 function renderSpeaking(){
@@ -778,6 +780,7 @@ function revisionPool(){
   if(mode==='verb-present-past') pool=pool.filter(x=>x.present&&x.past);
   if(mode==='verb-root') pool=pool.filter(x=>x.root);
   if(mode==='verb-form') pool=pool.filter(x=>x.form);
+  if(mode==='verb-bab') pool=pool.filter(x=>x.bab);
   if(mode==='verb-masdar') pool=pool.filter(x=>x.masdar);
 
   pool=pool.filter(x=>{
@@ -859,6 +862,13 @@ function newRevisionCard(){
       promptArabic=true;
       break;
 
+    case 'verb-bab':
+      promptText=currentCard.arabic||currentCard.past||'';
+      answerText=currentCard.bab||'—';
+      promptArabic=true;
+      answerArabic=true;
+      break;
+
     case 'verb-masdar':
       promptText=currentCard.arabic||currentCard.past||'';
       answerText=currentCard.masdar||'—';
@@ -904,6 +914,7 @@ function bindEvents(){
   ['vocabSearch','categoryFilter','typeFilter','sourceFilter','statusFilter','favouriteFilter'].forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.vocabulary='all';renderSectionDashboards();renderVocabulary();}));
   document.getElementById('formFilter').addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
   document.getElementById('verbTypeFilter')?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
+  document.getElementById('babFilter')?.addEventListener('input',()=>{SECTION_METRIC_FILTERS.verbs='all';renderSectionDashboards();renderVerbs();if(currentVerbTest)newVerbTestCard();});
   document.getElementById('verbSearch')?.addEventListener('input',renderVerbs);
   document.querySelectorAll('[data-verb-panel]').forEach(btn=>btn.addEventListener('click',()=>switchVerbPanel(btn.dataset.verbPanel)));
   document.getElementById('newVerbTestBtn')?.addEventListener('click',newVerbTestCard);
@@ -946,7 +957,7 @@ function bindEvents(){
     const box=document.getElementById('searchResults');
     if(!q){box.classList.add('hidden');box.innerHTML='';return;}
     const vocab=DATA.vocabulary.filter(x=>[x.arabic,x.english,x.root,x.topic].join(' ').toLowerCase().includes(q));
-    const verbs=DATA.verbs.filter(x=>[x.arabic,x.english,x.root,x.topic,x.form].join(' ').toLowerCase().includes(q));
+    const verbs=DATA.verbs.filter(x=>[x.arabic,x.english,x.root,x.topic,x.form,x.bab].join(' ').toLowerCase().includes(q));
     const speaking=DATA.speaking.filter(x=>[x.arabic,x.english,x.topic].join(' ').toLowerCase().includes(q));
     const nahw=DATA.nahw.filter(x=>[x.arabic,x.english,x.topic,x.summary].join(' ').toLowerCase().includes(q));
     const sarf=DATA.sarf.filter(x=>[x.arabic,x.english,x.section,x.summary].join(' ').toLowerCase().includes(q));
