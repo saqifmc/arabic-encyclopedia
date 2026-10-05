@@ -22,11 +22,11 @@
       <button data-view="vocabulary">Vocabulary</button>
       <button data-view="roots">Roots</button>
       <button data-view="verbs">Verbs</button>
+      <button data-view="revision">Revision</button>
       <button data-view="sarf">Sarf</button>
-      <button data-view="speaking">Speaking</button>
       <button data-view="nahw">Nahw</button>
       <button data-view="quranic-tarkeeb">Quranic Tarkeeb</button>
-      <button data-view="revision">Revision</button>
+      <button data-view="speaking">Speaking</button>
     </nav>
   </header>
 
@@ -62,16 +62,37 @@
         <input id="globalSearch" type="search" placeholder="Search Arabic, English, root or topic..." />
       </div>
 
-      <div class="cards">
-        <button class="dashboard-card" data-view="progress"><strong>Progress</strong><small>Track what you have covered</small></button>
-        <button class="dashboard-card" data-view="vocabulary"><strong>Vocabulary</strong><small>Browse all words</small></button>
-        <button class="dashboard-card" data-view="roots"><strong>Roots</strong><small>Explore word families</small></button>
-        <button class="dashboard-card" data-view="verbs"><strong>Verbs</strong><small>Reference library and testing</small></button>
-        <button class="dashboard-card" data-view="sarf"><strong>Sarf</strong><small>Foundational morphology topics</small></button>
-        <button class="dashboard-card" data-view="speaking"><strong>Speaking Phrases</strong><small>Useful spoken Arabic</small></button>
-        <button class="dashboard-card" data-view="nahw"><strong>Nahw Concepts</strong><small>Your grammar reference</small></button>
-        <button class="dashboard-card" data-view="quranic-tarkeeb"><strong>Quranic Tarkeeb</strong><small>Analyse Qur'anic sentence structure</small></button>
-        <button class="dashboard-card" data-view="revision"><strong>Revision</strong><small>Focus on weaker items</small></button>
+      <div class="home-topic-group tested-group">
+        <div class="home-group-head">
+          <div>
+            <span class="eyebrow dark">TESTED & TRACKED</span>
+            <h2>Learning & Testing</h2>
+            <p>These sections contribute to your progress and revision.</p>
+          </div>
+        </div>
+        <div class="cards">
+          <button class="dashboard-card" data-view="progress"><strong>Progress</strong><small>Track tested material</small></button>
+          <button class="dashboard-card" data-view="vocabulary"><strong>Vocabulary</strong><small>Learn and test your word bank</small></button>
+          <button class="dashboard-card" data-view="roots"><strong>Roots</strong><small>Explore tested word families</small></button>
+          <button class="dashboard-card" data-view="verbs"><strong>Verbs</strong><small>Verb reference and testing</small></button>
+          <button class="dashboard-card" data-view="revision"><strong>Revision</strong><small>Test vocabulary and verbs</small></button>
+        </div>
+      </div>
+
+      <div class="home-topic-group reference-group">
+        <div class="home-group-head">
+          <div>
+            <span class="eyebrow dark">REFERENCE ONLY</span>
+            <h2>Study & Reference</h2>
+            <p>These sections are viewable by topic and do not affect testing or progress.</p>
+          </div>
+        </div>
+        <div class="cards">
+          <button class="dashboard-card reference-card" data-view="sarf"><strong>Sarf</strong><small>Foundational morphology reference</small></button>
+          <button class="dashboard-card reference-card" data-view="nahw"><strong>Nahw Concepts</strong><small>Grammar reference by topic</small></button>
+          <button class="dashboard-card reference-card" data-view="quranic-tarkeeb"><strong>Quranic Tarkeeb</strong><small>Qur'anic sentence structure</small></button>
+          <button class="dashboard-card reference-card" data-view="speaking"><strong>Speaking Phrases</strong><small>Browse phrases by category</small></button>
+        </div>
       </div>
 
       <div id="stats" class="stats"></div>
@@ -80,7 +101,7 @@
 
     <section id="progress" class="view">
       <div class="section-head">
-        <div><h2>Progress Dashboard</h2><p>Your current coverage across vocabulary and speaking phrases.</p></div>
+        <div><h2>Progress Dashboard</h2><p>Your tracked progress across tested vocabulary and verbs.</p></div>
         <button id="resetProgressBtn" class="ghost danger">Reset progress</button>
       </div>
       <div id="progressSummary" class="progress-summary"></div>
@@ -198,10 +219,9 @@
 
     <section id="nahw" class="view section-nahw">
       <div class="section-head">
-        <div><h2>Nahw Concepts</h2><p>Your personal Arabic grammar reference and revision bank.</p></div>
+        <div><h2>Nahw Concepts</h2><p>Browse grammar concepts by topic. This section is reference-only and is not included in testing or progress tracking.</p></div>
         <select id="nahwTopicFilter"><option value="">All topics</option></select>
       </div>
-      <div id="nahwDashboard" class="section-dashboard"></div>
       <div class="nahw-keyterms-panel">
         <div class="nahw-keyterms-head">
           <div>
@@ -369,7 +389,6 @@
           <option value="ar-en">Arabic → English</option>
           <option value="en-ar">English → Arabic</option>
           <option value="verbs">Verbs</option>
-          <option value="nahw">Nahw Concepts</option>
         </select>
         <select id="revisionSubset">
           <option value="all">All items</option>
@@ -407,6 +426,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261005-speaking1"></script>
+  <script src="script.js?v=20261005-tested-reference"></script>
 </body>
 </html>
