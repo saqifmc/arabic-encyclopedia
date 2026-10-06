@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261006-root-detail-pages" />
+  <link rel="stylesheet" href="style.css?v=20261006-search-reset-source-cleanup" />
 </head>
 <body>
   <div id="updateBanner" class="update-banner hidden" role="status" aria-live="polite">
@@ -127,7 +127,10 @@
     <section id="vocabulary" class="view section-vocab">
       <div class="section-head">
         <div><h2>Vocabulary</h2><p>Your complete Arabic word bank.</p></div>
-        <input id="vocabSearch" type="search" placeholder="Search vocabulary..." />
+        <div class="section-search-controls">
+          <input id="vocabSearch" type="search" placeholder="Search vocabulary..." />
+          <button id="resetVocabFilters" type="button" class="section-reset-btn">Reset</button>
+        </div>
       </div>
       <div id="vocabDashboard" class="section-dashboard"></div>
       <div class="verb-tabs vocab-set-tabs" aria-label="Vocabulary sets">
@@ -155,6 +158,10 @@
     <section id="roots" class="view section-roots">
       <div class="section-head">
         <div><h2>Arabic Roots</h2><p>See words grouped into related families.</p></div>
+        <div class="section-search-controls">
+          <input id="rootSearch" type="search" placeholder="Search root, word or meaning..." />
+          <button id="resetRootFilters" type="button" class="section-reset-btn">Reset</button>
+        </div>
       </div>
       <div id="rootsBrowse">
         <div id="rootsDashboard" class="section-dashboard"></div>
@@ -183,7 +190,10 @@
     <section id="verbs" class="view section-verbs">
       <div class="section-head">
         <div><h2>Verbs</h2><p>Your Sarf-based verb reference library and testing bank.</p></div>
-        <input id="verbSearch" type="search" placeholder="Search verb, meaning or root..." />
+        <div class="section-search-controls">
+          <input id="verbSearch" type="search" placeholder="Search verb, meaning or root..." />
+          <button id="resetVerbFilters" type="button" class="section-reset-btn">Reset</button>
+        </div>
       </div>
 
       <div id="verbsDashboard" class="section-dashboard"></div>
@@ -381,6 +391,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261006-verb-command-passive"></script>
+  <script src="script.js?v=20261006-search-reset-source-cleanup"></script>
 </body>
 </html>

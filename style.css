@@ -1621,3 +1621,50 @@ button,a,input,select,summary{touch-action:manipulation}
     grid-template-columns:1fr 1fr;
   }
 }
+
+
+/* Search/reset controls */
+.section-search-controls{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  width:min(100%,600px);
+}
+.section-search-controls input{
+  flex:1 1 auto;
+  min-width:0;
+  max-width:none;
+}
+.section-reset-btn{
+  appearance:none;
+  flex:0 0 auto;
+  border:1px solid rgba(255,255,255,.75);
+  background:#fff;
+  color:var(--section-header,var(--green));
+  border-radius:12px;
+  padding:12px 15px;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 3px 10px rgba(15,23,42,.06);
+}
+.section-reset-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 5px 14px rgba(15,23,42,.1);
+}
+.section-roots .section-head input{
+  background:#fff;
+  color:#1f2937;
+  border-color:rgba(255,255,255,.55);
+}
+@media(max-width:650px){
+  .section-search-controls{
+    width:100%;
+  }
+  .section-search-controls input{
+    flex:1 1 0;
+  }
+  .section-reset-btn{
+    padding:12px 13px;
+  }
+}

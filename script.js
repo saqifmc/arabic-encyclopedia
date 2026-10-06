@@ -641,10 +641,10 @@ function verbCard(x){
     <div class="item-head"><div style="flex:1"><div class="arabic" lang="ar" dir="rtl">${x.arabic}</div><h3>${x.english}</h3></div><span class="pill ${statusClass(p.status)}">${p.status}</span></div>
     <div class="meta">Root: <span lang="ar" dir="rtl">${x.root||'—'}</span> · Form: ${x.form||'—'}${x.bab?` · Bāb: <span lang="ar" dir="rtl">${x.bab}</span>`:''}</div>
     <div class="verb-tag-row">${x.category?`<span class="verb-tag" lang="ar" dir="rtl">${x.category}</span>`:''}${x.verb_type?`<span class="verb-tag" lang="ar" dir="rtl">${x.verb_type}</span>`:''}${x.bab?`<span class="verb-tag" lang="ar" dir="rtl">${x.bab}</span>`:''}${x.subtype?`<span class="verb-tag" lang="ar" dir="rtl">${x.subtype}</span>`:''}</div>
-    <div class="vocab-source-row">${sourceValues(x).map(s=>`<span class="vocab-source-tag">${s}</span>`).join('')}${x.quran_frequency?`<span class="quran-frequency-tag">Qur'an occurrences: ${x.quran_frequency}</span>`:''}</div>
+    ${x.quran_frequency?`<div class="vocab-source-row"><span class="quran-frequency-tag">Qur'an occurrences: ${x.quran_frequency}</span></div>`:''}
     <details class="verb-reference-details"><summary>Full reference</summary><div class="verb-data-grid">
       ${verbDataCell('Past',x.past,true)}${verbDataCell('Present',x.present,true)}${verbDataCell('Command',verbCommandValue(x),true)}${verbDataCell('Prohibition',verbProhibitionValue(x),true)}${verbDataCell('Passive past',verbPassivePastValue(x),true)}${verbDataCell('Passive present',verbPassivePresentValue(x),true)}${verbDataCell('Maṣdar',x.masdar,true)}
-      ${verbDataCell('Active participle',x.active_participle,true)}${verbDataCell('Passive participle',x.passive_participle,true)}${verbDataCell('Pattern',x.pattern,true)}${verbDataCell('Bāb',x.bab,true)}${verbDataCell('Category',x.category,true)}${verbDataCell('Verb type',x.verb_type,true)}${verbDataCell('Source',sourceValues(x))}
+      ${verbDataCell('Active participle',x.active_participle,true)}${verbDataCell('Passive participle',x.passive_participle,true)}${verbDataCell('Pattern',x.pattern,true)}${verbDataCell('Bāb',x.bab,true)}${verbDataCell('Category',x.category,true)}${verbDataCell('Verb type',x.verb_type,true)}
     </div></details>
     <div class="meta">Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}</div>${statusControls(x)}
   </article>`;
@@ -1215,7 +1215,6 @@ function rootVerbDetailCard(x){
       ${rootSummaryTag('Type',x.verb_type,true)}
     </div>
     ${x.quran_frequency?`<div class="root-quran-count">Qur'an occurrences: <strong>${x.quran_frequency}</strong></div>`:''}
-    ${sourceValues(x).length?`<div class="vocab-source-row">${sourceValues(x).map(s=>`<span class="vocab-source-tag">${s}</span>`).join('')}</div>`:''}
     ${statusControls(x)}
     <button type="button" class="root-open-item" data-root-item-id="${x.id}">Open full verb entry</button>
   </article>`;
@@ -1351,7 +1350,12 @@ function renderRoots(){
   const groups=getRootGroups();
   const sort=document.getElementById('rootSort')?.value||'alphabetical';
   const letter=document.getElementById('rootLetterFilter')?.value||'';
+  const q=(document.getElementById('rootSearch')?.value||'').trim().toLowerCase();
   let entries=Object.entries(groups).map(([root,items])=>({root,items,progress:rootProgress(items)}));
+  if(q) entries=entries.filter(({root,items})=>{
+    const hay=[root,...items.flatMap(x=>[x.arabic,x.english,x.root,x.past,x.present,x.masdar])].filter(Boolean).join(' ').toLowerCase();
+    return hay.includes(q);
+  });
   if(letter) entries=entries.filter(x=>rootInitial(x.root)===letter);
   if(ROOT_METRIC_FILTER==='not-started')entries=entries.filter(x=>x.progress.pct===0);
   if(ROOT_METRIC_FILTER==='started')entries=entries.filter(x=>x.progress.pct>0);
@@ -1681,6 +1685,51 @@ function rateCurrent(rating){
   renderAll(); newRevisionCard();
 }
 function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});}
+function resetVocabularyFilters(){
+  VOCAB_PAGE=1;
+  VOCAB_COLLECTION_FILTER='all';
+  SECTION_METRIC_FILTERS.vocabulary='all';
+
+  const values={
+    vocabSearch:'',
+    categoryFilter:'',
+    typeFilter:'',
+    sourceFilter:'',
+    statusFilter:''
+  };
+  Object.entries(values).forEach(([id,value])=>{const el=document.getElementById(id);if(el)el.value=value;});
+  const fav=document.getElementById('favouriteFilter');if(fav)fav.checked=false;
+  document.querySelectorAll('[data-vocab-set]').forEach(btn=>btn.classList.toggle('active',btn.dataset.vocabSet==='all'));
+  renderSectionDashboards();
+  renderVocabulary();
+}
+
+function resetVerbFilters(){
+  VERB_PAGE=1;
+  VERB_COLLECTION_FILTER='all';
+  SECTION_METRIC_FILTERS.verbs='all';
+
+  ['verbSearch','formFilter','verbTypeFilter','babFilter'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.value='';
+  });
+  document.querySelectorAll('[data-verb-set]').forEach(btn=>btn.classList.toggle('active',btn.dataset.verbSet==='all'));
+  renderSectionDashboards();
+  renderVerbs();
+  if(currentVerbTest)newVerbTestCard();
+}
+
+function resetRootFilters(){
+  SELECTED_ROOT=null;
+  ROOT_METRIC_FILTER='all';
+
+  const search=document.getElementById('rootSearch');if(search)search.value='';
+  const letter=document.getElementById('rootLetterFilter');if(letter)letter.value='';
+  const sort=document.getElementById('rootSort');if(sort)sort.value='alphabetical';
+
+  renderRootsDashboard();
+  renderRoots();
+}
+
 function bindEvents(){
   document.addEventListener('click',e=>{
     const statusBtn=e.target.closest('[data-status-id]');
@@ -1724,8 +1773,12 @@ function bindEvents(){
   document.getElementById('revealVerbTestBtn')?.addEventListener('click',revealVerbTest);
   document.getElementById('verbTestMode')?.addEventListener('change',newVerbTestCard);
   document.getElementById('sarfSectionFilter')?.addEventListener('input',renderSarf);
+  document.getElementById('rootSearch')?.addEventListener('input',renderRoots);
   document.getElementById('rootSort')?.addEventListener('input',renderRoots);
   document.getElementById('rootLetterFilter')?.addEventListener('input',renderRoots);
+  document.getElementById('resetVocabFilters')?.addEventListener('click',resetVocabularyFilters);
+  document.getElementById('resetVerbFilters')?.addEventListener('click',resetVerbFilters);
+  document.getElementById('resetRootFilters')?.addEventListener('click',resetRootFilters);
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
   document.getElementById('nahwTopicFilter')?.addEventListener('input',renderNahw);
   document.getElementById('quranSurahFilter')?.addEventListener('change',renderQuranicTarkeeb);
