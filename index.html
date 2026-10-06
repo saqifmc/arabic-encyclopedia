@@ -8,16 +8,19 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Arabic Encyclopedia" />
   <link rel="icon" type="image/png" href="favicon.png?v=20261005-ios-icon-fix" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20261005-ios-icon-fix" />
-  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png?v=20261005-ios-icon-fix" />
-  <link rel="manifest" href="site.webmanifest?v=20261005-ios-icon-fix" />
+  <link rel="manifest" href="site.webmanifest?v=20261006-default-icon" />
 <title>My Arabic Encyclopedia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261005-status-roots" />
+  <link rel="stylesheet" href="style.css?v=20261006-mobile-nav-update" />
 </head>
 <body>
+  <div id="updateBanner" class="update-banner hidden" role="status" aria-live="polite">
+    <span>A newer version is available.</span>
+    <button id="refreshAppBtn" type="button">Refresh now</button>
+    <button id="dismissUpdateBtn" class="update-dismiss" type="button" aria-label="Dismiss update notice">×</button>
+  </div>
   <header class="topbar">
     <div class="brand">
       <div class="arabic-title" lang="ar" dir="rtl">مَوْسُوعَتِي الْعَرَبِيَّةُ</div>
@@ -360,6 +363,14 @@
 
   </main>
 
+  <nav class="mobile-bottom-nav" aria-label="Primary mobile navigation">
+    <button type="button" data-view="vocabulary"><span class="mobile-nav-icon">A</span><span>Vocabulary</span></button>
+    <button type="button" data-view="verbs"><span class="mobile-nav-icon">ف</span><span>Verbs</span></button>
+    <button type="button" data-view="roots"><span class="mobile-nav-icon">ج</span><span>Roots</span></button>
+    <button type="button" data-view="revision"><span class="mobile-nav-icon">↻</span><span>Revision</span></button>
+    <button type="button" data-view="progress"><span class="mobile-nav-icon">✓</span><span>Progress</span></button>
+  </nav>
+
   <footer>
     Progress is saved on this device and syncs to Firebase when you sign in.
   </footer>
@@ -367,6 +378,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261005-status-roots"></script>
+  <script src="script.js?v=20261006-mobile-nav-update"></script>
 </body>
 </html>
