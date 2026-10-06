@@ -1214,3 +1214,107 @@ button,a,input,select,summary{touch-action:manipulation}
   .root-filter-controls{width:100%}
   .root-filter-controls select{max-width:none;flex:1 1 180px}
 }
+
+
+/* App update notice */
+.update-banner{
+  position:fixed;
+  top:max(10px,env(safe-area-inset-top));
+  left:50%;
+  transform:translateX(-50%);
+  z-index:1200;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:min(92vw,560px);
+  padding:10px 12px 10px 16px;
+  border:1px solid #b9d7ca;
+  border-radius:14px;
+  background:#fff;
+  color:#173f34;
+  box-shadow:0 12px 32px rgba(15,23,42,.16);
+  font-size:.9rem;
+  font-weight:600;
+}
+.update-banner span{flex:1}
+.update-banner button{
+  border:0;
+  border-radius:10px;
+  background:#174f3f;
+  color:#fff;
+  padding:8px 11px;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+.update-banner .update-dismiss{
+  width:34px;
+  height:34px;
+  padding:0;
+  background:transparent;
+  color:#64748b;
+  font-size:1.4rem;
+}
+
+/* Mobile primary navigation */
+.mobile-bottom-nav{display:none}
+@media(max-width:760px){
+  body{
+    padding-bottom:calc(82px + env(safe-area-inset-bottom));
+  }
+  .mobile-bottom-nav{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:1100;
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:2px;
+    padding:7px 6px calc(7px + env(safe-area-inset-bottom));
+    border-top:1px solid #d9e2de;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 -8px 24px rgba(15,23,42,.08);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+  .mobile-bottom-nav button{
+    display:flex;
+    min-width:0;
+    min-height:52px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    padding:4px 2px;
+    border:0;
+    border-radius:11px;
+    background:transparent;
+    color:#64748b;
+    font:inherit;
+    font-size:.66rem;
+    line-height:1.1;
+    cursor:pointer;
+  }
+  .mobile-bottom-nav .mobile-nav-icon{
+    display:grid;
+    place-items:center;
+    width:26px;
+    height:24px;
+    font-size:1rem;
+    font-weight:800;
+    line-height:1;
+  }
+  .mobile-bottom-nav button.active{
+    background:#eef7f3;
+    color:#174f3f;
+    font-weight:800;
+  }
+  footer{
+    margin-bottom:0;
+  }
+  .update-banner{
+    top:max(8px,env(safe-area-inset-top));
+    width:calc(100vw - 20px);
+  }
+}
