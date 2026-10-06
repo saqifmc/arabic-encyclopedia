@@ -540,32 +540,70 @@ function renderRootsDashboard(){
 function openRootItem(id){
   const vocabItem=DATA.vocabulary.find(x=>x.id===id);
   const verbItem=DATA.verbs.find(x=>x.id===id);
+
   if(vocabItem){
     VOCAB_PAGE=1;
-    showView('vocabulary');
+    VOCAB_COLLECTION_FILTER='all';
+    SECTION_METRIC_FILTERS.vocabulary='all';
+
     const q=document.getElementById('vocabSearch');
+    const category=document.getElementById('categoryFilter');
     const type=document.getElementById('typeFilter');
     const source=document.getElementById('sourceFilter');
     const status=document.getElementById('statusFilter');
     const fav=document.getElementById('favouriteFilter');
+
     if(q) q.value=vocabItem.arabic;
+    if(category) category.value='';
     if(type) type.value='';
     if(source) source.value='';
     if(status) status.value='';
     if(fav) fav.checked=false;
+
+    document.querySelectorAll('[data-vocab-set]').forEach(btn=>{
+      btn.classList.toggle('active',btn.dataset.vocabSet==='all');
+    });
+
+    showView('vocabulary');
+    renderSectionDashboards();
     renderVocabulary();
-  } else if(verbItem){
-    VERB_PAGE=1;
-    showView('verbs');
-    const form=document.getElementById('formFilter');
-    if(form) form.value='';
-    renderVerbs();
+
     setTimeout(()=>{
-      document.querySelector(`[data-item-id="${id}"]`)?.scrollIntoView({behavior:'smooth',block:'center'});
-    },50);
+      document.querySelector(`#vocabList [data-item-id="${id}"]`)?.scrollIntoView({behavior:'smooth',block:'center'});
+    },80);
+    return;
+  }
+
+  if(verbItem){
+    VERB_PAGE=1;
+    VERB_COLLECTION_FILTER='all';
+    SECTION_METRIC_FILTERS.verbs='all';
+
+    const q=document.getElementById('verbSearch');
+    const form=document.getElementById('formFilter');
+    const type=document.getElementById('verbTypeFilter');
+    const bab=document.getElementById('babFilter');
+
+    // Search for the exact selected verb so pagination cannot hide it.
+    if(q) q.value=verbItem.arabic||verbItem.past||verbItem.english||'';
+    if(form) form.value='';
+    if(type) type.value='';
+    if(bab) bab.value='';
+
+    document.querySelectorAll('[data-verb-set]').forEach(btn=>{
+      btn.classList.toggle('active',btn.dataset.verbSet==='all');
+    });
+    switchVerbPanel('reference');
+
+    showView('verbs');
+    renderSectionDashboards();
+    renderVerbs();
+
+    setTimeout(()=>{
+      document.querySelector(`#verbsList [data-item-id="${id}"]`)?.scrollIntoView({behavior:'smooth',block:'center'});
+    },80);
   }
 }
-
 function statusControls(x){
   const p=progressFor(x.id);
   return `<div class="status-row">
