@@ -1894,3 +1894,20 @@ button,a,input,select,summary{touch-action:manipulation}
     font-size:1.35rem;
   }
 }
+
+
+/* Account panel below section title */
+.view>.account-panel{
+  max-width:none;
+  margin:0 0 20px;
+  padding:0;
+}
+.view>.account-panel>div{
+  width:100%;
+}
+@media(max-width:700px){
+  .view>.account-panel{
+    padding:0;
+    margin:0 0 16px;
+  }
+}

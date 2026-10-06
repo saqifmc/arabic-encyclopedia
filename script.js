@@ -323,6 +323,7 @@ function setup(){
   bindNavigation();
   populateFilters();
   bindEvents();
+  positionAccountPanel(document.querySelector('.view.active')?.id||'home');
   document.getElementById('googleSignInBtn')?.addEventListener('click',signInWithGoogle);
   document.getElementById('signOutBtn')?.addEventListener('click',signOut);
   renderAll();
@@ -372,6 +373,7 @@ function showView(id){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.mobile-bottom-nav [data-view]').forEach(btn=>btn.classList.toggle('active',btn.dataset.view===id));
+  positionAccountPanel(id);
   renderActiveView();
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -406,6 +408,22 @@ function populateFilters(){
   fillSelect('nahwTopicFilter',unique(DATA.nahw.map(x=>x.topic)));
   fillSelect('rootLetterFilter',ARABIC_ALPHABET);
 }
+function positionAccountPanel(viewId){
+  const panel=document.getElementById('accountPanel');
+  const view=document.getElementById(viewId);
+  if(!panel||!view) return;
+
+  const anchor=viewId==='home'
+    ? view.querySelector('.hero')
+    : view.querySelector('.section-head');
+
+  if(anchor){
+    anchor.insertAdjacentElement('afterend',panel);
+  }else{
+    view.insertAdjacentElement('afterbegin',panel);
+  }
+}
+
 function renderActiveView(){
   const id=document.querySelector('.view.active')?.id||'home';
   if(id==='vocabulary') renderVocabulary();
