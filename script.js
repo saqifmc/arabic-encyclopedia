@@ -643,7 +643,7 @@ function verbCard(x){
     <div class="verb-tag-row">${x.category?`<span class="verb-tag" lang="ar" dir="rtl">${x.category}</span>`:''}${x.verb_type?`<span class="verb-tag" lang="ar" dir="rtl">${x.verb_type}</span>`:''}${x.bab?`<span class="verb-tag" lang="ar" dir="rtl">${x.bab}</span>`:''}${x.subtype?`<span class="verb-tag" lang="ar" dir="rtl">${x.subtype}</span>`:''}</div>
     <div class="vocab-source-row">${sourceValues(x).map(s=>`<span class="vocab-source-tag">${s}</span>`).join('')}${x.quran_frequency?`<span class="quran-frequency-tag">Qur'an occurrences: ${x.quran_frequency}</span>`:''}</div>
     <details class="verb-reference-details"><summary>Full reference</summary><div class="verb-data-grid">
-      ${verbDataCell('Past',x.past,true)}${verbDataCell('Present',x.present,true)}${verbDataCell('Command',x.command,true)}${verbDataCell('Prohibition',x.prohibition,true)}${verbDataCell('Maṣdar',x.masdar,true)}
+      ${verbDataCell('Past',x.past,true)}${verbDataCell('Present',x.present,true)}${verbDataCell('Command',verbCommandValue(x),true)}${verbDataCell('Prohibition',verbProhibitionValue(x),true)}${verbDataCell('Passive past',verbPassivePastValue(x),true)}${verbDataCell('Passive present',verbPassivePresentValue(x),true)}${verbDataCell('Maṣdar',x.masdar,true)}
       ${verbDataCell('Active participle',x.active_participle,true)}${verbDataCell('Passive participle',x.passive_participle,true)}${verbDataCell('Pattern',x.pattern,true)}${verbDataCell('Bāb',x.bab,true)}${verbDataCell('Category',x.category,true)}${verbDataCell('Verb type',x.verb_type,true)}${verbDataCell('Source',sourceValues(x))}
     </div></details>
     <div class="meta">Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}</div>${statusControls(x)}
@@ -682,8 +682,10 @@ function revealVerbTest(){
     <div class="verb-bio"><span>Root</span><strong class="verb-ar">${currentVerbTest.root||'—'}</strong></div>
     <div class="verb-bio"><span>Past</span><strong class="verb-ar">${currentVerbTest.past||'—'}</strong></div>
     <div class="verb-bio"><span>Present</span><strong class="verb-ar">${currentVerbTest.present||'—'}</strong></div>
-    <div class="verb-bio"><span>Command</span><strong class="verb-ar">${currentVerbTest.command||'—'}</strong></div>
-    <div class="verb-bio"><span>Prohibition</span><strong class="verb-ar">${currentVerbTest.prohibition||'—'}</strong></div>
+    <div class="verb-bio"><span>Command</span><strong class="verb-ar">${verbCommandValue(currentVerbTest)}</strong></div>
+    <div class="verb-bio"><span>Prohibition</span><strong class="verb-ar">${verbProhibitionValue(currentVerbTest)}</strong></div>
+    <div class="verb-bio"><span>Passive past</span><strong class="verb-ar">${verbPassivePastValue(currentVerbTest)}</strong></div>
+    <div class="verb-bio"><span>Passive present</span><strong class="verb-ar">${verbPassivePresentValue(currentVerbTest)}</strong></div>
     <div class="verb-bio"><span>Maṣdar</span><strong class="verb-ar">${currentVerbTest.masdar||'—'}</strong></div>
     <div class="verb-bio"><span>Form</span><strong>${currentVerbTest.form||'—'}</strong></div>
     <div class="verb-bio"><span>Bāb</span><strong class="verb-ar">${currentVerbTest.bab||'—'}</strong></div>
@@ -795,6 +797,363 @@ function rootInitial(root){
   return clean.charAt(0);
 }
 
+
+const AR_MORPH_MARK=/[\u064B-\u065F\u0670\u06D6-\u06ED]/;
+const AR_MORPH_SHADDA='\u0651';
+const AR_MORPH_FATHA='\u064E';
+const AR_MORPH_DAMMA='\u064F';
+const AR_MORPH_KASRA='\u0650';
+const AR_MORPH_SUKUN='\u0652';
+
+function morphClusters(s){
+  const out=[];
+  for(const ch of String(s||'').normalize('NFC')){
+    if(AR_MORPH_MARK.test(ch)&&out.length) out[out.length-1]+=ch;
+    else out.push(ch);
+  }
+  return out.filter(Boolean);
+}
+function morphBase(c){return c?c[0]:'';}
+function morphMarks(c){return c?c.slice(1):'';}
+function morphHas(c,m){return morphMarks(c).includes(m);}
+function morphVowel(c){
+  if(morphHas(c,AR_MORPH_KASRA))return AR_MORPH_KASRA;
+  if(morphHas(c,AR_MORPH_DAMMA))return AR_MORPH_DAMMA;
+  if(morphHas(c,AR_MORPH_FATHA))return AR_MORPH_FATHA;
+  if(morphHas(c,AR_MORPH_SUKUN))return AR_MORPH_SUKUN;
+  return '';
+}
+function morphSetVowel(c,v){
+  if(!c)return c;
+  return morphBase(c)+(morphHas(c,AR_MORPH_SHADDA)?AR_MORPH_SHADDA:'')+(v||'');
+}
+function morphSetBase(c,base){return base+morphMarks(c);}
+function morphBareLong(c){
+  return ['ا','و','ي','ى'].includes(morphBase(c))&&!morphVowel(c)&&!morphHas(c,AR_MORPH_SHADDA);
+}
+function morphReseatHamza(cs){
+  cs=[...cs];
+  for(let i=0;i<cs.length;i++){
+    if(!['ء','أ','إ','ؤ','ئ'].includes(morphBase(cs[i]))) continue;
+    const own=morphVowel(cs[i]);
+    let base=morphBase(cs[i]);
+
+    if(i===0){
+      base=own===AR_MORPH_KASRA?'إ':'أ';
+    }else if(i===cs.length-1){
+      const prev=cs[i-1];
+      if(morphBareLong(prev)) base='ء';
+      else{
+        const pv=morphVowel(prev);
+        base=pv===AR_MORPH_KASRA?'ئ':pv===AR_MORPH_DAMMA?'ؤ':pv===AR_MORPH_FATHA?'أ':'ء';
+      }
+    }else{
+      const prev=cs[i-1];
+      const pv=morphBareLong(prev)?'':morphVowel(prev);
+      const rank={
+        [AR_MORPH_KASRA]:4,
+        [AR_MORPH_DAMMA]:3,
+        [AR_MORPH_FATHA]:2,
+        [AR_MORPH_SUKUN]:1,
+        '':0
+      };
+      const strong=rank[own]>=rank[pv]?own:pv;
+      base=strong===AR_MORPH_KASRA?'ئ':strong===AR_MORPH_DAMMA?'ؤ':strong===AR_MORPH_FATHA?'أ':'ء';
+    }
+    cs[i]=morphSetBase(cs[i],base);
+  }
+  return cs;
+}
+function morphJoin(cs){return morphReseatHamza(cs).join('').normalize('NFC');}
+function verbTypeHas(x,needle){return String(x?.verb_type||'').includes(needle);}
+function verbIsDefective(x){
+  if(verbTypeHas(x,'النَّاقِص')||verbTypeHas(x,'اللَّفِيف')) return true;
+  const cs=morphClusters(x?.present);
+  const last=cs.at(-1);
+  return ['ا','ى','ي','و'].includes(morphBase(last))&&!morphVowel(last);
+}
+function verbIsHollow(x){
+  return verbTypeHas(x,'الْأَجْوَف')||verbTypeHas(x,'أَجْوَف');
+}
+function verbIsDoubled(x){
+  return verbTypeHas(x,'الْمُضَاعَف')||morphClusters(x?.past).some(c=>morphHas(c,AR_MORPH_SHADDA));
+}
+function verbHasContractedHollowPresent(x,cs){
+  if(!['I','IV','VII','VIII','X'].includes(x?.form)) return false;
+  return cs.some((c,i)=>i>0&&i<cs.length-1&&['ا','و','ي'].includes(morphBase(c))&&morphBareLong(c));
+}
+function verbSecondPersonJussive(x){
+  let cs=morphClusters(x?.present);
+  if(!cs.length) return '';
+
+  cs[0]=morphSetBase(cs[0],'ت');
+
+  if(verbHasContractedHollowPresent(x,cs)){
+    const li=cs.findIndex((c,i)=>i>0&&i<cs.length-1&&['ا','و','ي'].includes(morphBase(c))&&morphBareLong(c));
+    if(li>0) cs.splice(li,1);
+  }
+
+  const last=cs.at(-1);
+  if(['ا','ى','ي','و'].includes(morphBase(last))&&!morphVowel(last)){
+    cs.pop();
+    return morphJoin(cs);
+  }
+
+  if(morphHas(last,AR_MORPH_SHADDA)){
+    cs[cs.length-1]=morphSetVowel(last,AR_MORPH_FATHA);
+  }else{
+    cs[cs.length-1]=morphSetVowel(last,AR_MORPH_SUKUN);
+  }
+  return morphJoin(cs);
+}
+function verbCommandValue(x){
+  if(x?.form==='I'&&verbTypeHas(x,'الْمَهْمُوز')&&x.command&&x.command!=='—') return x.command;
+
+  const jussive=verbSecondPersonJussive(x);
+  let cs=morphClusters(jussive);
+  if(!cs.length) return x?.command||'—';
+
+  cs.shift();
+  const f=x?.form||'';
+
+  if(f==='I'){
+    if(!cs.length) return x?.command||'—';
+    if(morphVowel(cs[0])===AR_MORPH_SUKUN){
+      const nextV=morphVowel(cs[1]||'');
+      const hamzaV=nextV===AR_MORPH_DAMMA?AR_MORPH_DAMMA:AR_MORPH_KASRA;
+      return morphJoin(['ا'+hamzaV,...cs]);
+    }
+    return morphJoin(cs);
+  }
+  if(f==='IV') return morphJoin(['أ'+AR_MORPH_FATHA,...cs]);
+  if(['VII','VIII','IX','X'].includes(f)) return morphJoin(['ا'+AR_MORPH_KASRA,...cs]);
+  return morphJoin(cs);
+}
+function verbProhibitionValue(x){
+  const j=verbSecondPersonJussive(x);
+  return j?('لَا '+j):(x?.prohibition||'—');
+}
+
+function verbPassivePastValue(x){
+  let cs=morphClusters(x?.past);
+  const f=x?.form||'';
+  if(!cs.length) return '—';
+
+  if(f==='I'){
+    if(verbIsHollow(x)){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_KASRA);
+      const li=cs.findIndex((c,i)=>i>0&&i<cs.length-1&&['ا','و','ي'].includes(morphBase(c))&&!morphHas(c,AR_MORPH_SHADDA));
+      if(li>0) cs[li]='ي';
+      cs[cs.length-1]=morphSetVowel(cs[cs.length-1],AR_MORPH_FATHA);
+    }else if(verbIsDefective(x)){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      if(cs.length>=2) cs[cs.length-2]=morphSetVowel(cs[cs.length-2],AR_MORPH_KASRA);
+      cs[cs.length-1]='ي'+AR_MORPH_FATHA;
+    }else if(verbIsDoubled(x)&&cs.length===2){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_FATHA);
+    }else if(cs.length>=3){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_KASRA);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_FATHA);
+    }
+  }else if(f==='II'){
+    if(cs.length>=3){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_KASRA);
+      cs[cs.length-1]=verbIsDefective(x)?'ي'+AR_MORPH_FATHA:morphSetVowel(cs[cs.length-1],AR_MORPH_FATHA);
+    }
+  }else if(f==='III'){
+    if(cs.length>=4){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      if(morphBase(cs[1])==='ا') cs[1]='و';
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_KASRA);
+      cs[cs.length-1]=verbIsDefective(x)?'ي'+AR_MORPH_FATHA:morphSetVowel(cs[cs.length-1],AR_MORPH_FATHA);
+    }
+  }else if(f==='IV'){
+    cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+    if(verbIsHollow(x)&&cs.length>=4){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_KASRA);
+      const li=cs.findIndex((c,i)=>i>0&&i<cs.length-1&&morphBase(c)==='ا');
+      if(li>0) cs[li]='ي';
+      cs[cs.length-1]=morphSetVowel(cs[cs.length-1],AR_MORPH_FATHA);
+    }else if(verbIsDefective(x)){
+      if(cs.length>=3) cs[cs.length-2]=morphSetVowel(cs[cs.length-2],AR_MORPH_KASRA);
+      cs[cs.length-1]='ي'+AR_MORPH_FATHA;
+    }else if(cs.length===3&&morphHas(cs[2],AR_MORPH_SHADDA)){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_KASRA);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_FATHA);
+    }else if(cs.length>=4){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_SUKUN);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_KASRA);
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_FATHA);
+    }
+  }else if(f==='V'){
+    if(cs.length>=4){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_DAMMA);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_KASRA);
+      cs[cs.length-1]=verbIsDefective(x)?'ي'+AR_MORPH_FATHA:morphSetVowel(cs[cs.length-1],AR_MORPH_FATHA);
+    }
+  }else if(f==='VI'){
+    if(cs.length>=5){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_DAMMA);
+      if(morphBase(cs[2])==='ا') cs[2]='و';
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_KASRA);
+      cs[cs.length-1]=verbIsDefective(x)?'ي'+AR_MORPH_FATHA:morphSetVowel(cs[cs.length-1],AR_MORPH_FATHA);
+    }
+  }else if(f==='VII'){
+    if(verbIsHollow(x)&&cs.length>=5){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_SUKUN);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_KASRA);
+      if(morphBase(cs[3])==='ا') cs[3]='ي';
+      cs[4]=morphSetVowel(cs[4],AR_MORPH_FATHA);
+    }else if(cs.length>=5){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_SUKUN);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_DAMMA);
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_KASRA);
+      cs[cs.length-1]=verbIsDefective(x)?'ي'+AR_MORPH_FATHA:morphSetVowel(cs[cs.length-1],AR_MORPH_FATHA);
+    }
+  }else if(f==='VIII'){
+    cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+    if(verbIsHollow(x)&&cs.length>=5){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_SUKUN);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_KASRA);
+      if(morphBase(cs[3])==='ا') cs[3]='ي';
+      cs[4]=morphSetVowel(cs[4],AR_MORPH_FATHA);
+    }else if(cs.length===4&&morphHas(cs[1],AR_MORPH_SHADDA)){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_DAMMA);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_KASRA);
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_FATHA);
+    }else if(cs.length>=5){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_SUKUN);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_DAMMA);
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_KASRA);
+      cs[cs.length-1]=verbIsDefective(x)?'ي'+AR_MORPH_FATHA:morphSetVowel(cs[cs.length-1],AR_MORPH_FATHA);
+    }
+  }else if(f==='IX'){
+    return '—';
+  }else if(f==='X'){
+    cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+    if(cs.length>=6){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_SUKUN);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_DAMMA);
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_SUKUN);
+      cs[4]=morphSetVowel(cs[4],AR_MORPH_KASRA);
+      if(verbIsHollow(x)){
+        const li=cs.findIndex((c,i)=>i>4&&i<cs.length-1&&morphBase(c)==='ا');
+        if(li>4) cs[li]='ي';
+      }
+      cs[cs.length-1]=verbIsDefective(x)?'ي'+AR_MORPH_FATHA:morphSetVowel(cs[cs.length-1],AR_MORPH_FATHA);
+    }
+  }else if(f==='Quadriliteral I'){
+    if(cs.length>=4){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_SUKUN);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_KASRA);
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_FATHA);
+    }
+  }else if(f==='Quadriliteral derived'){
+    if(cs.length>=5){
+      cs[0]=morphSetVowel(cs[0],AR_MORPH_DAMMA);
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_DAMMA);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_SUKUN);
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_KASRA);
+      cs[4]=morphSetVowel(cs[4],AR_MORPH_FATHA);
+    }
+  }
+  return morphJoin(cs);
+}
+
+function verbPassivePresentValue(x){
+  let cs=morphClusters(x?.present);
+  const f=x?.form||'';
+  if(!cs.length) return '—';
+
+  cs[0]=morphSetVowel(morphSetBase(cs[0],'ي'),AR_MORPH_DAMMA);
+
+  if(f==='I'){
+    if(verbIsHollow(x)){
+      if(cs.length>=4){
+        cs[1]=morphSetVowel(cs[1],AR_MORPH_FATHA);
+        const li=cs.findIndex((c,i)=>i>1&&i<cs.length-1&&['ا','و','ي'].includes(morphBase(c))&&morphBareLong(c));
+        if(li>1) cs[li]='ا';
+        cs[cs.length-1]=morphSetVowel(cs[cs.length-1],AR_MORPH_DAMMA);
+      }
+    }else if(verbIsDefective(x)){
+      if(cs.length>=3){
+        cs[1]=morphSetVowel(cs[1],AR_MORPH_SUKUN);
+        cs[cs.length-2]=morphSetVowel(cs[cs.length-2],AR_MORPH_FATHA);
+        cs[cs.length-1]='ى';
+      }
+    }else if(verbIsDoubled(x)&&cs.length===3){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_FATHA);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_DAMMA);
+    }else if(cs.length>=4){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_SUKUN);
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_FATHA);
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_DAMMA);
+    }else if(cs.length===3){
+      const pcs=morphClusters(x?.past);
+      const weak=morphBase(pcs[0]);
+      if(['و','ي'].includes(weak)){
+        cs=[cs[0],weak,morphSetVowel(cs[1],AR_MORPH_FATHA),morphSetVowel(cs[2],AR_MORPH_DAMMA)];
+      }
+    }
+  }else if(f==='II'){
+    if(cs.length>=4){
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_FATHA);
+      cs[cs.length-1]=verbIsDefective(x)?'ى':morphSetVowel(cs[cs.length-1],AR_MORPH_DAMMA);
+    }
+  }else if(f==='III'){
+    if(cs.length>=5){
+      cs[3]=morphSetVowel(cs[3],AR_MORPH_FATHA);
+      cs[cs.length-1]=verbIsDefective(x)?'ى':morphSetVowel(cs[cs.length-1],AR_MORPH_DAMMA);
+    }
+  }else if(f==='IV'){
+    if(verbIsHollow(x)&&cs.length>=4){
+      cs[1]=morphSetVowel(cs[1],AR_MORPH_FATHA);
+      const li=cs.findIndex((c,i)=>i>1&&i<cs.length-1&&morphBase(c)==='ي'&&morphBareLong(c));
+      if(li>1) cs[li]='ا';
+      cs[cs.length-1]=morphSetVowel(cs[cs.length-1],AR_MORPH_DAMMA);
+    }else if(verbIsDefective(x)){
+      if(cs.length>=3) cs[cs.length-2]=morphSetVowel(cs[cs.length-2],AR_MORPH_FATHA);
+      cs[cs.length-1]='ى';
+    }else if(cs.length>=4){
+      cs[2]=morphSetVowel(cs[2],AR_MORPH_FATHA);
+      cs[cs.length-1]=morphSetVowel(cs[cs.length-1],AR_MORPH_DAMMA);
+    }
+  }else if(f==='V'||f==='VI'){
+    cs[cs.length-1]=verbIsDefective(x)?'ى':morphSetVowel(cs[cs.length-1],AR_MORPH_DAMMA);
+  }else if(f==='VII'){
+    if(!verbIsHollow(x)&&cs.length>=5) cs[3]=morphSetVowel(cs[3],AR_MORPH_FATHA);
+    cs[cs.length-1]=verbIsDefective(x)?'ى':morphSetVowel(cs[cs.length-1],AR_MORPH_DAMMA);
+  }else if(f==='VIII'){
+    if(!verbIsHollow(x)){
+      if(cs.length===4&&morphHas(cs[1],AR_MORPH_SHADDA)) cs[2]=morphSetVowel(cs[2],AR_MORPH_FATHA);
+      else if(cs.length>=5) cs[3]=morphSetVowel(cs[3],AR_MORPH_FATHA);
+    }
+    cs[cs.length-1]=verbIsDefective(x)?'ى':morphSetVowel(cs[cs.length-1],AR_MORPH_DAMMA);
+  }else if(f==='IX'){
+    return '—';
+  }else if(f==='X'){
+    if(verbIsHollow(x)&&cs.length>=6){
+      cs[4]=morphSetVowel(cs[4],AR_MORPH_FATHA);
+      const li=cs.findIndex((c,i)=>i>4&&i<cs.length-1&&morphBase(c)==='ي'&&morphBareLong(c));
+      if(li>4) cs[li]='ا';
+    }else if(cs.length>=6){
+      cs[4]=morphSetVowel(cs[4],AR_MORPH_FATHA);
+    }
+    cs[cs.length-1]=verbIsDefective(x)?'ى':morphSetVowel(cs[cs.length-1],AR_MORPH_DAMMA);
+  }else if(f==='Quadriliteral I'){
+    if(cs.length>=5) cs[3]=morphSetVowel(cs[3],AR_MORPH_FATHA);
+  }
+  return morphJoin(cs);
+}
+
 function rootItemKind(item){
   return DATA.verbs.includes(item)?'verb':'vocabulary';
 }
@@ -846,6 +1205,10 @@ function rootVerbDetailCard(x){
     <div class="root-verb-forms">
       ${rootSummaryTag('Past',x.past,true)}
       ${rootSummaryTag('Present',x.present,true)}
+      ${rootSummaryTag('Command',verbCommandValue(x),true)}
+      ${rootSummaryTag('Prohibition',verbProhibitionValue(x),true)}
+      ${rootSummaryTag('Passive past',verbPassivePastValue(x),true)}
+      ${rootSummaryTag('Passive present',verbPassivePresentValue(x),true)}
       ${rootSummaryTag('Maṣdar',x.masdar,true)}
       ${rootSummaryTag('Form',x.form)}
       ${rootSummaryTag('Bāb',x.bab,true)}
@@ -1030,7 +1393,7 @@ function renderRoots(){
 }
 function renderVerbs(){
   const form=document.getElementById('formFilter')?.value||'',type=document.getElementById('verbTypeFilter')?.value||'',bab=document.getElementById('babFilter')?.value||'',q=(document.getElementById('verbSearch')?.value||'').toLowerCase();
-  let rows=DATA.verbs.filter(x=>{const h=[x.arabic,x.english,x.quran_english,x.root,x.form,x.bab,x.category,x.verb_type,x.masdar,...sourceValues(x)].join(' ').toLowerCase();const collections=Array.isArray(x.collections)?x.collections:[];const inCollection=VERB_COLLECTION_FILTER==='all'||collections.includes(VERB_COLLECTION_FILTER);return inCollection&&(!form||x.form===form)&&(!type||x.verb_type===type)&&(!bab||x.bab===bab)&&h.includes(q)});rows=filterByMetric(rows,SECTION_METRIC_FILTERS.verbs);
+  let rows=DATA.verbs.filter(x=>{const h=[x.arabic,x.english,x.quran_english,x.root,x.form,x.bab,x.category,x.verb_type,x.masdar,verbCommandValue(x),verbProhibitionValue(x),verbPassivePastValue(x),verbPassivePresentValue(x),...sourceValues(x)].join(' ').toLowerCase();const collections=Array.isArray(x.collections)?x.collections:[];const inCollection=VERB_COLLECTION_FILTER==='all'||collections.includes(VERB_COLLECTION_FILTER);return inCollection&&(!form||x.form===form)&&(!type||x.verb_type===type)&&(!bab||x.bab===bab)&&h.includes(q)});rows=filterByMetric(rows,SECTION_METRIC_FILTERS.verbs);
   rows=sortRecentlyCoveredLast(rows);
   const totalRows=rows.length;
   const totalPages=Math.max(1,Math.ceil(totalRows/VERB_PAGE_SIZE));
