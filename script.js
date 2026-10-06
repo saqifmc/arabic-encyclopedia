@@ -276,7 +276,8 @@ const REVISION_QUIZ = {
   index:0,
   correct:0,
   wrong:0,
-  answered:false
+  answered:false,
+  mistakes:[]
 };
 const STORE_KEY = 'arabicEncyclopediaProgressV2';
 const STATUSES = ['Not Started','Covered','Learning','Confident','Mastered'];
@@ -1682,6 +1683,7 @@ function showRevisionQuizSetup(){
   REVISION_QUIZ.correct=0;
   REVISION_QUIZ.wrong=0;
   REVISION_QUIZ.answered=false;
+  REVISION_QUIZ.mistakes=[];
   updateRevisionQuizSetupVisibility();
   document.getElementById('revisionQuizSetup')?.classList.remove('hidden');
   document.getElementById('revisionQuizPlay')?.classList.add('hidden');
@@ -1702,6 +1704,7 @@ function startRevisionQuiz(){
   REVISION_QUIZ.correct=0;
   REVISION_QUIZ.wrong=0;
   REVISION_QUIZ.answered=false;
+  REVISION_QUIZ.mistakes=[];
   REVISION_QUIZ.active=true;
 
   document.getElementById('revisionQuizSetup')?.classList.add('hidden');
@@ -1789,8 +1792,18 @@ function answerRevisionQuiz(optionIndex){
   const isCorrect=selected===correct;
   REVISION_QUIZ.answered=true;
 
-  if(isCorrect) REVISION_QUIZ.correct++;
-  else REVISION_QUIZ.wrong++;
+  if(isCorrect){
+    REVISION_QUIZ.correct++;
+  }else{
+    REVISION_QUIZ.wrong++;
+    REVISION_QUIZ.mistakes.push({
+      prompt:quizValueFor(q.item,q.direction,'prompt'),
+      selected,
+      correct,
+      direction:q.direction,
+      kind:q.kind
+    });
+  }
 
   recordRevisionQuizAttempt(q.item,isCorrect);
   updateRevisionQuizScore();
@@ -1831,6 +1844,35 @@ function nextRevisionQuizQuestion(){
   renderRevisionQuizQuestion();
   document.getElementById('revision')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
+function renderRevisionMistakes(){
+  const box=document.getElementById('quizMistakeReview');
+  if(!box) return;
+
+  if(!REVISION_QUIZ.mistakes.length){
+    box.innerHTML='<div class="quiz-perfect-review"><strong>No mistakes to review.</strong><span>You answered every question correctly.</span></div>';
+    return;
+  }
+
+  box.innerHTML='<div class="quiz-review-heading"><span class="quiz-kicker">REVIEW</span><h4>Mistakes to review</h4><p>'+REVISION_QUIZ.mistakes.length+' word'+(REVISION_QUIZ.mistakes.length===1?'':'s')+' to go over again.</p></div>'+
+    '<div class="quiz-review-list">'+REVISION_QUIZ.mistakes.map((m,i)=>{
+      const promptArabic=m.direction==='ar-en';
+      const answerArabic=m.direction==='en-ar';
+      const promptClass=promptArabic?' quiz-review-ar':'';
+      const answerClass=answerArabic?' quiz-review-ar':'';
+      const promptAttrs=promptArabic?' lang="ar" dir="rtl"':'';
+      const answerAttrs=answerArabic?' lang="ar" dir="rtl"':'';
+
+      return '<article class="quiz-review-item">'+
+        '<div class="quiz-review-number">'+(i+1)+'</div>'+
+        '<div class="quiz-review-content">'+
+          '<div class="quiz-review-prompt'+promptClass+'"'+promptAttrs+'>'+m.prompt+'</div>'+
+          '<div class="quiz-review-answer wrong-review-answer"><span>Your answer</span><strong class="'+(answerArabic?'quiz-review-ar':'')+'"'+answerAttrs+'>'+m.selected+'</strong></div>'+
+          '<div class="quiz-review-answer correct-review-answer"><span>Correct answer</span><strong class="'+(answerArabic?'quiz-review-ar':'')+'"'+answerAttrs+'>'+m.correct+'</strong></div>'+
+        '</div>'+
+      '</article>';
+    }).join('')+'</div>';
+}
+
 function finishRevisionQuiz(){
   REVISION_QUIZ.active=false;
   const total=REVISION_QUIZ.questions.length||1;
@@ -1849,6 +1891,7 @@ function finishRevisionQuiz(){
   if(correct) correct.textContent=REVISION_QUIZ.correct;
   if(wrong) wrong.textContent=REVISION_QUIZ.wrong;
 
+  renderRevisionMistakes();
   renderStats();
   renderSectionDashboards();
 }

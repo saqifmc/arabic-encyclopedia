@@ -1783,3 +1783,114 @@ button,a,input,select,summary{touch-action:manipulation}
   .quiz-prompt{min-height:88px;font-size:1.5rem;margin-bottom:18px}
   .quiz-prompt.arabic{font-size:2.5rem}
 }
+
+
+/* Quiz mistake review */
+.quiz-mistake-review{
+  margin:26px 0 24px;
+  text-align:left;
+}
+.quiz-review-heading{
+  margin-bottom:12px;
+}
+.quiz-review-heading h4{
+  margin:4px 0 5px;
+  font-size:1.35rem;
+}
+.quiz-review-heading p{
+  margin:0;
+  color:var(--muted);
+}
+.quiz-review-list{
+  display:grid;
+  gap:12px;
+}
+.quiz-review-item{
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:12px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:15px;
+  background:#fff;
+}
+.quiz-review-number{
+  width:32px;
+  height:32px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  background:#f2f5f3;
+  color:var(--muted);
+  font-weight:700;
+}
+.quiz-review-content{
+  min-width:0;
+}
+.quiz-review-prompt{
+  font-weight:700;
+  font-size:1.08rem;
+  margin-bottom:10px;
+}
+.quiz-review-ar{
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:1.45rem;
+  line-height:1.6;
+  text-align:right;
+}
+.quiz-review-answer{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:10px;
+  align-items:center;
+  border-radius:12px;
+  padding:9px 11px;
+  margin-top:7px;
+}
+.quiz-review-answer span{
+  font-size:.78rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+.quiz-review-answer strong{
+  overflow-wrap:anywhere;
+}
+.wrong-review-answer{
+  background:#fcecec;
+  color:#991b1b;
+}
+.correct-review-answer{
+  background:#e8f5ed;
+  color:#166534;
+}
+.quiz-perfect-review{
+  display:grid;
+  gap:4px;
+  padding:16px;
+  border-radius:15px;
+  background:#e8f5ed;
+  color:#166534;
+  text-align:center;
+}
+.quiz-perfect-review span{
+  font-size:.9rem;
+}
+@media(max-width:650px){
+  .quiz-review-item{
+    grid-template-columns:30px 1fr;
+    padding:13px;
+    gap:9px;
+  }
+  .quiz-review-number{
+    width:28px;
+    height:28px;
+  }
+  .quiz-review-answer{
+    grid-template-columns:1fr;
+    gap:3px;
+  }
+  .quiz-review-ar{
+    font-size:1.35rem;
+  }
+}
