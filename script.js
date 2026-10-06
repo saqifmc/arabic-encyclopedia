@@ -1415,9 +1415,36 @@ function renderSpeaking(){
   document.getElementById('speakingList').innerHTML=rows.map(speakingCard).join('');
   bindDynamicButtons();
 }
+function progressSourceGroups(){
+  const groups=[
+    {
+      label:'Madinah Book 1',
+      items:DATA.vocabulary.filter(x=>(Array.isArray(x.collections)?x.collections:[]).includes('Madinah Book 1'))
+    },
+    {
+      label:'Qur\'an High Frequency Vocabulary',
+      items:DATA.vocabulary.filter(x=>(Array.isArray(x.collections)?x.collections:[]).includes("Qur'an High Frequency"))
+    },
+    {
+      label:'Qur\'an High Frequency Verbs',
+      items:DATA.verbs.filter(x=>(Array.isArray(x.collections)?x.collections:[]).includes("Qur'an High Frequency Verbs"))
+    },
+    {
+      label:'Ṣarf Verb Bank',
+      items:DATA.verbs.filter(x=>!(Array.isArray(x.collections)?x.collections:[]).includes("Qur'an High Frequency Verbs"))
+    }
+  ];
+  return groups.filter(g=>g.items.length);
+}
+
 function progressItemCard(x){
   const p=progressFor(x.id);
-  return `<article class="item progress-item"><div class="item-head"><div><div class="arabic" lang="ar" dir="rtl">${x.arabic}</div><strong>${x.english}</strong></div><span class="pill ${statusClass(p.status)}">${p.status}</span></div><div class="meta">${x.topic||x.category||x.verb_type||'General'}</div></article>`;
+  const collections=Array.isArray(x.collections)?x.collections:[];
+  let sourceLabel='Ṣarf Verb Bank';
+  if(collections.includes('Madinah Book 1')) sourceLabel='Madinah Book 1';
+  else if(collections.includes("Qur'an High Frequency")) sourceLabel="Qur'an High Frequency Vocabulary";
+  else if(collections.includes("Qur'an High Frequency Verbs")) sourceLabel="Qur'an High Frequency Verbs";
+  return `<article class="item progress-item"><div class="item-head"><div><div class="arabic" lang="ar" dir="rtl">${x.arabic}</div><strong>${x.english}</strong></div><span class="pill ${statusClass(p.status)}">${p.status}</span></div><div class="meta">${sourceLabel}</div></article>`;
 }
 function renderProgress(){
   const all=[...DATA.vocabulary,...DATA.verbs];
@@ -1438,11 +1465,12 @@ function renderProgress(){
     drill.classList.remove('hidden');
     drill.innerHTML=`<div class="progress-drilldown-head"><h3>${PROGRESS_METRIC_FILTER}</h3><span>${rows.length} item${rows.length===1?'':'s'}</span></div><div class="list">${rows.map(progressItemCard).join('')||'<p>No items.</p>'}</div>`;
   }
-  const topics={};
-  all.forEach(x=>{const t=x.topic||x.category||x.verb_type||'Uncategorised';(topics[t]??=[]).push(x);});
-  document.getElementById('topicProgress').innerHTML=Object.entries(topics).sort().map(([topic,items])=>{
-    const c=items.filter(x=>itemStatus(x.id)!=='Not Started').length,p=Math.round(c/items.length*100);
-    return `<div class="topic-row"><div class="topic-top"><strong>${topic}</strong><span>${c}/${items.length} covered</span></div><div class="progress-bar"><div class="progress-fill" style="width:${p}%"></div></div></div>`;
+  const sourceGroups=progressSourceGroups();
+  document.getElementById('sourceProgress').innerHTML=sourceGroups.map(({label,items})=>{
+    const started=items.filter(x=>itemStatus(x.id)!=='Not Started').length;
+    const mastered=items.filter(x=>itemStatus(x.id)==='Mastered').length;
+    const pct=items.length?Math.round(started/items.length*100):0;
+    return `<div class="topic-row"><div class="topic-top"><strong>${label}</strong><span>${started}/${items.length} started · ${mastered} mastered</span></div><div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div><div class="meta">${pct}% started</div></div>`;
   }).join('');
   const recent=all.map(x=>({x,p:progressFor(x.id)})).filter(o=>o.p.dateCovered).sort((a,b)=>new Date(b.p.dateCovered)-new Date(a.p.dateCovered)).slice(0,6);
   document.getElementById('recentlyCovered').innerHTML=recent.length?recent.map(o=>`<article class="item"><div class="arabic" lang="ar" dir="rtl">${o.x.arabic}</div><strong>${o.x.english}</strong><div class="meta">${o.p.status} · Covered ${formatDate(o.p.dateCovered)}</div></article>`).join(''):'<p class="meta">Nothing marked as covered yet.</p>';
