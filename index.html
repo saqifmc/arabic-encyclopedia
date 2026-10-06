@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261006-mobile-nav-update" />
+  <link rel="stylesheet" href="style.css?v=20261006-quran-translation-toggle" />
 </head>
 <body>
   <div id="updateBanner" class="update-banner hidden" role="status" aria-live="polite">
@@ -268,7 +268,10 @@
           <h2>Quranic Tarkeeb</h2>
           <p>Select a sūrah and study its sentence structure, iʿrāb and grammatical relationships.</p>
         </div>
-        <select id="quranSurahFilter">
+        <div class="quran-header-controls">
+          <label>
+            <span>Sūrah</span>
+            <select id="quranSurahFilter">
           <option value="1">1 · Al-Fātiḥah</option>
           <option value="105">105 · Al-Fīl</option>
           <option value="106">106 · Quraysh</option>
@@ -281,6 +284,15 @@
           <option value="113">113 · Al-Falaq</option>
           <option value="114">114 · An-Nās</option>
         </select>
+          </label>
+          <label>
+            <span>English translation</span>
+            <select id="quranTranslationFilter" aria-label="Choose English Quran translation">
+              <option value="abdel-haleem">M. A. S. Abdel Haleem</option>
+              <option value="pickthall">Marmaduke Pickthall</option>
+            </select>
+          </label>
+        </div>
       </div>
 
       <div id="quranSurahIntro" class="quran-intro-card"></div>
@@ -378,6 +390,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261006-mobile-nav-update"></script>
+  <script src="script.js?v=20261006-quran-translation-toggle"></script>
 </body>
 </html>

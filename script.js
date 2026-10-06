@@ -267,6 +267,7 @@ let PROGRESS_METRIC_FILTER = 'all';
 let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [], sarf: [], quranicTarkeeb: [] };
 let currentCard = null;
 const STORE_KEY = 'arabicEncyclopediaProgressV2';
+const QURAN_TRANSLATION_STORE_KEY = 'arabicEncyclopediaQuranTranslationV1';
 const STATUSES = ['Not Started','Covered','Learning','Confident','Mastered'];
 const ARABIC_ALPHABET = ['ا','ب','ت','ث','ج','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ك','ل','م','ن','ه','و','ي'];
 
@@ -295,7 +296,7 @@ function patchProgress(id, patch){
 }
 async function loadData(){
   const [vocabRes, verbsRes, speakingRes, nahwRes, sarfRes, quranRes] = await Promise.all([
-    fetch('vocab.json?v=20261005-quran-high-frequency-vocab'), fetch('verbs.json?v=20261005-quran-high-frequency-verbs'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json'), fetch('quranic-tarkeeb.json')
+    fetch('vocab.json?v=20261005-quran-high-frequency-vocab'), fetch('verbs.json?v=20261005-quran-high-frequency-verbs'), fetch('speaking.json'), fetch('nahw.json'), fetch('sarf.json'), fetch('quranic-tarkeeb.json?v=20261006-translation-toggle')
   ]);
   const vocabData=await vocabRes.json();
   const verbsData=await verbsRes.json();
@@ -892,17 +893,29 @@ function quranTarkeebPart([word,label,note]){
 
 function renderQuranicTarkeeb(){
   const select=document.getElementById('quranSurahFilter');
+  const translationSelect=document.getElementById('quranTranslationFilter');
   const intro=document.getElementById('quranSurahIntro');
   const list=document.getElementById('quranAyahList');
   if(!select||!intro||!list) return;
 
   const selected=Number(select.value||1);
+  const translation=translationSelect?.value||'abdel-haleem';
   const surah=DATA.quranicTarkeeb.find(x=>Number(x.number)===selected) || DATA.quranicTarkeeb[0];
   if(!surah){
     intro.innerHTML='<p>No Qur\'anic Tarkeeb data is available.</p>';
     list.innerHTML='';
     return;
   }
+
+  const translationInfo=translation==='pickthall'
+    ? {
+        label:'Marmaduke Pickthall',
+        note:'Full āyah translation uses Marmaduke Pickthall, <em>The Meaning of the Glorious Qur\'an</em>. Word-by-word glosses remain based on M. A. S. Abdel Haleem so the study layer stays consistent.'
+      }
+    : {
+        label:'M. A. S. Abdel Haleem',
+        note:'English terminology and word meanings are based on M. A. S. Abdel Haleem, <em>The Qur\'an</em> (Oxford World\'s Classics). Word glosses are matched to each āyah rather than taken from a generic dictionary.'
+      };
 
   intro.innerHTML=`
     <div>
@@ -911,17 +924,19 @@ function renderQuranicTarkeeb(){
       <p>Sūrah ${surah.number} · ${surah.ayahs.length} āyah${surah.ayahs.length===1?'':'s'} · Tarkeeb & Iʿrāb</p>
     </div>
     <div class="translation-note">
-      <strong>English reference</strong>
-      <p>English terminology and word meanings are based on M. A. S. Abdel Haleem, <em>The Qur'an</em> (Oxford World's Classics). Word glosses are matched to each āyah rather than taken from a generic dictionary.</p>
+      <strong>English translation · ${translationInfo.label}</strong>
+      <p>${translationInfo.note}</p>
     </div>`;
 
-  list.innerHTML=surah.ayahs.map(a=>`
+  list.innerHTML=surah.ayahs.map(a=>{
+    const verseMeaning=translation==='pickthall' ? (a.pickthall||a.sense||'') : (a.sense||'');
+    return `
     <article class="quran-ayah-card">
       <div class="ayah-number">${a.n}</div>
 
       <div class="quran-verse-pair">
         <div class="quran-arabic" lang="ar" dir="rtl">${a.arabic}</div>
-        <div class="quran-english"><span class="analysis-kicker">ENGLISH MEANING</span>${a.sense||''}</div>
+        <div class="quran-english"><span class="analysis-kicker">ENGLISH MEANING · ${translationInfo.label}</span>${verseMeaning}</div>
       </div>
 
       <div class="quran-word-section">
@@ -935,7 +950,8 @@ function renderQuranicTarkeeb(){
         <div class="analysis-kicker">GRAMMAR ANALYSIS</div>
         <div class="tarkeeb-grid">${(a.parts||[]).map(quranTarkeebPart).join('')}</div>
       </div>
-    </article>`).join('');
+    </article>`;
+  }).join('');
 }
 
 function revisionPool(){
@@ -1127,6 +1143,17 @@ function bindEvents(){
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
   document.getElementById('nahwTopicFilter')?.addEventListener('input',renderNahw);
   document.getElementById('quranSurahFilter')?.addEventListener('change',renderQuranicTarkeeb);
+  const quranTranslationFilter=document.getElementById('quranTranslationFilter');
+  if(quranTranslationFilter){
+    const savedTranslation=localStorage.getItem(QURAN_TRANSLATION_STORE_KEY);
+    if(savedTranslation && [...quranTranslationFilter.options].some(o=>o.value===savedTranslation)){
+      quranTranslationFilter.value=savedTranslation;
+    }
+    quranTranslationFilter.addEventListener('change',()=>{
+      localStorage.setItem(QURAN_TRANSLATION_STORE_KEY,quranTranslationFilter.value);
+      renderQuranicTarkeeb();
+    });
+  }
   document.getElementById('revisionMode').addEventListener('change',newRevisionCard);
   document.getElementById('revisionSubset').addEventListener('change',newRevisionCard);
   document.getElementById('newCardBtn').addEventListener('click',newRevisionCard);
