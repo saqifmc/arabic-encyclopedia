@@ -1631,11 +1631,65 @@ function revisionQuizPool(){
   });
 }
 
-function buildBalancedQuizSelection(pool,target){
-  if(REVISION_QUIZ.bank!=='both') return shuffleQuizArray(pool).slice(0,target);
+function quizPriorityWeight(item){
+  const p=progressFor(item.id);
+  const statusWeights={
+    'Not Started':7,
+    'Learning':6,
+    'Covered':4,
+    'Confident':2,
+    'Mastered':0.8
+  };
 
-  const vocab=shuffleQuizArray(pool.filter(x=>x.kind==='vocabulary'));
-  const verbs=shuffleQuizArray(pool.filter(x=>x.kind==='verb'));
+  let weight=statusWeights[p.status]??4;
+  const correct=p.correctCount||0;
+  const incorrect=p.incorrectCount||0;
+  const attempts=correct+incorrect;
+
+  if(attempts){
+    const wrongRate=incorrect/attempts;
+    weight+=wrongRate*5;
+  }
+
+  if(p.lastQuizResult==='wrong') weight+=4;
+  if(p.lastQuizResult==='correct') weight-=1;
+
+  const streak=p.quizCorrectStreak||0;
+  weight-=Math.min(2.5,streak*0.55);
+
+  // Keep every eligible item alive for occasional spaced review.
+  return Math.max(0.5,weight);
+}
+
+function weightedQuizSample(rows,count){
+  const pool=[...rows];
+  const picked=[];
+
+  while(pool.length&&picked.length<count){
+    const weights=pool.map(row=>quizPriorityWeight(row.item));
+    const total=weights.reduce((sum,w)=>sum+w,0);
+    let r=Math.random()*total;
+    let chosen=0;
+
+    for(let i=0;i<weights.length;i++){
+      r-=weights[i];
+      if(r<=0){
+        chosen=i;
+        break;
+      }
+    }
+
+    picked.push(pool.splice(chosen,1)[0]);
+  }
+
+  return picked;
+}
+
+function buildBalancedQuizSelection(pool,target){
+  if(REVISION_QUIZ.bank!=='both') return weightedQuizSample(pool,target);
+
+  const vocab=pool.filter(x=>x.kind==='vocabulary');
+  const verbs=pool.filter(x=>x.kind==='verb');
 
   let vocabNeed=Math.floor(target/2);
   let verbNeed=target-vocabNeed;
@@ -1650,8 +1704,8 @@ function buildBalancedQuizSelection(pool,target){
   }
 
   return shuffleQuizArray([
-    ...vocab.slice(0,vocabNeed),
-    ...verbs.slice(0,verbNeed)
+    ...weightedQuizSample(vocab,vocabNeed),
+    ...weightedQuizSample(verbs,verbNeed)
   ]);
 }
 function quizValueFor(item,direction,part){
@@ -1775,7 +1829,9 @@ function recordRevisionQuizAttempt(item,isCorrect){
     timesRevised:(p.timesRevised||0)+1,
     lastRevised:new Date().toISOString(),
     correctCount:(p.correctCount||0)+(isCorrect?1:0),
-    incorrectCount:(p.incorrectCount||0)+(isCorrect?0:1)
+    incorrectCount:(p.incorrectCount||0)+(isCorrect?0:1),
+    lastQuizResult:isCorrect?'correct':'wrong',
+    quizCorrectStreak:isCorrect?((p.quizCorrectStreak||0)+1):0
   };
   const all=loadProgress();
   all[item.id]=next;
