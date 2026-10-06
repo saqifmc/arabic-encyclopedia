@@ -1256,7 +1256,6 @@ function renderRootDetail(root){
   const quranTotal=items.reduce((sum,x)=>sum+rootFrequencyValue(x.quran_frequency),0);
   const forms=unique(verbs.map(x=>x.form));
   const babs=unique(verbs.map(x=>x.bab));
-  const sources=unique(items.flatMap(sourceValues));
   const keys=rootSortedKeys();
   const pos=keys.indexOf(root);
   const previous=pos>0?keys[pos-1]:'';
@@ -1299,11 +1298,10 @@ function renderRootDetail(root){
       ${rootSummaryTag('Bābs',babs.length||'—')}
     </div>
 
-    ${forms.length||babs.length||sources.length?`
+    ${forms.length||babs.length?`
       <section class="root-family-reference">
         ${forms.length?`<div><span>Verb forms</span><div class="root-detail-tags">${forms.map(x=>`<span>${x}</span>`).join('')}</div></div>`:''}
         ${babs.length?`<div><span>Bābs</span><div class="root-detail-tags arabic-tags" lang="ar" dir="rtl">${babs.map(x=>`<span>${x}</span>`).join('')}</div></div>`:''}
-        ${sources.length?`<div><span>Sources</span><div class="root-detail-tags">${sources.map(x=>`<span>${x}</span>`).join('')}</div></div>`:''}
       </section>`:''}
 
     <section class="root-detail-section">
