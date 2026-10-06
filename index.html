@@ -349,9 +349,9 @@
           <div class="quiz-setting">
             <span class="quiz-setting-label">Number of questions</span>
             <div class="quiz-choice-row" role="group" aria-label="Number of quiz questions">
-              <button type="button" class="quiz-choice active" data-quiz-length="25">25</button>
+              <button type="button" class="quiz-choice active" data-quiz-length="10">10</button>
+              <button type="button" class="quiz-choice" data-quiz-length="20">20</button>
               <button type="button" class="quiz-choice" data-quiz-length="50">50</button>
-              <button type="button" class="quiz-choice" data-quiz-length="100">100</button>
             </div>
           </div>
 
@@ -371,7 +371,7 @@
       <div id="revisionQuizPlay" class="quiz-play hidden">
         <div class="quiz-session-head">
           <div>
-            <span id="quizCounter" class="quiz-counter">Question 1 of 25</span>
+            <span id="quizCounter" class="quiz-counter">Question 1 of 10</span>
             <span id="quizDirectionLabel" class="quiz-direction-label">Arabic → English</span>
           </div>
           <div class="quiz-live-score" aria-label="Current quiz score">
@@ -397,7 +397,7 @@
           <span class="quiz-kicker">QUIZ COMPLETE</span>
           <h3>Your score</h3>
           <div id="quizFinalPercent" class="quiz-final-percent">0%</div>
-          <div id="quizFinalScore" class="quiz-final-score">0 / 25 correct</div>
+          <div id="quizFinalScore" class="quiz-final-score">0 / 10 correct</div>
           <div class="quiz-result-stats">
             <div><span>Correct</span><strong id="quizResultCorrect">0</strong></div>
             <div><span>Wrong</span><strong id="quizResultWrong">0</strong></div>
@@ -450,6 +450,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261006-quiz-mistake-review"></script>
+  <script src="script.js?v=20261006-quiz-lengths-10-20-50"></script>
 </body>
 </html>

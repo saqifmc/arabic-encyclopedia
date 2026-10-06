@@ -266,7 +266,7 @@ let PROGRESS_METRIC_FILTER = 'all';
 
 let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [], sarf: [], quranicTarkeeb: [] };
 const REVISION_QUIZ = {
-  length:25,
+  length:10,
   direction:'both',
   bank:'both',
   vocabSource:'all',
@@ -2008,7 +2008,7 @@ function bindEvents(){
     document.querySelectorAll('[data-quiz-verb-source]').forEach(b=>b.classList.toggle('active',b===btn));
   }));
   document.querySelectorAll('[data-quiz-length]').forEach(btn=>btn.addEventListener('click',()=>{
-    REVISION_QUIZ.length=Number(btn.dataset.quizLength)||25;
+    REVISION_QUIZ.length=Number(btn.dataset.quizLength)||10;
     document.querySelectorAll('[data-quiz-length]').forEach(b=>b.classList.toggle('active',b===btn));
   }));
   document.querySelectorAll('[data-quiz-direction]').forEach(btn=>btn.addEventListener('click',()=>{
