@@ -149,7 +149,6 @@ async function loadRemoteProgress(){
     }
 
     renderAll();
-    if(currentCard) updateFlashMeta();
   }catch(err){
     console.error('Firestore progress load error',err);
     setAuthMessage('Signed in, but cloud progress could not load. Check Firestore setup/rules.');
@@ -266,7 +265,16 @@ let VERB_PAGE = 1;
 let PROGRESS_METRIC_FILTER = 'all';
 
 let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [], sarf: [], quranicTarkeeb: [] };
-let currentCard = null;
+const REVISION_QUIZ = {
+  length:25,
+  direction:'both',
+  active:false,
+  questions:[],
+  index:0,
+  correct:0,
+  wrong:0,
+  answered:false
+};
 const STORE_KEY = 'arabicEncyclopediaProgressV2';
 const STATUSES = ['Not Started','Covered','Learning','Confident','Mastered'];
 const ARABIC_ALPHABET = ['ا','ب','ت','ث','ج','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ك','ل','م','ن','ه','و','ي'];
@@ -314,7 +322,7 @@ function setup(){
   document.getElementById('googleSignInBtn')?.addEventListener('click',signInWithGoogle);
   document.getElementById('signOutBtn')?.addEventListener('click',signOut);
   renderAll();
-  newRevisionCard();
+  showRevisionQuizSetup();
 
   if(initFirebase()){
     firebaseAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(()=>{
@@ -1570,146 +1578,226 @@ function renderQuranicTarkeeb(){
     </article>`).join('');
 }
 
-function revisionPool(){
-  const mode=document.getElementById('revisionMode')?.value||'vocab-ar-en';
-  const subset=document.getElementById('revisionSubset')?.value||'all';
+function shuffleQuizArray(items){
+  const arr=[...items];
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+function quizArabicValue(item){
+  return String(item?.arabic||item?.past||'').trim();
+}
+function quizEnglishValue(item){
+  return String(item?.english||item?.quran_english||'').trim();
+}
+function revisionQuizPool(){
+  const seen=new Set();
+  const rows=[
+    ...DATA.vocabulary.map(item=>({item,kind:'vocabulary'})),
+    ...DATA.verbs.map(item=>({item,kind:'verb'}))
+  ].filter(({item})=>quizArabicValue(item)&&quizEnglishValue(item));
 
-  let pool=mode.startsWith('verb-') ? DATA.verbs : DATA.vocabulary;
+  return rows.filter(({item})=>{
+    const key=(quizArabicValue(item)+'|'+quizEnglishValue(item)).toLowerCase();
+    if(seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+function quizValueFor(item,direction,part){
+  if(direction==='ar-en') return part==='prompt'?quizArabicValue(item):quizEnglishValue(item);
+  return part==='prompt'?quizEnglishValue(item):quizArabicValue(item);
+}
+function quizDirectionText(direction){
+  return direction==='ar-en'?'Arabic → English':'English → Arabic';
+}
+function buildQuizOptions(question){
+  const correct=quizValueFor(question.item,question.direction,'answer');
+  const sameKind=revisionQuizPool().filter(x=>x.kind===question.kind);
+  const otherValues=shuffleQuizArray(
+    [...new Set(sameKind.map(({item})=>quizValueFor(item,question.direction,'answer')).filter(v=>v&&v!==correct))]
+  ).slice(0,3);
+  return shuffleQuizArray([correct,...otherValues]);
+}
+function showRevisionQuizSetup(){
+  REVISION_QUIZ.active=false;
+  REVISION_QUIZ.questions=[];
+  REVISION_QUIZ.index=0;
+  REVISION_QUIZ.correct=0;
+  REVISION_QUIZ.wrong=0;
+  REVISION_QUIZ.answered=false;
+  document.getElementById('revisionQuizSetup')?.classList.remove('hidden');
+  document.getElementById('revisionQuizPlay')?.classList.add('hidden');
+  document.getElementById('revisionQuizResult')?.classList.add('hidden');
+}
+function startRevisionQuiz(){
+  const pool=revisionQuizPool();
+  const target=Math.min(REVISION_QUIZ.length,pool.length);
+  const picked=shuffleQuizArray(pool).slice(0,target);
 
-  if(mode==='vocab-root') pool=pool.filter(x=>x.root);
-  if(mode==='verb-past-present') pool=pool.filter(x=>x.past&&x.present);
-  if(mode==='verb-present-past') pool=pool.filter(x=>x.present&&x.past);
-  if(mode==='verb-root') pool=pool.filter(x=>x.root);
-  if(mode==='verb-form') pool=pool.filter(x=>x.form);
-  if(mode==='verb-bab') pool=pool.filter(x=>x.bab);
-  if(mode==='verb-masdar') pool=pool.filter(x=>x.masdar);
+  REVISION_QUIZ.questions=picked.map(({item,kind},i)=>({
+    item,
+    kind,
+    direction:REVISION_QUIZ.direction==='both'?(i%2===0?'ar-en':'en-ar'):REVISION_QUIZ.direction,
+    options:null
+  }));
+  REVISION_QUIZ.index=0;
+  REVISION_QUIZ.correct=0;
+  REVISION_QUIZ.wrong=0;
+  REVISION_QUIZ.answered=false;
+  REVISION_QUIZ.active=true;
 
-  pool=pool.filter(x=>{
-    const p=progressFor(x.id);
-    if(subset==='all') return true;
-    if(subset==='favourites') return p.favourite;
-    const map={'not-started':'Not Started','learning':'Learning','covered':'Covered','confident':'Confident'};
-    return p.status===map[subset];
+  document.getElementById('revisionQuizSetup')?.classList.add('hidden');
+  document.getElementById('revisionQuizResult')?.classList.add('hidden');
+  document.getElementById('revisionQuizPlay')?.classList.remove('hidden');
+  renderRevisionQuizQuestion();
+}
+function renderRevisionQuizQuestion(){
+  if(!REVISION_QUIZ.active||!REVISION_QUIZ.questions.length) return;
+  const q=REVISION_QUIZ.questions[REVISION_QUIZ.index];
+  if(!q) return finishRevisionQuiz();
+
+  if(!q.options) q.options=buildQuizOptions(q);
+  REVISION_QUIZ.answered=false;
+
+  const total=REVISION_QUIZ.questions.length;
+  const num=REVISION_QUIZ.index+1;
+  const prompt=quizValueFor(q.item,q.direction,'prompt');
+  const promptArabic=q.direction==='ar-en';
+  const answersArabic=q.direction==='en-ar';
+
+  const counter=document.getElementById('quizCounter');
+  const direction=document.getElementById('quizDirectionLabel');
+  const promptEl=document.getElementById('quizPrompt');
+  const options=document.getElementById('quizOptions');
+  const feedback=document.getElementById('quizFeedback');
+  const next=document.getElementById('quizNextBtn');
+
+  if(counter) counter.textContent='Question '+num+' of '+total;
+  if(direction) direction.textContent=quizDirectionText(q.direction);
+  if(promptEl){
+    promptEl.textContent=prompt;
+    promptEl.className='quiz-prompt'+(promptArabic?' arabic':'');
+    if(promptArabic){promptEl.setAttribute('lang','ar');promptEl.setAttribute('dir','rtl');}
+    else{promptEl.removeAttribute('lang');promptEl.removeAttribute('dir');}
+  }
+
+  if(options){
+    options.innerHTML=q.options.map((answer,i)=>{
+      const cls='quiz-option'+(answersArabic?' arabic-option':'');
+      const attrs=answersArabic?' lang="ar" dir="rtl"':'';
+      return '<button type="button" class="'+cls+'" data-quiz-option="'+i+'"'+attrs+'>'+answer+'</button>';
+    }).join('');
+  }
+  if(feedback){
+    feedback.className='quiz-feedback hidden';
+    feedback.textContent='';
+  }
+  if(next){
+    next.classList.add('hidden');
+    next.textContent=num===total?'See results':'Next question';
+  }
+
+  updateRevisionQuizScore();
+  const fill=document.getElementById('quizProgressFill');
+  if(fill) fill.style.width=((REVISION_QUIZ.index/total)*100)+'%';
+}
+function updateRevisionQuizScore(){
+  const c=document.getElementById('quizCorrectCount');
+  const w=document.getElementById('quizWrongCount');
+  if(c)c.textContent=REVISION_QUIZ.correct;
+  if(w)w.textContent=REVISION_QUIZ.wrong;
+}
+function recordRevisionQuizAttempt(item,isCorrect){
+  const p=progressFor(item.id);
+  const next={
+    ...p,
+    timesRevised:(p.timesRevised||0)+1,
+    lastRevised:new Date().toISOString(),
+    correctCount:(p.correctCount||0)+(isCorrect?1:0),
+    incorrectCount:(p.incorrectCount||0)+(isCorrect?0:1)
+  };
+  const all=loadProgress();
+  all[item.id]=next;
+  saveProgress(all);
+  if(currentUser) pushProgress(item.id,next);
+}
+function answerRevisionQuiz(optionIndex){
+  if(REVISION_QUIZ.answered) return;
+  const q=REVISION_QUIZ.questions[REVISION_QUIZ.index];
+  if(!q) return;
+
+  const correct=quizValueFor(q.item,q.direction,'answer');
+  const selected=q.options?.[optionIndex]||'';
+  const isCorrect=selected===correct;
+  REVISION_QUIZ.answered=true;
+
+  if(isCorrect) REVISION_QUIZ.correct++;
+  else REVISION_QUIZ.wrong++;
+
+  recordRevisionQuizAttempt(q.item,isCorrect);
+  updateRevisionQuizScore();
+
+  document.querySelectorAll('#quizOptions .quiz-option').forEach((btn,i)=>{
+    btn.disabled=true;
+    const value=q.options?.[i]||'';
+    if(value===correct) btn.classList.add('correct');
+    if(i===optionIndex&&!isCorrect) btn.classList.add('wrong');
   });
 
-  return pool;
+  const feedback=document.getElementById('quizFeedback');
+  if(feedback){
+    feedback.classList.remove('hidden');
+    feedback.classList.toggle('correct-feedback',isCorrect);
+    feedback.classList.toggle('wrong-feedback',!isCorrect);
+    if(isCorrect){
+      feedback.innerHTML='<strong>Correct</strong>';
+    }else{
+      const answerClass=q.direction==='en-ar'?'arabic-feedback':'';
+      const answerAttrs=q.direction==='en-ar'?' lang="ar" dir="rtl"':'';
+      feedback.innerHTML='<strong>Incorrect</strong><span>Correct answer: <b class="'+answerClass+'"'+answerAttrs+'>'+correct+'</b></span>';
+    }
+  }
+
+  const next=document.getElementById('quizNextBtn');
+  if(next) next.classList.remove('hidden');
+  const fill=document.getElementById('quizProgressFill');
+  if(fill) fill.style.width=(((REVISION_QUIZ.index+1)/REVISION_QUIZ.questions.length)*100)+'%';
 }
-
-function newRevisionCard(){
-  const mode=document.getElementById('revisionMode')?.value||'vocab-ar-en';
-  const pool=revisionPool();
-  const prompt=document.getElementById('flashPrompt');
-  const answer=document.getElementById('flashAnswer');
-
-  document.getElementById('ratingButtons').classList.add('hidden');
-  answer.classList.add('hidden');
-
-  if(!pool.length){
-    currentCard=null;
-    prompt.textContent='No items match this revision filter.';
-    prompt.className='flash-prompt';
-    answer.textContent='';
-    updateFlashMeta();
+function nextRevisionQuizQuestion(){
+  if(!REVISION_QUIZ.answered) return;
+  if(REVISION_QUIZ.index>=REVISION_QUIZ.questions.length-1){
+    finishRevisionQuiz();
     return;
   }
-
-  currentCard=pool[Math.floor(Math.random()*pool.length)];
-
-  let promptText='';
-  let answerText='';
-  let promptArabic=false;
-  let answerArabic=false;
-
-  switch(mode){
-    case 'vocab-ar-en':
-    case 'verb-ar-en':
-      promptText=currentCard.arabic||currentCard.past||'';
-      answerText=currentCard.english||'';
-      promptArabic=true;
-      break;
-
-    case 'vocab-en-ar':
-    case 'verb-en-ar':
-      promptText=currentCard.english||'';
-      answerText=currentCard.arabic||currentCard.past||'';
-      answerArabic=true;
-      break;
-
-    case 'vocab-root':
-    case 'verb-root':
-      promptText=currentCard.arabic||currentCard.past||'';
-      answerText=currentCard.root||'—';
-      promptArabic=true;
-      answerArabic=true;
-      break;
-
-    case 'verb-past-present':
-      promptText=currentCard.past||currentCard.arabic||'';
-      answerText=currentCard.present||'—';
-      promptArabic=true;
-      answerArabic=true;
-      break;
-
-    case 'verb-present-past':
-      promptText=currentCard.present||'';
-      answerText=currentCard.past||currentCard.arabic||'—';
-      promptArabic=true;
-      answerArabic=true;
-      break;
-
-    case 'verb-form':
-      promptText=currentCard.arabic||currentCard.past||'';
-      answerText=currentCard.form||'—';
-      promptArabic=true;
-      break;
-
-    case 'verb-bab':
-      promptText=currentCard.arabic||currentCard.past||'';
-      answerText=currentCard.bab||'—';
-      promptArabic=true;
-      answerArabic=true;
-      break;
-
-    case 'verb-masdar':
-      promptText=currentCard.arabic||currentCard.past||'';
-      answerText=currentCard.masdar||'—';
-      promptArabic=true;
-      answerArabic=true;
-      break;
-  }
-
-  prompt.textContent=promptText;
-  prompt.className='flash-prompt'+(promptArabic?' arabic':'');
-  answer.textContent=answerText;
-  answer.className='flash-answer hidden'+(answerArabic?' arabic':'');
-
-  updateFlashMeta();
+  REVISION_QUIZ.index++;
+  renderRevisionQuizQuestion();
+  document.getElementById('revision')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function updateFlashMeta(){
-  const meta=document.getElementById('flashMeta');
-  const star=document.getElementById('flashFavourite');
-  const info=document.getElementById('revisionInfo');
-  if(!currentCard){meta.textContent='Revision';star.textContent='☆';info.textContent='';return;}
-  const p=progressFor(currentCard.id);
-  meta.textContent=`${p.status} · ${currentCard.topic||'General'}`;
-  star.textContent=p.favourite?'★':'☆';
-  star.classList.toggle('on',p.favourite);
-  info.textContent=`Revised ${p.timesRevised||0} time${p.timesRevised===1?'':'s'}${p.lastRevised?` · Last ${formatDate(p.lastRevised)}`:''}`;
+function finishRevisionQuiz(){
+  REVISION_QUIZ.active=false;
+  const total=REVISION_QUIZ.questions.length||1;
+  const pct=Math.round((REVISION_QUIZ.correct/total)*100);
+
+  document.getElementById('revisionQuizPlay')?.classList.add('hidden');
+  document.getElementById('revisionQuizSetup')?.classList.add('hidden');
+  document.getElementById('revisionQuizResult')?.classList.remove('hidden');
+
+  const percent=document.getElementById('quizFinalPercent');
+  const score=document.getElementById('quizFinalScore');
+  const correct=document.getElementById('quizResultCorrect');
+  const wrong=document.getElementById('quizResultWrong');
+  if(percent) percent.textContent=pct+'%';
+  if(score) score.textContent=REVISION_QUIZ.correct+' / '+REVISION_QUIZ.questions.length+' correct';
+  if(correct) correct.textContent=REVISION_QUIZ.correct;
+  if(wrong) wrong.textContent=REVISION_QUIZ.wrong;
+
+  renderStats();
+  renderSectionDashboards();
 }
-function rateCurrent(rating){
-  if(!currentCard)return;
-  const p=progressFor(currentCard.id);
-  const now=new Date().toISOString();
-  let patch={timesRevised:(p.timesRevised||0)+1,lastRevised:now};
-  if(rating==='Again'){patch.incorrectCount=(p.incorrectCount||0)+1;patch.status='Learning';}
-  if(rating==='Learning'){patch.correctCount=(p.correctCount||0)+1;patch.status='Learning';}
-  if(rating==='Know It'){patch.correctCount=(p.correctCount||0)+1;patch.status=p.status==='Confident'?'Mastered':'Confident';}
-  const all=loadProgress(); all[currentCard.id]={...p,...patch};
-  if(!all[currentCard.id].dateCovered) all[currentCard.id].dateCovered=now;
-  saveProgress(all);
-  if(currentUser) pushProgress(currentCard.id, all[currentCard.id]);
-  renderAll(); newRevisionCard();
-}
+
 function formatDate(s){return new Date(s).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});}
 function resetVocabularyFilters(){
   VOCAB_PAGE=1;
@@ -1808,20 +1896,21 @@ function bindEvents(){
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
   document.getElementById('nahwTopicFilter')?.addEventListener('input',renderNahw);
   document.getElementById('quranSurahFilter')?.addEventListener('change',renderQuranicTarkeeb);
-  document.getElementById('revisionMode').addEventListener('change',newRevisionCard);
-  document.getElementById('revisionSubset').addEventListener('change',newRevisionCard);
-  document.getElementById('newCardBtn').addEventListener('click',newRevisionCard);
-  document.getElementById('revealBtn').addEventListener('click',()=>{
-    if(!currentCard)return;
-    document.getElementById('flashAnswer').classList.remove('hidden');
-    document.getElementById('ratingButtons').classList.remove('hidden');
+  document.querySelectorAll('[data-quiz-length]').forEach(btn=>btn.addEventListener('click',()=>{
+    REVISION_QUIZ.length=Number(btn.dataset.quizLength)||25;
+    document.querySelectorAll('[data-quiz-length]').forEach(b=>b.classList.toggle('active',b===btn));
+  }));
+  document.querySelectorAll('[data-quiz-direction]').forEach(btn=>btn.addEventListener('click',()=>{
+    REVISION_QUIZ.direction=btn.dataset.quizDirection||'both';
+    document.querySelectorAll('[data-quiz-direction]').forEach(b=>b.classList.toggle('active',b===btn));
+  }));
+  document.getElementById('startRevisionQuiz')?.addEventListener('click',startRevisionQuiz);
+  document.getElementById('quizOptions')?.addEventListener('click',e=>{
+    const btn=e.target.closest('[data-quiz-option]');
+    if(btn) answerRevisionQuiz(Number(btn.dataset.quizOption));
   });
-  document.querySelectorAll('[data-rating]').forEach(btn=>btn.addEventListener('click',()=>rateCurrent(btn.dataset.rating)));
-  document.getElementById('flashFavourite').addEventListener('click',()=>{
-    if(!currentCard)return;
-    const p=progressFor(currentCard.id);
-    patchProgress(currentCard.id,{favourite:!p.favourite});updateFlashMeta();
-  });
+  document.getElementById('quizNextBtn')?.addEventListener('click',nextRevisionQuizQuestion);
+  document.getElementById('restartRevisionQuiz')?.addEventListener('click',showRevisionQuizSetup);
   document.getElementById('resetProgressBtn').addEventListener('click',()=>{
     if(confirm('Reset all saved learning progress on this device?')){
       localStorage.removeItem(STORE_KEY);
@@ -1833,7 +1922,7 @@ function bindEvents(){
           await batch.commit();
         }).catch(err=>console.error('Cloud progress reset error',err));
       }
-      renderAll();newRevisionCard();
+      renderAll();showRevisionQuizSetup();
     }
   });
   document.getElementById('globalSearch').addEventListener('input',e=>{

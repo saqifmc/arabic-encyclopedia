@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261006-search-reset-source-cleanup" />
+  <link rel="stylesheet" href="style.css?v=20261006-quizlet-revision" />
 </head>
 <body>
   <div id="updateBanner" class="update-banner hidden" role="status" aria-live="polite">
@@ -300,56 +300,82 @@
       <div id="quranAyahList" class="quran-ayah-list"></div>
     </section>
 
-    <section id="revision" class="view">
+    <section id="revision" class="view section-revision">
       <div class="section-head">
-        <div><h2>Revision</h2><p>Choose a subset and test yourself without looking at the answer first.</p></div>
-      </div>
-      <div class="revision-controls">
-        <select id="revisionMode">
-          <optgroup label="Vocabulary">
-            <option value="vocab-ar-en">Arabic → English</option>
-            <option value="vocab-en-ar">English → Arabic</option>
-            <option value="vocab-root">Word → Root</option>
-          </optgroup>
-          <optgroup label="Verbs">
-            <option value="verb-ar-en">Arabic → English</option>
-            <option value="verb-en-ar">English → Arabic</option>
-            <option value="verb-past-present">Past → Present</option>
-            <option value="verb-present-past">Present → Past</option>
-            <option value="verb-root">Verb → Root</option>
-            <option value="verb-form">Verb → Form</option>
-            <option value="verb-bab">Verb → Bāb</option>
-            <option value="verb-masdar">Verb → Maṣdar</option>
-          </optgroup>
-        </select>
-        <select id="revisionSubset">
-          <option value="all">All items</option>
-          <option value="not-started">Not Started</option>
-          <option value="learning">Learning</option>
-          <option value="covered">Covered</option>
-          <option value="confident">Confident</option>
-          <option value="favourites">Favourites</option>
-        </select>
-        <button id="newCardBtn">New Card</button>
+        <div>
+          <h2>Revision Quiz</h2>
+          <p>Choose your quiz length and direction, then match each word to one of four answers.</p>
+        </div>
       </div>
 
-      <div class="flashcard">
-        <div class="flash-topline">
-          <span id="flashMeta" class="pill">Revision</span>
-          <button id="flashFavourite" class="star-btn" aria-label="Toggle favourite">☆</button>
+      <div id="revisionQuizSetup" class="quiz-setup">
+        <div class="quiz-setup-card">
+          <div class="quiz-setup-intro">
+            <span class="quiz-kicker">QUIZ SETUP</span>
+            <h3>Build your test</h3>
+            <p>Questions are drawn from your Vocabulary and Verb banks. Each question has four possible answers.</p>
+          </div>
+
+          <div class="quiz-setting">
+            <span class="quiz-setting-label">Number of questions</span>
+            <div class="quiz-choice-row" role="group" aria-label="Number of quiz questions">
+              <button type="button" class="quiz-choice active" data-quiz-length="25">25</button>
+              <button type="button" class="quiz-choice" data-quiz-length="50">50</button>
+              <button type="button" class="quiz-choice" data-quiz-length="100">100</button>
+            </div>
+          </div>
+
+          <div class="quiz-setting">
+            <span class="quiz-setting-label">Question direction</span>
+            <div class="quiz-choice-row quiz-direction-row" role="group" aria-label="Quiz direction">
+              <button type="button" class="quiz-choice" data-quiz-direction="ar-en">Arabic → English</button>
+              <button type="button" class="quiz-choice" data-quiz-direction="en-ar">English → Arabic</button>
+              <button type="button" class="quiz-choice active" data-quiz-direction="both">Both</button>
+            </div>
+          </div>
+
+          <button id="startRevisionQuiz" type="button" class="quiz-primary-btn">Start quiz</button>
         </div>
-        <div id="flashPrompt" class="flash-prompt"></div>
-        <button id="revealBtn">Reveal Answer</button>
-        <div id="flashAnswer" class="flash-answer hidden"></div>
-        <div id="ratingButtons" class="rating-buttons hidden">
-          <button data-rating="Again" class="rate-again">Again</button>
-          <button data-rating="Learning" class="rate-learning">Learning</button>
-          <button data-rating="Know It" class="rate-know">Know It</button>
+      </div>
+
+      <div id="revisionQuizPlay" class="quiz-play hidden">
+        <div class="quiz-session-head">
+          <div>
+            <span id="quizCounter" class="quiz-counter">Question 1 of 25</span>
+            <span id="quizDirectionLabel" class="quiz-direction-label">Arabic → English</span>
+          </div>
+          <div class="quiz-live-score" aria-label="Current quiz score">
+            <span class="quiz-correct-stat">✓ <strong id="quizCorrectCount">0</strong></span>
+            <span class="quiz-wrong-stat">✕ <strong id="quizWrongCount">0</strong></span>
+          </div>
         </div>
-        <div id="revisionInfo" class="revision-info"></div>
+
+        <div class="quiz-progress-track" aria-hidden="true">
+          <div id="quizProgressFill" class="quiz-progress-fill"></div>
+        </div>
+
+        <article class="quiz-question-card">
+          <div id="quizPrompt" class="quiz-prompt"></div>
+          <div id="quizOptions" class="quiz-options"></div>
+          <div id="quizFeedback" class="quiz-feedback hidden"></div>
+          <button id="quizNextBtn" type="button" class="quiz-primary-btn quiz-next-btn hidden">Next question</button>
+        </article>
+      </div>
+
+      <div id="revisionQuizResult" class="quiz-result hidden">
+        <div class="quiz-result-card">
+          <span class="quiz-kicker">QUIZ COMPLETE</span>
+          <h3>Your score</h3>
+          <div id="quizFinalPercent" class="quiz-final-percent">0%</div>
+          <div id="quizFinalScore" class="quiz-final-score">0 / 25 correct</div>
+          <div class="quiz-result-stats">
+            <div><span>Correct</span><strong id="quizResultCorrect">0</strong></div>
+            <div><span>Wrong</span><strong id="quizResultWrong">0</strong></div>
+          </div>
+          <button id="restartRevisionQuiz" type="button" class="quiz-primary-btn">Start another quiz</button>
+        </div>
       </div>
     </section>
-
     <section id="about" class="view section-about">
       <div class="section-head">
         <div>
@@ -391,6 +417,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261006-root-sources-removed"></script>
+  <script src="script.js?v=20261006-quizlet-revision"></script>
 </body>
 </html>
