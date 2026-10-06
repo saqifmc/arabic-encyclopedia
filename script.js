@@ -256,6 +256,7 @@ function updateAuthUI(){
 
 const SECTION_METRIC_FILTERS = { vocabulary:'all', verbs:'all' };
 let ROOT_METRIC_FILTER = 'all';
+let SELECTED_ROOT = null;
 let VOCAB_COLLECTION_FILTER = 'all';
 let VERB_COLLECTION_FILTER = 'all';
 const VOCAB_PAGE_SIZE = 24;
@@ -355,6 +356,7 @@ function bindNavigation(){
   document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));
 }
 function showView(id){
+  if(id!=='roots') SELECTED_ROOT=null;
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.mobile-bottom-nav [data-view]').forEach(btn=>btn.classList.toggle('active',btn.dataset.view===id));
@@ -755,7 +757,196 @@ function rootInitial(root){
   return clean.charAt(0);
 }
 
+function rootItemKind(item){
+  return DATA.verbs.includes(item)?'verb':'vocabulary';
+}
+
+function rootFrequencyValue(value){
+  if(value===undefined||value===null||value==='') return 0;
+  const match=String(value).replace(/,/g,'').match(/\d+/);
+  return match?Number(match[0]):0;
+}
+
+function rootSummaryTag(label,value,arabic=false){
+  if(value===undefined||value===null||value==='') return '';
+  return `<div class="root-detail-stat"><span>${label}</span><strong class="${arabic?'root-detail-ar':''}">${value}</strong></div>`;
+}
+
+function rootVocabDetailCard(x){
+  const p=progressFor(x.id);
+  return `<article class="root-detail-item">
+    <div class="root-detail-item-head">
+      <div>
+        <div class="arabic root-detail-word" lang="ar" dir="rtl">${x.arabic}</div>
+        <h4>${x.english||'—'}</h4>
+      </div>
+      <span class="pill ${statusClass(p.status)}">${p.status}</span>
+    </div>
+    <div class="root-detail-meta">
+      ${x.type?`<span>Type: ${x.type}</span>`:''}
+      ${x.category?`<span>${x.category}</span>`:''}
+      ${x.topic?`<span>${x.topic}</span>`:''}
+      ${x.quran_frequency?`<span>Qur'an occurrences: ${x.quran_frequency}</span>`:''}
+    </div>
+    ${sourceValues(x).length?`<div class="vocab-source-row">${sourceValues(x).map(s=>`<span class="vocab-source-tag">${s}</span>`).join('')}</div>`:''}
+    ${x.example?`<div class="root-detail-example arabic" lang="ar" dir="rtl">${x.example}</div><div class="meta">${x.example_en||''}</div>`:''}
+    ${statusControls(x)}
+    <button type="button" class="root-open-item" data-root-item-id="${x.id}">Open full vocabulary entry</button>
+  </article>`;
+}
+
+function rootVerbDetailCard(x){
+  const p=progressFor(x.id);
+  return `<article class="root-detail-item root-detail-verb">
+    <div class="root-detail-item-head">
+      <div>
+        <div class="arabic root-detail-word" lang="ar" dir="rtl">${x.arabic||x.past||''}</div>
+        <h4>${x.english||'—'}</h4>
+      </div>
+      <span class="pill ${statusClass(p.status)}">${p.status}</span>
+    </div>
+    <div class="root-verb-forms">
+      ${rootSummaryTag('Past',x.past,true)}
+      ${rootSummaryTag('Present',x.present,true)}
+      ${rootSummaryTag('Maṣdar',x.masdar,true)}
+      ${rootSummaryTag('Form',x.form)}
+      ${rootSummaryTag('Bāb',x.bab,true)}
+      ${rootSummaryTag('Type',x.verb_type,true)}
+    </div>
+    ${x.quran_frequency?`<div class="root-quran-count">Qur'an occurrences: <strong>${x.quran_frequency}</strong></div>`:''}
+    ${sourceValues(x).length?`<div class="vocab-source-row">${sourceValues(x).map(s=>`<span class="vocab-source-tag">${s}</span>`).join('')}</div>`:''}
+    ${statusControls(x)}
+    <button type="button" class="root-open-item" data-root-item-id="${x.id}">Open full verb entry</button>
+  </article>`;
+}
+
+function rootSortedKeys(){
+  return Object.keys(getRootGroups()).sort((a,b)=>String(a).localeCompare(String(b),'ar',{sensitivity:'base'}));
+}
+
+function openRootDetail(root){
+  SELECTED_ROOT=root;
+  renderRoots();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function closeRootDetail(){
+  SELECTED_ROOT=null;
+  renderRoots();
+  document.getElementById('roots')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderRootDetail(root){
+  const browse=document.getElementById('rootsBrowse');
+  const detail=document.getElementById('rootDetail');
+  if(!browse||!detail) return;
+
+  const vocab=DATA.vocabulary.filter(x=>x.root===root);
+  const verbs=DATA.verbs.filter(x=>x.root===root);
+  const items=[...vocab,...verbs];
+  if(!items.length){
+    SELECTED_ROOT=null;
+    browse.classList.remove('hidden');
+    detail.classList.add('hidden');
+    renderRoots();
+    return;
+  }
+
+  const p=rootProgress(items);
+  const quranTotal=items.reduce((sum,x)=>sum+rootFrequencyValue(x.quran_frequency),0);
+  const forms=unique(verbs.map(x=>x.form));
+  const babs=unique(verbs.map(x=>x.bab));
+  const sources=unique(items.flatMap(sourceValues));
+  const keys=rootSortedKeys();
+  const pos=keys.indexOf(root);
+  const previous=pos>0?keys[pos-1]:'';
+  const next=pos>=0&&pos<keys.length-1?keys[pos+1]:'';
+
+  browse.classList.add('hidden');
+  detail.classList.remove('hidden');
+  detail.innerHTML=`
+    <div class="root-detail-topbar">
+      <button type="button" class="root-back-btn" data-root-back>← All roots</button>
+      <div class="root-detail-nav">
+        <button type="button" ${previous?'':'disabled'} data-root-nav="${previous?encodeURIComponent(previous):''}">← Previous</button>
+        <button type="button" ${next?'':'disabled'} data-root-nav="${next?encodeURIComponent(next):''}">Next →</button>
+      </div>
+    </div>
+
+    <section class="root-detail-hero">
+      <div>
+        <span class="root-detail-kicker">ROOT FAMILY</span>
+        <div class="root-detail-title arabic" lang="ar" dir="rtl">${root}</div>
+        <p>${items.length} related item${items.length===1?'':'s'} across your vocabulary and verb banks.</p>
+      </div>
+      <div class="root-detail-progress-card">
+        <div class="root-progress-head"><strong>Family progress</strong><span class="root-percent">${p.pct}%</span></div>
+        <div class="root-progress-bar"><div class="root-progress-fill" style="width:${p.pct}%"></div></div>
+        <div class="root-detail-status-line">
+          <span>${p.notStarted} not started</span>
+          <span>${p.covered+p.learning} learning</span>
+          <span>${p.confident} confident</span>
+          <span>${p.mastered} mastered</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="root-detail-overview">
+      ${rootSummaryTag('Vocabulary',vocab.length)}
+      ${rootSummaryTag('Verbs',verbs.length)}
+      ${rootSummaryTag('Qur\'an occurrences',quranTotal||'—')}
+      ${rootSummaryTag('Forms',forms.length||'—')}
+      ${rootSummaryTag('Bābs',babs.length||'—')}
+    </div>
+
+    ${forms.length||babs.length||sources.length?`
+      <section class="root-family-reference">
+        ${forms.length?`<div><span>Verb forms</span><div class="root-detail-tags">${forms.map(x=>`<span>${x}</span>`).join('')}</div></div>`:''}
+        ${babs.length?`<div><span>Bābs</span><div class="root-detail-tags arabic-tags" lang="ar" dir="rtl">${babs.map(x=>`<span>${x}</span>`).join('')}</div></div>`:''}
+        ${sources.length?`<div><span>Sources</span><div class="root-detail-tags">${sources.map(x=>`<span>${x}</span>`).join('')}</div></div>`:''}
+      </section>`:''}
+
+    <section class="root-detail-section">
+      <div class="root-detail-section-head">
+        <div><span class="root-detail-kicker">WORD FAMILY</span><h3>Vocabulary</h3></div>
+        <span>${vocab.length} item${vocab.length===1?'':'s'}</span>
+      </div>
+      <div class="root-detail-grid">
+        ${vocab.length?vocab.map(rootVocabDetailCard).join(''):'<p class="meta">No vocabulary items are currently stored under this root.</p>'}
+      </div>
+    </section>
+
+    <section class="root-detail-section">
+      <div class="root-detail-section-head">
+        <div><span class="root-detail-kicker">ṢARF FAMILY</span><h3>Verbs</h3></div>
+        <span>${verbs.length} verb${verbs.length===1?'':'s'}</span>
+      </div>
+      <div class="root-detail-grid">
+        ${verbs.length?verbs.map(rootVerbDetailCard).join(''):'<p class="meta">No verbs are currently stored under this root.</p>'}
+      </div>
+    </section>
+  `;
+
+  detail.querySelector('[data-root-back]')?.addEventListener('click',closeRootDetail);
+  detail.querySelectorAll('[data-root-nav]').forEach(btn=>btn.addEventListener('click',()=>{
+    if(btn.disabled||!btn.dataset.rootNav) return;
+    openRootDetail(decodeURIComponent(btn.dataset.rootNav));
+  }));
+  detail.querySelectorAll('[data-root-item-id]').forEach(btn=>btn.addEventListener('click',()=>openRootItem(btn.dataset.rootItemId)));
+  bindDynamicButtons();
+}
+
 function renderRoots(){
+  if(SELECTED_ROOT){
+    renderRootDetail(SELECTED_ROOT);
+    return;
+  }
+
+  const browse=document.getElementById('rootsBrowse');
+  const detail=document.getElementById('rootDetail');
+  browse?.classList.remove('hidden');
+  detail?.classList.add('hidden');
+
   const groups=getRootGroups();
   const sort=document.getElementById('rootSort')?.value||'alphabetical';
   const letter=document.getElementById('rootLetterFilter')?.value||'';
@@ -769,22 +960,32 @@ function renderRoots(){
   if(sort==='strongest') entries.sort((a,b)=>b.progress.pct-a.progress.pct||b.items.length-a.items.length);
   if(sort==='largest') entries.sort((a,b)=>b.items.length-a.items.length||a.root.localeCompare(b.root,'ar'));
   if(sort==='alphabetical') entries.sort((a,b)=>String(a.root).localeCompare(String(b.root),'ar',{sensitivity:'base'}));
+
   document.getElementById('rootsList').innerHTML=entries.map(({root,items,progress:p})=>{
     const state=p.pct===100?'mastered-root':p.pct===0?'not-started-root':'learning-root';
+    const vocabCount=items.filter(x=>rootItemKind(x)==='vocabulary').length;
+    const verbCount=items.length-vocabCount;
     return `<div class="root-card ${state}">
-      <div class="root-title" lang="ar" dir="rtl">${root}</div>
-      <div class="root-family-count">${items.length} related item${items.length===1?'':'s'}</div>
-      <div class="root-progress-head"><strong>Family progress</strong><span class="root-percent">${p.pct}%</span></div>
-      <div class="root-progress-bar"><div class="root-progress-fill" style="width:${p.pct}%"></div></div>
-      <div class="root-status-grid">
-        <div class="root-status-chip notstarted"><strong>${p.notStarted}</strong>Not started</div>
-        <div class="root-status-chip learning"><strong>${p.learning+p.covered}</strong>Learning</div>
-        <div class="root-status-chip confident"><strong>${p.confident}</strong>Confident</div>
-        <div class="root-status-chip mastered"><strong>${p.mastered}</strong>Mastered</div>
-      </div>
+      <button type="button" class="root-card-main" data-root-detail="${encodeURIComponent(root)}" aria-label="Open root family ${root}">
+        <div class="root-title" lang="ar" dir="rtl">${root}</div>
+        <div class="root-family-count">${items.length} related item${items.length===1?'':'s'} · ${vocabCount} vocab · ${verbCount} verb${verbCount===1?'':'s'}</div>
+        <div class="root-progress-head"><strong>Family progress</strong><span class="root-percent">${p.pct}%</span></div>
+        <div class="root-progress-bar"><div class="root-progress-fill" style="width:${p.pct}%"></div></div>
+        <div class="root-status-grid">
+          <div class="root-status-chip notstarted"><strong>${p.notStarted}</strong>Not started</div>
+          <div class="root-status-chip learning"><strong>${p.learning+p.covered}</strong>Learning</div>
+          <div class="root-status-chip confident"><strong>${p.confident}</strong>Confident</div>
+          <div class="root-status-chip mastered"><strong>${p.mastered}</strong>Mastered</div>
+        </div>
+        <span class="root-view-family">View root family →</span>
+      </button>
       <div class="root-family-words" lang="ar" dir="rtl">${items.map(x=>`<button type="button" class="root-word-link ${statusClass(itemStatus(x.id))}" data-root-item-id="${x.id}">${x.arabic}</button>`).join(' ')}</div>
     </div>`;
   }).join('')||'<p class="meta">No roots match this Arabic letter.</p>';
+
+  document.querySelectorAll('[data-root-detail]').forEach(btn=>{
+    btn.onclick=()=>openRootDetail(decodeURIComponent(btn.dataset.rootDetail));
+  });
   document.querySelectorAll('[data-root-item-id]').forEach(btn=>{
     btn.onclick=()=>openRootItem(btn.dataset.rootItemId);
   });

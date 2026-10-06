@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261006-mobile-nav-update" />
+  <link rel="stylesheet" href="style.css?v=20261006-root-detail-pages" />
 </head>
 <body>
   <div id="updateBanner" class="update-banner hidden" role="status" aria-live="polite">
@@ -156,25 +156,28 @@
       <div class="section-head">
         <div><h2>Arabic Roots</h2><p>See words grouped into related families.</p></div>
       </div>
-      <div id="rootsDashboard" class="section-dashboard"></div>
-      <div class="roots-toolbar">
-        <div>
-          <strong>Root-family progress</strong>
-          <p>Each root is measured by the words you have learned within that family.</p>
+      <div id="rootsBrowse">
+        <div id="rootsDashboard" class="section-dashboard"></div>
+        <div class="roots-toolbar">
+          <div>
+            <strong>Root-family progress</strong>
+            <p>Each root is measured by the words you have learned within that family.</p>
+          </div>
+          <div class="root-filter-controls">
+            <select id="rootLetterFilter" aria-label="Filter roots by Arabic letter">
+              <option value="">All Arabic letters</option>
+            </select>
+            <select id="rootSort">
+              <option value="alphabetical">Arabic alphabetical order</option>
+              <option value="weakest">Weakest first</option>
+              <option value="strongest">Strongest first</option>
+              <option value="largest">Largest families</option>
+            </select>
+          </div>
         </div>
-        <div class="root-filter-controls">
-          <select id="rootLetterFilter" aria-label="Filter roots by Arabic letter">
-            <option value="">All Arabic letters</option>
-          </select>
-          <select id="rootSort">
-            <option value="alphabetical">Arabic alphabetical order</option>
-            <option value="weakest">Weakest first</option>
-            <option value="strongest">Strongest first</option>
-            <option value="largest">Largest families</option>
-          </select>
-        </div>
+        <div id="rootsList" class="root-grid"></div>
       </div>
-      <div id="rootsList" class="root-grid"></div>
+      <div id="rootDetail" class="root-detail hidden" aria-live="polite"></div>
     </section>
 
     <section id="verbs" class="view section-verbs">
@@ -378,6 +381,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261006-mobile-nav-update"></script>
+  <script src="script.js?v=20261006-root-detail-pages"></script>
 </body>
 </html>
