@@ -270,6 +270,7 @@ const REVISION_QUIZ = {
   direction:'both',
   bank:'both',
   vocabSource:'all',
+  verbSource:'all',
   active:false,
   questions:[],
   index:0,
@@ -1604,7 +1605,15 @@ function revisionQuizPool(){
     })
     .map(item=>({item,kind:'vocabulary'}));
 
-  const verbs=DATA.verbs.map(item=>({item,kind:'verb'}));
+  const verbs=DATA.verbs
+    .filter(item=>{
+      const collections=Array.isArray(item.collections)?item.collections:[];
+      const isQuran=collections.includes("Qur'an High Frequency Verbs");
+      if(REVISION_QUIZ.verbSource==='quran') return isQuran;
+      if(REVISION_QUIZ.verbSource==='sarf') return !isQuran;
+      return true;
+    })
+    .map(item=>({item,kind:'verb'}));
 
   let rows=[];
   if(REVISION_QUIZ.bank==='vocabulary') rows=vocab;
@@ -1660,8 +1669,10 @@ function buildQuizOptions(question){
   return shuffleQuizArray([correct,...otherValues]);
 }
 function updateRevisionQuizSetupVisibility(){
-  const sourceSetting=document.getElementById('quizVocabSourceSetting');
-  if(sourceSetting) sourceSetting.classList.toggle('hidden',REVISION_QUIZ.bank==='verbs');
+  const vocabSetting=document.getElementById('quizVocabSourceSetting');
+  const verbSetting=document.getElementById('quizVerbSourceSetting');
+  if(vocabSetting) vocabSetting.classList.toggle('hidden',REVISION_QUIZ.bank==='verbs');
+  if(verbSetting) verbSetting.classList.toggle('hidden',REVISION_QUIZ.bank==='vocabulary');
 }
 
 function showRevisionQuizSetup(){
@@ -1948,6 +1959,10 @@ function bindEvents(){
   document.querySelectorAll('[data-quiz-vocab-source]').forEach(btn=>btn.addEventListener('click',()=>{
     REVISION_QUIZ.vocabSource=btn.dataset.quizVocabSource||'all';
     document.querySelectorAll('[data-quiz-vocab-source]').forEach(b=>b.classList.toggle('active',b===btn));
+  }));
+  document.querySelectorAll('[data-quiz-verb-source]').forEach(btn=>btn.addEventListener('click',()=>{
+    REVISION_QUIZ.verbSource=btn.dataset.quizVerbSource||'all';
+    document.querySelectorAll('[data-quiz-verb-source]').forEach(b=>b.classList.toggle('active',b===btn));
   }));
   document.querySelectorAll('[data-quiz-length]').forEach(btn=>btn.addEventListener('click',()=>{
     REVISION_QUIZ.length=Number(btn.dataset.quizLength)||25;
