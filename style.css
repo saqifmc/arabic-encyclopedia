@@ -1318,31 +1318,3 @@ button,a,input,select,summary{touch-action:manipulation}
     width:calc(100vw - 20px);
   }
 }
-
-/* Quranic Tarkeeb translation selector */
-.quran-header-controls{
-  display:grid;
-  grid-template-columns:minmax(190px,1fr) minmax(250px,1fr);
-  gap:10px;
-  width:min(100%,620px);
-}
-.quran-header-controls label{
-  display:grid;
-  gap:6px;
-  color:#fff;
-  font-size:.78rem;
-  font-weight:700;
-}
-.quran-header-controls label>span{
-  color:rgba(255,255,255,.9);
-}
-.section-quranic .quran-header-controls select{
-  width:100%;
-  max-width:none;
-}
-@media(max-width:650px){
-  .quran-header-controls{
-    grid-template-columns:1fr;
-    width:100%;
-  }
-}
