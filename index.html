@@ -320,6 +320,24 @@
           </div>
 
           <div class="quiz-setting">
+            <span class="quiz-setting-label">What do you want to test?</span>
+            <div class="quiz-choice-row" role="group" aria-label="Quiz content">
+              <button type="button" class="quiz-choice" data-quiz-bank="vocabulary">Vocabulary</button>
+              <button type="button" class="quiz-choice" data-quiz-bank="verbs">Verbs</button>
+              <button type="button" class="quiz-choice active" data-quiz-bank="both">Both</button>
+            </div>
+          </div>
+
+          <div id="quizVocabSourceSetting" class="quiz-setting">
+            <span class="quiz-setting-label">Vocabulary source</span>
+            <div class="quiz-choice-row quiz-source-row" role="group" aria-label="Vocabulary source">
+              <button type="button" class="quiz-choice active" data-quiz-vocab-source="all">All Vocabulary</button>
+              <button type="button" class="quiz-choice" data-quiz-vocab-source="Madinah Book 1">Madinah Book 1</button>
+              <button type="button" class="quiz-choice" data-quiz-vocab-source="Qur'an High Frequency">Qur'an High Frequency</button>
+            </div>
+          </div>
+
+          <div class="quiz-setting">
             <span class="quiz-setting-label">Number of questions</span>
             <div class="quiz-choice-row" role="group" aria-label="Number of quiz questions">
               <button type="button" class="quiz-choice active" data-quiz-length="25">25</button>
@@ -420,6 +438,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261006-quizlet-revision"></script>
+  <script src="script.js?v=20261006-quiz-bank-source-filter"></script>
 </body>
 </html>

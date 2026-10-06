@@ -268,6 +268,8 @@ let DATA = { vocabulary: [], verbs: [], speaking: [], nahw: [], sarf: [], qurani
 const REVISION_QUIZ = {
   length:25,
   direction:'both',
+  bank:'both',
+  vocabSource:'all',
   active:false,
   questions:[],
   index:0,
@@ -1594,10 +1596,22 @@ function quizEnglishValue(item){
 }
 function revisionQuizPool(){
   const seen=new Set();
-  const rows=[
-    ...DATA.vocabulary.map(item=>({item,kind:'vocabulary'})),
-    ...DATA.verbs.map(item=>({item,kind:'verb'}))
-  ].filter(({item})=>quizArabicValue(item)&&quizEnglishValue(item));
+  const vocab=DATA.vocabulary
+    .filter(item=>{
+      if(REVISION_QUIZ.vocabSource==='all') return true;
+      const collections=Array.isArray(item.collections)?item.collections:[];
+      return collections.includes(REVISION_QUIZ.vocabSource);
+    })
+    .map(item=>({item,kind:'vocabulary'}));
+
+  const verbs=DATA.verbs.map(item=>({item,kind:'verb'}));
+
+  let rows=[];
+  if(REVISION_QUIZ.bank==='vocabulary') rows=vocab;
+  else if(REVISION_QUIZ.bank==='verbs') rows=verbs;
+  else rows=[...vocab,...verbs];
+
+  rows=rows.filter(({item})=>quizArabicValue(item)&&quizEnglishValue(item));
 
   return rows.filter(({item})=>{
     const key=(quizArabicValue(item)+'|'+quizEnglishValue(item)).toLowerCase();
@@ -1605,6 +1619,30 @@ function revisionQuizPool(){
     seen.add(key);
     return true;
   });
+}
+
+function buildBalancedQuizSelection(pool,target){
+  if(REVISION_QUIZ.bank!=='both') return shuffleQuizArray(pool).slice(0,target);
+
+  const vocab=shuffleQuizArray(pool.filter(x=>x.kind==='vocabulary'));
+  const verbs=shuffleQuizArray(pool.filter(x=>x.kind==='verb'));
+
+  let vocabNeed=Math.floor(target/2);
+  let verbNeed=target-vocabNeed;
+
+  if(vocab.length<vocabNeed){
+    verbNeed=Math.min(verbs.length,verbNeed+(vocabNeed-vocab.length));
+    vocabNeed=vocab.length;
+  }
+  if(verbs.length<verbNeed){
+    vocabNeed=Math.min(vocab.length,vocabNeed+(verbNeed-verbs.length));
+    verbNeed=verbs.length;
+  }
+
+  return shuffleQuizArray([
+    ...vocab.slice(0,vocabNeed),
+    ...verbs.slice(0,verbNeed)
+  ]);
 }
 function quizValueFor(item,direction,part){
   if(direction==='ar-en') return part==='prompt'?quizArabicValue(item):quizEnglishValue(item);
@@ -1621,6 +1659,11 @@ function buildQuizOptions(question){
   ).slice(0,3);
   return shuffleQuizArray([correct,...otherValues]);
 }
+function updateRevisionQuizSetupVisibility(){
+  const sourceSetting=document.getElementById('quizVocabSourceSetting');
+  if(sourceSetting) sourceSetting.classList.toggle('hidden',REVISION_QUIZ.bank==='verbs');
+}
+
 function showRevisionQuizSetup(){
   REVISION_QUIZ.active=false;
   REVISION_QUIZ.questions=[];
@@ -1628,6 +1671,7 @@ function showRevisionQuizSetup(){
   REVISION_QUIZ.correct=0;
   REVISION_QUIZ.wrong=0;
   REVISION_QUIZ.answered=false;
+  updateRevisionQuizSetupVisibility();
   document.getElementById('revisionQuizSetup')?.classList.remove('hidden');
   document.getElementById('revisionQuizPlay')?.classList.add('hidden');
   document.getElementById('revisionQuizResult')?.classList.add('hidden');
@@ -1635,7 +1679,7 @@ function showRevisionQuizSetup(){
 function startRevisionQuiz(){
   const pool=revisionQuizPool();
   const target=Math.min(REVISION_QUIZ.length,pool.length);
-  const picked=shuffleQuizArray(pool).slice(0,target);
+  const picked=buildBalancedQuizSelection(pool,target);
 
   REVISION_QUIZ.questions=picked.map(({item,kind},i)=>({
     item,
@@ -1896,6 +1940,15 @@ function bindEvents(){
   document.getElementById('speakingTopicFilter').addEventListener('input',renderSpeaking);
   document.getElementById('nahwTopicFilter')?.addEventListener('input',renderNahw);
   document.getElementById('quranSurahFilter')?.addEventListener('change',renderQuranicTarkeeb);
+  document.querySelectorAll('[data-quiz-bank]').forEach(btn=>btn.addEventListener('click',()=>{
+    REVISION_QUIZ.bank=btn.dataset.quizBank||'both';
+    document.querySelectorAll('[data-quiz-bank]').forEach(b=>b.classList.toggle('active',b===btn));
+    updateRevisionQuizSetupVisibility();
+  }));
+  document.querySelectorAll('[data-quiz-vocab-source]').forEach(btn=>btn.addEventListener('click',()=>{
+    REVISION_QUIZ.vocabSource=btn.dataset.quizVocabSource||'all';
+    document.querySelectorAll('[data-quiz-vocab-source]').forEach(b=>b.classList.toggle('active',b===btn));
+  }));
   document.querySelectorAll('[data-quiz-length]').forEach(btn=>btn.addEventListener('click',()=>{
     REVISION_QUIZ.length=Number(btn.dataset.quizLength)||25;
     document.querySelectorAll('[data-quiz-length]').forEach(b=>b.classList.toggle('active',b===btn));
