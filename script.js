@@ -1,3 +1,67 @@
+let deployedVersion = '';
+let updateCheckTimer = null;
+
+async function fetchDeployVersion(){
+  try{
+    const res = await fetch('version.json?t='+Date.now(), {cache:'no-store'});
+    if(!res.ok) return '';
+    const data = await res.json();
+    return String(data.version || data.sha || '').trim();
+  }catch(err){
+    return '';
+  }
+}
+
+function showUpdateBanner(version){
+  const banner=document.getElementById('updateBanner');
+  if(!banner || !version) return;
+  if(sessionStorage.getItem('arabicUpdateDismissed')===version) return;
+  banner.dataset.version=version;
+  banner.classList.remove('hidden');
+}
+
+async function checkForAppUpdate(initial=false){
+  const latest=await fetchDeployVersion();
+  if(!latest) return;
+  const stored=localStorage.getItem('arabicAppVersion') || '';
+  if(initial){
+    deployedVersion=latest;
+    if(!stored){
+      localStorage.setItem('arabicAppVersion', latest);
+      return;
+    }
+    if(stored!==latest) showUpdateBanner(latest);
+    return;
+  }
+  if(deployedVersion && latest!==deployedVersion) showUpdateBanner(latest);
+  else if(stored && stored!==latest) showUpdateBanner(latest);
+}
+
+function initUpdateChecker(){
+  const refreshBtn=document.getElementById('refreshAppBtn');
+  const dismissBtn=document.getElementById('dismissUpdateBtn');
+  refreshBtn?.addEventListener('click',()=>{
+    const banner=document.getElementById('updateBanner');
+    const version=banner?.dataset.version || deployedVersion || '';
+    if(version) localStorage.setItem('arabicAppVersion', version);
+    const url=new URL(window.location.href);
+    url.searchParams.set('appv', version.slice(0,12) || Date.now().toString());
+    window.location.replace(url.toString());
+  });
+  dismissBtn?.addEventListener('click',()=>{
+    const banner=document.getElementById('updateBanner');
+    const version=banner?.dataset.version || '';
+    if(version) sessionStorage.setItem('arabicUpdateDismissed',version);
+    banner?.classList.add('hidden');
+  });
+  checkForAppUpdate(true);
+  window.addEventListener('focus',()=>checkForAppUpdate(false));
+  document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='visible') checkForAppUpdate(false);
+  });
+  updateCheckTimer=setInterval(()=>checkForAppUpdate(false),5*60*1000);
+}
+
 let firebaseApp = null;
 let firebaseAuth = null;
 let firebaseDb = null;
@@ -287,11 +351,13 @@ function setup(){
   }
 }
 function bindNavigation(){
+  initUpdateChecker();
   document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));
 }
 function showView(id){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.mobile-bottom-nav [data-view]').forEach(btn=>btn.classList.toggle('active',btn.dataset.view===id));
   renderActiveView();
   window.scrollTo({top:0,behavior:'smooth'});
 }
