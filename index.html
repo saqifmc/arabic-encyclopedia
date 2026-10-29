@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261006-account-under-title" />
+  <link rel="stylesheet" href="style.css?v=20261029-mobile-navigation" />
 </head>
 <body>
   <div id="updateBanner" class="update-banner hidden" role="status" aria-live="polite">
@@ -23,10 +23,11 @@
   </div>
   <header class="topbar">
     <div class="brand">
-      <div class="arabic-title" lang="ar" dir="rtl">مَوْسُوعَتِي الْعَرَبِيَّةُ</div>
+      <a class="arabic-title" href="#home" data-view="home" lang="ar" dir="rtl" aria-label="My Arabic Encyclopedia — Home">مَوْسُوعَتِي الْعَرَبِيَّةُ</a>
       <div class="subtitle">My Arabic Encyclopedia</div>
     </div>
-    <nav>
+    <button id="mobileMenuToggle" class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNavigation">☰ Menu</button>
+    <nav id="primaryNavigation" aria-label="All sections">
       <button data-view="home">Home</button>
       <button data-view="vocabulary">Vocabulary</button>
       <button data-view="verbs">Verbs</button>
@@ -436,11 +437,11 @@
   </main>
 
   <nav class="mobile-bottom-nav" aria-label="Primary mobile navigation">
-    <button type="button" data-view="vocabulary"><span class="mobile-nav-icon">م</span><span>Vocabulary</span></button>
-    <button type="button" data-view="verbs"><span class="mobile-nav-icon">ف</span><span>Verbs</span></button>
-    <button type="button" data-view="roots"><span class="mobile-nav-icon">ع</span><span>Roots</span></button>
-    <button type="button" data-view="revision"><span class="mobile-nav-icon">↻</span><span>Revision</span></button>
-    <button type="button" data-view="progress"><span class="mobile-nav-icon">✓</span><span>Progress</span></button>
+    <button type="button" data-view="vocabulary"><span class="mobile-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3zM12 6v15"/></svg></span><span>Vocabulary</span></button>
+    <button type="button" data-view="verbs"><span class="mobile-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 4-3 4 3 4m14 0 3 4-3 4M2 8h14a4 4 0 0 1 4 4M22 16H8a4 4 0 0 1-4-4"/></svg></span><span>Verbs</span></button>
+    <button type="button" data-view="roots"><span class="mobile-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v8M5 21v-6h14v6M12 11v10"/><circle cx="12" cy="3" r="2"/></svg></span><span>Roots</span></button>
+    <button type="button" data-view="revision"><span class="mobile-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10a8 8 0 1 0-1 8M20 3v7h-7"/></svg></span><span>Revision</span></button>
+    <button type="button" data-view="progress"><span class="mobile-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10m6 10V5m6 15v-7m5 7H2M14 5l3 3 5-6"/></svg></span><span>Progress</span></button>
   </nav>
 
   <footer>
@@ -450,6 +451,6 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
   <script src="config.js?v=20261004-firebase1"></script>
-  <script src="script.js?v=20261006-account-under-title"></script>
+  <script src="script.js?v=20261029-mobile-navigation"></script>
 </body>
 </html>

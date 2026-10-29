@@ -328,6 +328,7 @@ function setup(){
   document.getElementById('signOutBtn')?.addEventListener('click',signOut);
   renderAll();
   showRevisionQuizSetup();
+  showView(viewFromLocation(),{history:false,focus:false,scroll:false});
 
   if(initFirebase()){
     firebaseAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(()=>{
@@ -364,18 +365,79 @@ function setup(){
     setAuthMessage(firebaseInitError || 'Firebase is not connected yet. Your progress is currently stored only on this device.');
   }
 }
+function viewFromLocation(){
+  const id=location.hash.slice(1);
+  return document.getElementById(id)?.classList.contains('view')?id:'home';
+}
+function closeMobileMenu({restoreFocus=false}={}){
+  const toggle=document.getElementById('mobileMenuToggle');
+  toggle.setAttribute('aria-expanded','false');
+  document.getElementById('primaryNavigation').classList.remove('is-open');
+  if(restoreFocus) toggle.focus();
+}
 function bindNavigation(){
   initUpdateChecker();
-  document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));
+  document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',event=>{
+    if(btn.tagName==='A' && (event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)) return;
+    event.preventDefault();
+    showView(btn.dataset.view);
+  }));
+  const toggle=document.getElementById('mobileMenuToggle');
+  const menu=document.getElementById('primaryNavigation');
+  toggle.addEventListener('click',()=>{
+    const open=toggle.getAttribute('aria-expanded')!=='true';
+    toggle.setAttribute('aria-expanded',String(open));
+    menu.classList.toggle('is-open',open);
+  });
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
+      closeMobileMenu({restoreFocus:true});
+    }
+  });
+  document.addEventListener('click',event=>{
+    if(!event.target.closest('.topbar')) closeMobileMenu();
+  });
+  document.querySelector('.topbar').addEventListener('focusout',event=>{
+    if(!event.currentTarget.contains(event.relatedTarget)) closeMobileMenu();
+  });
+  window.matchMedia('(max-width:760px)').addEventListener('change',()=>{
+    const focusInMenu=menu.contains(document.activeElement);
+    closeMobileMenu();
+    if(focusInMenu && window.matchMedia('(max-width:760px)').matches) toggle.focus();
+    else if(document.activeElement===toggle) menu.querySelector('[aria-current],button').focus();
+  });
+  const restoreSection=()=>{
+    const id=viewFromLocation();
+    if(document.querySelector('.view.active')?.id!==id) showView(id,{history:false});
+  };
+  window.addEventListener('hashchange',restoreSection);
+  window.addEventListener('popstate',restoreSection);
 }
-function showView(id){
+function showView(id,{history:recordHistory=true,focus=true,scroll=true}={}){
+  const view=document.getElementById(id);
+  if(!view?.classList.contains('view')) return;
   if(id!=='roots') SELECTED_ROOT=null;
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.mobile-bottom-nav [data-view]').forEach(btn=>btn.classList.toggle('active',btn.dataset.view===id));
+  closeMobileMenu();
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v===view));
+  document.querySelectorAll('nav [data-view]').forEach(btn=>{
+    const active=btn.dataset.view===id;
+    btn.classList.toggle('active',active);
+    if(active) btn.setAttribute('aria-current','page');
+    else btn.removeAttribute('aria-current');
+  });
+  if(recordHistory && location.hash!==`#${id}`){
+    window.history.pushState(null,'',`#${id}`);
+  }
   positionAccountPanel(id);
   renderActiveView();
-  window.scrollTo({top:0,behavior:'smooth'});
+  if(focus){
+    const heading=view.querySelector('h1,h2');
+    if(heading){
+      heading.setAttribute('tabindex','-1');
+      heading.focus({preventScroll:true});
+    }
+  }
+  if(scroll) window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
 }
 function unique(arr){return [...new Set(arr.filter(Boolean))].sort();}
 function sortVerbForms(forms){
